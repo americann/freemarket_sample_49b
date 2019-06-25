@@ -6,7 +6,7 @@
 |password|string|null: false|
 |first_name|string|null: false|
 |last_name|string|null: false|
-|first_name_kana|string|null: false| カナ文字のみ(バリデーション?) 
+|first_name_kana|string|null: false| 
 |last_name_kana|string|null: false| 
 |birthday|date|null: false|
 |address|string|
