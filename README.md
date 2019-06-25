@@ -1,18 +1,9 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|nickname|string|null: false|
 |email|string|unique: true, null: false|
 |password|string|null: false|
-|first_name|string|null: false|
-|last_name|string|null: false|
-|first_name_kana|string|null: false| 
-|last_name_kana|string|null: false| 
-|birthday|date|null: false|
-|address|string|
-|image|string|
-|text|text| 
-|phone_number|integer|
+
 
 ### Association
 - has_many :reviews
@@ -20,6 +11,40 @@
 - has_many :deal_messages
 - has_many :likes
 - has_one :card
+- has_many :products
+- has_one :profile
+- has_many :addresses
+
+## profilesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|first_name|string|null: false|
+|last_name|string|null: false|
+|first_name_kana|string|null: false| 
+|last_name_kana|string|null: false| 
+|nickname|string|null: false| 
+|birthday|date|null: false|
+|address|string|
+|image|string|
+|text|text| 
+|phone_number|integer|
+|user_id|references|foreign_key: true| 
+
+### Association
+- belongs_to :user
+
+
+## addressesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|zip_code|integer|null: false|
+|prefecture|string|null: false|
+|city|string|null: false|
+|block|string|null: false|
+|building_number|string|null: false|
+
+### Association
+- belongs_to :user
 
 
 ## productsテーブル
@@ -38,6 +63,7 @@
 
 ### Association
 - belongs_to :user
+- belongs_to :category
 - has_many :photos
 - has_many :comments
 - has_many :deal_messages
@@ -52,14 +78,14 @@
 |ancestry|||
 
 ### Association
-- belongs_to :product
+- has_many :products
 
 
 ## photosテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|image|string|null: false|
 |product_id|references|null: false,foreign_key: true|
 
 ### Association
@@ -114,6 +140,10 @@
 ### Association
 - belongs_to :user
 - belongs_to :product
+
+
+## likesテーブル
+|Column|Type|Options|
 |------|----|-------|
 |product_id|references|null: false,foreign_key: true|
 |user_id|references|null: false,foreign_key: true|
