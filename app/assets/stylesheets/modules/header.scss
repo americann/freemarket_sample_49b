@@ -13,25 +13,22 @@ body {
   width: 100%;
 }
 
-.header{
+.header{ //header全体の大枠
   width:100%;
   height:100px;
   background-color:#fff;
+  &__inner{ //header全体のインサイド大枠
+    width:1020px;
+    height:100px;
+    margin:auto;
+    padding: 8px 0 0;
+    &__upper{ //headerの上段部
+      width:1020px;
+      height:40px;
+      display:flex;
+  }
+ }
 }
-
-.header-inner{
-  width:1020px;
-  height:100px;
-  margin:auto;
-  padding: 8px 0 0;
-}
-//headerの上段部
-.header-upper{
-  width:1020px;
-  height:40px;
-  display:flex;
-}
-
 
 .seach{
   width:100%;
