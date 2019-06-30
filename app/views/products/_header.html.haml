@@ -1,0 +1,49 @@
+%div.header
+  %div.header-inner
+
+    %div.header-upper
+      %div.logo
+        %a( href="https://www.mercari.com/jp/" class="logo__link")
+          %img(src="//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1905591235"
+          alt="mercari" class="logo__img" width="134" height="36")
+    
+      %div.seach
+        %form.seach__form
+          %input.seach__form__input{:name => "keyword", :placeholder => "何かお探しですか？", :type => "search", :value => ""}
+          %button.seach__form__icon{:type => "submit"}
+            %i.fas.fa-search
+
+    %div.header-nav-box
+      %div.serch-nav-box1
+      
+        %ul.header-nav-left       
+          %li.header-nav-left__nav1
+            %a( href="https://www.mercari.com/jp/category/" class="header-nav-left__nav1__link")
+              %i.fa.fa-list-ul.fa-1.3x
+              %span.header-nav-left__nav1__link__character　カテゴリーから探す
+
+
+          %li.header-nav-left__nav2
+            %a( href="https://www.mercari.com/jp/category/" class="header-nav-left__nav2__link")
+              %i.fa.fa-tag{"aria-hidden" => "true"}
+              %span.header-nav-left__nav2__link__brand　ブランドから探す
+
+
+      %div.serch-nav-box2
+        %ul.header-nav-right
+          %li.header-nav-right__info
+            %a( href="https://www.mercari.com/jp/mypage/notification/" class="header-nav-right__info__link")
+              %i.fa.fa-bell-o{"aria-hidden" => "true"}
+              %span.header-nav-right__info__link__info　お知らせ
+              
+
+          %li.header-nav-right__todo
+            %a( href="https://www.mercari.com/jp/mypage/notification/" class="header-nav-right__todo__link")
+              %i.fa.fa-check{"aria-hidden" => "true"}
+              %span.header-nav-right__todo__link__todo　やることリスト
+
+          %li.header-nav-right__mypage
+            %a( href="https://www.mercari.com/jp/mypage/notification/" class="header-nav-right__mypage__link")
+              %i.far.fa-smile{"aria-hidden" => "true"}
+
+              %span.header-nav-right__mypage__link__mypage　マイページ
