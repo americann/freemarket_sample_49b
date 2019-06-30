@@ -80,7 +80,7 @@ body {
 }
 
 //お知らせicon css
-.fa.fa-bell-o {
+.fa.fa-bell{
   color: #ccc;
   font-size: 18px;
 }
@@ -92,9 +92,9 @@ body {
 }
 
 //マイページicon css
-.far.fa-smile {
+.fa.fa-smile{
   color: #ccc;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .serch-nav-box1 {
@@ -139,18 +139,19 @@ body {
 
 .serch-nav-box2 {
   //お知らせ　やること　マイページの大枠
-  width: 465px;
+  width: 435px;
   height: 44px;
   .header-nav-right {
     display: flex;
     width: 100%;
     cursor: pointer;
     position: relative;
-    left: 235px;
+    left: 260px;
     &__info {
       //liタグ　カテゴリーから探す
       list-style: none;
-      width: 33.3%;
+      width: 30%;
+      padding: 0 14px;
       &__link {
         //link　カテゴリーから探す
         color: #333;
@@ -158,12 +159,14 @@ body {
         font-size: 13px;
         font-weight: bold;
         line-height: 32px;
+        float:right;
       }
     }
     &__todo {
       //liタグ　カテゴリーから探す
       list-style: none;
-      width: 33.3%;
+      width: 40%;
+      padding: 0 14px;
       &__link {
         //link　カテゴリーから探す
         color: #333;
@@ -171,12 +174,14 @@ body {
         font-size: 13px;
         font-weight: bold;
         line-height: 32px;
+        float:right;
       }
     }
     &__mypage {
       //liタグ　カテゴリーから探す
       list-style: none;
-      width: 33.4%;
+      width: 30%;
+      padding: 0 14px;
       &__link {
         //link　カテゴリーから探す
         color: #333;
@@ -184,6 +189,7 @@ body {
         font-size: 13px;
         font-weight: bold;
         line-height: 32px;
+        float:right;
       }
     }
   }
