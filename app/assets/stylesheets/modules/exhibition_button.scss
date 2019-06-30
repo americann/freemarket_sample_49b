@@ -1,0 +1,28 @@
+@media screen and (min-width: 1068px){
+  .displayButton{
+    width:160px;
+    height:160px;
+    background-color:#EA3520;
+    border-radius: 50%;
+    position: fixed;
+    display:center;
+    bottom:30px;
+    right:30px;
+    .text{
+      color:#fff;
+      font-size:21.5px;
+      position: absolute;
+      // text-align:center; 
+      top:32px;
+      left:57px;
+    
+    }
+    .fas.fa-camera{
+      color: #fff;
+      font-size: 62px;
+      position: absolute;
+      bottom: 40px;
+      left: 48px;
+    }
+  }
+}
