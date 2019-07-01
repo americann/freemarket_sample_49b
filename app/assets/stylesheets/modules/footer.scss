@@ -1,0 +1,149 @@
+html {
+  height: 100vh;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  }
+
+.app-banner {
+  width: 100%;
+  height: 260px;
+  img {
+    width: 100%;
+  }
+  &__pc {
+    position: absolute;
+    top: 0;
+    right: 200px;
+    width: 750px;
+    height: 260px;
+    margin: 0 145px;
+    color: #fff;
+    &__inner {
+      margin-top: 50px;
+      h2 {
+        font-size: 22px;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        margin-bottom: 10px;
+      }
+      p {
+        font-size: 34px;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        margin: 0;
+      }
+      .app-banner__icon {
+        display: flex;
+        position: absolute;
+        bottom: 40px;
+        width: 68px;
+        height: 70px;
+        .app-list {
+          display: flex;
+          list-style: none;
+          position: relative;
+          left: 25px;
+          top: 15px;
+          li {
+            padding-right: 15px;
+          }
+          img {
+            width: 130px;
+            height: 40px;
+          }
+        }
+      }
+    }
+    .phone {
+      position: absolute;
+      top: 11px;
+      right: -40px;
+      width: 300px;
+    }
+  }
+}
+
+.global-footer {
+  width: 100%;
+  margin: 0;
+  padding: 0 20px 10px 20px;
+  background: #212121;
+  color: #fff;
+  .footer-info {
+    display: flex;
+    justify-content: center;
+    width: 1020px;
+    margin: 0 auto;
+    .footer-cell{
+      h2 {
+        font-size: 15px;
+        margin: 40px 0 10px;
+      }
+      ul {
+        padding-left: 0;
+        li {
+          list-style: none;
+          font-size: 12px;
+          opacity: .7;
+          margin: 20px 0 0;
+        }
+        .footer-social__link {
+          font-size: 30px;
+          margin-top: 25px;
+        }
+      }
+    }
+    .inner-footer {
+      display: flex;
+    }
+  }
+  .footer-bottom {
+    margin: 0 230px;
+    img {
+      width: 124px;
+      height: 33px;
+    }
+    small {
+      margin: 0 300px;
+      font-size: 12px;
+    }
+  }
+}
+
+.footer-cell:nth-child(1) {
+  width: 20%;
+}
+.footer-cell:nth-child(2) {
+  width: 23%;
+}
+.footer-cell:nth-child(3) {
+  width: 42%;
+  .inner-footer__cell {
+    width: 49%;
+    ul {
+      margin: 10px;
+    }
+    li:first-child {
+      margin: 0;
+    }
+  }
+  .inner-footer__cell:nth-child(2) {
+    width: 47%;
+    ul {
+      margin-right: 10px;
+    }
+    li:first-child {
+      margin: 0;
+    }
+  }
+}
