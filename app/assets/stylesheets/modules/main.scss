@@ -1,11 +1,11 @@
 // @media screen and (min-width: 1068px){
   .main{
-    background-color:#fafafa;
     width:100%;
     max-width:1440px;
     height:calc(100% - 751px);
-    margin-top:100px;
     .pickup{
+      background-color: #f5f5f5;
+      padding-top: 30px;
       &__title{
         text-align: center;
         font-size:28px;
