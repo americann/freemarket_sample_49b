@@ -1,9 +1,7 @@
 // @media screen and (min-width: 1068px){
-  
   .slider{
     width:100%;
     .slider-advertisingApp{
-        // position:relative;
         height:390px;
         max-height:390px;
       display:flex;
@@ -17,8 +15,6 @@
         top:-410px;
         .slide-advertisingApp__content__smartphone{
           position:relative;
-          // top:10px;
-          // right:20%;
           left:49.25%;
           height:390px;
         }
@@ -39,7 +35,6 @@
           font-size:16px;
           z-index:100;
           margin:0 auto;
-          // font-weight:bold;
           line-height:35px;
         }
         &__appBottons{
@@ -47,11 +42,9 @@
           top:300px;
           left:280px;
           display: flex;
-      
           img{
             width:170px;
             margin-left:10px;
-          
           }
         }
       }
@@ -65,7 +58,6 @@
   z-index:100;
   left:4.2%;
 }
-
 .next-arrow{
   position:absolute;
   top:44%;
