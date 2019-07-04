@@ -126,6 +126,7 @@ body{
         }
 
         figure {
+            
             overflow: hidden;
             width: 60px;
             height: 60px;
@@ -133,8 +134,8 @@ body{
             border-radius: 50%;
         }
         img {
+            background: url("user/member_photo.png");
             vertical-align: middle;
-            // width: 100%;
             max-width: 100%;
             height: auto;
         }
