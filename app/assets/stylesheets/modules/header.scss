@@ -79,6 +79,13 @@ body {
   font-size: 20px;
 }
 
+//いいね！アイコン
+.fa.fa-heart-o.fa-2x{
+  color: #ccc;
+  font-size: 18px;
+}
+
+
 //お知らせicon css
 .fa.fa-bell{
   color: #ccc;
@@ -138,22 +145,34 @@ body {
 }
 
 .serch-nav-box2 {
-  //お知らせ　やること　マイページの大枠
-  width: 435px;
+  //いいね！　お知らせ　やること　マイページの大枠
+  width: 550px;
   height: 44px;
   .header-nav-right {
     display: flex;
     width: 100%;
     cursor: pointer;
-    position: relative;
-    left: 260px;
-    &__info {
-      //liタグ　カテゴリーから探す
+    position:relative;
+    left:150px;
+    &__nice{//いいね！一覧
       list-style: none;
-      width: 30%;
-      padding: 0 14px;
+      width: 150px;
+      &__link{
+        color: #333;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: bold;
+        line-height: 32px;
+        float:right;
+    }
+  }
+
+    &__info {
+      //liタグ　おしらせ
+      list-style: none;
+      width: 125px;
       &__link {
-        //link　カテゴリーから探す
+        //link　おしらせ
         color: #333;
         text-decoration: none;
         font-size: 13px;
@@ -163,12 +182,11 @@ body {
       }
     }
     &__todo {
-      //liタグ　カテゴリーから探す
+      //liタグ　やることリスト
       list-style: none;
-      width: 40%;
-      padding: 0 14px;
+      width: 150px;
       &__link {
-        //link　カテゴリーから探す
+        //link　やることリスト
         color: #333;
         text-decoration: none;
         font-size: 13px;
@@ -178,12 +196,11 @@ body {
       }
     }
     &__mypage {
-      //liタグ　カテゴリーから探す
+      //liタグ　マイページ
       list-style: none;
-      width: 30%;
-      padding: 0 14px;
+      width: 125px;
       &__link {
-        //link　カテゴリーから探す
+        //link　マイページ
         color: #333;
         text-decoration: none;
         font-size: 13px;

@@ -3,9 +3,9 @@
 
     .header__inner__upper
       .logo
-        = link_to 'https://www.mercari.com/jp/' , class:'logo__link' do
-          = image_tag('//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1905591235' , size: '134x36', alt:'mercari',class:'logo__img') 
-    
+        = link_to '' , class:'logo__link' do
+          = image_tag('//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1905591235' , size: '134x36', alt:'mercari',class:'logo__img')
+
       .seach
         %form.seach__form
           %input.seach__form__input{name: "keyword", placeholder: "何かお探しですか？", type: "search", value: ""}
@@ -14,30 +14,36 @@
 
     .header-nav-box
       .serch-nav-box1
-        %ul.header-nav-left       
+        %ul.header-nav-left
           %li.header-nav-left__nav1
-            = link_to 'https://www.mercari.com/jp/category/' , class:'header-nav-left__nav1__link' do
+            = link_to '' , class:'header-nav-left__nav1__link' do
               %i.fa.fa-list-ul.fa-1.3x
               %span.header-nav-left__nav1__link__character　カテゴリーから探す
 
           %li.header-nav-left__nav2
-            = link_to 'https://www.mercari.com/jp/brand/' , class:'header-nav-left__nav2__link' do
+            = link_to '' , class:'header-nav-left__nav2__link' do
               %i.fa.fa-tag
               %span.header-nav-left__nav2__link__brand　ブランドから探す
 
       .serch-nav-box2
         %ul.header-nav-right
+
+          %li.header-nav-right__nice
+            = link_to '', class:'header-nav-right__nice__link' do
+              %i.fa.fa-heart-o.fa-2x
+              %span.header-nav-right__nice__link__nice　いいね！一覧
+
           %li.header-nav-right__info
-            = link_to 'https://www.mercari.com/jp/mypage/notification/', class:'header-nav-right__info__link' do
+            = link_to '', class:'header-nav-right__info__link' do
               %i.fa.fa-bell
               %span.header-nav-right__info__link__info　お知らせ
-              
+
           %li.header-nav-right__todo
-            = link_to 'https://www.mercari.com/jp/mypage/todo/' , class:'header-nav-right__todo__link' do
+            = link_to '' , class:'header-nav-right__todo__link' do
               %i.fa.fa-check
               %span.header-nav-right__todo__link__todo　やることリスト
 
           %li.header-nav-right__mypage
-            = link_to 'https://www.mercari.com/jp/mypage/', class:'header-nav-right__mypage__link' do
+            = link_to '', class:'header-nav-right__mypage__link' do
               %i.fa.fa-smile
               %span.header-nav-right__mypage__link__mypage　マイページ
