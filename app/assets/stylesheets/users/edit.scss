@@ -1,14 +1,22 @@
-._user_profile_edit-wrapper{
+.profile-edit-wrapper{
   background-color: #F5F5F5;
   height:100vh;
   width:100%;
-  .side_bar{
-    width:280px;
-    height:1252px;
+  .edit-main{
+    
+    display:flex;
+    .mypage-nav{
+      width:340px;
+      &__list{
+        width:280px;
+        height:1252px;
+      }
+    }
+    .edit-content {
+      width:700px;
+      height:568px;
+      background-color:red;
+      margin-top:30px;
+    }
   }
-  // .content {
-  //   width:700px;
-  //   height:568px;
-  //   background-color: #fff;
-  // }
 }
