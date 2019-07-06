@@ -16,13 +16,13 @@
       height: 100%;
     }
   &__pc {
-    position: absolute;
-    top: 0;
-    right: 200px;
+    position: relative;
+    top: -260px;
+    right: -600px;
     width: 750px;
     height: 260px;
-    margin: 0 145px;
     color: #fff;
+    padding: 5px 5px 10px;
     &__inner {
       margin-top: 50px;
       h2 {
