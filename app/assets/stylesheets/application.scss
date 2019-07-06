@@ -1,11 +1,9 @@
 @import "./reset";
-@import "./slick";
-@import "./slick-theme";
-@import "./carousel";
+@import "slick/slick";
+@import "slick/slick-theme";
 @import "modules/header";
-@import "modules/main";
+@import "products/main";
 @import "modules/footer";
-@import "modules/slide";
+@import "slick/slide";
 @import "modules/exhibition_button";
 @import "users/users";
-
