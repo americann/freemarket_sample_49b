@@ -1,111 +1,39 @@
-%main.container
-    = render "shared/side_bar"
-    %div.content
-        %section.content__mypage__icon
-            %div
-                %figure
-                    = image_tag("#{asset_path "user/member_photo.png"}")
-                .content__mypage__icon__name
-                    yuki
-                    .content__mypage__icon__name__number
-                        %div
-                            評価
-                            %span
-                            0
-                        %div
-                            出品数
-                            %span
-                            0
-        .content__mypage__tab
-            %input#message{checked: "checked",name: "content__mypage__tab__item",type: "radio"}
-            %label.content__mypage__tab__item{for: "message"}お知らせ
-            %input#doinglist{name: "content__mypage__tab__item",type: "radio"}/
-            %label.content__mypage__tab__item{for: "doinglist"}やることリスト
-            #message.content__mypage__contents
-                #mypage.content__mypage__contents__list
-                    %li#list
-                        =link_to "#", class: ".mypage-item-link" do 
-                            %figure
-                                = image_tag("#{asset_path "user/merucari.logo.jpg"}")
-                            .mypage-item-link__body
-                                .mypage-item-link__text 事務局から個別メッセージ「【あと払い】メルペイあと払い手数料に関するお知らせ」
-                                .mypage-item-link__time
-                                    %i.far.fa-clock
-                                        %span  ２日前
-                            %i.fa.fa-angle-right
-                            
-                    %li#list
-                        =link_to "#", class: ".mypage-item-link" do 
-                            %figure
-                                = image_tag("#{asset_path "user/merucari.logo.jpg"}")
-                            .mypage-item-link__body
-                                .mypage-item-link__text 【出品はじめかたガイド】安心でかんたんに出品する方法をCHECKしてみよう！
-                                .mypage-item-link__time
-                                    %i.far.fa-clock
-                                        %span  ２日前
-                            %i.fa.fa-angle-right
-                
-                    %li#list
-                        =link_to "#", class: ".mypage-item-link" do 
-                            %figure
-                                = image_tag("#{asset_path "user/merucari.logo.jpg"}")
-                            .mypage-item-link__body
-                                .mypage-item-link__text 明日、P999還元お得チケットの有効期限が切れます！タップして詳細を確認しましょう。
-                                .mypage-item-link__time
-                                    %i.far.fa-clock
-                                        %span  ２日前
-                            %i.fa.fa-angle-right
-                    %li#list
-                        =link_to "#", class: ".mypage-item-link" do 
-                            %figure
-                                = image_tag("#{asset_path "user/merucari.logo.jpg"}")
-                            .mypage-item-link__body
-                                .mypage-item-link__text 【メルカリ安心への取り組み】商品代金は、取引完了まで事務局が大切にお預かりいたします
-                                .mypage-item-link__time
-                                    %i.far.fa-clock
-                                        %span  ２日前
-                            %i.fa.fa-angle-right
-                
-                    %li#list
-                        =link_to "#", class: ".mypage-item-link" do 
-                            %figure
-                                = image_tag("#{asset_path "user/merucari.logo.jpg"}")
-                            .mypage-item-link__body
-                                .mypage-item-link__text 《お買い物応援キャンペーン》1,000円の商品を&quot;実質1円&quot;で購入できます！
-                                .mypage-item-link__time
-                                    %i.far.fa-clock
-                                        %span  ２日前
-                            %i.fa.fa-angle-right
-                .mypage-go-list
-                    = link_to "一覧を見る","#" do
-
-
-            %ul#doinglist.content__mypage__contents
-                %li.content__mypage__contents__doinglist
-                    %figure
-                        %img{src:"#{asset_path "user/merucari.gray.png"}"}
-                    .content__mypage__contents__doinglist__text
-                        現在、やることリストはありません
-
-
-        %section.content__mypage__tab__products
-            %h2
-            購入した商品
-        .content__mypage__tab   
-            %input#doing{checked: "checked",name: "content__mypage__tab__products__item",type: "radio"}
-            %label.content__mypage__tab__products__item{for: "doing"}取引中
-            %input#end{name: "content__mypage__tab__products__item",type: "radio"}/
-            %label.content__mypage__tab__products__item{for: "end"}過去の取引
-
-            %ul#doing.content__mypage__contents
-                %li.content__mypage__contents__doing
-                    %figure
-                        = image_tag("#{asset_path "user/merucari.gray.png"}")
-                    .content__mypage__contents__doinglist__text
-                        取引中の商品がありません
-            %ul#end.content__mypage__contents
-                %li.content__mypage__contents__end
-                    %figure
-                        = image_tag("#{asset_path "user/merucari.gray.png"}")
-                    .content__mypage__contents__doinglist__text
-                        過去に取引した商品がありません
+.default-container
+  = render 'products/header'
+  %nav.breadcrumbs
+    %ul
+      %li
+        メルカリ
+      %i.fa.fa-angle-right
+      %li
+        ユーザー名
+  .user-details
+    .user-profile
+      %img{ src: "#{asset_path "user_bg.jpg"}"}/
+      .user-photo
+        %img{ src: "#{asset_path "member_photo_noimage.png"}"}/ 
+        %h2.user-name
+          ユーザー名
+        .user-score
+          %ul
+            %li
+              評価0
+            %li
+              出品数0
+    .profile-under
+      .raiting
+        %i.fas.fa-laugh
+        .raiting-score 0
+        %i.fas.fa-meh
+        .raiting-score 0
+        %i.fas.fa-frown
+        .raiting-score 0
+      .sns
+        %ul
+          %li
+            %i.fab.fa-facebook-square
+          %li
+            %i.fab.fa-twitter-square
+          %li
+            %i.fab.fa-line
+  = render 'products/footer'
