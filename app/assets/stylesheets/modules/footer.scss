@@ -2,12 +2,6 @@
   box-sizing: border-box;
   }
 
-.footer {
-  position: relative;
-  bottom: 0px;
-  width: 100%;
-}
-
 .app-banner {
   width: 100%;
   height: 260px;
@@ -16,13 +10,13 @@
       height: 100%;
     }
   &__pc {
+    display: flex;
+    margin: 0 auto;
     position: relative;
-    top: -260px;
-    right: -600px;
+    top: -255px;
     width: 750px;
     height: 260px;
     color: #fff;
-    padding: 5px 5px 10px;
     &__inner {
       margin-top: 50px;
       h2 {
@@ -62,10 +56,11 @@
       }
     }
     .phone {
-      position: absolute;
-      top: 0;
-      right: -40px;
+      position: relative;
+      top: -7px;
       width: 300px;
+      height: 262px;
+      margin-left: 30px;
       img {
         width: 100%;
         height: 100%;
@@ -76,7 +71,7 @@
 
 .global-footer {
   width: 100%;
-  margin: 0;
+  height: 52vh;
   padding: 0 20px 10px 20px;
   background: #212121;
   color: #fff;
@@ -110,13 +105,10 @@
   }
   .footer-bottom {
     margin: 0 230px;
-    img {
-      width: 124px;
-      height: 33px;
-    }
-    small {
-      margin: 0 300px;
+    .footer-copyright {
       font-size: 12px;
+      justify-content: center;
+      display: flex;
     }
   }
 }
