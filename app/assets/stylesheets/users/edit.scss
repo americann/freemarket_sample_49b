@@ -32,11 +32,31 @@
         }
       }
       &__middle{
-      //アイコン
-        &__image{
-          height:156px;
-          width:100%;
+        background-image:url("/user-bg.jpg");
+        height:156px;
+        width:100%;
+        padding: 72px 16px 24px;
+        display:flex;
+        justify-content:center;
+        //ニックネーム
+        &__name{
+          height:48px;
+          width:220px;
+          margin:6px 8px;
+          border:1px solid #ccc ;
+          border-radius: 3px;
+          outline: none;
         }
+        &__name:focus{
+          border:1px solid #0099E8 ;
+        }
+        //アイコン
+        &__img{
+          height:60px;
+          width:60px;
+          border-radius: 50%;
+        }
+
       
       }
       &__bottom{
@@ -49,6 +69,11 @@
           padding:10px;
           overflow-y:scroll;
           font-size:16px;
+          border:1px solid #ccc ;
+          outline: none;
+        }
+        &__text:focus{
+          border:1px solid #0099E8 ;
         }
         //送信ボタン
         &__submit{

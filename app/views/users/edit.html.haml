@@ -6,7 +6,8 @@
       .edit-content__top 
         %p.edit-content__top__title  プロフィール
       .edit-content__middle
-        = image_tag "/user-bg.jpg" , class: "edit-content__middle__image"
+        %img.edit-content__middle__img{src: "/member_photo_noimage.png"}
+        %input{type: "text",class: "edit-content__middle__name"}/
       .edit-content__bottom
         %textarea.edit-content__bottom__text
         %input.edit-content__bottom__submit{type: "submit",value: "変更する"}/
