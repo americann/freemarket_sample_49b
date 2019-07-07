@@ -11,7 +11,7 @@
     .user-profile
       %img{ src: "#{asset_path "user_bg.jpg"}"}/
       .user-photo
-        %img{ src: "#{asset_path "member_photo_noimage.png"}"}/ 
+        %img{ src:"#{asset_path "member_photo_noimage.png"}"}/ 
         %h2.user-name
           ユーザー名
         .user-score
@@ -36,5 +36,4 @@
             %i.fab.fa-twitter-square
           %li
             %i.fab.fa-line
-
   = render 'products/footer'
