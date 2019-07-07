@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
     end
 
     def exhibit_new
+    @user = User.new
     end
 
 

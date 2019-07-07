@@ -8,63 +8,67 @@
     %div.main__sell
       %h2.main__sell__text 商品の情報を入力
 
-      %form.form
+      = form_for @user,html: { class: 'form' }  do |f|
+
         %div.form__upload
           %h3.form__upload__imgtext 出品画像
           %p.form__upload__text 最大10枚までアップロードできます
           %div.form__upload__dropbox
-            %input{class:"form__upload__dropbox__file",type:"file"} 
+            = f.text_area :name, class: "form__upload__dropbox__file"
             %pre.form__upload__dropbox__visible 
+
+
             ドラッグアンドドロップ 
             %br またはクリックしてファイルをアップロード
 
 
         %div.sell-content
           %div.sell-content__group1
-            %label.sell-content__group1__label 商品名
-            %input.sell-content__group1__input{placeholder:"商品名（必須 40文字まで)", value:""}
+            = f.label :name , class:"sell-content__group1__label"
+              = f.text_field :name, class: "sell-content__group1__input", placeholder:"商品名（必須 40文字まで)", value:""
 
           %div.sell-content__group2
-            %label.sell-content__group1__label 商品の説明
-            %textarea.sell-content__group1__input{placeholder:placeholder="商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", value:""}
+            = f.label :name , class:"sell-content__group1__label" #商品の説明
+              = f.text_area :name , class:"sell-content__group1__input", placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", value:""
 
 
         %div.item-detail
           %h3.item-detail__sub-head 商品の詳細
           %div.item-detail__form-box
             %div.item-detail__form-box__group1
-              %label.item-detail__form-box__group1__label1 カテゴリー
+              = f.label :name ,class:"item-detail__form-box__group1__label1" #カテゴリー
 
               %div.item-detail__form-box__group1__select-wrap1
-                %select.item-detail__form-box__group1__select-wrap1__select-default1
-                  %option　---
-                  %option　レディース
-                  %option　メンズ
-                  %option　ベビー・キッズ
-                  %option　インテリア・住まい・小物
-                  %option　本・音楽・ゲーム
-                  %option　おもちゃ・ホビー・グッズ
-                  %option　コスメ・香水・美容
-                  %option　家電・スマホ・カメラ
-                  %option　スポーツ・レジャー
-                  %option　ハンドメイド
-                  %option　チケット
-                  %option　自動車・オートバイ
-                  %option　その他
+                = f.collection_select :prefecture_id, Prefecture.all, :id, :name ,calss:"item-detail__form-box__group1__select-wrap1__select-default1" 
+
+                  -# %option　---
+                  -# %option　レディース
+                  -# %option　メンズ
+                  -# %option　ベビー・キッズ
+                  -# %option　インテリア・住まい・小物
+                  -# %option　本・音楽・ゲーム
+                  -# %option　おもちゃ・ホビー・グッズ
+                  -# %option　コスメ・香水・美容
+                  -# %option　家電・スマホ・カメラ
+                  -# %option　スポーツ・レジャー
+                  -# %option　ハンドメイド
+                  -# %option　チケット
+                  -# %option　自動車・オートバイ
+                  -# %option　その他
                 %i.fa.fa-chevron-down.fa-lg
 
             %div.item-detail__form-box__group2
-              %label.item-detail__form-box__group2__label2 商品の状態
+              =f.label :name , class:"item-detail__form-box__group2__label2"
 
               %div.item-detail__form-box__group2__select-wrap2
-                %select.item-detail__form-box__group2__select-wrap2__select-default2
-                  %option　---
-                  %option　新品、未使用
-                  %option　未使用に近い
-                  %option　目立った傷や汚れなし
-                  %option　やや傷や汚れあり
-                  %option　傷や汚れあり
-                  %option　全体的に状態が悪い
+                =f.select :name , calss:"item-detail__form-box__group2__select-wrap2__select-default2" 
+                  -# %option　---
+                  -# %option　新品、未使用
+                  -# %option　未使用に近い
+                  -# %option　目立った傷や汚れなし
+                  -# %option　やや傷や汚れあり
+                  -# %option　傷や汚れあり
+                  -# %option　全体的に状態が悪い
                 %i.fa.fa-chevron-down.fa-lg
 
 
@@ -72,81 +76,36 @@
           %h3.delivery__sub-head 配送について
           %div.delivery__form-box
             %div.delivery__form-box__group1
-              %label.delivery__form-box__group1__label1 配送料の負担
+              =f.label :name , class:"delivery__form-box__group1__label1"
 
               %div.delivery__form-box__group1__select-wrap1
-                %select.delivery__form-box__group1__select-wrap1__select-default1
-                  %option　---
-                  %option　送料込み(出品者負担)
-                  %option　着払い(購入者負担)
+                =f.select :name , class:"delivery__form-box__group1__select-wrap1__select-default1"
+                  -# %option　---
+                  -# %option　送料込み(出品者負担)
+                  -# %option　着払い(購入者負担)
 
 
             
             %div.delivery__form-box__group2
-              %label.delivery__form-box__group2__label2 発送元の地域
+              =f.label :name,class:"delivery__form-box__group2__label2"
 
               %div.delivery__form-box__group2__select-wrap2
-                %select.delivery__form-box__group2__select-wrap2__select-default2
-                  %option　---
-                  %option{selected: "selected", value: ""} 都道府県
-                  %option{value: "北海道"} 北海道
-                  %option{value: "青森県"} 青森県
-                  %option{value: "岩手県"} 岩手県
-                  %option{value: "宮城県"} 宮城県
-                  %option{value: "秋田県"} 秋田県
-                  %option{value: "山形県"} 山形県
-                  %option{value: "福島県"} 福島県
-                  %option{value: "茨城県"} 茨城県
-                  %option{value: "栃木県"} 栃木県
-                  %option{value: "群馬県"} 群馬県
-                  %option{value: "埼玉県"} 埼玉県
-                  %option{value: "千葉県"} 千葉県
-                  %option{value: "東京都"} 東京都
-                  %option{value: "神奈川県"} 神奈川県
-                  %option{value: "新潟県"} 新潟県
-                  %option{value: "富山県"} 富山県
-                  %option{value: "石川県"} 石川県
-                  %option{value: "福井県"} 福井県
-                  %option{value: "山梨県"} 山梨県
-                  %option{value: "長野県"} 長野県
-                  %option{value: "岐阜県"} 岐阜県
-                  %option{value: "静岡県"} 静岡県
-                  %option{value: "愛知県"} 愛知県
-                  %option{value: "三重県"} 三重県
-                  %option{value: "滋賀県"} 滋賀県
-                  %option{value: "京都府"} 京都府
-                  %option{value: "大阪府"} 大阪府
-                  %option{value: "兵庫県"} 兵庫県
-                  %option{value: "奈良県"} 奈良県
-                  %option{value: "和歌山県"} 和歌山県
-                  %option{value: "鳥取県"} 鳥取県
-                  %option{value: "島根県"} 島根県
-                  %option{value: "岡山県"} 岡山県
-                  %option{value: "広島県"} 広島県
-                  %option{value: "山口県"} 山口県
-                  %option{value: "徳島県"} 徳島県
-                  %option{value: "香川県"} 香川県
-                  %option{value: "愛媛県"} 愛媛県
-                  %option{value: "高知県"} 高知県
-                  %option{value: "福岡県"} 福岡県
-                  %option{value: "佐賀県"} 佐賀県
-                  %option{value: "長崎県"} 長崎県
-                  %option{value: "熊本県"} 熊本県
-                  %option{value: "大分県"} 大分県
-                  %option{value: "宮崎県"} 宮崎県
-                  %option{value: "鹿児島県"} 鹿児島県
-                  %option{value: "沖縄県"} 沖縄県
+                =f.select :name , class:"delivery__form-box__group2__select-wrap2__select-default2"
+
+
+                = f.collection_select :prefecture_id, Prefecture.all, :id, :name
+                 
                 %i.fa.fa-chevron-down.fa-lg
 
             %div.delivery__form-box__group3
-              %label.delivery__form-box__group3__label3 発送までの日数
+              =f.label :name , class:"delivery__form-box__group3__label3" 
 
               %div.delivery__form-box__group3__select-wrap3
-                %select.delivery__form-box__group3__select-wrap3__select-default3
-                  %option　---
-                  %option 1日~2日で発送
-                  %option 2日~3日で発送
-                  %option 3日~4日で発送
+                = f.select :name , class:"delivery__form-box__group3__select-wrap3__select-default3"
+                  -# %option　---
+                  -# %option 1日~2日で発送
+                  -# %option 2日~3日で発送
+                  -# %option 3日~4日で発送
                 %i.fa.fa-chevron-down.fa-lg
 
         %div.sale-price
@@ -154,11 +113,11 @@
           %div.sale-price__form-box
             %div.sale-price__form-box__first
               %div.sale-price__form-box__first__inside
-                %label.sale-price__form-box__first__inside__label 価格
+                = f.label :name , class:"sale-price__form-box__first__inside__label" #価格
 
                 %div.sale-price__form-box__first__inside__price
                   %p.sale-price__form-box__first__inside__price__text ¥
-                  %input.sale-price__form-box__first__inside__price__input{placeholder:"例）300"}
+                  = f.text_field :name , class:"sale-price__form-box__first__inside__price__input",placeholder:"例）300"
 
 
             %div.sale-price__form-box__second
@@ -168,6 +127,8 @@
             %div.sale-price__form-box__third
               %div.sale-price__form-box__third__label 販売利益
               %div.sale-price__form-box__third__mark1
+
+
 
         %div.sell-btn-box
           %div.sell-btn-box__inner
@@ -187,8 +148,8 @@
               = link_to"加盟店規約","#"
               に同意したことになります。
 
-          %button.sell-btn-box__btn{type: "submit"} 出品する
-          = link_to"もどる","#",class:'sell-btn-box__link'
+          =f.button :name , class:"sell-btn-box__btn" ,type: "submit" #出品する
+          = link_to　"もどる","#", {class:'sell-btn-box__link'}
           
 
   %footer.footer-terms
