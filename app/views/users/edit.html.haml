@@ -2,6 +2,13 @@
   = render 'products/header'
   .edit-main
     = render "shared/side_bar"
-    .edit-content
+    %form.edit-content
+      .edit-content__top 
+        %p.edit-content__top__title  プロフィール
+      .edit-content__middle
+        = image_tag "/user-bg.jpg" , class: "edit-content__middle__image"
+      .edit-content__bottom
+        %textarea.edit-content__bottom__text
+        %input.edit-content__bottom__submit{type: "submit",value: "変更する"}/
   = render 'products/exhibition_button'
   = render 'products/footer'
