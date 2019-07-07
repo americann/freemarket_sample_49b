@@ -1,0 +1,16 @@
+.identification-wrapper
+  = render 'shared/header'
+  = render 'shared/breadcrumbs'
+  .identification-main
+    = render "shared/side_bar"
+    %form.identification-content
+      .identification-content__top 
+        %p.identification-content__top__title  プロフィール
+      .identification-content__middle
+        = image_tag("/member_photo_noimage.png", class: "identification-content__middle__img")
+        %input{type: "text",class: "identification-content__middle__name"}/
+      .identification-content__bottom
+        %textarea.identification-content__bottom__text
+        %input.identification-content__bottom__submit{type: "submit",value: "変更する"}/
+  = render 'shared/exhibition_button'
+  = render 'shared/footer'
