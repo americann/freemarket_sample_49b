@@ -1,3 +1,4 @@
+
 * {
   box-sizing: border-box;
 }
@@ -11,6 +12,7 @@ body {
   height: 100%;
   width: 100%;
 }
+
 
 //チェックアイコン
 .fa.fa-chevron-down.fa-lg {
@@ -45,7 +47,7 @@ body {
 
 .main {
   width: 100%;
-  height: calc(100% -350px);
+  height: calc(100% - 350px);
   background-color: #F5F5F5;
   &__sell {
     width: 700px;

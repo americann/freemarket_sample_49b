@@ -1,6 +1,4 @@
-//出品情報　ユーザー登録済
-
-%div.container
+%div.entire
   %header.header
     %h1.header__logo
       = link_to '' , class:'container__logo__link' do
@@ -90,54 +88,54 @@
               %div.delivery__form-box__group2__select-wrap2
                 %select.delivery__form-box__group2__select-wrap2__select-default2
                   %option　---
-                  %option{:selected => "selected", :value => ""} 都道府県
-                  %option{:value => "北海道"} 北海道
-                  %option{:value => "青森県"} 青森県
-                  %option{:value => "岩手県"} 岩手県
-                  %option{:value => "宮城県"} 宮城県
-                  %option{:value => "秋田県"} 秋田県
-                  %option{:value => "山形県"} 山形県
-                  %option{:value => "福島県"} 福島県
-                  %option{:value => "茨城県"} 茨城県
-                  %option{:value => "栃木県"} 栃木県
-                  %option{:value => "群馬県"} 群馬県
-                  %option{:value => "埼玉県"} 埼玉県
-                  %option{:value => "千葉県"} 千葉県
-                  %option{:value => "東京都"} 東京都
-                  %option{:value => "神奈川県"} 神奈川県
-                  %option{:value => "新潟県"} 新潟県
-                  %option{:value => "富山県"} 富山県
-                  %option{:value => "石川県"} 石川県
-                  %option{:value => "福井県"} 福井県
-                  %option{:value => "山梨県"} 山梨県
-                  %option{:value => "長野県"} 長野県
-                  %option{:value => "岐阜県"} 岐阜県
-                  %option{:value => "静岡県"} 静岡県
-                  %option{:value => "愛知県"} 愛知県
-                  %option{:value => "三重県"} 三重県
-                  %option{:value => "滋賀県"} 滋賀県
-                  %option{:value => "京都府"} 京都府
-                  %option{:value => "大阪府"} 大阪府
-                  %option{:value => "兵庫県"} 兵庫県
-                  %option{:value => "奈良県"} 奈良県
-                  %option{:value => "和歌山県"} 和歌山県
-                  %option{:value => "鳥取県"} 鳥取県
-                  %option{:value => "島根県"} 島根県
-                  %option{:value => "岡山県"} 岡山県
-                  %option{:value => "広島県"} 広島県
-                  %option{:value => "山口県"} 山口県
-                  %option{:value => "徳島県"} 徳島県
-                  %option{:value => "香川県"} 香川県
-                  %option{:value => "愛媛県"} 愛媛県
-                  %option{:value => "高知県"} 高知県
-                  %option{:value => "福岡県"} 福岡県
-                  %option{:value => "佐賀県"} 佐賀県
-                  %option{:value => "長崎県"} 長崎県
-                  %option{:value => "熊本県"} 熊本県
-                  %option{:value => "大分県"} 大分県
-                  %option{:value => "宮崎県"} 宮崎県
-                  %option{:value => "鹿児島県"} 鹿児島県
-                  %option{:value => "沖縄県"} 沖縄県
+                  %option{selected: "selected", value: ""} 都道府県
+                  %option{value: "北海道"} 北海道
+                  %option{value: "青森県"} 青森県
+                  %option{value: "岩手県"} 岩手県
+                  %option{value: "宮城県"} 宮城県
+                  %option{value: "秋田県"} 秋田県
+                  %option{value: "山形県"} 山形県
+                  %option{value: "福島県"} 福島県
+                  %option{value: "茨城県"} 茨城県
+                  %option{value: "栃木県"} 栃木県
+                  %option{value: "群馬県"} 群馬県
+                  %option{value: "埼玉県"} 埼玉県
+                  %option{value: "千葉県"} 千葉県
+                  %option{value: "東京都"} 東京都
+                  %option{value: "神奈川県"} 神奈川県
+                  %option{value: "新潟県"} 新潟県
+                  %option{value: "富山県"} 富山県
+                  %option{value: "石川県"} 石川県
+                  %option{value: "福井県"} 福井県
+                  %option{value: "山梨県"} 山梨県
+                  %option{value: "長野県"} 長野県
+                  %option{value: "岐阜県"} 岐阜県
+                  %option{value: "静岡県"} 静岡県
+                  %option{value: "愛知県"} 愛知県
+                  %option{value: "三重県"} 三重県
+                  %option{value: "滋賀県"} 滋賀県
+                  %option{value: "京都府"} 京都府
+                  %option{value: "大阪府"} 大阪府
+                  %option{value: "兵庫県"} 兵庫県
+                  %option{value: "奈良県"} 奈良県
+                  %option{value: "和歌山県"} 和歌山県
+                  %option{value: "鳥取県"} 鳥取県
+                  %option{value: "島根県"} 島根県
+                  %option{value: "岡山県"} 岡山県
+                  %option{value: "広島県"} 広島県
+                  %option{value: "山口県"} 山口県
+                  %option{value: "徳島県"} 徳島県
+                  %option{value: "香川県"} 香川県
+                  %option{value: "愛媛県"} 愛媛県
+                  %option{value: "高知県"} 高知県
+                  %option{value: "福岡県"} 福岡県
+                  %option{value: "佐賀県"} 佐賀県
+                  %option{value: "長崎県"} 長崎県
+                  %option{value: "熊本県"} 熊本県
+                  %option{value: "大分県"} 大分県
+                  %option{value: "宮崎県"} 宮崎県
+                  %option{value: "鹿児島県"} 鹿児島県
+                  %option{value: "沖縄県"} 沖縄県
                 %i.fa.fa-chevron-down.fa-lg
 
             %div.delivery__form-box__group3
@@ -174,36 +172,36 @@
         %div.sell-btn-box
           %div.sell-btn-box__inner
             %p       
-              = link_to"禁止されている出品"
+              = link_to"禁止されている出品","#"
               ,
-              = link_to"行為"
+              = link_to"行為","#"
               を必ずご確認ください。
             %p
               またブランド品でシリアルナンバー等がある場合はご記載ください。
             %p
-              = link_to"偽ブランドの販売"
+              = link_to"偽ブランドの販売","#"
               は犯罪であり処罰される可能性があります。
             
             %p
               また、出品をもちまして
-              = link_to"加盟店規約"
+              = link_to"加盟店規約","#"
               に同意したことになります。
 
           %button.sell-btn-box__btn{type: "submit"} 出品する
-          = link_to"もどる","",class:'sell-btn-box__link'
+          = link_to"もどる","#",class:'sell-btn-box__link'
           
 
-  %footer.footer
+  %footer.footer-terms
     %div.footer__inner
       %ul.footer__inner__links
         %li.footer__inner__links__link1
-          = link_to"プライバシーポリシー",""
+          = link_to"プライバシーポリシー","#"
 
         %li.footer__inner__links__link2
-          = link_to"メルカリ利用規約",""
+          = link_to"メルカリ利用規約","#"
 
         %li.footer__inner__links__link2
-          = link_to"特定商取引に関する表記",""
+          = link_to"特定商取引に関する表記","#"
 
       %div.footer__inner__logo
         = link_to"特定商取引に関する表記",class:'footer-inner__logo__link' do
@@ -211,3 +209,4 @@
 
       %p.footer__inner__c-mark  
         %small © 2019 Mercari
+
