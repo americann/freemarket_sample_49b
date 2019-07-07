@@ -1,14 +1,90 @@
-._user_profile_edit-wrapper{
+.profile-edit-wrapper{
   background-color: #F5F5F5;
   height:100vh;
   width:100%;
-  .side_bar{
-    width:280px;
-    height:1252px;
+  .edit-main{
+    display:flex;
+    justify-content: center;
+    //部分テンプレートside_barのサイズ調整
+    .mypage-nav{
+      width:340px;
+      margin-top:10px;
+      &__list{
+        width:280px;
+      }
+    }
+    //プロフィール編集部分
+    .edit-content {
+      width:700px;
+      height:568px;
+      background-color:#fff;
+      margin:40px 0 0 10px;
+      &__top {
+        width:100%;
+        height:50px;
+        padding:12px;
+        &__title{
+          text-align:center;
+          font-size:24px;
+          font-weight: bold;
+          line-height:30px;
+        }
+      }
+      &__middle{
+        background-image:url("/user-bg.jpg");
+        height:156px;
+        width:100%;
+        padding: 72px 16px 24px;
+        display:flex;
+        justify-content:center;
+        //ニックネーム
+        &__name{
+          height:48px;
+          width:220px;
+          margin:6px 8px;
+          padding:10px 16px 8px;
+          border:1px solid #ccc ;
+          border-radius: 3px;
+          outline: none;
+          font-size:16px;
+        }
+        &__name:focus{
+          border:1px solid #0099E8 ;
+        }
+        //アイコン
+        &__img{
+          height:60px;
+          width:60px;
+          border-radius: 50%;
+        }
+      }
+      &__bottom{
+        padding:40px 16px;
+        height:calc(100% - 216px);
+        //プロフィール文
+        &__text{
+          width:100%;
+          height:216px;
+          padding:10px;
+          overflow-y:scroll;
+          font-size:16px;
+          border:1px solid #ccc ;
+          outline: none;
+        }
+        &__text:focus{
+          border:1px solid #0099E8 ;
+        }
+        //送信ボタン
+        &__submit{
+          width:100%;
+          height:50px;
+          background-color:#EA352D;
+          color:#fff;
+          margin-top:16px;
+          font-size:14px;
+          line-height:50px;
+        }
+      }
+    }
   }
-  // .content {
-  //   width:700px;
-  //   height:568px;
-  //   background-color: #fff;
-  // }
 }

@@ -1,0 +1,15 @@
+.profile-edit-wrapper
+  = render 'products/header'
+  .edit-main
+    = render "shared/side_bar"
+    %form.edit-content
+      .edit-content__top 
+        %p.edit-content__top__title  プロフィール
+      .edit-content__middle
+        = image_tag("/member_photo_noimage.png", class: "edit-content__middle__img")
+        %input{type: "text",class: "edit-content__middle__name"}/
+      .edit-content__bottom
+        %textarea.edit-content__bottom__text
+        %input.edit-content__bottom__submit{type: "submit",value: "変更する"}/
+  = render 'products/exhibition_button'
+  = render 'products/footer'
