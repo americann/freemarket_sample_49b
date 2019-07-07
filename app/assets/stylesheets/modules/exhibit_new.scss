@@ -228,7 +228,22 @@ body {
         position: relative;
         background: #fff;
         cursor: auto;
-        &__select-default2 {
+        border:solid;
+        width: 100%;
+          position: relative;
+          z-index: 2;
+          height: 48px;
+          padding: 0 16px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: 0;
+          font-size: 16px;
+          line-height: 1.5;
+          cursor: pointer;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+        select {
           //商品の状態
           width: 100%;
           position: relative;
@@ -244,6 +259,7 @@ body {
           -webkit-appearance: none;
           -moz-appearance: none;
           appearance: none;
+          display:none;
         }
       }
     }
@@ -283,7 +299,7 @@ body {
         position: relative;
         background: #fff;
         cursor: auto;
-        &__select-default1 {
+        select {
           //カテゴリー
           width: 100%;
           position: relative;
