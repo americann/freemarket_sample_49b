@@ -15,13 +15,13 @@
     .header-nav-box
       .serch-nav-box1
         %ul.header-nav-left
-          %li#category.header-nav-left__nav1
-            = link_to '' , class:'header-nav-left__nav1__link' do
+          %li.header-nav-left__nav1
+            = link_to '', class:'header-nav-left__nav1__link navbar', id:'category' do
               %i.fa.fa-list-ul.fa-1.3x
               %span.header-nav-left__nav1__link__character　カテゴリーから探す
 
-          %li#brand.header-nav-left__nav2
-            = link_to '' , class:'header-nav-left__nav2__link' do
+          %li.header-nav-left__nav2
+            = link_to '' , class:'header-nav-left__nav2__link navbar', id:'brand' do
               %i.fa.fa-tag
               %span.header-nav-left__nav2__link__brand　ブランドから探す
 
@@ -29,22 +29,22 @@
         %ul.header-nav-right
 
           %li.header-nav-right__nice
-            = link_to '', class:'header-nav-right__nice__link', id:'good' do
+            = link_to '', class:'header-nav-right__nice__link navbar', id:'good' do
               %i.far.fa-heart
 
               %span.header-nav-right__nice__link__nice　いいね！一覧
 
           %li.header-nav-right__info
-            = link_to '', class:'header-nav-right__info__link', id:'notification' do
+            = link_to '', class:'header-nav-right__info__link navbar', id:'notification' do
               %i.fa.fa-bell
               %span.header-nav-right__info__link__info　お知らせ
 
           %li.header-nav-right__todo
-            = link_to '' , class:'header-nav-right__todo__link', id:'todo' do
+            = link_to '' , class:'header-nav-right__todo__link navbar', id:'todo' do
               %i.fa.fa-check
               %span.header-nav-right__todo__link__todo　やることリスト
 
           %li.header-nav-right__mypage
-            = link_to '', class:'header-nav-right__mypage__link', id:'mypage' do
+            = link_to '', class:'header-nav-right__mypage__link navbar', id:'mypage' do
               %i.fa.fa-smile
               %span.header-nav-right__mypage__link__mypage　マイページ
