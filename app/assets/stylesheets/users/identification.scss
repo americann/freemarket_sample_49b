@@ -1,0 +1,163 @@
+.identification-wrapper{
+  background-color: #F5F5F5;
+  height:100vh;
+  width:100%;
+  .identification-main{
+    display:flex;
+    justify-content: center;
+    //部分テンプレートside_barのサイズ調整
+    .mypage-nav{
+      width:340px;
+      margin-top:10px;
+      &__list{
+        width:280px;
+      }
+    }
+    //個人情報登録部分
+    .identification-content {
+      width:700px;
+      height:1208px;
+      background-color:#fff;
+      margin:40px 0 0 10px;
+      //本人情報の確認
+      &__top {
+        width:100%;
+        height:50px;
+        padding:12px;
+        border-bottom: 1px solid #f5f5f5; 
+        &__title{
+          text-align:center;
+          font-size:24px;
+          font-weight: bold;
+          line-height:30px;
+        }
+      }
+      //入力フォーム部分
+      &__middle{
+        border-top: 1px solid #f5f5f5; 
+        height:950px;
+        width:100%;
+        padding: 64px 64px 0 64px;
+        display:flex;
+        flex-direction: column;
+        &__text{
+          width:100%;
+          height:71px;
+          p{
+            font-size:14px;
+            line-height:20px;
+          }
+          a{
+            font-size:14px;
+            color:#0099E8;
+            text-decoration: none;
+            margin-top:12px;
+            float:right;
+          }
+          a:after{
+            font-family: "Font Awesome 5 Free";
+            content:'\f054';
+            font-weight:900;
+          }
+        }
+        &__information{
+          width:100%;
+          height:43px;
+          margin-top:40px;
+          label{
+            font-size:14px;
+            font-weight:bold;
+          }
+          p {
+            font-size:14px;
+            margin-top:8px;
+          }
+        }
+        &__form-box{
+          width:100%;
+          height:70px;
+          margin-top:40px;
+          &__top{
+            display:flex;
+            label{
+              font-size:14px;
+              font-weight:bold;
+              line-height: 19px;
+            }
+            p{
+              display:block;
+              font-size:12px;
+              background-color:#ccc;
+              color:#fff;
+              margin-left:8px;
+              height: 19px;
+              width: 32px;
+              text-align: center;
+              line-height: 19px;
+              border-radius: 2px;
+            }
+          }
+          input{
+            outline: none;
+            font-size:16px;
+            height:48px;
+            width:100%;
+            margin-top:8px;
+            padding:10px 16px 8px;
+            border:1px solid #ccc;
+            border-radius: 3px;
+          }
+          input:focus{
+            border:1px solid #0099E8 ;
+          }
+          select{
+            outline: none;
+            font-size:16px;
+            height:48px;
+            width:100%;
+            margin-top:8px;
+            padding:10px 16px 8px;
+            border:1px solid #ccc;
+            border-radius: 3px;
+            background-color:#fff;
+          }
+          select:focus{
+            border:1px solid #0099E8 ;
+            padding: 10px 16px 8px;
+          }
+        }
+      }
+      &__bottom{
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        padding:0 64px;
+        //送信ボタン
+        &__submit{
+          width:572px;
+          height:50px;
+          background-color:#EA352D;
+          color:#fff;
+          margin-top: 30px;
+          font-size:14px;
+          line-height:50px;
+        }
+        &__link{
+          a{
+            font-size:14px;
+            color:#0099E8;
+            text-decoration: none;
+            float:right;
+            margin-top:40px;
+            right:0px;
+          }
+          a:after{
+            font-family: "Font Awesome 5 Free";
+            content:'\f054';
+            font-weight:900;
+          }
+        }
+      }
+    }
+  }
+}
