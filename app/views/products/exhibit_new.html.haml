@@ -46,10 +46,8 @@
               =f.label :email,"商品の状態",class:"item-detail__form-box__group2__label2"
 
               %div.item-detail__form-box__group2__select-wrap2
-                =f.select :email , {} , {} ,{ calss:"item-detail__form-box__group2__select-wrap2__select-default2" }
+                =f.select :email , {} , {} ,calss:"item-detail__form-box__group2__select-wrap2__select-default2"
                 %i.fa.fa-chevron-down.fa-lg
-
- 
 
         %div.delivery
           %h3.delivery__sub-head 配送について
@@ -58,7 +56,7 @@
               =f.label :email,"配送料の負担",class:"delivery__form-box__group1__label1"
 
               %div.delivery__form-box__group1__select-wrap1
-                =f.select :email , {} , {} , {class:"delivery__form-box__group1__select-wrap1__select-default1"}
+                =f.select :email , [["---", "---"],["送料込み(出品者負担)", "送料込み(出品者負担)"], ["着払い(購入者負担)", "着払い(購入者負担)"] ],  {} , {class:"delivery__form-box__group1__select-wrap1__select-default1"}
                 %i.fa.fa-chevron-down.fa-lg
 
 
@@ -75,7 +73,7 @@
               =f.label :email,"発送までの日数",class:"delivery__form-box__group3__label3" 
 
               %div.delivery__form-box__group3__select-wrap3
-                = f.select :email , {} , {} , {class:"delivery__form-box__group3__select-wrap3__select-default3"}
+                = f.select :email , [["---", "---"],["1~2日で発送", "1~2日で発送"], ["2~3日で発送", "2~3日で発送"],["4~7日で発送", "4~7日で発送"] ], {} , {class:"delivery__form-box__group3__select-wrap3__select-default3"}
 
                 %i.fa.fa-chevron-down.fa-lg
 
