@@ -1,16 +1,37 @@
 .productshow{
-  width:70%;
-  margin: 0 auto;
+  width:60%;
+  margin: 40px auto 0;
+ 
   padding:24px 40px 40px;
   background-color: white;
-  height: 1200px;
-
+  height: auto;
+  display: flex;
+ 
+  &__table{
+    float:right;
+    width:50%;
+    margin:16px 0 0;
+    border:1px solid #FAFAFA;
+    color:#333;
+  }
+  
+    table th {
+        padding: 10px 10px;
+        background-color:#FAFAFA;
+        height:auto;
+        width: 150px;
+      }
+      
+      table td {
+        padding: 10px 10px;
+        height:auto;
+        border-bottom:1px solid #f5f5f5;
+      }
   
   &__name{
       font-weight:bold;
       text-align: center;
       font-size:24px;
-     
   }
   &__photos{
       float:left;
@@ -33,75 +54,95 @@
             width: auto;
             height: 100%;
             margin: auto;
-        }
-          
-      }
-      &__small-photos{
-        
-          img{
-              height:30%;
-              width:30%;
           }
+        }
+      &__small-photos{
+          img{
+              height:20%;
+              width:20%;
+            }
       }
+  }
+  &__price{
+    text-align: center;
+    clear:both;
+    padding:20px;
+    &__yen{
+      font-weight:bold;
+      font-size:50px;
+    }
+    &__tax{
+      font-size:10px;
+    }
+    &__shopping-fee{
+      font-size:16px;
+    }
+  }
+
+  &__shopping-botton{
+    height:60px;
+    background-color:#e61f17;
+    font-size:30px;
+    padding:15px;
+    text-align: center;
+    cursor: pointer;
+   a{
+    text-decoration: none;
+    color:white;
+    font-weight:bold;
+   }
+  }
+  &__description{
+    padding: 32px 0 0;
+    line-height:1.5;
+    font-size:18px;
+    p{
+      white-space: pre;
+    }
   }
 }
 
+.comment{
+  margin: 8px auto;
 
-table{
-  float:right;
-  width:50%;
-  margin:16px 0 0;
-  text-align: center;
-  border:1px solid #f5f5f5;
-  color:#333;
-}
+&__main{
+  height: auto;
+  background-color: white;
+  margin: 0 auto;
+  width:60%;
 
-  table th {/*table内のthに対して*/
-      padding: 0 50px;/*上下左右10pxずつ*/
-      // border-bottom:1px solid #f5f5f5;
-      background-color:#f5f5f5;
-      
-     
-    }
+  &__content{
+    padding: 24px;
+   
     
-    table td {/*table内のtdに対して*/
-      padding: 10px 50px;/*上下3pxで左右10px*/
-      height:auto;
-      border-bottom:1px solid #f5f5f5;
-    }
-
-
-
-
+      p{
+        padding:8px;
+        font-size:14px;
+        background-color:#FFF6DE;
+        color:#333;
+      }
+      textarea{
+        margin:10px;
+        height:100px;
+        width:100%;
+        margin: 10px auto;
+      }
+      &__botton{
+        height:50px;
+        background-color:#AAAAAA;
+        font-size:14px;
+        padding:17px;
+        text-align: center;
+        margin:0 auto;
+        cursor: pointer;
+        a{
+          text-decoration: none;
+          color:white;
+          padding:10px;
+         }
+      }
+  }
   
-
-
-
-
-
-
-
-//   &__item{
-//      
-     
-//       &__body{
-//         float: left; 
-//         // font-weight:bold;
-//         background:#fafafa;
-//         padding: 5% 10% 5% 5%;
-//       }
-//       &__right{
-//       float:right;
-//       text-align: auto;
-//       padding: 5% 10% 5% 5%;
-
-//       }
-
-//       li{
-//         // height: 50px;
-//        
-//         list-style:none;
-//       }
-//   }
-// }
+}
+}
 
