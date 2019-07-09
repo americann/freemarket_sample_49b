@@ -8,6 +8,5 @@ class UsersController < ApplicationController
   end
   def identification
     @user = User.new
-
   end
 end
