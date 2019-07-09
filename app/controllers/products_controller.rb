@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
     end
 
     def new
-        @user = User.new
+      @user = User.new
     end
 
 end
