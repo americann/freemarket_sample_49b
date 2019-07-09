@@ -16,14 +16,29 @@
       .serch-nav-box1
         %ul.header-nav-left
           %li.header-nav-left__nav1
-            = link_to '', class:'header-nav-left__nav1__link navbar', id:'category' do
+            = link_to '', class:'header-nav-left__nav1__link navbar navleft', id:'category' do
               %i.fa.fa-list-ul.fa-1.3x
               %span.header-nav-left__nav1__link__character　カテゴリーから探す
+            %ul
+              %li
+                %a{href: "#"} レディース
+              %li
+                %a{href: "#"} メンズ
+              %li
+                %a{href: "#"} ベビー・キッズ
 
           %li.header-nav-left__nav2
-            = link_to '' , class:'header-nav-left__nav2__link navbar', id:'brand' do
+            = link_to '' , class:'header-nav-left__nav2__link navbar navleft', id:'brand' do
               %i.fa.fa-tag
               %span.header-nav-left__nav2__link__brand　ブランドから探す
+            %ul
+              %li
+                %a{href: "#"} シャネル
+              %li
+                %a{href: "#"} ナイキ
+              %li
+                %a{href: "#"} ルイ ヴィトン
+
 
       .serch-nav-box2
         %ul.header-nav-right
