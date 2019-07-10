@@ -1,0 +1,46 @@
+.main__sell{
+  width:700px;
+  
+  // height:982.33px;
+  .main__title{
+    height: 65px;
+    font-size: 22px;
+    line-height: 1.5;
+    text-align: center;
+    font-weight: bold;
+    padding:16px;
+  }
+  .top-content{
+    height:534px;
+    border-top: 1px solid #eee;
+    padding:24px 190px 0px;
+    display:flex;
+    flex-direction: column;
+    &__top{
+      font-size:14px;
+      font-weight:bold;
+    }
+    &__main{
+      font-size:14px;
+      margin-top:8px;
+      line-height: 20px;
+      text-decoration: none;
+    }
+    &__bottom{
+      color:
+
+    }
+  }
+  .middle-content{
+    height:146.61px;
+    border-top: 1px solid #eee;
+    margin-top:40px;
+    padding:24px 190px 0px;
+  }
+  .bottom-content{
+    height:156.72px;
+    border-top: 1px solid #eee;
+    margin-top:40px;
+    padding:24px 190px 0px;
+  }
+}
