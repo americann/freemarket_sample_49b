@@ -1,25 +1,53 @@
 .productshow
   .productshow__main
     .productshow__name 
-      チャコネット　ワンピース　サイズS
+      おしゃれなカバン　
 
-    .productshow__photos
-      .productshow__photos__top-photo
-        %img{src:"#{asset_path "products/top1.jpg"}"}
-      .productshow__photos__small-photos
-        %img{src:"#{asset_path "products/top1.jpg"}"}
-        %img{src:"#{asset_path "products/top1.jpg"}"}
-        %img{src:"#{asset_path "products/top1.jpg"}"}
-        %img{src:"#{asset_path "products/top1.jpg"}"}
-        %img{src:"#{asset_path "products/top1.jpg"}"}
-        %img{src:"#{asset_path "products/top1.jpg"}"}
-        %img{src:"#{asset_path "products/top1.jpg"}"}
-        %img{src:"#{asset_path "products/top1.jpg"}"}
-  
+
+    #wrap
+      %ul#slider
+        %li.slide-item
+          %img{src:"#{asset_path "products/bag1.jpg"}"}
+        %li.slide-item
+          %img{src:"#{asset_path "products/bag2.jpg"}"}
+        %li.slide-item
+          %img{src:"#{asset_path "products/bag3.jpg"}"}
+        %li.slide-item
+          %img{src:"#{asset_path "products/bag4.jpg"}"}
+        %li.slide-item
+          %img{src:"#{asset_path "products/bag5.jpg"}"}
+        
+      %ul#thumbnail-list
+        %li.thumbnail-item
+          %img{src:"#{asset_path "products/bag1.jpg"}"}
+        %li.thumbnail-item
+          %img{src:"#{asset_path "products/bag2.jpg"}"}
+        %li.thumbnail-item
+          %img{src:"#{asset_path "products/bag3.jpg"}"}
+        %li.thumbnail-item
+          %img{src:"#{asset_path "products/bag4.jpg"}"}
+        %li.thumbnail-item
+          %img{src:"#{asset_path "products/bag5.jpg"}"}
+      
     %table.productshow__table
       %tr
-        %th 出品者
-        %td ゆき
+        %th 
+          出品者
+        %td
+          .productshow__table__name
+            ゆき
+          .rate
+            .rate__score
+              %i.fas.fa-laugh
+              %p.rating-score__p
+                0
+            .rate__score
+              %i.fas.fa-meh
+              %p 0
+            .rate__score 
+              %i.fas.fa-frown
+              %p 0
+            .rate__score 
       %tr
         %th カテゴリー
         %td レディース
@@ -56,16 +84,15 @@
     .productshow__shopping-botton
       = link_to '購入画面に進む','#'
     .productshow__description
-      %p.productshow__description-inner
-        アドレス
-        コート
+      %p.productshow__description__inner
+        人気のコーチ パッチワークシグネチャー×パイソン ショルダーバッグです♪(ᴖ◡ᴖ)♪ 
+        斜めがけ用のショルダーバッグで長さ調整可能
 
-        グレー
-        サイズは11号
-        マフラー付き
+        アウトレットファクトリー品ではなく直営店購入品です。
+        ヴィンテージに近いオールドコーチ期のレア品。
 
-        ウール100%
-
+        お値引きについては出品時から特価で出しておりますので行っておりません。
+        複数購入時のみご相談いただければ幸いです。
 .comment
   .comment__main
     .comment__main__content
@@ -78,6 +105,9 @@
       .comment__main__content__botton
         = link_to 'コメントする','#'
   
+
+
+
 
       
 
