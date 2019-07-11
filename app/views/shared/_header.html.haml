@@ -15,42 +15,104 @@
     .header-nav-box
       .serch-nav-box1
         %ul.header-nav-left
-          %li.header-nav-left__nav1
-            = link_to '', class:'header-nav-left__nav1__link navbar navleft', id:'category' do
+          %li#category.header-nav-left__nav1
+            = link_to '', class:'header-nav-left__nav1__link navbar navleft' do
               %i.fa.fa-list-ul.fa-1.3x
               %span.header-nav-left__nav1__link__character　カテゴリーから探す
-            %ul
-              %li
-                %a{href: "#"} レディース
-              %li
-                %a{href: "#"} メンズ
-              %li
-                %a{href: "#"} ベビー・キッズ
-              %li
-                %a{href: "#"} インテリア・住まい・小物
-              %li
-                %a{href: "#"} 本・音楽・ゲーム
-              %li
-                %a{href: "#"} おもちゃ・ホビー・グッズ
-              %li
-                %a{href: "#"} コスメ・香水・美容
-              %li
-                %a{href: "#"} 家電・スマホ・カメラ
-              %li
-                %a{href: "#"} スポーツ・レジャー
-              %li
-                %a{href: "#"} ハンドメイド
-              %li
-                %a{href: "#"} チケット
-              %li
-                %a{href: "#"} 自動車・オートバイ
-              %li
-                %a{href: "#"} その他
-              %li
-                %a{href: "#"} カテゴリー一覧
+            .category
+              %ul.category__child
+                %li
+                  %a{href: "#"} レディース
+                %li
+                  %a{href: "#"} メンズ
+                %li
+                  %a{href: "#"} ベビー・キッズ
+                %li
+                  %a{href: "#"} インテリア・住まい・小物
+                %li
+                  %a{href: "#"} 本・音楽・ゲーム
+                %li
+                  %a{href: "#"} おもちゃ・ホビー・グッズ
+                %li
+                  %a{href: "#"} コスメ・香水・美容
+                %li
+                  %a{href: "#"} 家電・スマホ・カメラ
+                %li
+                  %a{href: "#"} スポーツ・レジャー
+                %li
+                  %a{href: "#"} ハンドメイド
+                %li
+                  %a{href: "#"} チケット
+                %li
+                  %a{href: "#"} 自動車・オートバイ
+                %li
+                  %a{href: "#"} その他
+                %li
+                  %a{href: "#"} カテゴリー一覧
 
-          %li.header-nav-left__nav2
-            = link_to '' , class:'header-nav-left__nav2__link navbar navleft', id:'brand' do
+              %ul.category__grandchild 
+                %li
+                  %a{href: "#"} トップス
+                %li
+                  %a{href: "#"} ジャケット/アウター
+                %li
+                  %a{href: "#"} パンツ
+                %li
+                  %a{href: "#"} スカート
+                %li
+                  %a{href: "#"} ワンピース
+                %li
+                  %a{href: "#"} 靴
+                %li
+                  %a{href: "#"} ルームウェア/パジャマ
+                %li
+                  %a{href: "#"} レッグウェア
+                %li
+                  %a{href: "#"} 帽子
+                %li
+                  %a{href: "#"} バッグ
+                %li
+                  %a{href: "#"} アクセサリー
+                %li
+                  %a{href: "#"} ヘアアクセサリー
+                %li
+                  %a{href: "#"} 小物
+                %li
+                  %a{href: "#"} 時計
+
+              %ul.category__GGC
+                %li
+                  %a{href: "#"} Tシャツ/カットソー(半袖/袖なし)
+                %li
+                  %a{href: "#"} Tシャツ/カットソー(七分/長袖)
+                %li
+                  %a{href: "#"} シャツ/ブラウス(半袖/袖なし)
+                %li
+                  %a{href: "#"} シャツ/ブラウス(七分/長袖)
+                %li
+                  %a{href: "#"} ポロシャツ
+                %li
+                  %a{href: "#"} キャミソール
+                %li
+                  %a{href: "#"} タンクトップ
+                %li
+                  %a{href: "#"} ホルターネック
+                %li
+                  %a{href: "#"} ニット/セーター
+                %li
+                  %a{href: "#"} チュニック
+                %li
+                  %a{href: "#"} カーディガン/ボレロ
+                %li
+                  %a{href: "#"} アンサンブル
+                %li
+                  %a{href: "#"} ベスト/ジレ
+                %li
+                  %a{href: "#"} パーカー
+
+
+          %li#brand.header-nav-left__nav2
+            = link_to '' , class:'header-nav-left__nav2__link navbar navleft' do
               %i.fa.fa-tag
               %span.header-nav-left__nav2__link__brand　ブランドから探す
             %ul
@@ -73,13 +135,18 @@
           %li.header-nav-right__nice
             = link_to '', class:'header-nav-right__nice__link navbar', id:'good' do
               %i.far.fa-heart
-
               %span.header-nav-right__nice__link__nice　いいね！一覧
 
           %li.header-nav-right__info
             = link_to '', class:'header-nav-right__info__link navbar', id:'notification' do
               %i.fa.fa-bell
               %span.header-nav-right__info__link__info　お知らせ
+            .notification-box
+              %ul
+                %li
+                
+
+
 
           %li.header-nav-right__todo
             = link_to '' , class:'header-nav-right__todo__link navbar', id:'todo' do
