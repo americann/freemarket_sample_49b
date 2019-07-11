@@ -8,16 +8,22 @@
     .main__sell
       %h2.main__title 購入内容の確認
       .top-content
-        .top-content__top 配送先
-        .top-content__main 〒542-0081<br>大阪府大阪市中央区南船場２丁目６−２８ ユタカビル7階<br>真子就有
-        = link_to '変更する',class: "top-content__bottom" 
+        
 
 
 
       .middle-content
-
+        .middle-content__top 配送先
+        .middle-content__middle 〒542-0081<br>大阪府大阪市中央区南船場２丁目６−２８ ユタカビル7階<br>真子就有
+        .middle-content__bottom
+          = link_to '変更する','', class: "middle-content__bottom__link" 
       .bottom-content
-
+        .bottom-content__top 配送先
+        .bottom-content__middle 
+          .bottom-content__middle__number ************0000<br>11 / 23
+          = image_tag("/visa.svg",class:"bottom-content__middle__image")
+        .bottom-content__bottom
+          = link_to '変更する','', class: "bottom-content__bottom__link" 
   %footer.footer-terms
     .footer__inner
       %ul.footer__inner__links
