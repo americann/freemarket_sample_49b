@@ -2,12 +2,22 @@
   %header.header
     %h1.header__logo
       = link_to '' , class:'container__logo__link' do
-        = image_tag('//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1905591235' , size: '185x50', alt:'mercari')
+        = image_tag('/products/logo.svg' , size: '185x50', alt:'mercari')
 
   .main
     .main__sell
       %h2.main__title 購入内容の確認
-      .top-content
+      = form_with(model: @user, local: true, class: "top-content") do |f|
+        .top-content__info
+          %figure.top-content__info__image
+            = image_tag("/products/m34238645569_1.jpg",class: "img")
+          .top-content__info__title シャツ
+        .top-content__price ¥ 1,000 <span>送料込み</span>
+        .top-content__select-points ポイントを使う
+        .top-content__payment
+          .top-content__payment__left 支払い金額
+          .top-content__payment__right ¥1,000
+        = f.button :購入する ,class: "top-content__button"
         
 
 
@@ -18,7 +28,7 @@
         .middle-content__bottom
           = link_to '変更する','', class: "middle-content__bottom__link" 
       .bottom-content
-        .bottom-content__top 配送先
+        .bottom-content__top 支払い方法
         .bottom-content__middle 
           .bottom-content__middle__number ************0000<br>11 / 23
           = image_tag("/visa.svg",class:"bottom-content__middle__image")
@@ -38,7 +48,7 @@
 
       .footer__inner__logo
         = link_to"特定商取引に関する表記",class:'footer-inner__logo__link' do
-          = image_tag('//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?270352715' , size: '80x65', alt:'mercari',class:'logo__img')
+          = image_tag('/products/logo-gray.svg' , size: '80x65', alt:'mercari',class:'logo__img')
 
       %p.footer__inner__c-mark  
         %small © 2019 Mercari
