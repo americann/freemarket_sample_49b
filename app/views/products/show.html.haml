@@ -35,7 +35,7 @@
           出品者
         %td
           .productshow__table__name
-            ゆき
+            = link_to "yuki" ,"/users/show" 
           .rate
             .rate__score
               %i.fas.fa-laugh
@@ -50,7 +50,16 @@
             .rate__score 
       %tr
         %th カテゴリー
-        %td レディース
+        %td 
+          レディース
+          .like
+            %i.fa.fa-angle-right
+            %span
+              バッグ
+          .like
+            %i.fa.fa-angle-right
+            %span
+              ハンドバッグ
       %tr
         %th ブランド
         %td コーチ
@@ -93,6 +102,14 @@
 
         お値引きについては出品時から特価で出しておりますので行っておりません。
         複数購入時のみご相談いただければ幸いです。
+    %button.like
+      %i.far.fa-heart
+      %span
+        いいね！
+        %span.like__number
+          1
+    
+    
 .comment
   .comment__main
     .comment__main__content
@@ -104,7 +121,7 @@
         %textarea.textarea-default{:name => "body", :type => "text", :value => ""}
       .comment__main__content__botton
         = link_to 'コメントする','#'
-  
+      
 
 
 
