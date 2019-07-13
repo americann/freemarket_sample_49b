@@ -15,20 +15,23 @@
         .top-content__price ¥ 1,000 <span>送料込み</span>
         %label{for:"select-points",class:"top-content__select-points"}
           %div{class:"top-content__select-points__text"} ポイントを使う
-          %input{type: "checkbox",id:"select-points"}
+          %input{type: "checkbox",id:"use-points"}
         .select-box
           .select-box__top 所持ポイント: P 33
           .select-box__main
             .select-box__main__content
-              %input{type: "radio"}
-              %div ポイントを使わない
+              %label
+                %input{type: "radio",name: "points",class:"select"}
+                %div ポイントを使わない
             .select-box__main__content
-              %input{type: "radio"}
-              %div すべてのポイントを使う<br>P 33
+              %label
+                %input{type: "radio",name: "points",class:"select"}
+                %div すべてのポイントを使う<br>P 33
             .select-box__main__content
-              %input{type: "radio"}
-              %div 一部のポイントを使う
-              = f.text_field :point,placeholder: "使うポイントを入力"
+              %label
+                %input{type: "radio",name: "points",class:"select"}
+                %div 一部のポイントを使う
+              = f.text_field :point,placeholder: "使うポイントを入力",class: "how_points"
             
         .top-content__payment
           .top-content__payment__left 支払い金額
