@@ -22,15 +22,15 @@
             .select-box__main__content
               %label
                 %input{type: "radio",name: "points",class:"select"}
-                %div ポイントを使わない
+                %div.single-row ポイントを使わない
             .select-box__main__content
               %label
-                %input{type: "radio",name: "points",class:"select"}
+                %input{type: "radio",name: "points",class:"select select--middle"}
                 %div すべてのポイントを使う<br>P 33
             .select-box__main__content
               %label
                 %input{type: "radio",name: "points",class:"select"}
-                %div 一部のポイントを使う
+                %div.single-row 一部のポイントを使う
               = f.text_field :point,placeholder: "使うポイントを入力",class: "how_points"
             
         .top-content__payment
