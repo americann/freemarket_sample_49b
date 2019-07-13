@@ -53,7 +53,7 @@
       &__text{
       text-align:center;
       font-size:14px;
-      padding:10px;
+      padding:9px;
       cursor: pointer;
       }
       &__text:after{
@@ -64,66 +64,60 @@
         margin-left:5px;
         vertical-align:middle;
       }
-      #select-points{
+      #use-points{
+        display: none;
+      }
+      #use-points:checked + .select-box{
+        display:block;
+      }
+      .select-box{
+        height: 222px;
+        background-color:#FAFAFA;
+        padding:24px 40px;
         display:none;
-      }
-      #select-points:checked{
-        display:block;
-      }
-      #select-points:checked ~ .top-content__points-form{
-        display:block;
-        // color:blue;
-      }
-    }
-    .select-box{
-      height: 222px;
-      background-color:#FAFAFA;
-      padding:24px 40px;
-      // display:none;
-      
-      &__top{
-        font-size:15px;
-        font-weight:bold;
-      }
-      &__main{
-        &__content{
-          margin-top:12px;
-          label{
-            display:flex;
-            .select{
-              transform: scale(1.5);
-              // padding:5px;
-            }
-            .select--middle{
-              margin-top:6px;
-            }
-            div{
-              font-size:14px;
-              margin-left:10px;
-              
-            }
-            .single-row{
-              // padding-top:4px;
-              padding: 4px 0;
-            }
-          }
-          .how_points{
-            outline: none;
-            font-size:16px;
-            height:48px;
-            width:100%;
-            margin-top:5px;
-            padding:10px 16px 8px;
-            border:1px solid #ccc;
-            border-radius: 3px;
-          }
-          .how_points:focus{
-            border:1px solid #0099E8;
-          }
+        &__top{
+          font-size:15px;
+          font-weight:bold;
         }
-
+        &__main{
+          &__content{
+            margin-top:12px;
+            label{
+              display:flex;
+              .select{
+                transform: scale(1.5);
+              }
+              .select--middle{
+                margin-top:6px;
+              }
+              div{
+                font-size:14px;
+                margin-left:10px;
+                
+              }
+              .single-row{
+                padding: 4px 0;
+              }
+            }
+            .how_points{
+              outline: none;
+              font-size:16px;
+              height:48px;
+              width:100%;
+              margin-top:5px;
+              padding:10px 16px 8px;
+              border:1px solid #ccc;
+              border-radius: 3px;
+            }
+            .how_points:focus{
+              border:1px solid #0099E8;
+            }
+          }
+        
       }
     }
+  }
+  
     &__payment{
       height: 60px;
       display:flex;
