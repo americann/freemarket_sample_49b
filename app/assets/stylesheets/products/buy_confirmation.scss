@@ -48,22 +48,23 @@
       height: 48px;
       margin-top: 10px;
       border: 1px solid #ccc;
+      padding:9px 90px ;
+      display:flex;
       &__text{
       text-align:center;
       font-size:14px;
-      padding:9px;
+      line-height:30px;
+      margin-left:10px;
+      
       cursor: pointer;
       }
-      &__text:after{
-        font-family: "Font Awesome 5 Free";
-        content:'\f107';
+      .fas.fa-angle-down{
+        // font-family: "Font Awesome 5 Free";
+        // content:'\f107';
         font-weight:900;
         font-size: 30px;
         margin-left:5px;
         vertical-align:middle;
-      }
-      #use-points{
-        display: none;
       }
   }
   .select-box{

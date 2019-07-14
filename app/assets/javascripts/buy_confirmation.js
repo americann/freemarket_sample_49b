@@ -1,6 +1,6 @@
 $(document).on("turbolinks:load", function(){
   $(function() {
-    $('.top-content__select-points__text').click(function(){
+    $('.top-content__select-points').click(function(){
       $(".select-box").slideToggle();
     });
     // $(".top-content__select-points__text").on("click", function() {
