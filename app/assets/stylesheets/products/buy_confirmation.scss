@@ -9,13 +9,11 @@
     padding:16px;
   }
   .top-content{
-    // height:534px;
     border-top: 1px solid #eee;
     padding:24px 190px 0px;
     display:flex;
     flex-direction: column;
     &__info{
-      // height:85.19px;
       display:flex;
       &__title{
         width:240px;
@@ -67,57 +65,52 @@
       #use-points{
         display: none;
       }
-      #use-points:checked + .select-box{
-        display:block;
-      }
-      .select-box{
-        height: 222px;
-        background-color:#FAFAFA;
-        padding:24px 40px;
-        display:none;
-        &__top{
-          font-size:15px;
-          font-weight:bold;
-        }
-        &__main{
-          &__content{
-            margin-top:12px;
-            label{
-              display:flex;
-              .select{
-                transform: scale(1.5);
-              }
-              .select--middle{
-                margin-top:6px;
-              }
-              div{
-                font-size:14px;
-                margin-left:10px;
-                
-              }
-              .single-row{
-                padding: 4px 0;
-              }
-            }
-            .how_points{
-              outline: none;
-              font-size:16px;
-              height:48px;
-              width:100%;
-              margin-top:5px;
-              padding:10px 16px 8px;
-              border:1px solid #ccc;
-              border-radius: 3px;
-            }
-            .how_points:focus{
-              border:1px solid #0099E8;
-            }
-          }
-        
-      }
-    }
   }
-  
+  .select-box{
+    height: 222px;
+    background-color:#FAFAFA;
+    padding:24px 40px;
+    display:none;
+    &__top{
+      font-size:15px;
+      font-weight:bold;
+    }
+    &__main{
+      &__content{
+        margin-top:12px;
+        label{
+          display:flex;
+          .select{
+            transform: scale(1.5);
+          }
+          .select--middle{
+            margin-top:6px;
+          }
+          p{
+            font-size:14px;
+            margin-left:10px;
+          }
+          .single-row{
+            padding: 4px 0;
+          }
+        }
+
+        .how_points{
+          outline: none;
+          font-size:16px;
+          height:48px;
+          width:100%;
+          margin-top:5px;
+          padding:10px 16px 8px;
+          border:1px solid #ccc;
+          border-radius: 3px;
+        }
+        .how_points:focus{
+          border:1px solid #0099E8;
+        }
+      }
+  }
+}
     &__payment{
       height: 60px;
       display:flex;
@@ -216,7 +209,6 @@
         font-weight:900;
         font-size: 10px;
         margin-left:10px;
-        // vertical-align: center;
       }
     }
   }

@@ -16,22 +16,23 @@
         %label{for:"use-points",class:"top-content__select-points"}
           %div{class:"top-content__select-points__text"} ポイントを使う
           %input{type: "checkbox",id:"use-points"}
-          .select-box
-            .select-box__top 所持ポイント: P 33
-            .select-box__main
-              .select-box__main__content
-                %label
-                  %input{type: "radio",name: "points",class:"select"}
-                  %div.single-row ポイントを使わない
-              .select-box__main__content
-                %label
-                  %input{type: "radio",name: "points",class:"select select--middle"}
-                  %div すべてのポイントを使う<br>P 33
-              .select-box__main__content
-                %label
-                  %input{type: "radio",name: "points",class:"select"}
-                  %div.single-row 一部のポイントを使う
-                = f.text_field :point,placeholder: "使うポイントを入力",class: "how_points"
+        .select-box
+          .select-box__top 所持ポイント: P 33
+          .select-box__main
+            .select-box__main__content
+              %label
+                %input{type: "radio",name: "points",class:"select"}
+                %p.single-row ポイントを使わない
+            .select-box__main__content
+              %label
+                %input{type: "radio",name: "points",class:"select select--middle"}
+                %p すべてのポイントを使う<br>P 33
+            .select-box__main__content
+              %label
+                %input{type: "radio",name: "points",class:"select",id:"part-of-points"}
+                %p.single-row 一部のポイントを使う
+              = f.text_field :point,placeholder: "使うポイントを入力",class: "how_points"
+                
             
         .top-content__payment
           .top-content__payment__left 支払い金額
