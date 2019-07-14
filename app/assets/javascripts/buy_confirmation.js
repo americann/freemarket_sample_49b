@@ -1,8 +1,16 @@
 $(document).on("turbolinks:load", function(){
   $(function() {
+    var state = "close";
     $('.top-content__select-points').click(function(){
       $(".select-box").slideToggle();
-      $(".fas.fa-angle-down").css({'transform':'rotateZ(180deg)','font-size':'35px','padding-bottom':'30px'})
+      if (state == "close"){
+        $(".fas.fa-angle-down").css({'transform':'rotateZ(180deg)','font-size':'35px','padding-bottom':'30px'});
+        state = "open";
+      }else{
+        $(".fas.fa-angle-down").removeAttr('style');
+        $(".fas.fa-angle-down").css({'font-size':'25px','padding-bottom':'30px'});
+        state = "close";
+      }
     });
     $(".how_points").click(function(){
       $("#part-of-points").prop('checked', true);
