@@ -3,31 +3,30 @@
     .productshow__name 
       おしゃれなカバン　
 
-
     #wrap
       %ul#slider
         %li.slide-item
-          %img{src:"#{asset_path "products/bag1.jpg"}"}
+          = image_tag('products/bag1.jpg')
         %li.slide-item
-          %img{src:"#{asset_path "products/bag2.jpg"}"}
+          = image_tag('products/bag2.jpg')
         %li.slide-item
-          %img{src:"#{asset_path "products/bag3.jpg"}"}
+          = image_tag('products/bag3.jpg')
         %li.slide-item
-          %img{src:"#{asset_path "products/bag4.jpg"}"}
+          = image_tag('products/bag4.jpg')
         %li.slide-item
-          %img{src:"#{asset_path "products/bag5.jpg"}"}
+          = image_tag('products/bag5.jpg')
         
       %ul#thumbnail-list
         %li.thumbnail-item
-          %img{src:"#{asset_path "products/bag1.jpg"}"}
+          = image_tag('products/bag1.jpg')
         %li.thumbnail-item
-          %img{src:"#{asset_path "products/bag2.jpg"}"}
+          = image_tag('products/bag2.jpg')
         %li.thumbnail-item
-          %img{src:"#{asset_path "products/bag3.jpg"}"}
+          = image_tag('products/bag3.jpg')
         %li.thumbnail-item
-          %img{src:"#{asset_path "products/bag4.jpg"}"}
+          = image_tag('products/bag4.jpg')
         %li.thumbnail-item
-          %img{src:"#{asset_path "products/bag5.jpg"}"}
+          = image_tag('products/bag5.jpg')
       
     %table.productshow__table
       %tr
@@ -116,8 +115,6 @@
 
       %form.message-form{action: "#", method: "POST"}
         %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-        -# %input{:name => "item_id", :type => "hidden", :value => "m26175828589"}
-        -# %input{:name => "redirect_url_key", :type => "hidden", :value => "item_detail"}
         %textarea.textarea-default{:name => "body", :type => "text", :value => ""}
       .comment__main__content__botton
         = link_to 'コメントする','#'
