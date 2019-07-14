@@ -19,16 +19,16 @@
         .select-box
           .select-box__top 所持ポイント: P 33
           .select-box__main
-            .select-box__main__content
-              %label
+            %ul.select-box__main__content
+              %li
                 %input{type: "radio",name: "points",class:"select"}
                 %p.single-row ポイントを使わない
             .select-box__main__content
-              %label
+              %li
                 %input{type: "radio",name: "points",class:"select select--middle"}
                 %p すべてのポイントを使う<br>P 33
             .select-box__main__content
-              %label
+              %li
                 %input{type: "radio",name: "points",class:"select",id:"part-of-points"}
                 %p.single-row 一部のポイントを使う
               = f.text_field :point,placeholder: "使うポイントを入力",class: "how_points"
