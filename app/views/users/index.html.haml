@@ -4,7 +4,7 @@
         %section.content__mypage__icon
             %div
                 %figure
-                    %img{src:"#{asset_path "user/member_photo.png"}"}
+                    = image_tag("#{asset_path "user/member_photo.png"}")
                 .content__mypage__icon__name
                     = link_to "yuki" ,"/users/1" 
                     .content__mypage__icon__name__number
@@ -26,7 +26,7 @@
                     %li#list
                         %a.mypage-item-link{href: ""} 
                             %figure
-                                %img{src:"#{asset_path "user/merucari.logo.jpg"}"}
+                                = image_tag("#{asset_path "user/merucari.logo.jpg"}")
                             .mypage-item-link__body
                                 .mypage-item-link__text 事務局から個別メッセージ「【あと払い】メルペイあと払い手数料に関するお知らせ」
                                 .mypage-item-link__time
@@ -37,7 +37,7 @@
                     %li#list
                         %a.mypage-item-link{:href => ""}
                             %figure
-                                %img{src:"#{asset_path "user/merucari.logo.jpg"}"}
+                                = image_tag("#{asset_path "user/merucari.logo.jpg"}")
                             .mypage-item-link__body
                                 .mypage-item-link__text 【出品はじめかたガイド】安心でかんたんに出品する方法をCHECKしてみよう！
                                 .mypage-item-link__time
@@ -48,7 +48,7 @@
                     %li#list
                         %a.mypage-item-link{href: ""}
                             %figure
-                                %img{src:"#{asset_path "user/merucari.logo.jpg"}"}
+                                = image_tag("#{asset_path "user/merucari.logo.jpg"}")
                             .mypage-item-link__body
                                 .mypage-item-link__text 明日、P999還元お得チケットの有効期限が切れます！タップして詳細を確認しましょう。
                                 .mypage-item-link__time
@@ -58,7 +58,7 @@
                     %li#list
                         %a.mypage-item-link{href: ""}
                             %figure
-                                %img{src:"#{asset_path "user/merucari.logo.jpg"}"}
+                                = image_tag("#{asset_path "user/merucari.logo.jpg"}")
                             .mypage-item-link__body
                                 .mypage-item-link__text 【メルカリ安心への取り組み】商品代金は、取引完了まで事務局が大切にお預かりいたします
                                 .mypage-item-link__time
@@ -69,7 +69,7 @@
                     %li#list
                         %a.mypage-item-link{href: ""}
                             %figure
-                                %img{src:"#{asset_path "user/merucari.logo.jpg"}"}
+                                = image_tag("#{asset_path "user/merucari.logo.jpg"}")
                             .mypage-item-link__body
                                 .mypage-item-link__text 《お買い物応援キャンペーン》1,000円の商品を&quot;実質1円&quot;で購入できます！
                                 .mypage-item-link__time
@@ -83,7 +83,7 @@
             %ul#doinglist.content__mypage__contents
                 %li.content__mypage__contents__doinglist
                     %figure
-                        %img{src:"#{asset_path "user/merucari.gray.png"}"}
+                        = image_tag("#{asset_path "user/merucari.gray.png"}")
                     .content__mypage__contents__doinglist__text
                         現在、やることリストはありません
 
@@ -100,12 +100,12 @@
             %ul#doing.content__mypage__contents
                 %li.content__mypage__contents__doing
                     %figure
-                        %img{src:"#{asset_path "user/merucari.gray.png"}"}
+                        = image_tag("#{asset_path "user/merucari.gray.png"}")
                     .content__mypage__contents__doinglist__text
                         取引中の商品がありません
             %ul#end.content__mypage__contents
                 %li.content__mypage__contents__end
                     %figure
-                        %img{src:"#{asset_path "user/merucari.gray.png"}"}
+                        = image_tag("#{asset_path "user/merucari.gray.png"}")
                     .content__mypage__contents__doinglist__text
                         過去に取引した商品がありません
