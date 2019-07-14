@@ -162,14 +162,14 @@
 .comment{
   margin: 8px auto;
 
-&__main{
-  height: auto;
-  background-color: white;
-  margin: 0 auto;
-  width:55%;
+  &__main{
+    height: auto;
+    background-color: white;
+    margin: 0 auto;
+    width:55%;
 
-  &__content{
-    padding: 24px;
+    &__content{
+      padding: 24px;
    
     
       p{
@@ -185,7 +185,7 @@
         width:100%;
         margin: 10px auto;
       }
-      &__botton{
+      &__button{
         height:50px;
         background-color:#AAAAAA;
         font-size:14px;
@@ -212,11 +212,3 @@ button{
   border-radius: 40px;
   cursor: pointer;
 }
-
-
-
-
-
-
-
-
