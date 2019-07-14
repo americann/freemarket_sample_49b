@@ -13,5 +13,6 @@ Rails.application.routes.draw do
     end
   end
   resources  :users, only:[:index ,:show , :edit]
+  resources  :cards, only:[:index]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

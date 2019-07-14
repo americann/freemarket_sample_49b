@@ -1,18 +1,18 @@
 .app-banner
-  %img{ src: "#{asset_path "footer/background_img.jpg"}"}/
+  = image_tag("#{asset_path "footer/background_img.jpg"}")
   .app-banner__pc
     .app-banner__pc__inner
       %h2 スマホでかんたんフリマアプリ
       %p 今すぐ無料ダウンロード！
       .app-banner__icon
-        %img{ src: "#{asset_path "footer/mercari_icon.png"}"}/
+        = image_tag("#{asset_path "footer/mercari_icon.png"}")
         %ul.app-list
           %li
-            %img{ src: "#{asset_path "footer/app-store.svg"}"}/
+            = image_tag("#{asset_path "footer/app-store.svg"}")
           %li
-            %img{ src: "#{asset_path "footer/google-play.svg"}"}/
+            = image_tag("#{asset_path "footer/google-play.svg"}")
     %figure.phone
-      %img{ src: "#{asset_path "footer/phone_image.png"}"}/
+      = image_tag("#{asset_path "footer/phone_image.png"}")
 
 .global-footer
   %nav.footer-info
@@ -85,6 +85,6 @@
           United States
   .footer-bottom
     .footer-bottom__mercari__icon
-      %img{ src: "#{asset_path "footer/logo-white.svg"}"}/
+      = image_tag("#{asset_path "footer/logo-white.svg"}")
     .footer-copyright
       © 2019 Mercari

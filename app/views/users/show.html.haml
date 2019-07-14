@@ -9,9 +9,9 @@
         ユーザー名
   .user-details
     .user-profile
-      %img{ src: "#{asset_path "user_bg.jpg"}"}/
+      = image_tag("#{asset_path "user_bg.jpg"}")
       .user-photo
-        %img{ src:"#{asset_path "member_photo_noimage.png"}"}/ 
+        = image_tag("#{asset_path "member_photo_noimage.png"}") 
         %h2.user-name
           ユーザー名
         .user-score
