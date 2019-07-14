@@ -7,7 +7,7 @@ $(document).on("turbolinks:load", function(){
         $(".fas.fa-angle-down").css({'transform':'rotateZ(180deg)','font-size':'35px','padding-bottom':'30px'});
         state = "open";
       }else{
-        $(".fas.fa-angle-down").css({'font-size':'25px','padding-bottom':'30px'});
+        $(".fas.fa-angle-down").css({'transform':'rotateZ(0deg)','font-size':'25px','padding-bottom':'30px'});
         state = "close";
       }
     });
