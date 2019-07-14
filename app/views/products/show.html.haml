@@ -6,27 +6,27 @@
     #wrap
       %ul#slider
         %li.slide-item
-          = image_tag('products/bag1.jpg')
+          = image_tag("#{asset_path "products/bag1.jpg"}")
         %li.slide-item
-          = image_tag('products/bag2.jpg')
+          = image_tag("#{asset_path "products/bag2.jpg"}")
         %li.slide-item
-          = image_tag('products/bag3.jpg')
+          = image_tag("#{asset_path "products/bag3.jpg"}")
         %li.slide-item
-          = image_tag('products/bag4.jpg')
+          = image_tag("#{asset_path "products/bag4.jpg"}")
         %li.slide-item
-          = image_tag('products/bag5.jpg')
+          = image_tag("#{asset_path "products/bag5.jpg"}")
         
       %ul#thumbnail-list
         %li.thumbnail-item
-          = image_tag('products/bag1.jpg')
+          = image_tag("#{asset_path "products/bag1.jpg"}")
         %li.thumbnail-item
-          = image_tag('products/bag2.jpg')
+          = image_tag("#{asset_path "products/bag2.jpg"}")
         %li.thumbnail-item
-          = image_tag('products/bag3.jpg')
+          = image_tag("#{asset_path "products/bag3.jpg"}")
         %li.thumbnail-item
-          = image_tag('products/bag4.jpg')
+          = image_tag("#{asset_path "products/bag4.jpg"}")
         %li.thumbnail-item
-          = image_tag('products/bag5.jpg')
+          = image_tag("#{asset_path "products/bag5.jpg"}")
       
     %table.productshow__table
       %tr
@@ -34,7 +34,7 @@
           出品者
         %td
           .productshow__table__name
-            = link_to "yuki" ,"/users/show" 
+            = link_to "yuki" ,"/users" 
           .rate
             .rate__score
               %i.fas.fa-laugh
