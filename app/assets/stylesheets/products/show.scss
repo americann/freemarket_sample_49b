@@ -159,6 +159,16 @@
 }
 }
 
+
+.like{
+  padding: 8px 16px;
+  color: #333;
+  border: 1px solid #f5f5f5;
+  background: #f5f5f5;
+  border-radius: 40px;
+}
+
+
 .comment{
   margin: 8px auto;
 
@@ -193,6 +203,7 @@
         text-align: center;
         margin:0 auto;
         cursor: pointer;
+        
         a{
           text-decoration: none;
           color:white;
@@ -204,11 +215,3 @@
 }
 }
 
-button{
-  padding: 8px 16px;
-  color: #333;
-  border: 1px solid #f5f5f5;
-  background: #f5f5f5;
-  border-radius: 40px;
-  cursor: pointer;
-}
