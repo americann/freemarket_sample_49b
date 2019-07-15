@@ -12,7 +12,10 @@
           %figure.top-content__info__image
             = image_tag("/products/m34238645569_1.jpg",class: "img")
           .top-content__info__title シャツ
-        .top-content__price ¥ 1,000 <span>送料込み</span>
+        .top-content__price
+          ¥ 1,000
+          %span
+            送料込み
         .top-content__select-points
           %p{class:"top-content__select-points__text"} ポイントを使う
           %i.fas.fa-angle-down
