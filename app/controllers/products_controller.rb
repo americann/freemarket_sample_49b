@@ -11,4 +11,7 @@ class ProductsController < ApplicationController
       @user = User.new
     end
 
+    def buy_confirmation
+      @user = User.new
+    end
 end
