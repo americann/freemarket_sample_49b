@@ -32,7 +32,12 @@ body {
   }
 }
 
-.seach {
+.logo-img{//ロゴのサイズ設定
+  width:134px;
+  height:36px;
+}
+
+.search {
   width: 100%;
   margin-left: 45px;
   &__form {
