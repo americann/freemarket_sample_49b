@@ -3,7 +3,12 @@
 |------|----|-------|
 |email|string|unique: true, null: false|
 |password|string|null: false|
-
+|first_name|string|null: false|
+|last_name|string|null: false|
+|first_name_kana|string|null: false| 
+|last_name_kana|string|null: false| 
+|nickname|string|null: false| 
+|birthday|date|null: false|
 
 ### Association
 - has_many :reviews
@@ -18,12 +23,6 @@
 ## profilesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|first_name|string|null: false|
-|last_name|string|null: false|
-|first_name_kana|string|null: false| 
-|last_name_kana|string|null: false| 
-|nickname|string|null: false| 
-|birthday|date|null: false|
 |address|string|
 |image|string|
 |text|text| 
@@ -38,13 +37,14 @@
 |Column|Type|Options|
 |------|----|-------|
 |zip_code|integer|null: false|
-|prefecture|string|null: false|
+|prefecture_id|references|foreign_key: true|
 |city|string|null: false|
 |block|string|null: false|
 |building_number|string|null: false|
 
 ### Association
 - belongs_to :user
+- belongs_to :prefecture
 
 
 ## productsテーブル
@@ -54,20 +54,31 @@
 |description|text|null: false|
 |state|integer|null: false|
 |postage|integer|null: false|
-|region|integer|null: false|
+|prefecture_id|references|foreign_key: true|
 |shipping_date|integer|null: false|
 |price|interger|null: false|
-|seller_id|references|null: false, foreign_key: true|
-|buyer_id|references|foreign_key: true| 
+|user_id|references|null: false, foreign_key: true|
 |size|integer|
+
 
 ### Association
 - belongs_to :user
 - belongs_to :category
+- belongs_to :prefecture
 - has_many :photos
 - has_many :comments
 - has_many :deal_messages
 - has_many :likes
+
+
+## prefecturesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|integer|null: false|
+
+### Association
+- has_many :addresses
+- has_many :products
 
 
 ## categoriesテーブル
