@@ -19,97 +19,356 @@
             = link_to '', class:'header-nav-left__nav1__link navbar navleft' do
               %i.fa.fa-list-ul.fa-1.3x
               %span.header-nav-left__nav1__link__character　カテゴリーから探す
-            .category
-              %ul.category__child
-                %li
-                  %a{href: "#"} レディース
-                %li
-                  %a{href: "#"} メンズ
-                %li
-                  %a{href: "#"} ベビー・キッズ
-                %li
-                  %a{href: "#"} インテリア・住まい・小物
-                %li
-                  %a{href: "#"} 本・音楽・ゲーム
-                %li
-                  %a{href: "#"} おもちゃ・ホビー・グッズ
-                %li
-                  %a{href: "#"} コスメ・香水・美容
-                %li
-                  %a{href: "#"} 家電・スマホ・カメラ
-                %li
-                  %a{href: "#"} スポーツ・レジャー
-                %li
-                  %a{href: "#"} ハンドメイド
-                %li
-                  %a{href: "#"} チケット
-                %li
-                  %a{href: "#"} 自動車・オートバイ
-                %li
-                  %a{href: "#"} その他
-                %li
-                  %a{href: "#"} カテゴリー一覧
-
-              %ul.category__grandchild 
-                %li
-                  %a{href: "#"} トップス
-                %li
-                  %a{href: "#"} ジャケット/アウター
-                %li
-                  %a{href: "#"} パンツ
-                %li
-                  %a{href: "#"} スカート
-                %li
-                  %a{href: "#"} ワンピース
-                %li
-                  %a{href: "#"} 靴
-                %li
-                  %a{href: "#"} ルームウェア/パジャマ
-                %li
-                  %a{href: "#"} レッグウェア
-                %li
-                  %a{href: "#"} 帽子
-                %li
-                  %a{href: "#"} バッグ
-                %li
-                  %a{href: "#"} アクセサリー
-                %li
-                  %a{href: "#"} ヘアアクセサリー
-                %li
-                  %a{href: "#"} 小物
-                %li
-                  %a{href: "#"} 時計
-
-              %ul.category__GGC
-                %li
-                  %a{href: "#"} Tシャツ/カットソー(半袖/袖なし)
-                %li
-                  %a{href: "#"} Tシャツ/カットソー(七分/長袖)
-                %li
-                  %a{href: "#"} シャツ/ブラウス(半袖/袖なし)
-                %li
-                  %a{href: "#"} シャツ/ブラウス(七分/長袖)
-                %li
-                  %a{href: "#"} ポロシャツ
-                %li
-                  %a{href: "#"} キャミソール
-                %li
-                  %a{href: "#"} タンクトップ
-                %li
-                  %a{href: "#"} ホルターネック
-                %li
-                  %a{href: "#"} ニット/セーター
-                %li
-                  %a{href: "#"} チュニック
-                %li
-                  %a{href: "#"} カーディガン/ボレロ
-                %li
-                  %a{href: "#"} アンサンブル
-                %li
-                  %a{href: "#"} ベスト/ジレ
-                %li
-                  %a{href: "#"} パーカー
-
+            %ul.category__child
+              %li
+                %a{href: "#"} レディース
+                %ul.category__grandchild 
+                  %li
+                    %a{href: "#"} トップス
+                    %ul.category__GGC
+                      %li
+                        %a{href: "#"} Tシャツ/カットソー(半袖/袖なし)
+                      %li
+                        %a{href: "#"} Tシャツ/カットソー(七分/長袖)
+                      %li
+                        %a{href: "#"} シャツ/ブラウス(半袖/袖なし)
+                      %li
+                        %a{href: "#"} シャツ/ブラウス(七分/長袖)
+                      %li
+                        %a{href: "#"} ポロシャツ
+                      %li
+                        %a{href: "#"} キャミソール
+                      %li
+                        %a{href: "#"} タンクトップ
+                      %li
+                        %a{href: "#"} ホルターネック
+                      %li
+                        %a{href: "#"} ニット/セーター
+                      %li
+                        %a{href: "#"} チュニック
+                      %li
+                        %a{href: "#"} カーディガン/ボレロ
+                      %li
+                        %a{href: "#"} アンサンブル
+                      %li
+                        %a{href: "#"} ベスト/ジレ
+                      %li
+                        %a{href: "#"} パーカー
+                  %li
+                    %a{href: "#"} ジャケット/アウター
+                  %li
+                    %a{href: "#"} パンツ
+                  %li
+                    %a{href: "#"} スカート
+                  %li
+                    %a{href: "#"} ワンピース
+                  %li
+                    %a{href: "#"} 靴
+                  %li
+                    %a{href: "#"} ルームウェア/パジャマ
+                  %li
+                    %a{href: "#"} レッグウェア
+                  %li
+                    %a{href: "#"} 帽子
+                  %li
+                    %a{href: "#"} バッグ
+                  %li
+                    %a{href: "#"} アクセサリー
+                  %li
+                    %a{href: "#"} ヘアアクセサリー
+                  %li
+                    %a{href: "#"} 小物
+                  %li
+                    %a{href: "#"} 時計
+              %li
+                %a{href: "#"} メンズ
+                %ul.category__grandchild 
+                  %li
+                    %a{href: "#"} トップス
+                  %li
+                    %a{href: "#"} ジャケット/アウター
+                  %li
+                    %a{href: "#"} パンツ
+                  %li
+                    %a{href: "#"} 靴
+                  %li
+                    %a{href: "#"} バッグ
+                  %li
+                    %a{href: "#"} スーツ
+                  %li
+                    %a{href: "#"} 帽子
+                  %li
+                    %a{href: "#"} アクセサリー
+                  %li
+                    %a{href: "#"} 小物
+                  %li
+                    %a{href: "#"} 時計
+                  %li
+                    %a{href: "#"} 水着
+                  %li
+                    %a{href: "#"} レッグウェア
+                  %li
+                    %a{href: "#"} アンダーウェア
+                  %li
+                    %a{href: "#"} その他
+              %li
+                %a{href: "#"} ベビー・キッズ
+                %ul.category__grandchild 
+                  %li
+                    %a{href: "#"} ベビー服(女の子用)~95cm
+                  %li
+                    %a{href: "#"} ベビー服(男の子用)~95cm
+                  %li
+                    %a{href: "#"} ベビー服(男女兼用)~95cm
+                  %li
+                    %a{href: "#"} キッズ服(女の子用)100cm~
+                  %li
+                    %a{href: "#"} キッズ服(男の子用)100cm~
+                  %li
+                    %a{href: "#"} キッズ服(男女兼用)100cm~
+                  %li
+                    %a{href: "#"} キッズ靴
+                  %li
+                    %a{href: "#"} 子ども用ファッション小物
+                  %li
+                    %a{href: "#"} おむつ/トイレ/バス
+                  %li
+                    %a{href: "#"} 外出/移動用品
+                  %li
+                    %a{href: "#"} 授乳/食事
+                  %li
+                    %a{href: "#"} ベビー家具/寝具/室内用品
+                  %li
+                    %a{href: "#"} おもちゃ
+                  %li
+                    %a{href: "#"} 行事/記念品
+              %li
+                %a{href: "#"} インテリア・住まい・小物
+                %ul.category__grandchild 
+                  %li
+                    %a{href: "#"} キッチン/食器
+                  %li
+                    %a{href: "#"} ベッド/マットレス
+                  %li
+                    %a{href: "#"} ソファ/ソファベッド
+                  %li
+                    %a{href: "#"} 椅子/チェア
+                  %li
+                    %a{href: "#"} 机/テーブル
+                  %li
+                    %a{href: "#"} 収納家具
+                  %li
+                    %a{href: "#"} ラグ/カーペット/マット
+                  %li
+                    %a{href: "#"} カーテン/ブラインド
+                  %li
+                    %a{href: "#"} ライト/照明
+                  %li
+                    %a{href: "#"} 寝具
+                  %li
+                    %a{href: "#"} インテリア小物
+                  %li
+                    %a{href: "#"} 季節/年中行事
+                  %li
+                    %a{href: "#"} その他
+              %li
+                %a{href: "#"} 本・音楽・ゲーム
+                %ul.category__grandchild 
+                  %li
+                    %a{href: "#"} 本
+                  %li
+                    %a{href: "#"} 漫画
+                  %li
+                    %a{href: "#"} 雑誌
+                  %li
+                    %a{href: "#"} CD
+                  %li
+                    %a{href: "#"} DVD/ブルーレイ
+                  %li
+                    %a{href: "#"} レコード
+                  %li
+                    %a{href: "#"} テレビ
+              %li
+                %a{href: "#"} おもちゃ・ホビー・グッズ
+                %ul.category__grandchild 
+                  %li
+                    %a{href: "#"} おもちゃ
+                  %li
+                    %a{href: "#"} タレントグッズ
+                  %li
+                    %a{href: "#"} コミック/アニメグッズ
+                  %li
+                    %a{href: "#"} トレーディングカード
+                  %li
+                    %a{href: "#"} フィギュア
+                  %li
+                    %a{href: "#"} 楽器/器材
+                  %li
+                    %a{href: "#"} コレクション
+                  %li
+                    %a{href: "#"} ミリタリー
+                  %li
+                    %a{href: "#"} 美術品
+                  %li
+                    %a{href: "#"} アート用品
+                  %li
+                    %a{href: "#"} その他
+              %li
+                %a{href: "#"} コスメ・香水・美容
+                %ul.category__grandchild 
+                  %li
+                    %a{href: "#"} ベースメイク
+                  %li
+                    %a{href: "#"} メイクアップ
+                  %li
+                    %a{href: "#"} ネイルケア
+                  %li
+                    %a{href: "#"} 香水
+                  %li
+                    %a{href: "#"} スキンケア/基礎化粧品
+                  %li
+                    %a{href: "#"} ヘアケア
+                  %li
+                    %a{href: "#"} ボディケア
+                  %li
+                    %a{href: "#"} ミリタリー
+                  %li
+                    %a{href: "#"} 美術品
+                  %li
+                    %a{href: "#"} アート用品
+                  %li
+                    %a{href: "#"} その他
+              %li
+                %a{href: "#"} 家電・スマホ・カメラ
+                %ul.category__grandchild 
+                  %li
+                    %a{href: "#"} スマートフォン/携帯電話
+                  %li
+                    %a{href: "#"} スマホアクセサリー
+                  %li
+                    %a{href: "#"} PC/タブレット
+                  %li
+                    %a{href: "#"} カメラ
+                  %li
+                    %a{href: "#"} テレビ/映像機器
+                  %li
+                    %a{href: "#"} オーディオ機器
+                  %li
+                    %a{href: "#"} 美容/健康
+                  %li
+                    %a{href: "#"} 冷暖房/空調
+                  %li
+                    %a{href: "#"} 生活家電
+                  %li
+                    %a{href: "#"} その他
+              %li
+                %a{href: "#"} スポーツ・レジャー
+                %ul.category__grandchild 
+                  %li
+                    %a{href: "#"} ゴルフ
+                  %li
+                    %a{href: "#"} フィッシング
+                  %li
+                    %a{href: "#"} 自転車
+                  %li
+                    %a{href: "#"} トレーニング/エクササイズ
+                  %li
+                    %a{href: "#"} 野球
+                  %li
+                    %a{href: "#"} サッカー/フットサル
+                  %li
+                    %a{href: "#"} テニス
+                  %li
+                    %a{href: "#"} スノーボード
+                  %li
+                    %a{href: "#"} スキー
+                  %li
+                    %a{href: "#"} その他スポーツ
+                  %li
+                    %a{href: "#"} アウトドア
+                  %li
+                    %a{href: "#"} その他
+              %li
+                %a{href: "#"} ハンドメイド
+                %ul.category__grandchild 
+                  %li
+                    %a{href: "#"} アクセサリー(女性用)
+                  %li
+                    %a{href: "#"} ファッション/小物
+                  %li
+                    %a{href: "#"} アクセサリー/時計
+                  %li
+                    %a{href: "#"} 日用品/インテリア
+                  %li
+                    %a{href: "#"} 趣味/おもちゃ
+                  %li
+                    %a{href: "#"} キッズ/ベビー
+                  %li
+                    %a{href: "#"} 素材/材料
+                  %li
+                    %a{href: "#"} 二次創作物
+                  %li
+                    %a{href: "#"} その他
+              %li
+                %a{href: "#"} チケット
+                %ul.category__grandchild 
+                  %li
+                    %a{href: "#"} 音楽
+                  %li
+                    %a{href: "#"} スポーツ
+                  %li
+                    %a{href: "#"} 演劇/芸能
+                  %li
+                    %a{href: "#"} イベント
+                  %li
+                    %a{href: "#"} 映画
+                  %li
+                    %a{href: "#"} 施設利用券
+                  %li
+                    %a{href: "#"} 優待券/割引券
+                  %li
+                    %a{href: "#"} その他
+              %li
+                %a{href: "#"} 自動車・オートバイ
+                %ul.category__grandchild 
+                  %li
+                    %a{href: "#"} 自動車本体
+                  %li
+                    %a{href: "#"} 自動車タイヤ/ホイール
+                  %li
+                    %a{href: "#"} 自動車パーツ
+                  %li
+                    %a{href: "#"} 自動車アクセサリー
+                  %li
+                    %a{href: "#"} オートバイ車体
+                  %li
+                    %a{href: "#"} オートバイパーツ
+                  %li
+                    %a{href: "#"} オートバイアクセサリー
+              %li
+                %a{href: "#"} その他
+                %ul.category__grandchild 
+                  %li
+                    %a{href: "#"} まとめ売り
+                  %li
+                    %a{href: "#"} ペット用品
+                  %li
+                    %a{href: "#"} 食品
+                  %li
+                    %a{href: "#"} 飲料/酒
+                  %li
+                    %a{href: "#"} 日用品/生活雑貨/旅行
+                  %li
+                    %a{href: "#"} アンティーク/コレクション
+                  %li
+                    %a{href: "#"} 文房具/事務用品
+                  %li
+                    %a{href: "#"} 事務/店舗用品
+                  %li
+                    %a{href: "#"} その他
+              %li
+                %a{href: "#"} カテゴリー一覧
+            
 
           %li#brand.header-nav-left__nav2
             = link_to '' , class:'header-nav-left__nav2__link navbar navleft' do
@@ -131,29 +390,82 @@
 
       .serch-nav-box2
         %ul.header-nav-right
-
-          %li.header-nav-right__nice
-            = link_to '', class:'header-nav-right__nice__link navbar', id:'good' do
+          %li#good.header-nav-right__nice
+            = link_to '', class:'header-nav-right__nice__link navbar ' do
               %i.far.fa-heart
               %span.header-nav-right__nice__link__nice　いいね！一覧
 
-          %li.header-nav-right__info
-            = link_to '', class:'header-nav-right__info__link navbar', id:'notification' do
+          %li#notification.header-nav-right__info
+            = link_to '', class:'header-nav-right__info__link navbar' do
               %i.fa.fa-bell
               %span.header-nav-right__info__link__info　お知らせ
             .notification-box
               %ul
                 %li
-                
-
-
-
-          %li.header-nav-right__todo
-            = link_to '' , class:'header-nav-right__todo__link navbar', id:'todo' do
+                  = image_tag("/mercari_profile.png") 
+                  お知らせ１
+                %li
+                  = image_tag("/mercari_profile.png") 
+                  お知らせ２
+                %li
+                  = image_tag("/mercari_profile.png") 
+                  お知らせ３
+                %li
+                  = image_tag("/mercari_profile.png") 
+                  お知らせ４
+                  
+          %li#todo.header-nav-right__todo
+            = link_to '' , class:'header-nav-right__todo__link navbar' do
               %i.fa.fa-check
               %span.header-nav-right__todo__link__todo　やることリスト
 
-          %li.header-nav-right__mypage
-            = link_to '', class:'header-nav-right__mypage__link navbar', id:'mypage' do
+          %li#mypage.header-nav-right__mypage
+            = link_to '', class:'header-nav-right__mypage__link navbar' do
               %i.fa.fa-smile
               %span.header-nav-right__mypage__link__mypage　マイページ
+            .mypage-box
+              .profile__box
+                = image_tag("/user-bg.jpg")
+                .profile__image
+                  = image_tag("/member_photo_noimage.png")
+                  .mypage-box__name
+                    ユーザー名
+                  .mypage-box__score
+                    %ul
+                      %li
+                        評価:0
+                      %li
+                        出品数:0
+                %ul.mypage__sales__points
+                  %li
+                    売上金
+                    .sales
+                      ¥0
+                      %i.fa.fa-chevron-right
+                  %li
+                    ポイント
+                    .points
+                      P0
+                      %i.fa.fa-chevron-right
+              %ul.mypage-navlist
+                %li
+                  いいね！一覧
+                  %i.fa.fa-chevron-right
+                %li
+                  出品した商品-出品中
+                  %i.fa.fa-chevron-right
+                %li
+                  出品した商品-取引中
+                  %i.fa.fa-chevron-right
+                %li
+                  出品した商品-売却済み
+                  %i.fa.fa-chevron-right
+                %li
+                  購入した商品-取引中
+                  %i.fa.fa-chevron-right
+                %li
+                  購入した商品-過去の取引
+                  %i.fa.fa-chevron-right
+
+
+
