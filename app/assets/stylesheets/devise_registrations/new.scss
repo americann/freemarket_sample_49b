@@ -1,3 +1,168 @@
 .regist-entire{
   border:solid;
 }
+
+.regist-new-header{
+  text-align: center;
+  height: 130px;
+  background-color: #F5F5F5;
+  &__logo {
+    display: inline-block;
+    text-align: center;
+    height: 50px;
+    width: 185px;
+    margin: 40px 0 0;
+  }
+  &__state{
+    display: inline-block;
+    vertical-align: top;
+    font-size: 0;
+    text-align: center;
+    border:solid;
+    width:620px;
+    height:90px;
+    &__elements{
+      width:580px;
+      height:50px;
+      border:solid;
+      list-style: none;
+      display: block;
+      margin:40px 0px 40px 40px;
+      &__member-info{
+        font-weight: 600;
+        color: #ea352d;
+        min-width: 60px;
+        height:40px;
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+        font-size: 12px;
+        margin: 0 40px 0 0;
+        border:solid;
+        &__ele{
+            background: #ea352d;
+            width: 12px;
+    height: 12px;
+    margin: 8px auto 0;
+    border-radius: 50%;
+          &__line{
+            left: 50%;
+            position: absolute;
+            bottom: 5px;
+            z-index: -1;
+            display: block;
+            content: '';
+            width: 100%;
+            height: 2px;
+            background: #ccc;
+            border-style: solid;
+  }
+ }
+}
+    &__tel-info{
+      font-weight: 600;
+      color: #ea352d;
+      min-width: 60px;
+      height:40px;
+      position: relative;
+      z-index: 1;
+      display: inline-block;
+      font-size: 12px;
+      margin: 0 40px 0 0;
+      border:solid;
+      &__ele{
+      background: #ea352d;
+      width: 12px;
+      height: 12px;
+      margin: 8px auto 0;
+      border-radius: 50%;
+        &__l-line1{
+          right: 50%;
+          position: absolute;
+          bottom: 5px;
+          z-index: -1;
+          display: block;
+          content: '';
+          width: 100%;
+          height: 2px;
+          background: #ccc;
+          border-style: solid;
+}
+        &__r-line1{
+          left: 50%;
+          position: absolute;
+          bottom: 5px;
+          z-index: -1;
+          display: block;
+          content: '';
+          width: 100%;
+          height: 2px;
+          background: #ccc;
+          border-style: solid;
+}
+
+
+
+}
+    }
+    &__send-info{
+      font-weight: 600;
+      color: #ea352d;
+      min-width: 60px;
+      height:40px;
+      position: relative;
+      z-index: 1;
+      display: inline-block;
+      font-size: 12px;
+      margin: 0 40px 0 0;
+      border:solid;
+      &__ele{
+        background: #ea352d;
+        width: 12px;
+height: 12px;
+margin: 8px auto 0;
+border-radius: 50%;
+}
+    }
+    &__pay-info{
+      font-weight: 600;
+      color: #ea352d;
+      min-width: 60px;
+      height:40px;
+      position: relative;
+      z-index: 1;
+      display: inline-block;
+      font-size: 12px;
+      margin: 0 40px 0 0;
+      border:solid;
+      &__ele{
+        background: #ea352d;
+        width: 12px;
+height: 12px;
+margin: 8px auto 0;
+border-radius: 50%;
+}
+    }
+    &__done-info{
+      font-weight: 600;
+      color: #ea352d;
+      min-width: 60px;
+      height:40px;
+      position: relative;
+      z-index: 1;
+      display: inline-block;
+      font-size: 12px;
+      margin: 0 40px 0 0;
+      border:solid;
+      &__ele{
+        background: #ea352d;
+        width: 12px;
+        height: 12px;
+        margin: 8px auto 0;
+        border-radius: 50%;
+}
+    }
+
+}
+}
+}
