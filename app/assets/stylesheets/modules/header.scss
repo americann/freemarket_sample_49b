@@ -150,12 +150,12 @@ body {
           display: block;
           padding-top: 20px;
           height: 45px;
-        }
           a {
             text-decoration: none;
             color: #000;
             margin-left: 15px;
           }
+        }
       }
       .category__child {
         display: inline-block;
@@ -172,12 +172,12 @@ body {
           padding: 10px 0;
           margin-bottom: 5px;
           height: 30px;
-        }
           a {
             text-decoration: none;
             color: #000;
             margin-left: 15px;
           }
+        }
       }
       .category__grandchild {
         display: inline-block;
@@ -194,13 +194,12 @@ body {
           padding: 10px 0;
           margin-bottom: 5px;
           height: 30px;
-        }
           a {
             text-decoration: none;
             color: #000;
             margin-left: 15px;
           }
-      
+        }
       }
   }
   &__nav2 {
@@ -231,12 +230,12 @@ body {
         padding-top: 20px;
         height: 50px;
         width: 224px;
-      }
         a {
           text-decoration: none;
           color: #000;
           margin-left: 15px;
         }
+      }
     }
   }
 }
