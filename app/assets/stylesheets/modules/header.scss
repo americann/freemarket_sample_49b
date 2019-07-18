@@ -135,7 +135,7 @@ body {
       font-weight: bold;
       line-height: 32px;
     }
-      .category__child {
+      .category__parent {
         display: inline-block;
         position: absolute;
         left: 0;
@@ -157,7 +157,7 @@ body {
             margin-left: 15px;
           }
       }
-      .category__grandchild {
+      .category__child {
         display: inline-block;
         position: absolute;
         left: 222px;
@@ -179,7 +179,7 @@ body {
             margin-left: 15px;
           }
       }
-      .category__GGC {
+      .category__grandchild {
         display: inline-block;
         position: absolute;
         left: 222px;
