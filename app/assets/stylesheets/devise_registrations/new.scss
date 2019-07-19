@@ -18,13 +18,13 @@
     vertical-align: top;
     font-size: 0;
     text-align: center;
-    border:solid;
+    
     width:620px;
     height:90px;
     &__elements{
       width:580px;
       height:50px;
-      border:solid;
+      
       list-style: none;
       display: block;
       margin:40px 0px 40px 40px;
@@ -38,7 +38,7 @@
         display: inline-block;
         font-size: 12px;
         margin: 0 40px 0 0;
-        border:solid;
+        
         &__ele{
             background: #ea352d;
             width: 12px;
@@ -69,7 +69,7 @@
       display: inline-block;
       font-size: 12px;
       margin: 0 40px 0 0;
-      border:solid;
+      
       &__ele{
       background: #ea352d;
       width: 12px;
@@ -115,7 +115,7 @@
       display: inline-block;
       font-size: 12px;
       margin: 0 40px 0 0;
-      border:solid;
+      
       &__ele{
         background: #ea352d;
         width: 12px;
@@ -134,7 +134,7 @@ border-radius: 50%;
       display: inline-block;
       font-size: 12px;
       margin: 0 40px 0 0;
-      border:solid;
+      
       &__ele{
         background: #ea352d;
         width: 12px;
@@ -153,7 +153,6 @@ border-radius: 50%;
       display: inline-block;
       font-size: 12px;
       margin: 0 40px 0 0;
-      border:solid;
       &__ele{
         background: #ea352d;
         width: 12px;
