@@ -34,7 +34,7 @@
               %label
                 %input{type: "radio",name: "points",class:"select",id:"part-of-points"}
                 %p.single-row 一部のポイントを使う
-              = f.text_field :point,placeholder: "使うポイントを入力",class: "how_points"
+              = f.number_field :point,placeholder: "使うポイントを入力",class: "how_points"
                 
             
         .top-content__payment
