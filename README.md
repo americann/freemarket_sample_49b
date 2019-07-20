@@ -52,14 +52,13 @@
 |------|----|-------|
 |name|string|null: false|
 |description|text|null: false|
-|state|integer|null: false|
-|postage|integer|null: false|
+|state|string|null: false|
+|postage|string|null: false|
 |prefecture_id|references|foreign_key: true|
-|shipping_date|integer|null: false|
+|shipping_date|string|null: false|
 |price|interger|null: false|
 |user_id|references|null: false, foreign_key: true|
-|size|integer|
-
+|size|string|
 
 ### Association
 - belongs_to :user
