@@ -1,0 +1,73 @@
+.confirmation-wrapper
+  .header
+    = link_to '' , class:'header__link' do
+      = image_tag('/products/logo.svg')
+
+  .main
+    .main__sell
+      %h2.main__title 購入内容の確認
+      = form_with(model: @user, local: true, class: "top-content") do |f|
+        .top-content__info
+          %figure.top-content__info__image
+            = image_tag("/products/m34238645569_1.jpg",class: "img")
+          .top-content__info__title シャツ
+        .top-content__price
+          ¥ 1,000
+          %span
+            送料込み
+        .top-content__select-points
+          %p{class:"top-content__select-points__text"} ポイントを使う
+          %i.fas.fa-angle-down
+        .select-box
+          .select-box__top 所持ポイント: P 33
+          .select-box__main
+            .select-box__main__content
+              %label
+                %input{type: "radio",name: "points",class:"select"}
+                %p.single-row ポイントを使わない
+            .select-box__main__content
+              %label
+                %input{type: "radio",name: "points",class:"select select--middle"}
+                %p すべてのポイントを使う<br>P 33
+            .select-box__main__content
+              %label
+                %input{type: "radio",name: "points",class:"select",id:"part-of-points"}
+                %p.single-row 一部のポイントを使う
+              = f.number_field :point,placeholder: "使うポイントを入力",class: "how_points"
+                
+            
+        .top-content__payment
+          .top-content__payment__left 支払い金額
+          .top-content__payment__right ¥1,000
+        = f.button :購入する ,class: "top-content__button"
+      .middle-content
+        .middle-content__top 配送先
+        .middle-content__middle 〒542-0081<br>大阪府大阪市中央区南船場２丁目６−２８ ユタカビル7階<br>真子就有
+        .middle-content__bottom
+          = link_to '変更する','', class: "middle-content__bottom__link" 
+      .bottom-content
+        .bottom-content__top 支払い方法
+        .bottom-content__middle 
+          .bottom-content__middle__number ************0000<br>11 / 23
+          = image_tag("/visa.svg",class:"bottom-content__middle__image")
+        .bottom-content__bottom
+          = link_to '変更する','', class: "bottom-content__bottom__link" 
+  %footer.footer-terms
+    .footer__inner
+      %ul.footer__inner__links
+        %li.footer__inner__links__link1
+          = link_to"プライバシーポリシー","#"
+
+        %li.footer__inner__links__link2
+          = link_to"メルカリ利用規約","#"
+
+        %li.footer__inner__links__link2
+          = link_to"特定商取引に関する表記","#"
+
+      .footer__inner__logo
+        = link_to"特定商取引に関する表記",class:'footer-inner__logo__link' do
+          = image_tag('/products/logo-gray.svg' ,class:'logo__img')
+
+      %p.footer__inner__c-mark  
+        %small © 2019 Mercari
+

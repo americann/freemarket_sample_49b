@@ -32,7 +32,12 @@ body {
   }
 }
 
-.seach {
+.logo-img{//ロゴのサイズ設定
+  width:134px;
+  height:36px;
+}
+
+.search {
   width: 100%;
   margin-left: 45px;
   &__form {
@@ -42,6 +47,7 @@ body {
     &__input {
       height: 40px;
       width: 95%;
+      padding-left: 10px;
       border-radius: 4px;
       background: #f5f5f5;
       border: 1px solid #ccc;
@@ -54,7 +60,7 @@ body {
       float: right;
       font-style: normal;
       background: #f5f5f5;
-      border-radius: 4px;
+      background: rgb(102, 102, 102);
     }
   }
 }
@@ -67,6 +73,11 @@ body {
   display: flex;
 }
 
+.fas.fa-search{
+  color:white;
+}
+
+
 //カテゴリーicon css
 .fa.fa-list-ul {
   color: red;
@@ -78,6 +89,13 @@ body {
   color: red;
   font-size: 20px;
 }
+
+//いいね！アイコン
+.far.fa-heart{
+  color: #ccc;
+  font-size: 18px;
+}
+
 
 //お知らせicon css
 .fa.fa-bell{
@@ -112,6 +130,8 @@ body {
     //liタグ　カテゴリーから探す
     list-style: none;
     width: 50%;
+    height: 44px;
+    position: relative;
     &__link {
       //link　カテゴリーから探す
       color: #333;
@@ -120,11 +140,78 @@ body {
       font-weight: bold;
       line-height: 32px;
     }
+      .category__parent {
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: 44px;
+        z-index: 1000;
+        font-size: 13px;
+        width: 224px;
+        height: 630px;
+        background-color:  #fff;
+        border: 1px solid #eee;
+        li {
+          display: block;
+          padding-top: 20px;
+          height: 45px;
+          a {
+            text-decoration: none;
+            color: #000;
+            margin-left: 15px;
+          }
+        }
+      }
+      .category__child {
+        display: inline-block;
+        position: absolute;
+        left: 222px;
+        top: -1px;
+        font-size: 13px;
+        width: 224px;
+        height: 630px;
+        background-color:  #fff;
+        border: 1px solid #eee;
+        li {
+          display: block;
+          padding: 10px 0;
+          margin-bottom: 5px;
+          height: 30px;
+          a {
+            text-decoration: none;
+            color: #000;
+            margin-left: 15px;
+          }
+        }
+      }
+      .category__grandchild {
+        display: inline-block;
+        position: absolute;
+        left: 222px;
+        top: -1px;
+        font-size: 13px;
+        width: 280px;
+        height: 630px;
+        background-color:  #fff;
+        border: 1px solid #eee;
+        li {
+          display: block;
+          padding: 10px 0;
+          margin-bottom: 5px;
+          height: 30px;
+          a {
+            text-decoration: none;
+            color: #000;
+            margin-left: 15px;
+          }
+        }
+      }
   }
   &__nav2 {
     //ブランドから探す
     list-style: none;
     width: 50%;
+    height: 10vh;
     font-size: 10px;
     &__link {
       //link  ブランドから探す
@@ -134,26 +221,59 @@ body {
       font-weight: bold;
       line-height: 32px;
     }
+    ul {
+      display: none;
+      font-size: 13px;
+      width: 224px;
+      height: 300px;
+      background-color:  #fff;
+      z-index: 1000;
+      position: absolute;
+      margin-top: 11px;
+      border: 1px solid #eee;
+      li {
+        padding-top: 20px;
+        height: 50px;
+        width: 224px;
+        a {
+          text-decoration: none;
+          color: #000;
+          margin-left: 15px;
+        }
+      }
+    }
   }
 }
 
 .serch-nav-box2 {
-  //お知らせ　やること　マイページの大枠
-  width: 435px;
+  //いいね！　お知らせ　やること　マイページの大枠
+  width: 550px;
   height: 44px;
   .header-nav-right {
     display: flex;
     width: 100%;
     cursor: pointer;
-    position: relative;
-    left: 260px;
-    &__info {
-      //liタグ　カテゴリーから探す
+    position:relative;
+    left:150px;
+    &__nice{//いいね！一覧
       list-style: none;
-      width: 30%;
-      padding: 0 14px;
+      width: 150px;
+      &__link{
+        color: #333;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: bold;
+        line-height: 32px;
+        float:right;
+    }
+  }
+
+    &__info {
+      //liタグ　おしらせ
+      list-style: none;
+      width: 125px;
       &__link {
-        //link　カテゴリーから探す
+        //link　おしらせ
         color: #333;
         text-decoration: none;
         font-size: 13px;
@@ -161,14 +281,42 @@ body {
         line-height: 32px;
         float:right;
       }
+      .notification-box {
+        display: none;
+        width: 300px;
+        height: 400px;
+        background-color:  #fff;
+        z-index: 1000;
+        position: relative;
+        top: 43px;
+        ul {
+          font-size: 13px;
+          width: 300px;
+          height: 400px;
+          background-color:  #fff;
+          li {
+            height: 100px;
+            width: 300px;
+            display: inline-flex;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            top: -30px;
+            padding-top: 20px;
+            img {
+              width: 17%;
+              height: 55%;
+              margin: 0 0 10px 20px;
+            }
+          }
+        }
+      }
     }
     &__todo {
-      //liタグ　カテゴリーから探す
+      //liタグ　やることリスト
       list-style: none;
-      width: 40%;
-      padding: 0 14px;
+      width: 150px;
       &__link {
-        //link　カテゴリーから探す
+        //link　やることリスト
         color: #333;
         text-decoration: none;
         font-size: 13px;
@@ -178,12 +326,11 @@ body {
       }
     }
     &__mypage {
-      //liタグ　カテゴリーから探す
+      //liタグ　マイページ
       list-style: none;
-      width: 30%;
-      padding: 0 14px;
+      width: 125px;
       &__link {
-        //link　カテゴリーから探す
+        //link　マイページ
         color: #333;
         text-decoration: none;
         font-size: 13px;
@@ -191,6 +338,90 @@ body {
         line-height: 32px;
         float:right;
       }
+      .mypage-box {
+        display: none;
+        width: 330px;
+        height: 600px;
+        background-color: #fff;
+        z-index: 1000;
+        position: relative;
+        top: 44px;
+        right: 210px;
+        border: 1px solid #eee;
+        .profile__box {
+          position: relative;
+          width: 330px;
+          height: 300px;
+          border-bottom: 1px solid #eee;
+          img {
+            position: absolute;
+            width: 100%;
+            height: 25%;
+          }
+          .profile__image {
+            position: relative;
+            width: 200px;
+            height: 170px;
+            left: 65px;
+            top: 20px;
+            img {
+              position: absolute;
+              top: 10px;
+              right: 80px;
+              width: 60px;
+              height: 60px;
+              border-radius: 50%;
+            }
+              .mypage-box__name {
+                position: absolute;
+                top: 80px;
+                left: 50px;
+
+              }
+              .mypage-box__score {
+                position: absolute;
+                top: 110px;
+                left: 40px;
+                height: 40px;
+                ul {
+                  display: flex;
+                  li {
+                    margin-left: 10px;
+                  }
+                }
+              }
+          }
+          .mypage__sales__points {
+            margin: 10px;
+            li {
+              display: flex;
+              border: 1px solid #eee;
+              height: 50px;
+              justify-content: space-between;
+              .sales {
+                width: 30px;
+                margin: 10px;
+                display: flex;
+                .fa-chevron-right {
+                  margin-left: 5px;
+                }
+              }
+              .points {
+                margin: 10px;
+
+              }
+            }
+          }
+        }
+        .mypage-navlist {
+          li {
+            border: 1px solid #eee;
+            height: 50px;
+          }
+        }
+      }
     }
+
+
   }
 }

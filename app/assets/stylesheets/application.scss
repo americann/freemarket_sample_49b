@@ -1,11 +1,20 @@
 @import "./reset";
-@import "./slick";
-@import "./slick-theme";
-@import "./carousel";
+@import "slick/slick";
+@import "slick/slick-theme";
 @import "modules/header";
-@import "modules/main";
+@import "products/main";
 @import "modules/footer";
-@import "modules/slide";
+@import "slick/slide";
 @import "modules/exhibition_button";
-@import "modules/users";
+@import "products/new";
+//@import "modules/users";
+@import "users/users";
+@import "users/mypage_evaluation";
+@import "products/show";
 
+@import "users/edit";
+@import "shared/side_bar";
+@import "shared/breadcrumbs";
+@import "users/identification";
+@import "products/buy_confirmation";
+@import "cards/cards";

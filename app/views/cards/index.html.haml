@@ -1,0 +1,16 @@
+.card-list-page
+  = render "shared/side_bar"
+  .card-list-page__frame
+    .card-list-page__frame__howto
+      %h2.card-list-page__frame__howto__text  支払い方法
+    .card-list-page__frame__index
+      %h3.card-list-page__frame__index__text  クレジットカード一覧
+      .card-list-page__frame__index__btn
+        = link_to '' , class:'card-list-page__frame__index__btn__in' do
+          %i.fa.fa-credit-card.fa-lg
+          %span.card-list-page__frame__index__btn__in__link  クレジットカードを追加する
+      .card-list-page__frame__index__bottom
+        = link_to '' , class:'card-list-page__frame__index__bottom__link' do
+          %span.card-list-page__frame__index__bottom__link__text 支払い方法について
+          %i.fa.fa-chevron-right.fa-lg
+          
