@@ -9,7 +9,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.integer         :price
       t.string          :size
       t.references :user, foreign_key: true
-      t.references :prefecture, foreign_key: true
+      t.references :prefecture
       t.references :category, foreign_key: true
       t.timestamps
     end
