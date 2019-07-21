@@ -4,9 +4,8 @@ class ProductsController < ApplicationController
 
 
     def show
-      @product = Product.find(1).includes(:user)
+      @product = Product.find(1)
     end
-    
 
     def new
       @user = User.new
