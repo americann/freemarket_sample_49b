@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
 
 
     def show
-      @product = Product.find(1)
+      @product = Product.find(1).includes(:user)
     end
     
 
