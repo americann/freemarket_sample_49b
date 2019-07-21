@@ -23,10 +23,8 @@
 ## profilesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|address|string|
 |image|string|
 |text|text| 
-|phone_number|integer|
 |user_id|references|foreign_key: true| 
 
 ### Association
@@ -37,10 +35,11 @@
 |Column|Type|Options|
 |------|----|-------|
 |zip_code|integer|null: false|
-|prefecture_id|references|foreign_key: true|
+|prefecture_id|references|
 |city|string|null: false|
 |block|string|null: false|
-|building_number|string|null: false|
+|building_number|string||
+|phone_number|integer|
 
 ### Association
 - belongs_to :user
@@ -54,11 +53,12 @@
 |description|text|null: false|
 |state|string|null: false|
 |postage|string|null: false|
-|prefecture_id|references|foreign_key: true|
+|prefecture_id|references|
 |shipping_date|string|null: false|
 |price|interger|null: false|
 |user_id|references|null: false, foreign_key: true|
 |size|string|
+|category_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -70,22 +70,12 @@
 - has_many :likes
 
 
-## prefecturesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|integer|null: false|
-
-### Association
-- has_many :addresses
-- has_many :products
-
-
 ## categoriesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|ancestry|||
+|parent_id|integer||
 
 ### Association
 - has_many :products

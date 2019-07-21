@@ -8,10 +8,11 @@ class ProductsController < ApplicationController
     
 
     def new
-      @user = User.new
+      @product = Product.new
     end
 
     def buy_confirmation
-      @user = User.new
+      @product = Product.find(params[:id])
+      @user = User.find(current_user.id)
     end
 end
