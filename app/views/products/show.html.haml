@@ -34,7 +34,8 @@
           出品者
         %td
           .productshow__table__name
-            = link_to "yuki" ,user_path(1) 
+            = link_to user_path(1) do
+              = @user.nickname
           .rate
             .rate__score
               %i.fas.fa-laugh
