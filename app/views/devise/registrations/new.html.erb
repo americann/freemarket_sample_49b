@@ -51,6 +51,10 @@
           date_separator: '') # 年月日を仕切る文字
    %>
 
+  <div class="field">
+    <%= f.label :郵便番号 %><br />
+    <%= f.text_field :zip_code, placeholder:'例）123-4567' %>
+  </div>
 
   <div class="actions">
     <%= f.submit "次へ進む" %>
