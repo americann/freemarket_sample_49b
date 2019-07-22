@@ -1,14 +1,14 @@
 .entire
   %header.header-new
     %h1.header-new__logo
-      = link_to '' , class:'container__logo__link' do
+      = link_to root_path, class:'container__logo__link' do
         = image_tag('//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1905591235.jpg')
 
   .main
     .main__sell
       %h2.main__sell__text 商品の情報を入力
 
-      = form_for @user,html: { class: 'form' }  do |f|
+      = form_for @product,html: { class: 'form' }  do |f|
 
         .form__upload
           %h3.form__upload__imgtext 出品画像
@@ -116,7 +116,7 @@
               に同意したことになります。
 
           =f.button  "出品する" , class:"sell-btn-box__btn" ,type: "submit"
-          = link_to  "もどる","#", {class:'sell-btn-box__link'}
+          = link_to  "もどる",:back, {class:'sell-btn-box__link'}
           
 
   %footer.footer-terms
@@ -132,7 +132,7 @@
           = link_to"特定商取引に関する表記","#"
 
       .footer__inner__logo
-        = link_to"特定商取引に関する表記",class:'footer-inner__logo__link' do
+        = link_to root_path,class:'footer-inner__logo__link' do
           = image_tag('//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?270352715.jpg')
 
       %p.footer__inner__c-mark  

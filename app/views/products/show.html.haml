@@ -34,7 +34,7 @@
           出品者
         %td
           .productshow__table__name
-            = link_to "yuki" ,"/users" 
+            = link_to "yuki" ,user_path(1) 
           .rate
             .rate__score
               %i.fas.fa-laugh
@@ -90,7 +90,7 @@
       %span.productshow__price__shopping-fee
         送料込み
     .productshow__shopping-botton
-      = link_to '購入画面に進む','#'
+      = link_to '購入画面に進む',buy_confirmation_product_path
     .productshow__description
       %p.productshow__description__inner
         人気のコーチ パッチワークシグネチャー×パイソン ショルダーバッグです♪(ᴖ◡ᴖ)♪ 
