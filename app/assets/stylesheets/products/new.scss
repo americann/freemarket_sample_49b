@@ -1,4 +1,3 @@
-
 * {
   box-sizing: border-box;
 }
@@ -115,7 +114,7 @@ body {
   }
 }
 
-.sell-content {
+.sell-content {////ここに修正する
   width: 700px;
   height: 355px;
   padding: 40px;
@@ -146,16 +145,15 @@ body {
       font-weight: 600;
     }
     &__input {
-      display: block;
       width: 100%;
-      max-width: 100%;
-      height: 142px;
-      min-height: 104px;
-      padding: 10px;
+      margin: 8px 0 0;
+      height: 150px;
+      padding: 10px 16px 8px;
+      border-radius: 4px;
       border: 1px solid #ccc;
       background: #fff;
-      font-size: 16px;
       line-height: 1.5;
+      font-size: 16px;
     }
   }
 }
@@ -187,13 +185,12 @@ body {
         display: inline-block;
         font-size: 14px;
       }
-      &__select-wrap1 {
+      &__select-wrap1 {//ここを修正する
         //カテゴリー
         margin: 8px 0 0;
         position: relative;
         background: #fff;
-        cursor: auto;
-        &__select-default1 {
+        select {//ここを修正する
           //カテゴリー
           width: 100%;
           position: relative;
@@ -227,24 +224,7 @@ body {
         margin: 8px 0 0;
         position: relative;
         background: #fff;
-        cursor: auto;
-        border:solid;
-        width: 100%;
-          position: relative;
-          z-index: 2;
-          height: 48px;
-          
-          border-radius: 4px;
-          border: 1px solid #ccc;
-          background: 0;
-          font-size: 16px;
-          line-height: 1.5;
-          cursor: pointer;
-          -webkit-appearance: none;
-          -moz-appearance: none;
-          appearance: none;
-      select {
-          //商品の状態
+        select{
           width: 100%;
           position: relative;
           z-index: 2;
@@ -298,7 +278,7 @@ body {
         position: relative;
         background: #fff;
         cursor: auto;
-        select {
+      &__select-default1 {
           //カテゴリー
           width: 100%;
           position: relative;
@@ -334,7 +314,7 @@ body {
         position: relative;
         background: #fff;
         cursor: auto;
-        &__select-default2 {
+      &__select-default2 {
           //カテゴリー
           width: 100%;
           position: relative;
@@ -495,6 +475,7 @@ body {
     }
   }
 }
+
 
 .sell-btn-box__inner a {
   //禁止事項の文字リンクのCSS
