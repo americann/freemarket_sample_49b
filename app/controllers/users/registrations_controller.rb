@@ -4,6 +4,32 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
+  def new
+    @user = User.new
+    @user.build_address
+  end
+  
+  def create
+    binding.pry
+    @user = User.new(user_params)
+    @user.save!
+    redirect_to user_path(@user)
+  rescue
+    render action: 'new'
+  end
+
+
+  private
+
+    # def find_user
+    #   @user = User.find(params[:id])
+    # end
+
+    def user_params
+      params.require(:user).permit(:nickname,:firstname,:lastname,:firstname_kana,:lastname_kana,:birthday,:email,:password,address_attributes: [:zip_code])
+    end
+
+
   # GET /resource/sign_up
   # def new
   #   super
