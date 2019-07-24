@@ -1,5 +1,41 @@
 = render "shared/header"
 .card-new-page
   = render "shared/side_bar"
+  .card-new-page__main
+    %h2.card-new-page__main__title クレジットカード情報入力
 
-= render 'shared/footer'
+    = form_for @card,html: { class: "card-new-form" }  do |f|
+      .card-new-form__inside
+        .card-new-form__inside__card-num
+          = f.label :card_number,"カード番号",class:"card-new-form__inside__card-num__label"
+          %span.card-new-form__inside__card-num__span 必須
+          = f.text_field :card_number,class:"card-new-form__inside__card-num__text",placeholder:"半角数字のみ",maxlength:"19"
+          %ul.card-new-form__inside__card-num__ul
+            %li.card-new-form__inside__card-num__ul__li
+              %img{alt:"visa", src:"//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?732810650.jpg",width:"49",height:"20"}
+            %li.card-new-form__inside__card-num__ul__li
+              %img{alt:"master", src:"//www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?732810650.jpg",width:"49",height:"20"}
+            %li.card-new-form__inside__card-num__ul__li
+              %img{alt:"saison", src:"//www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?732810650.jpg",width:"49",height:"20"}
+
+            %li.card-new-form__inside__card-num__ul__li
+              %img{alt:"jcb", src:"//www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?732810650.jpg",width:"49",height:"20"}
+            %li.card-new-form__inside__card-num__ul__li
+              %img{alt:"american", src:"//www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?732810650.jpg",width:"49",height:"20"}
+            %li.card-new-form__inside__card-num__ul__li
+              %img{alt:"diners", src:"//www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?732810650.jpg",width:"49",height:"20"}
+            %li.card-new-form__inside__card-num__ul__li
+              %img{alt:"discover", src:"//www-mercari-jp.akamaized.net/assets/img/card/discover.svg?732810650.jpg",width:"49",height:"20"}
+
+        .card-new-form__inside__expiration-date
+          = f.label :expiration_date,"有効期限",class:"card-new-form__inside__expiration-date__label"
+          %span.card-new-form__inside__expiration-date__span 必須
+
+          .card-new-form__inside__expiration-date__text
+            = f.select :expiration_date ,[["01","01"],["02","02"],["03","03"],["04","04"],["05","05"],["06","06"],["07","07"],["08","08"],["09","09"],["10","10"],["11","11"],["12","12"]],{} , class:"card-new-form__inside__expiration-date__text__select1"
+
+          
+
+
+
+= render "shared/footer"
