@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2019_07_24_105240) do
 
+
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "prefecture_id"
     t.string "city"
@@ -52,6 +53,7 @@ ActiveRecord::Schema.define(version: 2019_07_24_105240) do
     t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "shipping_method"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["prefecture_id"], name: "index_products_on_prefecture_id"
     t.index ["user_id"], name: "index_products_on_user_id"
