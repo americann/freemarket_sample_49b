@@ -35,7 +35,7 @@
         %td
           .productshow__table__name
             = link_to user_path(1) do
-              = @user.nickname
+              = @product.user.nickname
           .rate
             .rate__score
               %i.fas.fa-laugh
@@ -78,7 +78,7 @@
       %tr
         %th 配送の方法
         %td
-          = @product.name
+          = @product.shipping_method
       %tr
         %th 配送元地域
         %td 大阪
