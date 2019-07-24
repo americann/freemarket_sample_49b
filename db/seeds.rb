@@ -48,3 +48,19 @@ end
 grandchild_array.each do |grandchild|
   Category.create(name: grandchild[0] , parent_id: grandchild[1])
 end
+
+100.times do |i| 
+  Product.create(
+    name: "カバンです#{i}",
+    description: "カバンです#{i}カバンです#{i}カバンです#{i}カバンです#{i}カバンです#{i}カバンです#{i}カバンです#{i}カバンです#{i}カバンです#{i}カバンです#{i}カバンです#{i}カバンです#{i}カバンです#{i}カバンです#{i}カバンです#{i}カバンです#{i}カバンです#{i}カバンです#{i}カバンです#{i}カバンです#{i}",
+    state: "新品",
+    postage: "送料込み",  
+    shipping_date: "2~3",
+    price: "3000",
+    size: "S",
+    user_id: "#{i}",
+    prefecture_id:"#{i+1}",
+    category_id:"#{i+2}",
+    shipping_method: "ゆうゆうメルカリ便"
+  )
+end
