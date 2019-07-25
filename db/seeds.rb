@@ -56,9 +56,8 @@ Product.create(
   postage: "送料込み",  
   shipping_date: "2~3",
   price: "3000",
-  size: "S",
   user_id: "1",
   prefecture_id:"1",
-  category_id:"1",
+  category_id:"245",
   shipping_method: "ゆうゆうメルカリ便",
 )
