@@ -71,10 +71,17 @@
     <%= address_f.text_field :building_number , placeholder:'例）柳ビル103'%><br />
 
     <%= address_f.label :電話 %><br />
-    <%= address_f.number_field :phone_number , placeholder:'例）09012345678'%><br />
+    <%= address_f.text_field :phone_number , placeholder:'例）09012345678'%><br />
 
     <% end %>
   </div>
+
+  <div><%= f.fields_for :card do |card_f| %>
+      <%= card_f.label :カード番号 %><br />
+      <%= card_f.text_field :card_number, placeholder:'半角数字のみ' %><br />
+    <% end %>
+  </div>
+
 
   <div class="actions">
     <%= f.submit "次へ進む" %>
