@@ -54,8 +54,25 @@
   
 
   <div><%= f.fields_for :address do |address_form| %>
-    <%= address_form.label :zip_code %>
-    <%= address_form.text_field :zip_code %>
+    <%= address_form.label :郵便番号 %><br />
+    <%= address_form.number_field :zip_code, placeholder:'例）123ー4567' %><br />
+
+
+    <%= address_form.label :都道府県 %><br />
+    <%= address_form.collection_select :prefecture_id, Prefecture.all, :id, :name %><br />
+
+    <%= address_form.label :市区町村 %><br />
+    <%= address_form.text_field :city , placeholder:'例）横浜市緑区'%><br />
+
+    <%= address_form.label :番地 %><br />
+    <%= address_form.text_field :block , placeholder:'例）青山1-1-1'%><br />
+
+    <%= address_form.label :建物名 %><br />
+    <%= address_form.text_field :building_number , placeholder:'例）柳ビル103'%><br />
+
+    <%= address_form.label :電話 %><br />
+    <%= address_form.number_field :phone_number , placeholder:'例）09012345678'%><br />
+
     <% end %>
   </div>
 
