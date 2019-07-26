@@ -42,20 +42,22 @@
     <%= f.label :生年月日%><br />
   
 
-    <%= f.date_select(
+    <%= raw sprintf(
+        f.date_select( 
           :birthday,          
-          use_month_numbers: true, # jan, febとかじゃなくて数字で月を表現
-          start_year:     1930, # 何年から表示させるか
-          end_year:       (Time.now.year), # 何年まで表示させるか
-          default:        Date.new(1989, 1, 1), # 最初に表示されている年月日
-          date_separator: '') # 年月日を仕切る文字
+          use_month_numbers: true, 
+          start_year:     1930, 
+          end_year:       (Time.now.year),
+          default:        Date.new(1989, 1, 1), 
+          date_separator:    '%s'),
+           '年','月')+ '日'
    %>
-
+ </div>
   
 
   <div><%= f.fields_for :address do |address_f| %>
     <%= address_f.label :郵便番号 %><br />
-    <%= address_f.number_field :zip_code, placeholder:'例）123ー4567' %><br />
+    <%= address_f.text_field :zip_code, placeholder:'例）123ー4567' %><br />
 
 
     <%= address_f.label :都道府県 %><br />
@@ -71,7 +73,7 @@
     <%= address_f.text_field :building_number , placeholder:'例）柳ビル103'%><br />
 
     <%= address_f.label :電話 %><br />
-    <%= address_f.text_field :phone_number , placeholder:'例）09012345678'%><br />
+    <%= address_f.telephone_field :phone_number , placeholder:'例）09012345678'%><br />
 
     <% end %>
   </div>
@@ -79,6 +81,23 @@
   <div><%= f.fields_for :card do |card_f| %>
       <%= card_f.label :カード番号 %><br />
       <%= card_f.text_field :card_number, placeholder:'半角数字のみ' %><br />
+
+      <%= card_f.label :カード番号 %><br />
+
+      <%= 
+        card_f.date_select(
+          :expiration_date,
+          discard_day: true, 
+          start_year: Date.today.year, 
+          end_year: (Date.today.year+10), 
+          use_month_numbers: true )
+      %>
+          
+          <br />
+
+      <%= card_f.label :セキュリティコード %><br />
+      <%= card_f.text_field :card_number, placeholder:'カード背面4桁もしくは3桁の番号' %><br />
+
     <% end %>
   </div>
 
