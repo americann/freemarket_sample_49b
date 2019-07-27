@@ -63,7 +63,7 @@
               =f.label :発送元の地域, class:"delivery__form-box__group2__label2"
 
               .delivery__form-box__group2__select-wrap2
-                = f.collection_select :prefecture, Prefecture.all, :id, :name,{},class:"delivery__form-box__group2__select-wrap2__select-default2"
+                = f.collection_select :prefecture, Prefecture.all, class:"delivery__form-box__group2__select-wrap2__select-default2"
                  
                 %i.fa.fa-chevron-down.fa-lg
 
@@ -71,7 +71,7 @@
               =f.label :発送までの日数, class:"delivery__form-box__group3__label3" 
 
               .delivery__form-box__group3__select-wrap3
-                = f.select :name, [["---", "---"],["1~2日で発送", "1~2日で発送"], ["2~3日で発送", "2~3日で発送"],["4~7日で発送", "4~7日で発送"] ], {} , {class:"delivery__form-box__group3__select-wrap3__select-default3"}
+                = f.select :shipping_date, [["---", "---"],["1~2日で発送", "1~2日で発送"], ["2~3日で発送", "2~3日で発送"],["4~7日で発送", "4~7日で発送"] ], {} , {class:"delivery__form-box__group3__select-wrap3__select-default3"}
 
                 %i.fa.fa-chevron-down.fa-lg
 
