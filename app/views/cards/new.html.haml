@@ -33,12 +33,24 @@
 
           .card-new-form__inside__expiration-date__text
             = f.select :expiration_date ,[["01","01"],["02","02"],["03","03"],["04","04"],["05","05"],["06","06"],["07","07"],["08","08"],["09","09"],["10","10"],["11","11"],["12","12"]],{} , class:"card-new-form__inside__expiration-date__text__select1"
-            %i.card-new-form__inside__expiration-date__text__check
+            %i.fa.fa-chevron-down.fa-lg
             %span.card-new-form__inside__expiration-date__text__month 月
-          
-            = f.select :expiration_date ,[["01","01"],["02","02"],["03","03"],["04","04"],["05","05"],["06","06"],["07","07"],["08","08"],["09","09"],["10","10"],["11","11"],["12","12"]],{} , class:"card-new-form__inside__expiration-date__text__select1"
-            %i.card-new-form__inside__expiration-date__text__check
-            %span.card-new-form__inside__expiration-date__text__month 月
+                      
+            = f.select :expiration_date ,[["19","19"],["20","20"],["21","21"],["22","22"],["23","23"],["24","24"],["25","25"],["26","26"],["27","27"],["28","28"],["29","29"]],{} , class:"card-new-form__inside__expiration-date__text__select1"
+            %i.fa.fa-chevron-down.fa-lg
+            %span.card-new-form__inside__expiration-date__text__year 年
 
+          .card-new__inside__security_cord
+            = f.label :security_cord,"セキュリティコード",class:"card-new__inside__security_cord__label"
+            %span.card-new__inside__security_cord__span 必須
+            = f.text_field :card_number,class:"card-new__inside__security_cord__text",placeholder:"カード背面4桁もしくは3桁の番号",maxlength:"19"
+            
+            .card-new__inside__security_cord__question
+              %i.fas.fa-question-circle
+
+              %span.card-new__inside__security_cord__question__text カード裏面の番号とは?
+
+          .card-new__inside__security_cord__signup
+            = f.button "追加する" , class:"card-new__inside__security_cord__signup__btn" ,type: "submit"
 
 = render "shared/footer"
