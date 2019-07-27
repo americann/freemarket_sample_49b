@@ -51,13 +51,6 @@
           date_separator: '') # 年月日を仕切る文字
    %>
 
-  
-
-  <div><%= f.fields_for :address do |address_form| %>
-    <%= address_form.label :zip_code %>
-    <%= address_form.text_field :zip_code %>
-    <% end %>
-  </div>
 
   <div class="actions">
     <%= f.submit "次へ進む" %>
