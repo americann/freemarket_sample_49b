@@ -1,7 +1,7 @@
 .productshow
   .productshow__main
     .productshow__name 
-      おしゃれなカバン
+      = @product.name
 
     #wrap
       %ul#slider
@@ -34,7 +34,8 @@
           出品者
         %td
           .productshow__table__name
-            = link_to "yuki" ,user_path(1) 
+            = link_to user_path(1) do
+              = @product.user.nickname
           .rate
             .rate__score
               %i.fas.fa-laugh
@@ -64,43 +65,44 @@
         %td コーチ
       %tr
         %th 商品のサイズ
-        %td S
+        %td 
+          = @product.size
       %tr
         %th 商品の状態
-        %td やや傷や汚れあり
+        %td 
+          = @product.state
       %tr
         %th 配送料の負担
-        %td 送料込み（出品者負担）
+        %td 
+          = @product.postage
       %tr
         %th 配送の方法
-        %td ゆうゆうメルカリ便
+        %td
+          = @product.shipping_method
       %tr
         %th 配送元地域
-        %td 大阪
+        %td 
+          = @product.prefecture_id
       %tr
         %th 発送日の目安
-        %td 1~2日で発送
+        %td 
+          = @product.shipping_date
+          日で発送
   
   
     .productshow__price
       %span.productshow__price__yen
-        ¥3,000
+        ¥
+        = @product.price
       %span.productshow__price__tax
         (税込)
       %span.productshow__price__shopping-fee
-        送料込み
+        = @product.postage
     .productshow__shopping-botton
       = link_to '購入画面に進む',buy_confirmation_product_path
     .productshow__description
       %p.productshow__description__inner
-        人気のコーチ パッチワークシグネチャー×パイソン ショルダーバッグです♪(ᴖ◡ᴖ)♪ 
-        斜めがけ用のショルダーバッグで長さ調整可能
-
-        アウトレットファクトリー品ではなく直営店購入品です。
-        ヴィンテージに近いオールドコーチ期のレア品。
-
-        お値引きについては出品時から特価で出しておりますので行っておりません。
-        複数購入時のみご相談いただければ幸いです。
+        = @product.description
     %button.like
       %i.far.fa-heart
       %span
