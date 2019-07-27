@@ -1,5 +1,7 @@
 class Card < ApplicationRecord
-  validates :card_number, null:false
-  validates :expiration_date, null:false
-  validates :security_cord, null:false
+  validates :card_number, presence: true
+  validates :expiration_date, presence: true
+  validates :security_cord, presence: true
+
+  belongs_to :user
 end
