@@ -1,19 +1,33 @@
 class ProductsController < ApplicationController
-    def index
-    end
 
+  # before_action :move_to_index, except: :index
 
-    def show
-      @product = Product.find(params[:id])
-      @user = User.find(params[:id])
-    end
+  def index
+  end
 
-    def new
-      @product = Product.new
-    end
+  def create
+    Product.create(name: params[:name])
+  end
 
-    def buy_confirmation
-      @product = Product.find(params[:id])
-      @user = User.find(current_user.id)
-    end
+  def show
+    @product = Product.find(params[:id])
+    @user = User.find(params[:id])
+  end
+
+  def new
+    @product = Product.new
+
+  end
+
+  def buy_confirmation
+    @product = Product.find(params[:id])
+    @user = User.find(current_user.id)
+  end
+
+  # private
+  # def move_to_index
+  #   redirect_to action: :index unless user_signed_in?
+  # end
+
 end
+
