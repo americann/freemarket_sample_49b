@@ -12,8 +12,8 @@ Rails.application.routes.draw do
       get'identification' 
     end
   end
-  resources  :products, only:[:index , :new,:show]
-  resources  :users, only:[:index ,:show , :edit]
-  resources  :cards, only:[:index ,:new , :create]
+  resources  :products, only:[:index, :new, :show]
+  resources  :users, only:[:index, :show, :edit]
+  resources  :cards, only:[:index, :new, :create]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
