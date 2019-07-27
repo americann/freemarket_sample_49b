@@ -12,20 +12,26 @@
           = f.text_field :card_number,class:"card-new-form__inside__card-num__text",placeholder:"半角数字のみ",maxlength:"19"
           %ul.card-new-form__inside__card-num__ul
             %li.card-new-form__inside__card-num__ul__li
-              %img{alt:"visa", src:"//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?732810650.jpg",width:"49",height:"20"}
-            %li.card-new-form__inside__card-num__ul__li
-              %img{alt:"master", src:"//www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?732810650.jpg",width:"49",height:"20"}
-            %li.card-new-form__inside__card-num__ul__li
-              %img{alt:"saison", src:"//www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?732810650.jpg",width:"49",height:"20"}
+              = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?732810650.jpg' , size:'49x20',alt:"visa"
+
 
             %li.card-new-form__inside__card-num__ul__li
-              %img{alt:"jcb", src:"//www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?732810650.jpg",width:"49",height:"20"}
+              = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?732810650.jpg' , size:'49x20',alt:"master"
+
             %li.card-new-form__inside__card-num__ul__li
-              %img{alt:"american", src:"//www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?732810650.jpg",width:"49",height:"20"}
+              = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?732810650.jpg' , size:'49x20',alt:"saison"
+
             %li.card-new-form__inside__card-num__ul__li
-              %img{alt:"diners", src:"//www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?732810650.jpg",width:"49",height:"20"}
+              = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?732810650.jpg' , size:'49x20',alt:"jcb"
+
             %li.card-new-form__inside__card-num__ul__li
-              %img{alt:"discover", src:"//www-mercari-jp.akamaized.net/assets/img/card/discover.svg?732810650.jpg",width:"49",height:"20"}
+              = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?732810650.jpg' , size:'49x20',alt:"american"
+
+            %li.card-new-form__inside__card-num__ul__li
+              = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?732810650.jpg' , size:'49x20',alt:"diners"
+
+            %li.card-new-form__inside__card-num__ul__li
+              = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/discover.svg?732810650.jpg' , size:'49x20',alt:"discover"
 
         .card-new-form__inside__expiration-date
           = f.label :expiration_date,"有効期限",class:"card-new-form__inside__expiration-date__label"
