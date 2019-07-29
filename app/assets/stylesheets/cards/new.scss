@@ -130,6 +130,7 @@
       }
     }
   }
+
   .card-new__inside__security__cord {
     width: 343px;
     height: 93px;
@@ -179,8 +180,7 @@
 .card-new__inside__security__cord__js{
   width: 343px;
   height: 166px;
-  border:solid;
-  z-index: 1;
+  z-index: 2;
   padding: 16px;
   border-radius: 6px;
   background: #eee;
@@ -189,14 +189,10 @@
   text-align: center;
   display:none;
   &__p{
-    border:solid;
-    font-size:12px;
+    font-size:13px;
+    margin-bottom:10px;
   }
-
-
 }
-
-
 
 .card-new__inside__security__cord__signup {
     height: 50px;
@@ -231,7 +227,7 @@
     font-size: 18px;
   }
   .fas.fa-question-circle {
-    font-size: 20px;
+    font-size: 15px;
     color: #0099e8;
   }
 }
