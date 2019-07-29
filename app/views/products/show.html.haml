@@ -1,6 +1,6 @@
 .wrapper
-  = render 'shared/exhibition_button'
   = render 'shared/header'
+  = render 'shared/breadcrumbs'
 
 .productshow
   .productshow__main
@@ -79,14 +79,12 @@
         %th カテゴリー
         %td 
           レディース
-          .like
+          .productshow__table__detail
             %i.fa.fa-angle-right
-            %span
-              バッグ
-          .like
+            バッグ
+          .productshow__table__detail
             %i.fa.fa-angle-right
-            %span
-              ハンドバッグ
+            ハンドバッグ
       %tr
         %th ブランド
         %td コーチ
