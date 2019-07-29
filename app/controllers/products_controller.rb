@@ -6,7 +6,8 @@ class ProductsController < ApplicationController
   end
 
   def create
-    Product.create(name: params[:name])
+    @product = Product.create(product_params)
+    
   end
 
   def show
@@ -15,7 +16,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
-
+    @categories = Category.where(parent_id: nil)
   end
 
   def buy_confirmation
@@ -27,6 +28,11 @@ class ProductsController < ApplicationController
   # def move_to_index
   #   redirect_to action: :index unless user_signed_in?
   # end
+  private
+  def product_params
+    params.require(:product).permit(:name,:description, :state, :postage, :prefecture_id, :shipping_date, :price, :category_id).merge(user_id: current_user.id)
+  end
+
 
 end
 
