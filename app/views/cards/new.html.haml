@@ -46,17 +46,23 @@
             %i.fa.fa-chevron-down.fa-lg
             %span.card-new-form__inside__expiration-date__text__year 年
 
-          .card-new__inside__security_cord
-            = f.label :security_cord,"セキュリティコード",class:"card-new__inside__security_cord__label"
+          .card-new__inside__security__cord
+            = f.label :security_cord,"セキュリティコード",class:"card-new__inside__security__cord__label"
             %span.card-new__inside__security_cord__span 必須
-            = f.text_field :card_number,class:"card-new__inside__security_cord__text",placeholder:"カード背面4桁もしくは3桁の番号",maxlength:"19"
+            = f.text_field :card_number,class:"card-new__inside__security__cord__text",placeholder:"カード背面4桁もしくは3桁の番号",maxlength:"19"
             
-            .card-new__inside__security_cord__question
+            .card-new__inside__security__cord__question
               %i.fas.fa-question-circle
 
-              %span.card-new__inside__security_cord__question__text カード裏面の番号とは?
+              %span.card-new__inside__security__cord__question__text カード裏面の番号とは?
+          
 
-          .card-new__inside__security_cord__signup
-            = f.button "追加する" , class:"card-new__inside__security_cord__signup__btn" ,type: "submit"
+          .card-new__inside__security__cord__js
+            %p.card-new__inside__security__cord__js__p　カードの裏側を参照ください。
+            .card-new__inside__security__cord__js__image
+              = image_tag '//www-mercari-jp.akamaized.net/assets/img/signup/seq-card.png?2098311808.jpg' , size:'240x105',alt:"discover"
+
+          .card-new__inside__security__cord__signup
+            = f.button "追加する" , class:"card-new__inside__security__cord__signup__btn" ,type: "submit"
 
 = render "shared/footer"
