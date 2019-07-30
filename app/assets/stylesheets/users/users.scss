@@ -165,6 +165,7 @@ body{
         text-align: left;
         padding:10px;
         margin:24px;
+        margin-bottom: 0;
        
         
             &__item{
@@ -207,8 +208,7 @@ body{
     .content__mypage__tab input:checked + .content__mypage__tab__products__item{
         background-color: #fff;
         color: black;
-        border-top:solid 3px red;
-        
+        border-top:solid 3px red;   
     }
 
 

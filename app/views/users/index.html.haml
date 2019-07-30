@@ -99,20 +99,24 @@
               現在、やることリストはありません
 
 
-      .content__mypage__tab__products
+      %section.content__mypage__tab__products
         %h2
           購入した商品
-          
+      .content__mypage__tab   
+        %input#doing{checked: "checked",name: "content__mypage__tab__products__item",type: "radio"}
+        %label.content__mypage__tab__products__item{for: "doing"}取引中
+        %input#end{name: "content__mypage__tab__products__item",type: "radio"}/
+        %label.content__mypage__tab__products__item{for: "end"}過去の取引
 
-       %ul#doing.content__mypage__contents
+        %ul#doing.content__mypage__contents
           %li.content__mypage__contents__doing
             %figure
               = image_tag("#{asset_path "user/merucari.gray.png"}")
             .content__mypage__contents__doinglist__text
-                取引中の商品がありません
-      %ul#end.content__mypage__contents
-        %li.content__mypage__contents__end
+              取引中の商品がありません
+        %ul#end.content__mypage__contents
+          %li.content__mypage__contents__end
             %figure
-                = image_tag("#{asset_path "user/merucari.gray.png"}")
-              .content__mypage__contents__doinglist__text
-                  過去に取引した商品がありません
+              = image_tag("#{asset_path "user/merucari.gray.png"}")
+            .content__mypage__contents__doinglist__text
+              過去に取引した商品がありません
