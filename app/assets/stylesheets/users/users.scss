@@ -1,4 +1,3 @@
-
 body{
   background-repeat:no-repeat;
   padding:0;
@@ -21,7 +20,6 @@ body{
       color:#333; 
     }
     
-
     &__mypage__icon{
       background: url("user/mypage.jpg");
       position: relative;
@@ -66,7 +64,6 @@ body{
           max-width: 100%;
           height: auto;
         }
-
         
     }
     &__mypage__tab{
@@ -124,7 +121,6 @@ body{
           white-space: nowrap;
         }
         
-    
         &__doing {
           width: 100px;
           height: 100px;
@@ -161,11 +157,9 @@ body{
       height:60px;
       font-weight: bold;
       text-align: left;
-      padding:10px;
+      padding:20px;
       margin:24px;
-      margin-bottom: 0;
-       
-        
+      margin-bottom: 0; 
             &__item{
               width: calc(100%/2);
               background-color: #EEEEEE;
@@ -183,9 +177,6 @@ body{
             }
     }
         
-    
-    
-    
     input[type=radio] {
       display: none; 
       }
@@ -209,10 +200,7 @@ body{
       border-top:solid 3px red;   
     }
 
-
-
     .mypage-item-link {
-      
       display: block;
       min-height: 80px;
       padding: 16px;
@@ -244,7 +232,6 @@ body{
         padding: 30px 10px 20px 10px;
         font-size: 2em;
       }
-      
       &__body {
         margin: 1px 40px 0px 68px;
       }
@@ -267,7 +254,6 @@ body{
       }           
     }
 
-
     .mypage-go-list {
       padding: 16px;
         a {
@@ -280,5 +266,3 @@ body{
           text-align: center;
         }
     }
-
- 
