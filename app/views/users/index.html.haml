@@ -1,4 +1,4 @@
-+.default-container
+.default-container
   = render 'shared/header'
   = render 'shared/breadcrumbs'
   %main.container
@@ -90,3 +90,29 @@
                   
           .mypage-go-list
             %a{href: ""}一覧をみる
+
+        %ul#doinglist.content__mypage__contents
+          %li.content__mypage__contents__doinglist
+            %figure
+              = image_tag("#{asset_path "user/merucari.gray.png"}")
+            .content__mypage__contents__doinglist__text
+              現在、やることリストはありません
+
+
+      .content__mypage__tab__products
+        %h2
+          購入した商品
+          
+
+       %ul#doing.content__mypage__contents
+          %li.content__mypage__contents__doing
+            %figure
+              = image_tag("#{asset_path "user/merucari.gray.png"}")
+            .content__mypage__contents__doinglist__text
+                取引中の商品がありません
+      %ul#end.content__mypage__contents
+        %li.content__mypage__contents__end
+            %figure
+                = image_tag("#{asset_path "user/merucari.gray.png"}")
+              .content__mypage__contents__doinglist__text
+                  過去に取引した商品がありません
