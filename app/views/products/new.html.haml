@@ -15,9 +15,10 @@
           %p.form__upload__text 最大10枚までアップロードできます
           .form__upload__dropbox
             = f.text_area :images, class: "form__upload__dropbox__file"
+            %ul
             .form__upload__dropbox__visible 
               %ul
-                %li ドラッグアンドドロップ 
+                %li ドラッグアンドドロップ
                 %li またはクリックしてファイルをアップロード
               = f.file_field :images, class: 'hidden'
               

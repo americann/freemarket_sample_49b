@@ -91,6 +91,7 @@ body {
       margin-top: 20px;
       border: 1px dashed #ccc;
       text-align: center;
+      display:flex;
       cursor: pointer;
       &__file {
         background-color: transparent;
