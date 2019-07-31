@@ -30,7 +30,7 @@
           #mypage.content__mypage__contents__list
             
             %li#list
-              %a.mypage-item-link{href: ""}
+              = link_to '#', class:'mypage-item-link' do
                 %figure
                   = image_tag("#{asset_path "user/merucari.logo.jpg"}")
                 .mypage-item-link__body
@@ -42,7 +42,7 @@
                 %i.fa.fa-angle-right
 
             %li#list
-              %a.mypage-item-link{href: ""}
+              = link_to '#', class:'mypage-item-link' do
                 %figure
                   = image_tag("#{asset_path "user/merucari.logo.jpg"}")
                 .mypage-item-link__body
@@ -54,7 +54,7 @@
                 %i.fa.fa-angle-right
 
               %li#list
-                %a.mypage-item-link{href: ""}
+                = link_to '#', class:'mypage-item-link' do
                   %figure
                     = image_tag("#{asset_path "user/merucari.logo.jpg"}")
                   .mypage-item-link__body
@@ -66,7 +66,7 @@
                   %i.fa.fa-angle-right
               
               %li#list
-                %a.mypage-item-link{href: ""}
+                = link_to '#', class:'mypage-item-link' do
                   %figure
                     = image_tag("#{asset_path "user/merucari.logo.jpg"}")
                   .mypage-item-link__body
@@ -78,7 +78,7 @@
                   %i.fa.fa-angle-right
               
               %li#list
-                %a.mypage-item-link{href: ""}
+                = link_to '#', class:'mypage-item-link' do
                   %figure
                     = image_tag("#{asset_path "user/merucari.logo.jpg"}")
                   .mypage-item-link__body
@@ -90,7 +90,8 @@
                   %i.fa.fa-angle-right
                   
           .mypage-go-list
-            %a{href: ""}一覧をみる
+            = link_to '#' do
+              一覧をみる
 
         %ul#doinglist.content__mypage__contents
           %li.content__mypage__contents__doinglist
