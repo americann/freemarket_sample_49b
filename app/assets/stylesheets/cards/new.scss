@@ -130,7 +130,8 @@
       }
     }
   }
-  .card-new__inside__security_cord {
+
+  .card-new__inside__security__cord {
     width: 343px;
     height: 93px;
     margin: 24px 0 0;
@@ -175,13 +176,31 @@
       }
     }
   }
-  .card-new__inside__security_cord__signup {
+
+.card-new__inside__security__cord__js{
+  width: 343px;
+  height: 166px;
+  z-index: 2;
+  padding: 16px;
+  border-radius: 6px;
+  background: #eee;
+  color: #333;
+  line-height: 1.5;
+  text-align: center;
+  display:none;
+  &__p{
+    font-size:13px;
+    margin-bottom:10px;
+  }
+}
+
+.card-new__inside__security__cord__signup {
     height: 50px;
     width: 343px;
     margin-top: 32px;
     background: #e62017;
     color: #fff;
-    &__btn {
+  &__btn {
       background: #e62017;
       color: #fff;
       text-decoration: none;
@@ -208,7 +227,7 @@
     font-size: 18px;
   }
   .fas.fa-question-circle {
-    font-size: 20px;
+    font-size: 15px;
     color: #0099e8;
   }
 }

@@ -8,17 +8,19 @@
     .main__sell
       %h2.main__sell__text 商品の情報を入力
 
-      = form_for @product,html: { class: 'form' }  do |f|
+      = form_for @product,html: { class: 'form' } do |f|
 
         .form__upload
           %h3.form__upload__imgtext 出品画像
           %p.form__upload__text 最大10枚までアップロードできます
           .form__upload__dropbox
-            = f.text_area :name, class: "form__upload__dropbox__file"
-            %pre.form__upload__dropbox__visible 
-
-            ドラッグアンドドロップ 
-            %br またはクリックしてファイルをアップロード
+            = f.text_area :images, class: "form__upload__dropbox__file"
+            .form__upload__dropbox__visible 
+              %ul
+                %li ドラッグアンドドロップ 
+                %li またはクリックしてファイルをアップロード
+              = f.file_field :images, class: 'hidden'
+              
 
         .sell-content
           .sell-content__group1
@@ -137,4 +139,5 @@
 
       %p.footer__inner__c-mark  
         %small © 2019 Mercari
+
 
