@@ -1,3 +1,7 @@
+.wrapper
+  = render 'shared/header'
+  = render 'shared/breadcrumbs'
+
 .productshow
   .productshow__main
     .productshow__name 
@@ -15,8 +19,31 @@
           = image_tag('products/bag4.jpg')
         %li.slide-item
           = image_tag('products/bag5.jpg')
+        %li.slide-item
+          = image_tag('products/bag1.jpg')
+        %li.slide-item
+          = image_tag('products/bag2.jpg')
+        %li.slide-item
+          = image_tag('products/bag3.jpg')
+        %li.slide-item
+          = image_tag('products/bag4.jpg')
+        %li.slide-item
+          = image_tag('products/bag5.jpg')
+        
         
       %ul#thumbnail-list
+        %li.thumbnail-item
+          = image_tag('products/bag1.jpg')
+        %li.thumbnail-item
+          = image_tag('products/bag2.jpg')
+        %li.thumbnail-item
+          = image_tag('products/bag3.jpg')
+        %li.thumbnail-item
+          = image_tag('products/bag4.jpg')
+        %li.thumbnail-item
+          = image_tag('products/bag5.jpg')
+
+      %ul#thumbnail-list  
         %li.thumbnail-item
           = image_tag('products/bag1.jpg')
         %li.thumbnail-item
@@ -52,14 +79,12 @@
         %th カテゴリー
         %td 
           レディース
-          .like
+          .productshow__table__detail
             %i.fa.fa-angle-right
-            %span
-              バッグ
-          .like
+            バッグ
+          .productshow__table__detail
             %i.fa.fa-angle-right
-            %span
-              ハンドバッグ
+            ハンドバッグ
       %tr
         %th ブランド
         %td コーチ
@@ -118,3 +143,4 @@
         %textarea.textarea-default{name: "body", type: "text", value: ""}
       .comment__main__content__button
         = link_to 'コメントする','#'
+= render 'shared/footer'

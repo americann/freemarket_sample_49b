@@ -8,71 +8,73 @@
     .main__sell
       %h2.main__sell__text 商品の情報を入力
 
-      = form_for @product,html: { class: 'form' }  do |f|
+      = form_for @product,html: { class: 'form' } do |f|
 
         .form__upload
           %h3.form__upload__imgtext 出品画像
           %p.form__upload__text 最大10枚までアップロードできます
           .form__upload__dropbox
-            = f.text_area :name, class: "form__upload__dropbox__file"
-            %pre.form__upload__dropbox__visible 
-
-            ドラッグアンドドロップ 
-            %br またはクリックしてファイルをアップロード
+            = f.text_area :images, class: "form__upload__dropbox__file"
+            .form__upload__dropbox__visible 
+              %ul
+                %li ドラッグアンドドロップ 
+                %li またはクリックしてファイルをアップロード
+              = f.file_field :images, class: 'hidden'
+              
 
         .sell-content
           .sell-content__group1
-            = f.label :email,"商品名", class:"sell-content__group1__label"
-            = f.text_field :email, class: "sell-content__group1__input", placeholder:"商品名（必須 40文字まで)", value:""
+            = f.label :商品名, class:"sell-content__group1__label"
+            = f.text_field :name, class: "sell-content__group1__input", placeholder:"商品名（必須 40文字まで)", value:""
 
           .sell-content__group2
-            = f.label :email,"商品の説明", class:"sell-content__group2__label" #商品の説明
-      
-            = f.text_area :email , class:"sell-content__group2__input", placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", value:""
+            = f.label :商品の説明, class:"sell-content__group2__label" #商品の説明
+            = f.text_area :description, class:"sell-content__group2__input", placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", value:""
 
 
         .item-detail
           %h3.item-detail__sub-head 商品の詳細
           .item-detail__form-box
             .item-detail__form-box__group1
-              = f.label :email,"カテゴリー",class:"item-detail__form-box__group1__label1" #カテゴリー
+              = f.label :カテゴリー, class:"item-detail__form-box__group1__label1" #カテゴリー
 
               .item-detail__form-box__group1__select-wrap1
-                =f.select :name , [["---", "---"],["レディース", "レディース"], ["メンズ", "メンズ"],["ベビー・キッズ","ベビー・キッズ"],["住まい・インテリア・小物","住まい・インテリア・小物"],["本・音楽・ゲーム","本・音楽・ゲーム"],["おもちゃ・ホビー・グッズ","おもちゃ・ホビー・グッズ"],["コスメ・香水・美容","コスメ・香水・美容"],["家電・スマホ・カメラ","家電・スマホ・カメラ"],["スポーツ・レジャー","スポーツ・レジャー"],["ハンドメイド","ハンドメイド"],["チケット","チケット"],["自動車・オートバイ","自動車・オートバイ"],["その他","その他"] ],{} ,calss:"item-detail__form-box__group1__select-wrap1__select-default1"
+                -# =f.select :category_id, [["---", "---"],[1, "レディース"], [2, "メンズ"],[3,"ベビー・キッズ"],["住まい・インテリア・小物","住まい・インテリア・小物"],["本・音楽・ゲーム","本・音楽・ゲーム"],["おもちゃ・ホビー・グッズ","おもちゃ・ホビー・グッズ"],["コスメ・香水・美容","コスメ・香水・美容"],["家電・スマホ・カメラ","家電・スマホ・カメラ"],["スポーツ・レジャー","スポーツ・レジャー"],["ハンドメイド","ハンドメイド"],["チケット","チケット"],["自動車・オートバイ","自動車・オートバイ"],["その他","その他"] ],{} ,class:"item-detail__form-box__group1__select-wrap1__select-default1"
+                =f.collection_select :category_id, @categories, :id, :name,{prompt: "---"},class:"item-detail__form-box__group1__select-wrap1__select-default1"
                 %i.fa.fa-chevron-down.fa-lg
 
             .item-detail__form-box__group2
-              =f.label :email,"商品の状態",class:"item-detail__form-box__group2__label2"
+              =f.label :商品の状態, class:"item-detail__form-box__group2__label2"
 
               .item-detail__form-box__group2__select-wrap2
-                =f.select :name , [["---", "---"],["新品、未使用", "新品、未使用"], ["未使用に近い", "未使用に近い"],["目立った傷や汚れなし","目立った傷や汚れなし"],["やや傷や汚れあり","やや傷や汚れあり"],["傷や汚れあり","傷や汚れあり"],["全体的に状態が悪い","全体的に状態が悪い"] ], {} ,calss:"item-detail__form-box__group2__select-wrap2__select-default2"
+                =f.select :state, [["---", "---"],["新品、未使用", "新品、未使用"], ["未使用に近い", "未使用に近い"],["目立った傷や汚れなし","目立った傷や汚れなし"],["やや傷や汚れあり","やや傷や汚れあり"],["傷や汚れあり","傷や汚れあり"],["全体的に状態が悪い","全体的に状態が悪い"] ], {} ,class:"item-detail__form-box__group2__select-wrap2__select-default2"
                 %i.fa.fa-chevron-down.fa-lg
 
         .delivery
           %h3.delivery__sub-head 配送について
           .delivery__form-box
             .delivery__form-box__group1
-              =f.label :email,"配送料の負担",class:"delivery__form-box__group1__label1"
+              =f.label :配送料の負担 ,class:"delivery__form-box__group1__label1"
 
               .delivery__form-box__group1__select-wrap1
-                =f.select :name , [["---", "---"],["送料込み(出品者負担)", "送料込み(出品者負担)"],["着払い(購入者負担)", "着払い(購入者負担)"] ], {} , {class:"delivery__form-box__group1__select-wrap1__select-default1"}
+                =f.select :postage, [["---", "---"],["送料込み(出品者負担)", "送料込み(出品者負担)"],["着払い(購入者負担)", "着払い(購入者負担)"] ], {} , {class:"delivery__form-box__group1__select-wrap1__select-default1"}
                 %i.fa.fa-chevron-down.fa-lg
 
 
             
             .delivery__form-box__group2
-              =f.label :email,"発送元の地域",class:"delivery__form-box__group2__label2"
+              =f.label :発送元の地域, class:"delivery__form-box__group2__label2"
 
               .delivery__form-box__group2__select-wrap2
-                = f.collection_select :name, Prefecture.all, :id, :name,{},class:"delivery__form-box__group2__select-wrap2__select-default2"
+                = f.collection_select :prefecture_id, Prefecture.all, :id, :name,{prompt: "---"}, class:"delivery__form-box__group2__select-wrap2__select-default2"
                  
                 %i.fa.fa-chevron-down.fa-lg
 
             .delivery__form-box__group3
-              =f.label :email,"発送までの日数",class:"delivery__form-box__group3__label3" 
+              =f.label :発送までの日数, class:"delivery__form-box__group3__label3" 
 
               .delivery__form-box__group3__select-wrap3
-                = f.select :name , [["---", "---"],["1~2日で発送", "1~2日で発送"], ["2~3日で発送", "2~3日で発送"],["4~7日で発送", "4~7日で発送"] ], {} , {class:"delivery__form-box__group3__select-wrap3__select-default3"}
+                = f.select :shipping_date, [["---", "---"],["1~2日で発送", "1~2日で発送"], ["2~3日で発送", "2~3日で発送"],["4~7日で発送", "4~7日で発送"] ], {} , {class:"delivery__form-box__group3__select-wrap3__select-default3"}
 
                 %i.fa.fa-chevron-down.fa-lg
 
@@ -81,11 +83,11 @@
           .sale-price__form-box
             .sale-price__form-box__first
               .sale-price__form-box__first__inside
-                = f.label :email,"価格", class:"sale-price__form-box__first__inside__label"
+                = f.label :価格, class:"sale-price__form-box__first__inside__label"
 
                 .sale-price__form-box__first__inside__price
                   %p.sale-price__form-box__first__inside__price__text ¥
-                  = f.text_field :name , class:"sale-price__form-box__first__inside__price__input",placeholder:"例）300"
+                  = f.text_field :price, class:"sale-price__form-box__first__inside__price__input", placeholder:"例）300"
 
 
             .sale-price__form-box__second
@@ -102,7 +104,6 @@
           .sell-btn-box__inner
             %p.ban       
               = link_to"禁止されている出品","#"
-              ,
               = link_to"行為","#"
               を必ずご確認ください。
             %p.ban
@@ -116,7 +117,7 @@
               = link_to"加盟店規約","#"
               に同意したことになります。
 
-          =f.button  "出品する" , class:"sell-btn-box__btn" ,type: "submit"
+          =f.submit  "出品する" , class:"sell-btn-box__btn" 
           = link_to  "もどる",:back, {class:'sell-btn-box__link'}
           
 
@@ -138,4 +139,5 @@
 
       %p.footer__inner__c-mark  
         %small © 2019 Mercari
+
 
