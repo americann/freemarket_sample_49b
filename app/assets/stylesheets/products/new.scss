@@ -98,6 +98,7 @@ body {
       .image-container{
         display:flex;
         margin-right:10px;
+        flex-direction:row-reverse;
         .image-box{
           width:116px;
           height:162px;
