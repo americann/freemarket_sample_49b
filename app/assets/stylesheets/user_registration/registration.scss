@@ -1,6 +1,6 @@
 .single-container{
     background-color: #f5f5f5;
-    margin:0 auto;
+    // margin:0 auto;
     &__header{
         height:128px
     }
@@ -9,14 +9,13 @@
 .user-text{
     background-color: white;
     width: 700px;
-    margin: 0 auto;
+    // margin: 0 auto;
     &__topic{
-    text-align: center;
+    // text-align: center;
     font-size: 20px;
     font-weight:bold;
     padding: 32px;
     border-bottom: 0.03px solid #ccc;
-   
     }
 
     input{   
@@ -27,7 +26,6 @@
     background: #fff;
     line-height: 1.5;
     font-size: 16px;
-    
     }
 
     select{
@@ -38,7 +36,6 @@
         background: #fff;
         line-height: 1.5;
         font-size: 16px;
-
     }
 
     &__text{
@@ -64,13 +61,15 @@
 
     input{
     margin: 24px 0 0;
-    background: #ea352d;
+    cursor: pointer;
+    height: 48px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
     border: 1px solid #ea352d;
+    background: #e61f17;
+    line-height: 1.5;
+    font-size: 16px;
     color: #fff;
     width: 100%;
-    line-height: 48px;
-    font-size: 14px;
-    cursor: pointer;
     }
-
 }

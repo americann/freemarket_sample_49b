@@ -46,7 +46,7 @@
         .user-text__form__topic
           = f.label :お名前（全角）
           %br/
-        .user-text__input
+       
           = f.text_field :firstname, placeholder:'例）山田'
           = f.text_field :lastname, placeholder:'例）絢'
 
@@ -85,7 +85,7 @@
           .user-text__form__topic
             = address_f.label :都道府県
           .user-text__input
-            = address_f.collection_select :prefecture_id, Prefecture.all, :id, :name
+            = address_f.collection_select :prefecture_id, Prefecture.all, :id, :name,{prompt: "---"}
           
           .user-text__form__topic
             = address_f.label :市区町村
