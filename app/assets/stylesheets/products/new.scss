@@ -526,6 +526,14 @@ body {
   }
 }
 
+
+
+
+
+
+
+
+
 //マウスがのった時だけリンク下線つく
 .footer__inner__links a:hover {
   text-decoration: underline;
@@ -574,16 +582,16 @@ body {
         float: right;
       }
     }
-    &__logo {
-      width: 80px;
-      height: 65px;
-      margin: 40px auto 0;
-      display: block;
-    }
+  
     &__c-mark {
       margin: 8px 0 0;
       font-size: 13px;
       text-align: center;
     }
   }
+}
+
+.single__footer{
+  margin:0 auto;
+  padding: 40px 180px;
 }
