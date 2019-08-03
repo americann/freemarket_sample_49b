@@ -1,5 +1,6 @@
 .single-container
   .single-container__header
+    = image_tag("#{asset_path "header/logo.svg"}")
   .user-text
     .user-text__topic
       会員情報入力
@@ -72,7 +73,7 @@
             default:        Date.new(1989, 1, 1), |
             date_separator:    '%s'),             |
             '年','月')+ '日'                         |
-
+          
    
       
         = f.fields_for :address do |address_f|
@@ -80,13 +81,16 @@
           .user-text__form__topic       
             = address_f.label :郵便番号
           .user-text__input
-            = address_f.text_field :zip_code, placeholder:'例）123ー4567'
+            = address_f.number_field :zip_code, placeholder:'例）123ー4567'
 
           .user-text__form__topic
             = address_f.label :都道府県
-          .user-text__input
-            = address_f.collection_select :prefecture_id, Prefecture.all, :id, :name,{prompt: "---"}
-          
+        
+          .user-text__select
+            = address_f.collection_select :prefecture_id, Prefecture.all, :id, :name,{prompt: "---"},class:"user-text__select__prefecture"
+            %i.fa.fa-chevron-down.fa-lg
+
+        
           .user-text__form__topic
             = address_f.label :市区町村
           .user-text__input
@@ -107,10 +111,13 @@
           .user-text__form__topic
             = address_f.label :電話
           .user-text__input  
-            = address_f.telephone_field :phone_number , placeholder:'例）09012345678'
+            = address_f.number_field :phone_number , placeholder:'例）09012345678'
           
-        .user-text__text
-          「次へ進む」のボタンを押すことにより、利用規約に同意したものとみなします
+        .text-center
+          「次へ進む」のボタンを押すことにより、
+          %p.agreement
+            = link_to"利用契約","#"
+            に同意したものとみなします
 
         .actions
           = f.submit "次へ進む"
