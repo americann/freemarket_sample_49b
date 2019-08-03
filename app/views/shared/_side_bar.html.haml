@@ -96,5 +96,6 @@
                     %i.fa.fa-angle-right
             %li
                 .mypage-nav__setting__list
-                = link_to "ログアウト", destroy_user_session_path, method: :delete
-                %i.fa.fa-angle-right
+                    = link_to logout_user_path(1), class:"mypage-nav__setting__list" do
+                        ログアウト
+                        %i.fa.fa-angle-right
