@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources  :users do 
     member do
       get'identification' 
+      get'logout'
     end
   end
   resources  :products, only:[:index, :new, :show]
