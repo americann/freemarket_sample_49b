@@ -7,8 +7,11 @@
   
     .logout
       .logout__button
-        = button_to "ログアウト", destroy_user_session_path, method: :delete
+        = link_to "ログアウト", destroy_user_session_path, method: :delete
         
 = render 'shared/footer'
       
 
+
+
+    
