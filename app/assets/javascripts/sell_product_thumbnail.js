@@ -48,6 +48,7 @@ return html;
     if(boxLength == 5){
       $(".form__upload").append(formBox);
       $("#top-dropbox").css("display","none");
+      $(".sell-content").css("margin-top","162px");
     }
     });
   });
