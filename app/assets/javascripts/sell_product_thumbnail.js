@@ -21,15 +21,22 @@ $(document).on("turbolinks:load", function(){
                 </p>
                 </div>
                 </div>`
-return html;
+    return html;
+  }
+  function inputFile(){
+    var html = `<input class="hidden" type="file" name="product[images]" id="product_images" />`
+    return html;
   }
   $(function() {
     // アップロードするファイルを選択
-    $('.hidden').change(function(){
+    $(document).on("change",".hidden", function(){
       // 画像データの取得
       var file = $(this).prop('files')[0];
       // console.log(file);
       // 画像以外は処理を停止
+      $(".hidden").css("display","none");
+      $(".form__upload__dropbox__visible").append(inputFile);
+      
       if (! file.type.match('image.*')) {
         // クリア
         $(this).val('');
@@ -42,6 +49,7 @@ return html;
       var reader = new FileReader();
       reader.onload = function() {
       $('#img').attr('src', reader.result);
+      console(reader.result);
     }
     reader.readAsDataURL(file);
     var boxLength =($(".image-box").length);
