@@ -1,3 +1,69 @@
+// 2バージョン
+$(document).on("turbolinks:load", function(){
+  function buildHTML(file){
+    var html = `<li class="image-box">
+                  <img id="img2"></img>
+                  <div class="button">
+                    <a class="edit">編集</a>
+                    <a class="delete">削除</a>
+                  </div>
+                </li>`
+    return html;
+  }
+  function formBox(){
+    var html = `<div class='form__upload__dropbox'>
+                <ul class='image-container'>
+                </ul>
+                <div class='form__upload__dropbox__visible'>
+                <input class="hidden2" type="file" name="product[images]" id="product_images" />
+                <p>
+                ドラッグアンドドロップ
+                またはクリックしてファイルをアップロード
+                </p>
+                </div>
+                </div>`
+    return html;
+  }
+  function inputFile(){
+    var html = `<input class="hidden2" type="file" name="product[images]" id="product_images" />`
+    return html;
+  }
+  $(function() {
+    // アップロードするファイルを選択
+    $(document).on("change",".hidden2", function(){
+      // 画像データの取得
+      var file = $(this).prop('files')[0];
+      // console.log(file);
+      // 画像以外は処理を停止
+      // $(".hidden").css("display","none");
+      // $(".form__upload__dropbox__visible").append(inputFile);
+      
+      if (! file.type.match('image.*')) {
+        // クリア
+        $(this).val('');
+        $(this).html('');
+        return;
+      }
+      // 画像表示
+      $(".image-container").append(buildHTML(file));
+      // 仮
+      var reader = new FileReader();
+      reader.onload = function() {
+        $('#img2').attr('src', reader.result);
+        console(reader.result);
+      }
+    reader.readAsDataURL(file);
+    var boxLength =($(".image-box").length);
+    if(boxLength == 5){
+      $(".form__upload").append(formBox);
+      $("#top-dropbox").css("display","none");
+      $(".sell-content").css("margin-top","162px");
+      }
+    });
+  });
+}); 
+// // 2バージョン
+
 $(document).on("turbolinks:load", function(){
   function buildHTML(file){
     var html = `<li class="image-box">
@@ -14,7 +80,7 @@ $(document).on("turbolinks:load", function(){
                 <ul class='image-container'>
                 </ul>
                 <div class='form__upload__dropbox__visible'>
-                <input class="hidden" type="file" name="product[images]" id="product_images" />
+                <input class="hidden2" type="file" name="product[images]" id="product_images" />
                 <p>
                 ドラッグアンドドロップ
                 またはクリックしてファイルをアップロード
@@ -34,8 +100,8 @@ $(document).on("turbolinks:load", function(){
       var file = $(this).prop('files')[0];
       // console.log(file);
       // 画像以外は処理を停止
-      $(".hidden").css("display","none");
-      $(".form__upload__dropbox__visible").append(inputFile);
+      // $(".hidden").css("display","none");
+      // $(".form__upload__dropbox__visible").append(inputFile);
       
       if (! file.type.match('image.*')) {
         // クリア
@@ -48,27 +114,19 @@ $(document).on("turbolinks:load", function(){
       // 仮
       var reader = new FileReader();
       reader.onload = function() {
-      $('#img').attr('src', reader.result);
-      console(reader.result);
-    }
+        $('#img').attr('src', reader.result);
+        console(reader.result);
+      }
     reader.readAsDataURL(file);
     var boxLength =($(".image-box").length);
     if(boxLength == 5){
       $(".form__upload").append(formBox);
       $("#top-dropbox").css("display","none");
       $(".sell-content").css("margin-top","162px");
-    }
+      }
     });
   });
-
-  
-
 }); 
-
-
-
-
-
 
 // // 複数
 // $(function() {
