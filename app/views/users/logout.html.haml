@@ -1,0 +1,12 @@
+.default-container
+  = render 'shared/header'
+  = render 'shared/breadcrumbs'
+  = render 'shared/exhibition_button'
+  .container
+    = render "shared/side_bar"
+  
+    .logout
+      .logout__button
+        = link_to "ログアウト", destroy_user_session_path, method: :delete
+        
+= render 'shared/footer'
