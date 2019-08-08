@@ -12,7 +12,9 @@ body {
   width: 100%;
 }
 
-
+.hidden, .hidden2 {
+  display:none;
+}
 //チェックアイコン
 .fa.fa-chevron-down.fa-lg {
   position: absolute;

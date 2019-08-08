@@ -15,9 +15,10 @@
           %p.form__upload__text 最大10枚までアップロードできます
           .form__upload__dropbox
             %ul.image-container
-            .form__upload__dropbox__visible{id: "top-dropbox"}
-              = f.file_field :images, class: 'hidden'
-              = f.file_field :images, class: 'hidden2'
+            %label.form__upload__dropbox__visible{id: "top-dropbox",for: "hidden"}
+              = f.file_field :images, class: 'hidden' ,id:'hidden'
+            %label.form__upload__dropbox__visible{id: "top-dropbox2",for: "hidden2"}
+              = f.file_field :images, class: 'hidden2' ,id:'hidden2'
               %p 
                 ドラッグアンドドロップ
                 またはクリックしてファイルをアップロード
