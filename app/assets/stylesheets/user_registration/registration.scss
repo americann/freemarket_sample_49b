@@ -36,6 +36,15 @@
   width: 100%;
   }
 
+  &__birthday{
+    position: relative;
+    &__tab{
+
+     position: absolute; 
+    }
+
+  }
+
   &__select {
     margin: 8px 0 0;
     position: relative;
@@ -117,13 +126,40 @@ select{
   line-height: 1.5;
   font-size: 16px;
   cursor: pointer;
+  -webkit-appearance: none;
 }
 
 .text-center{
   text-align: center;
   font-size:13px;
-  padding:20px;
   padding-bottom:0;
   line-height: 1.5;
   color:#333333;
+  margin: 24px;
+}
+
+.error_message{
+  color:#ea352d;
+  margin: 8px 8px 0;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+.text-comment{
+  color:gray;
+  margin:5px;
+  font-size:13px;
+  line-height: 1.5;
+}
+
+#button{
+  margin: 24px 0 0;
+  cursor: pointer;
+  height: 48px;
+  padding: 10px 16px 8px;
+  border: 1px solid #ea352d;
+  background: #e61f17;
+  line-height: 1.5;
+  font-size: 16px;
+  color: #fff;
 }
