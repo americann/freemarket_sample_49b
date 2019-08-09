@@ -2,10 +2,7 @@
   %header.header-new
     %h1.header-new__logo
       = link_to root_path, class:'container__logo__link' do
-        = image_tag ("#{asset_path "products/new/logo.svg"}")
-
-        
-
+        = image_tag("#{asset_path "products/new/logo1.png"}",class:"new-logo-icon")
   .main
     .main__sell
       %h2.main__sell__text 商品の情報を入力
@@ -157,7 +154,7 @@
 
       .footer__inner__logo
         = link_to root_path,class:'footer-inner__logo__link' do
-          = image_tag ("#{asset_path "products/new/logo-gray.svg"}")
+          = image_tag("#{asset_path "products/new/logo2.png"}",class:"new-logo2-icon")
 
       %p.footer__inner__c-mark  
         %small © 2019 Mercari

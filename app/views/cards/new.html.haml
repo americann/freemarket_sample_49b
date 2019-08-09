@@ -14,25 +14,25 @@
           = f.text_field :card_number,class:"card-new-form__inside__card-num__text",placeholder:"半角数字のみ",maxlength:"19"
           %ul.card-new-form__inside__card-num__ul
             %li.card-new-form__inside__card-num__ul__li
-              = image_tag("#{asset_path "cards/new/visa.svg"}",class:"card-icon")
+              = image_tag("#{asset_path "cards/new/visa.png"}",class:"visa-icon")
 
             %li.card-new-form__inside__card-num__ul__li
-              = image_tag("#{asset_path "cards/new/master-card.svg"}",class:"card-icon")
+              = image_tag("#{asset_path "cards/new/master-card.png"}",class:"master-icon")
 
             %li.card-new-form__inside__card-num__ul__li
-              = image_tag("#{asset_path "cards/new/saison-card.svg"}",class:"card-icon")
+              = image_tag("#{asset_path "cards/new/saison-card.png"}",class:"saison-icon")
 
             %li.card-new-form__inside__card-num__ul__li
-              = image_tag("#{asset_path "cards/new/jcb.svg"}",class:"card-icon")
+              = image_tag("#{asset_path "cards/new/jcb.png"}",class:"jcb-icon")
 
             %li.card-new-form__inside__card-num__ul__li
-              = image_tag("#{asset_path "cards/new/american_express.svg"}",class:"card-icon")
+              = image_tag("#{asset_path "cards/new/american_express.png"}",class:"american-icon")
 
             %li.card-new-form__inside__card-num__ul__li
-              = image_tag("#{asset_path "cards/new/dinersclub.svg"}",class:"card-icon")
+              = image_tag("#{asset_path "cards/new/dinersclub.png"}",class:"diners-icon")
 
             %li.card-new-form__inside__card-num__ul__li
-              = image_tag("#{asset_path "cards/new/discover.svg"}",class:"card-icon")
+              = image_tag("#{asset_path "cards/new/discover.png"}",class:"discover-icon")
 
         .card-new-form__inside__expiration-date
           = f.label :expiration_date,"有効期限",class:"card-new-form__inside__expiration-date__label"
