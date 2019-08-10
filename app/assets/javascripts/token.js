@@ -11,7 +11,19 @@ $(document).on('click','(".card-new__inside__security__cord__signup__btn")', fun
   };
   Payjp.createToken(card, function(status, response) {
     if (status == 200) {
-      //トークン作成成功時の処理
+      var token = response.id;
+      $.ajax({
+        url: cards_path,
+        type: "POST",
+        data: { token: token },
+        dataType: 'json',
+      })
+      .done(function(){
+        //非同期通信失敗時の処理
+      })
+      .fail(function(){
+        //非同期通信失敗時の処理
+      })
     }
     else {
       //トークン作成失敗時の処理
