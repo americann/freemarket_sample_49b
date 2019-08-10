@@ -1,12 +1,13 @@
+
 $(function(){
-$(document).on('click','(登録ボタンのIDやクラス名)', function(e) {
+$(document).on('click','(".card-new__inside__security__cord__signup__btn")', function(e) {　//登録ボタンのIDやクラス名
   e.preventDefault();
-  Payjp.setPublicKey('（Pay.jpを登録した時に取得できる公開鍵）');
+  Payjp.setPublicKey('（pk_test_d7a950435be908a5fbe46bd8）'); //payjp API テスト秘密鍵を入力
   var card = {
-    number: parseInt($("（カード番号入力欄のIDやクラス名）").val()),
-    cvc: parseInt($("（セキュリティーコード入力欄のIDやクラス名）").val()),
-    exp_month: parseInt($("（有効月入力欄のIDやクラス名）").val()),
-    exp_year: parseInt($("（有効年入力欄のIDやクラス名）").val())
+    number: parseInt($(".card-new-form__inside__card-num__text").val()), //カード番号入力欄
+    cvc: parseInt($(".card-new__inside__security__cord__text").val()),　//セキュリティーコード入力欄のIDやクラス名
+    exp_month: parseInt($(".card-new-form__inside__expiration-date__text__select1").val()), //有効月入力欄のIDやクラス名
+    exp_year: parseInt($(".card-new-form__inside__expiration-date__text__select1").val())　//有効年入力欄のIDやクラス名
   };
   Payjp.createToken(card, function(status, response) {
     if (status == 200) {
