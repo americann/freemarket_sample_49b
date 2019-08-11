@@ -1,6 +1,35 @@
 .single-container
   .single-container__header
-    = image_tag("#{asset_path "header/logo.svg"}")
+    %h1
+      = image_tag("#{asset_path "header/logo.svg"}")
+    %ol.stepBar#step1
+      %li.visited
+        %span 
+        = succeed "会員情報" do
+          %br/
+      %li
+        %span 
+        = succeed "お届け先住所入力" do
+          %br/
+      %li
+        %span 
+        = succeed "完了" do
+          %br
+
+    %ol.stepBar#step2
+      %li.visited
+        %span
+        = succeed "会員情報" do
+          %br/
+      %li.visited
+        %span 
+        = succeed "お届け先住所入力" do
+          %br/
+      %li
+        %span 
+        = succeed "完了" do
+          %br/
+
   .user-text
     .user-text__topic
       会員情報入力
@@ -147,6 +176,7 @@
                 %ul
                   -resource.address.errors.full_messages_for(:prefecture_id).each do|message|
                     .error_message= message
+                    
 
 
             .user-text__form__topic
@@ -199,5 +229,3 @@
   
     %p.footer__inner__c-mark  
       %small © 2019 Mercari
-
-#bar
