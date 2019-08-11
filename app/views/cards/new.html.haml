@@ -6,7 +6,7 @@
   .card-new-page__main
     %h2.card-new-page__main__title クレジットカード情報入力
 
-    = form_for @card,html: { class: "card-new-form" }  do |f|
+    = form_with url: payjp_cards_path , class: "card-new-form", local: true do |f|
       .card-new-form__inside
         .card-new-form__inside__card-num
           = f.label :card_number,"カード番号",class:"card-new-form__inside__card-num__label"
@@ -50,7 +50,7 @@
           .card-new__inside__security__cord
             = f.label :security_cord,"セキュリティコード",class:"card-new__inside__security__cord__label"
             %span.card-new__inside__security_cord__span 必須
-            = f.text_field :card_number,class:"card-new__inside__security__cord__text",placeholder:"カード背面4桁もしくは3桁の番号",maxlength:"19"
+            = f.text_field :security_cord ,class:"card-new__inside__security__cord__text",placeholder:"カード背面4桁もしくは3桁の番号",maxlength:"19"
             
             .card-new__inside__security__cord__question
               %i.fas.fa-question-circle
