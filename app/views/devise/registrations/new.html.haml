@@ -64,7 +64,25 @@
       %br/
       = address_f.telephone_field :phone_number , placeholder:'例）09012345678'
       %br/
-      
+  %div
+    = f.fields_for :card do |card_f|
+      = card_f.label :カード番号
+      %br/
+      = card_f.text_field :card_number, placeholder:'半角数字のみ'
+      %br/
+      = card_f.label :カード番号
+      %br/
+      = card_f.date_select(             |
+        :expiration_date,               |
+        discard_day: true,              |
+        start_year: Date.today.year,    |
+        end_year: (Date.today.year+10), |
+        use_month_numbers: true )       |
+      %br/
+      = card_f.label :セキュリティコード
+      %br/
+      = card_f.text_field :card_number, placeholder:'カード背面4桁もしくは3桁の番号'
+      %br/
   .actions
     = f.submit "次へ進む"
 = render "devise/shared/links"
