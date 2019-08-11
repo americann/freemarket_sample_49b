@@ -2,8 +2,7 @@
   %header.header-new
     %h1.header-new__logo
       = link_to root_path, class:'container__logo__link' do
-        = image_tag('//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1905591235.jpg')
-
+        = image_tag("#{asset_path "products/new/logo1.png"}",class:"new-logo-icon")
   .main
     .main__sell
       %h2.main__sell__text 商品の情報を入力
@@ -45,37 +44,57 @@
           %h3.item-detail__sub-head 商品の詳細
           .item-detail__form-box
             .item-detail__form-box__group1
-              = f.label :カテゴリー, class:"item-detail__form-box__group1__label1" #カテゴリー
-
+              = f.label :カテゴリー, class:"item-detail__form-box__group1__label" #カテゴリー
               .item-detail__form-box__group1__select-wrap1
-                -# =f.select :category_id, [["---", "---"],[1, "レディース"], [2, "メンズ"],[3,"ベビー・キッズ"],["住まい・インテリア・小物","住まい・インテリア・小物"],["本・音楽・ゲーム","本・音楽・ゲーム"],["おもちゃ・ホビー・グッズ","おもちゃ・ホビー・グッズ"],["コスメ・香水・美容","コスメ・香水・美容"],["家電・スマホ・カメラ","家電・スマホ・カメラ"],["スポーツ・レジャー","スポーツ・レジャー"],["ハンドメイド","ハンドメイド"],["チケット","チケット"],["自動車・オートバイ","自動車・オートバイ"],["その他","その他"] ],{} ,class:"item-detail__form-box__group1__select-wrap1__select-default1"
-                =f.collection_select :category_id, @categories, :id, :name,{prompt: "---"},class:"item-detail__form-box__group1__select-wrap1__select-default1"
+                = f.collection_select :category_id, @parent, :id, :name,{prompt: "---"},class:"category__box__parent item-detail__form-box__group__select-wrap__select-default"
+                %i.fa.fa-chevron-down.fa-lg
+
+              .item-detail__form-box__group1__select-wrap2
+                = f.collection_select :category_id, @children, :id, :name,{prompt: "---"},class:"category__box__child item-detail__form-box__group__select-wrap__select-default"
+                %i.fa.fa-chevron-down.fa-lg
+
+              .item-detail__form-box__group1__select-wrap3
+                = f.collection_select :category_id, @grand_children, :id, :name,{prompt: "---"},class:"category__box__grandchild item-detail__form-box__group__select-wrap__select-default"
                 %i.fa.fa-chevron-down.fa-lg
 
             .item-detail__form-box__group2
-              =f.label :商品の状態, class:"item-detail__form-box__group2__label2"
-
-              .item-detail__form-box__group2__select-wrap2
-                =f.select :state, [["---", "---"],["新品、未使用", "新品、未使用"], ["未使用に近い", "未使用に近い"],["目立った傷や汚れなし","目立った傷や汚れなし"],["やや傷や汚れあり","やや傷や汚れあり"],["傷や汚れあり","傷や汚れあり"],["全体的に状態が悪い","全体的に状態が悪い"] ], {} ,class:"item-detail__form-box__group2__select-wrap2__select-default2"
+              = f.label :サイズ, class:"item-detail__form-box__group2__label"
+              .item-detail__form-box__group2__select-wrap
+                = f.select :size, [["---", "---"],["XXS以下", "XXS以下"], ["XS(SS)", "XS(SS)"],["S","S"],["M","M"],["L","L"],["XL(LL)","XL(LL)"],["2XL(3L)","2XL(3L)"],["3XL(4L)","3XL(4L)"],["4XL(5L以上)","4XL(5L以上)"],["FREE SIZE","FREE SIZE"] ], {} ,class:"item-detail__form-box__group__select-wrap__select-default"
                 %i.fa.fa-chevron-down.fa-lg
+
+
+            .item-detail__form-box__group3
+              = f.label :ブランド, class:"item-detail__form-box__group3__label"
+              .item-detail__form-box__group3__select-wrap
+                -# =f.select :brand, 
+                %i.fa.fa-chevron-down.fa-lg
+
+
+            .item-detail__form-box__group4
+              = f.label :商品の状態, class:"item-detail__form-box__group3__label"
+              .item-detail__form-box__group4__select-wrap
+                = f.select :state, [["---", "---"],["新品、未使用", "新品、未使用"], ["未使用に近い", "未使用に近い"],["目立った傷や汚れなし","目立った傷や汚れなし"],["やや傷や汚れあり","やや傷や汚れあり"],["傷や汚れあり","傷や汚れあり"],["全体的に状態が悪い","全体的に状態が悪い"] ], {} ,class:"item-detail__form-box__group__select-wrap__select-default"
+                %i.fa.fa-chevron-down.fa-lg
+
 
         .delivery
           %h3.delivery__sub-head 配送について
           .delivery__form-box
             .delivery__form-box__group1
-              =f.label :配送料の負担 ,class:"delivery__form-box__group1__label1"
+              = f.label :配送料の負担 , class:"delivery__form-box__group1__label1"
 
               .delivery__form-box__group1__select-wrap1
-                =f.select :postage, [["---", "---"],["送料込み(出品者負担)", "送料込み(出品者負担)"],["着払い(購入者負担)", "着払い(購入者負担)"] ], {} , {class:"delivery__form-box__group1__select-wrap1__select-default1"}
+                = f.select :postage, [["---", "---"],["送料込み(出品者負担)", "送料込み(出品者負担)"],["着払い(購入者負担)", "着払い(購入者負担)"] ], {} , class:"item-detail__form-box__group__select-wrap__select-default"
                 %i.fa.fa-chevron-down.fa-lg
 
 
             
             .delivery__form-box__group2
-              =f.label :発送元の地域, class:"delivery__form-box__group2__label2"
+              = f.label :発送元の地域, class:"delivery__form-box__group2__label2"
 
               .delivery__form-box__group2__select-wrap2
-                = f.collection_select :prefecture_id, Prefecture.all, :id, :name,{prompt: "---"}, class:"delivery__form-box__group2__select-wrap2__select-default2"
+                = f.collection_select :prefecture_id, Prefecture.all, :id, :name,{prompt: "---"}, class:"item-detail__form-box__group__select-wrap__select-default"
                  
                 %i.fa.fa-chevron-down.fa-lg
 
@@ -83,9 +102,10 @@
               =f.label :発送までの日数, class:"delivery__form-box__group3__label3" 
 
               .delivery__form-box__group3__select-wrap3
-                = f.select :shipping_date, [["---", "---"],["1~2日で発送", "1~2日で発送"], ["2~3日で発送", "2~3日で発送"],["4~7日で発送", "4~7日で発送"] ], {} , {class:"delivery__form-box__group3__select-wrap3__select-default3"}
+                = f.select :shipping_date, [["---", "---"],["1~2日で発送", "1~2日で発送"], ["2~3日で発送", "2~3日で発送"],["4~7日で発送", "4~7日で発送"] ], {} , class:"item-detail__form-box__group__select-wrap__select-default"
 
                 %i.fa.fa-chevron-down.fa-lg
+
 
         .sale-price
           %h3.sale-price__sub-head 販売価格(300〜9,999,999)
@@ -108,7 +128,6 @@
               .sale-price__form-box__third__mark1
 
 
-
         .sell-btn-box
           .sell-btn-box__inner
             %p.ban       
@@ -127,7 +146,7 @@
               に同意したことになります。
 
           =f.submit  "出品する" , class:"sell-btn-box__btn" 
-          = link_to  "もどる",:back, {class:'sell-btn-box__link'}
+          = link_to  "もどる", :back, class:'sell-btn-box__link'
           
 
   %footer.footer-terms
@@ -144,9 +163,7 @@
 
       .footer__inner__logo
         = link_to root_path,class:'footer-inner__logo__link' do
-          = image_tag('//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?270352715.jpg')
+          = image_tag("#{asset_path "products/new/logo2.png"}",class:"new-logo2-icon")
 
       %p.footer__inner__c-mark  
         %small © 2019 Mercari
-
-
