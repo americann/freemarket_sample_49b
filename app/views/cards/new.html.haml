@@ -14,25 +14,25 @@
           = f.text_field :card_number,class:"card-new-form__inside__card-num__text",placeholder:"半角数字のみ",maxlength:"19"
           %ul.card-new-form__inside__card-num__ul
             %li.card-new-form__inside__card-num__ul__li
-              = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?732810650.jpg' , size:'49x20',alt:"visa"
+              = image_tag("#{asset_path "cards/new/visa.png"}",class:"visa-icon")
 
             %li.card-new-form__inside__card-num__ul__li
-              = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?732810650.jpg' , size:'49x20',alt:"master"
+              = image_tag("#{asset_path "cards/new/master-card.png"}",class:"master-icon")
 
             %li.card-new-form__inside__card-num__ul__li
-              = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?732810650.jpg' , size:'49x20',alt:"saison"
+              = image_tag("#{asset_path "cards/new/saison-card.png"}",class:"saison-icon")
 
             %li.card-new-form__inside__card-num__ul__li
-              = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?732810650.jpg' , size:'49x20',alt:"jcb"
+              = image_tag("#{asset_path "cards/new/jcb.png"}",class:"jcb-icon")
 
             %li.card-new-form__inside__card-num__ul__li
-              = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?732810650.jpg' , size:'49x20',alt:"american"
+              = image_tag("#{asset_path "cards/new/american_express.png"}",class:"american-icon")
 
             %li.card-new-form__inside__card-num__ul__li
-              = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?732810650.jpg' , size:'49x20',alt:"diners"
+              = image_tag("#{asset_path "cards/new/dinersclub.png"}",class:"diners-icon")
 
             %li.card-new-form__inside__card-num__ul__li
-              = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/discover.svg?732810650.jpg' , size:'49x20',alt:"discover"
+              = image_tag("#{asset_path "cards/new/discover.png"}",class:"discover-icon")
 
         .card-new-form__inside__expiration-date
           = f.label :expiration_date,"有効期限",class:"card-new-form__inside__expiration-date__label"
@@ -43,7 +43,7 @@
             %i.fa.fa-chevron-down.fa-lg
             %span.card-new-form__inside__expiration-date__text__month 月
                       
-            = f.select :expiration_date ,[["19","19"],["20","20"],["21","21"],["22","22"],["23","23"],["24","24"],["25","25"],["26","26"],["27","27"],["28","28"],["29","29"]],{} , class:"card-new-form__inside__expiration-date__text__select1"
+            = f.select :expiration_date ,[["19","19"],["20","20"],["21","21"],["22","22"],["23","23"],["24","24"],["25","25"],["26","26"],["27","27"],["28","28"],["29","29"]],{} , class:"card-new-form__inside__expiration-date__text__select2"
             %i.fa.fa-chevron-down.fa-lg
             %span.card-new-form__inside__expiration-date__text__year 年
 
@@ -59,7 +59,7 @@
           .card-new__inside__security__cord__js
             %p.card-new__inside__security__cord__js__p　カードの裏側を参照ください。
             .card-new__inside__security__cord__js__image
-              = image_tag '//www-mercari-jp.akamaized.net/assets/img/signup/seq-card.png?2098311808.jpg' , size:'240x105',alt:"discover"
+              = image_tag("#{asset_path "cards/new/seq-card.png"}",class:"js-card-icon")
 
           .card-new__inside__security__cord__signup
             = f.button "追加する" , class:"card-new__inside__security__cord__signup__btn" ,type: "submit"
