@@ -1,13 +1,13 @@
 class ProductsController < ApplicationController
 
   # before_action :move_to_index, except: :index
-
+  before_action :authenticate_user!,only: :new
+  
   def index
   end
 
   def create
     @product = Product.create(product_params)
-    
   end
 
   def show

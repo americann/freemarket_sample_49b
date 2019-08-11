@@ -13,7 +13,7 @@
             %i.fas.fa-search
 
     .header-nav-box
-      .serch-nav-box1
+      .header-left
         %ul.header-nav-left
           %li#category.header-nav-left__nav1
             = link_to '', class:'header-nav-left__nav1__link navbar navleft' do
@@ -369,7 +369,7 @@
               %li
                 = link_to 'カテゴリー一覧', '#', class:'category__list__parent'
             
-
+        
           %li#brand.header-nav-left__nav2
             = link_to '' , class:'header-nav-left__nav2__link navbar navleft' do
               %i.fa.fa-tag
@@ -387,7 +387,14 @@
                 = link_to 'アディダス', '#', class:'category__list__child'
               %li
                 = link_to 'ブランド一覧', '#', class:'category__list__child'
-      .serch-nav-box2
+      
+      .header-right
+        %li
+          %a.header-right__signup-nav.btn{href: ""} 新規会員登録
+        %li
+          %a.header-right__login-nav.btn{href: ""} ログイン
+
+      - if user_signed_in? && current_user.id
         %ul.header-nav-right
           %li#good.header-nav-right__nice
             = link_to '', class:'header-nav-right__nice__link navbar ' do
@@ -465,6 +472,3 @@
                 %li
                   購入した商品-過去の取引
                   %i.fa.fa-chevron-right
-
-
-

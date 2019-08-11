@@ -70,8 +70,49 @@ body {
   width: 1020px;
   height: 44px;
   margin-top: 8px;
-  display: flex;
 }
+
+.header-left {
+  //カテゴリーから探す　ブランドから探すの大枠
+  width: 320px;
+  height: 44px;
+  float: left;
+}
+
+.header-right{
+  display: inline-flex;
+  float: right;
+  padding: 0 10px;
+  line-height: 30px;
+  font-size: 14px;
+  li{
+    list-style: none;
+  }
+
+  &__signup-nav.btn{
+    background: #ea352d;
+    border: 1px solid #ea352d;
+    color: #fff;
+    border-radius: 4px; 
+    text-align: center;
+    text-decoration: none;
+    margin: 20px;
+    padding: 10px;
+    
+  }
+
+  &__login-nav.btn{
+    border: 1px solid #0099e8;
+    background: #fff;
+    color: #0099e8;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+    border-radius: 4px; 
+    }
+}
+
+
 
 .fas.fa-search{
   color:white;
@@ -115,11 +156,6 @@ body {
   font-size: 20px;
 }
 
-.serch-nav-box1 {
-  //カテゴリーから探す　ブランドから探すの大枠
-  width: 320px;
-  height: 44px;
-}
 
 .header-nav-left {
   //urタグ
@@ -245,10 +281,6 @@ body {
   }
 }
 
-.serch-nav-box2 {
-  //いいね！　お知らせ　やること　マイページの大枠
-  width: 550px;
-  height: 44px;
   .header-nav-right {
     display: flex;
     width: 100%;
@@ -421,7 +453,7 @@ body {
         }
       }
     }
-
-
   }
-}
+
+
+
