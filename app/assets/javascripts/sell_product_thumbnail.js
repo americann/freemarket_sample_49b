@@ -1,8 +1,7 @@
-// 2バージョン
 $(document).on("turbolinks:load", function(){
   function buildHTML(file){
     var html = `<li class="image-box">
-                  <img id="img2"></img>
+                  <img class="img1"></img>
                   <div class="button">
                     <a class="edit">編集</a>
                     <a class="delete">削除</a>
@@ -12,28 +11,123 @@ $(document).on("turbolinks:load", function(){
   }
   function formBox(){
     var html = `<div class='form__upload__dropbox'>
-                <ul class='image-container'>
+                <ul class='image-container'　id='image-container2'>
                 </ul>
-                <div class='form__upload__dropbox__visible'>
-                <input class="hidden2" type="file" name="product[images]" id="product_images" />
+                <div class='form__upload__dropbox__visible' id='top-dropbox'>
                 <p>
                 ドラッグアンドドロップ
                 またはクリックしてファイルをアップロード
                 </p>
-                </div>
+                <label class='form__upload__dropbox__visible__label' for="hidden6">
+                <input class="hidden" type="file" name="product[images]" id="hidden6" />
+                </label>
+                <label class='form__upload__dropbox__visible__label' for="hidden7">
+                <input class="hidden" type="file" name="product[images]" id="hidden7" />
+                </label>
+                <label class='form__upload__dropbox__visible__label' for="hidden8">
+                <input class="hidden" type="file" name="product[images]" id="hidden8" />
+                </label>
+                <label class='form__upload__dropbox__visible__label' for="hidden9">
+                <input class="hidden" type="file" name="product[images]" id="hidden9" />
+                </label>
+                <label class='form__upload__dropbox__visible__label' for="hidden10">
+                <input class="hidden" type="file" name="product[images]" id="hidden10" />
+                </label>
+                </di>
                 </div>`
+    return html;
+  }
+  $(function() {
+    // アップロードするファイルを選択
+    $(document).on("change","#hidden1", function(){
+      $(this).parent().css("z-index","-10");
+      $(this).parent().remove;
+      // 画像データの取得
+      var file = $(this).prop('files')[0];
+
+      // 画像以外は処理を停止
+      // $(".hidden").css("display","none");
+      // $(".form__upload__dropbox__visible").append(inputFile);
+      
+      if (! file.type.match('image.*')) {
+        // クリア
+        $(this).val('');
+        $(this).html('');
+        return;
+      }
+      // 画像表示
+      $(".image-container").append(buildHTML(file));
+      // 仮
+      var reader = new FileReader();
+      reader.onload = function() {
+        $('.img1').attr('src', reader.result);
+        console(reader.result);
+      }
+    reader.readAsDataURL(file);
+    var boxLength =($(".image-box").length);
+    if(boxLength == 5){
+      $(".form__upload").append(formBox);
+      $("#top-dropbox").css("display","none");
+      $(".sell-content").css("margin-top","162px");
+      }
+    });
+  });
+}); 
+// 2バージョン
+$(document).on("turbolinks:load", function(){
+  function buildHTML(file){
+    var html = `<li class="image-box">
+                  <img class="img2"></img>
+                  <div class="button">
+                    <a class="edit">編集</a>
+                    <a class="delete">削除</a>
+                  </div>
+                </li>`
+    return html;
+  }
+  function formBox(){
+    var html = `<div class='form__upload__dropbox'>
+    <ul class='image-container'　id='image-container2'>
+    </ul>
+    <div class='form__upload__dropbox__visible' id='top-dropbox'>
+    <p>
+    ドラッグアンドドロップ
+    またはクリックしてファイルをアップロード
+    </p>
+    <label class='form__upload__dropbox__visible__label' for="hidden6">
+    <input class="hidden" type="file" name="product[images]" id="hidden6" />
+    </label>
+    <label class='form__upload__dropbox__visible__label' for="hidden7">
+    <input class="hidden" type="file" name="product[images]" id="hidden7" />
+    </label>
+    <label class='form__upload__dropbox__visible__label' for="hidden8">
+    <input class="hidden" type="file" name="product[images]" id="hidden8" />
+    </label>
+    <label class='form__upload__dropbox__visible__label' for="hidden9">
+    <input class="hidden" type="file" name="product[images]" id="hidden9" />
+    </label>
+    <label class='form__upload__dropbox__visible__label' for="hidden10">
+    <input class="hidden" type="file" name="product[images]" id="hidden10" />
+    </label>
+    </di>
+    </div>`
     return html;
   }
   function inputFile(){
     var html = `<input class="hidden2" type="file" name="product[images]" id="product_images" />`
     return html;
   }
+  // function newlabel(){
+  //   `<label class="form__upload__dropbox__visible" for="hidden2" id="top-dropbox"></label>`
+  // }
   $(function() {
     // アップロードするファイルを選択
-    $(document).on("change",".hidden2", function(){
+    $(document).on("change","#hidden2", function(){
+      $(this).parent().css("z-index","-10");
+      $(this).parent().remove;
       // 画像データの取得
       var file = $(this).prop('files')[0];
-      // console.log(file);
+
       // 画像以外は処理を停止
       // $(".hidden").css("display","none");
       // $(".form__upload__dropbox__visible").append(inputFile);
@@ -49,25 +143,25 @@ $(document).on("turbolinks:load", function(){
       // 仮
       var reader = new FileReader();
       reader.onload = function() {
-        $('#img2').attr('src', reader.result);
+        $('.img2').attr('src', reader.result);
         console(reader.result);
       }
-    reader.readAsDataURL(file);
-    var boxLength =($(".image-box").length);
-    if(boxLength == 5){
-      $(".form__upload").append(formBox);
-      $("#top-dropbox").css("display","none");
-      $(".sell-content").css("margin-top","162px");
+      reader.readAsDataURL(file);
+      var boxLength =($(".image-box").length);
+      if(boxLength == 5){
+        $(".form__upload").append(formBox);
+        $("#top-dropbox").css("display","none");
+        $(".sell-content").css("margin-top","162px");
       }
     });
   });
 }); 
-// // 2バージョン
 
 $(document).on("turbolinks:load", function(){
   function buildHTML(file){
+
     var html = `<li class="image-box">
-                  <img id="img"></img>
+                  <img class="img3"></img>
                   <div class="button">
                     <a class="edit">編集</a>
                     <a class="delete">削除</a>
@@ -77,28 +171,40 @@ $(document).on("turbolinks:load", function(){
   }
   function formBox(){
     var html = `<div class='form__upload__dropbox'>
-                <ul class='image-container'>
-                </ul>
-                <div class='form__upload__dropbox__visible'>
-                <input class="hidden2" type="file" name="product[images]" id="product_images" />
-                <p>
-                ドラッグアンドドロップ
-                またはクリックしてファイルをアップロード
-                </p>
-                </div>
-                </div>`
-    return html;
-  }
-  function inputFile(){
-    var html = `<input class="hidden" type="file" name="product[images]" id="product_images" />`
+    <ul class='image-container'　id='image-container2'>
+    </ul>
+    <div class='form__upload__dropbox__visible' id='top-dropbox'>
+    <p>
+    ドラッグアンドドロップ
+    またはクリックしてファイルをアップロード
+    </p>
+    <label class='form__upload__dropbox__visible__label' for="hidden6">
+    <input class="hidden" type="file" name="product[images]" id="hidden6" />
+    </label>
+    <label class='form__upload__dropbox__visible__label' for="hidden7">
+    <input class="hidden" type="file" name="product[images]" id="hidden7" />
+    </label>
+    <label class='form__upload__dropbox__visible__label' for="hidden8">
+    <input class="hidden" type="file" name="product[images]" id="hidden8" />
+    </label>
+    <label class='form__upload__dropbox__visible__label' for="hidden9">
+    <input class="hidden" type="file" name="product[images]" id="hidden9" />
+    </label>
+    <label class='form__upload__dropbox__visible__label' for="hidden10">
+    <input class="hidden" type="file" name="product[images]" id="hidden10" />
+    </label>
+    </di>
+    </div>`
     return html;
   }
   $(function() {
     // アップロードするファイルを選択
-    $(document).on("change",".hidden", function(){
+    $(document).on("change","#hidden3", function(){
+      $(this).parent().css("z-index","-10");
+      $(this).parent().remove;
       // 画像データの取得
       var file = $(this).prop('files')[0];
-      // console.log(file);
+
       // 画像以外は処理を停止
       // $(".hidden").css("display","none");
       // $(".form__upload__dropbox__visible").append(inputFile);
@@ -114,7 +220,7 @@ $(document).on("turbolinks:load", function(){
       // 仮
       var reader = new FileReader();
       reader.onload = function() {
-        $('#img').attr('src', reader.result);
+        $('.img3').attr('src', reader.result);
         console(reader.result);
       }
     reader.readAsDataURL(file);
@@ -128,36 +234,534 @@ $(document).on("turbolinks:load", function(){
   });
 }); 
 
-// // 複数
-// $(function() {
-//   $('input[type=file]').after('<span></span>');
+$(document).on("turbolinks:load", function(){
+  function buildHTML(file){
+    var html = `<li class="image-box">
+                  <img class="img4"></img>
+                  <div class="button">
+                    <a class="edit">編集</a>
+                    <a class="delete">削除</a>
+                  </div>
+                </li>`
+    return html;
+  }
+  function formBox(){
+    var html = `<div class='form__upload__dropbox'>
+    <ul class='image-container'　id='image-container2'>
+    </ul>
+    <div class='form__upload__dropbox__visible' id='top-dropbox'>
+    <p>
+    ドラッグアンドドロップ
+    またはクリックしてファイルをアップロード
+    </p>
+    <label class='form__upload__dropbox__visible__label' for="hidden6">
+    <input class="hidden" type="file" name="product[images]" id="hidden6" />
+    </label>
+    <label class='form__upload__dropbox__visible__label' for="hidden7">
+    <input class="hidden" type="file" name="product[images]" id="hidden7" />
+    </label>
+    <label class='form__upload__dropbox__visible__label' for="hidden8">
+    <input class="hidden" type="file" name="product[images]" id="hidden8" />
+    </label>
+    <label class='form__upload__dropbox__visible__label' for="hidden9">
+    <input class="hidden" type="file" name="product[images]" id="hidden9" />
+    </label>
+    <label class='form__upload__dropbox__visible__label' for="hidden10">
+    <input class="hidden" type="file" name="product[images]" id="hidden10" />
+    </label>
+    </di>
+    </div>`
+    return html;
+  }
+  $(function() {
+    // アップロードするファイルを選択
+    $(document).on("change","#hidden4", function(){
+      $(this).parent().css("z-index","-10");
+      $(this).parent().remove;
+      // 画像データの取得
+      var file = $(this).prop('files')[0];
 
-//   // アップロードするファイルを複数選択
-//   $('input[type=file]').change(function() {
-//     $('span').html('');
-//     var file = $(this).prop('files');
-
-//     var img_count = 1;
-//     $(file).each(function(i) {
-//       // 5枚まで
-//       if (img_count > 5) {
-//         return false;
-//       }
-
-//       if (! file[i].type.match('image.*')) {
-//         $(this).val('');
-//         $('span').html('');
-//         return;
-//       }
-
-//       var reader = new FileReader();
-//       reader.onload = function() {
-//         var img_src = $('<img>').attr('src', reader.result);
-//         $('span').append(img_src);
-//       }
-//       reader.readAsDataURL(file[i]);
+      // 画像以外は処理を停止
+      // $(".hidden").css("display","none");
+      // $(".form__upload__dropbox__visible").append(inputFile);
       
-//       img_count = img_count + 1;
-//     });
-//   });
-// });
+      if (! file.type.match('image.*')) {
+        // クリア
+        $(this).val('');
+        $(this).html('');
+        return;
+      }
+      // 画像表示
+      $(".image-container").append(buildHTML(file));
+      // 仮
+      var reader = new FileReader();
+      reader.onload = function() {
+        $('.img4').attr('src', reader.result);
+        console(reader.result);
+      }
+    reader.readAsDataURL(file);
+    var boxLength =($(".image-box").length);
+    if(boxLength == 5){
+      $(".form__upload").append(formBox);
+      $("#top-dropbox").css("display","none");
+      $(".sell-content").css("margin-top","162px");
+      }
+    });
+  });
+}); 
+
+
+$(document).on("turbolinks:load", function(){
+  function buildHTML(file){
+    var html = `<li class="image-box">
+                  <img class="img5"></img>
+                  <div class="button">
+                    <a class="edit">編集</a>
+                    <a class="delete">削除</a>
+                  </div>
+                </li>`
+    return html;
+  }
+  function formBox(){
+    var html = `<div class='form__upload__dropbox'>
+    <ul class='image-container'　id='image-container2'>
+    </ul>
+    <div class='form__upload__dropbox__visible' id='top-dropbox'>
+    <p>
+    ドラッグアンドドロップ
+    またはクリックしてファイルをアップロード
+    </p>
+    <label class='form__upload__dropbox__visible__label' for="hidden6">
+    <input class="hidden" type="file" name="product[images]" id="hidden6" />
+    </label>
+    <label class='form__upload__dropbox__visible__label' for="hidden7">
+    <input class="hidden" type="file" name="product[images]" id="hidden7" />
+    </label>
+    <label class='form__upload__dropbox__visible__label' for="hidden8">
+    <input class="hidden" type="file" name="product[images]" id="hidden8" />
+    </label>
+    <label class='form__upload__dropbox__visible__label' for="hidden9">
+    <input class="hidden" type="file" name="product[images]" id="hidden9" />
+    </label>
+    <label class='form__upload__dropbox__visible__label' for="hidden10">
+    <input class="hidden" type="file" name="product[images]" id="hidden10" />
+    </label>
+    </di>
+    </div>`
+    return html;
+  }
+  $(function() {
+    // アップロードするファイルを選択
+    $(document).on("change","#hidden5", function(){
+      $(this).parent().css("z-index","-10");
+      $(this).parent().remove;
+      // 画像データの取得
+      var file = $(this).prop('files')[0];
+
+      // 画像以外は処理を停止
+      // $(".hidden").css("display","none");
+      // $(".form__upload__dropbox__visible").append(inputFile);
+      
+      if (! file.type.match('image.*')) {
+        // クリア
+        $(this).val('');
+        $(this).html('');
+        return;
+      }
+      // 画像表示
+      $(".image-container").append(buildHTML(file));
+      // 仮
+      var reader = new FileReader();
+      reader.onload = function() {
+        $('.img5').attr('src', reader.result);
+        console(reader.result);
+      }
+    reader.readAsDataURL(file);
+    var boxLength =($(".image-box").length);
+    if(boxLength == 5){
+      $(".form__upload").append(formBox);
+      $("#top-dropbox").css("display","none");
+      $(".sell-content").css("margin-top","162px");
+      }
+    });
+  });
+}); 
+
+$(document).on("turbolinks:load", function(){
+  function buildHTML(file){
+    var html = `<li class="image-box">
+                  <img class="img6"></img>
+                  <div class="button">
+                    <a class="edit">編集</a>
+                    <a class="delete">削除</a>
+                  </div>
+                </li>`
+    return html;
+  }
+  function formBox(){
+    var html = `<div class='form__upload__dropbox'>
+                <ul class='image-container'　id='image-container2'>
+                </ul>
+                <div class='form__upload__dropbox__visible' id='top-dropbox'>
+                <p>
+                ドラッグアンドドロップ
+                またはクリックしてファイルをアップロード
+                </p>
+                <label class='form__upload__dropbox__visible__label' for="hidden6">
+                <input class="hidden" type="file" name="product[images]" id="hidden6" />
+                </label>
+                <label class='form__upload__dropbox__visible__label' for="hidden7">
+                <input class="hidden" type="file" name="product[images]" id="hidden7" />
+                </label>
+                <label class='form__upload__dropbox__visible__label' for="hidden8">
+                <input class="hidden" type="file" name="product[images]" id="hidden8" />
+                </label>
+                <label class='form__upload__dropbox__visible__label' for="hidden9">
+                <input class="hidden" type="file" name="product[images]" id="hidden9" />
+                </label>
+                <label class='form__upload__dropbox__visible__label' for="hidden10">
+                <input class="hidden" type="file" name="product[images]" id="hidden10" />
+                </label>
+                </di>
+                </div>`
+    return html;
+  }
+  $(function() {
+    // アップロードするファイルを選択
+    $(document).on("change","#hidden6", function(){
+      $(this).parent().css("z-index","-10");
+      $(this).parent().remove;
+      // 画像データの取得
+      var file = $(this).prop('files')[0];
+
+      // 画像以外は処理を停止
+      // $(".hidden").css("display","none");
+      // $(".form__upload__dropbox__visible").append(inputFile);
+      
+      if (! file.type.match('image.*')) {
+        // クリア
+        $(this).val('');
+        $(this).html('');
+        return;
+      }
+      // 画像表示
+      $("#image-container2").append(buildHTML(file));
+      // 仮
+      var reader = new FileReader();
+      reader.onload = function() {
+        $('.img1').attr('src', reader.result);
+        console(reader.result);
+      }
+    reader.readAsDataURL(file);
+    var boxLength =($(".image-box").length);
+    if(boxLength == 5){
+      $(".form__upload").append(formBox);
+      $("#top-dropbox").css("display","none");
+      $(".sell-content").css("margin-top","162px");
+      }
+    });
+  });
+}); 
+
+$(document).on("turbolinks:load", function(){
+  function buildHTML(file){
+    var html = `<li class="image-box">
+                  <img class="img7"></img>
+                  <div class="button">
+                    <a class="edit">編集</a>
+                    <a class="delete">削除</a>
+                  </div>
+                </li>`
+    return html;
+  }
+  function formBox(){
+    var html = `<div class='form__upload__dropbox'>
+                <ul class='image-container'　id='image-container2'>
+                </ul>
+                <div class='form__upload__dropbox__visible' id='top-dropbox'>
+                <p>
+                ドラッグアンドドロップ
+                またはクリックしてファイルをアップロード
+                </p>
+                <label class='form__upload__dropbox__visible__label' for="hidden6">
+                <input class="hidden" type="file" name="product[images]" id="hidden6" />
+                </label>
+                <label class='form__upload__dropbox__visible__label' for="hidden7">
+                <input class="hidden" type="file" name="product[images]" id="hidden7" />
+                </label>
+                <label class='form__upload__dropbox__visible__label' for="hidden8">
+                <input class="hidden" type="file" name="product[images]" id="hidden8" />
+                </label>
+                <label class='form__upload__dropbox__visible__label' for="hidden9">
+                <input class="hidden" type="file" name="product[images]" id="hidden9" />
+                </label>
+                <label class='form__upload__dropbox__visible__label' for="hidden10">
+                <input class="hidden" type="file" name="product[images]" id="hidden10" />
+                </label>
+                </di>
+                </div>`
+    return html;
+  }
+  $(function() {
+    // アップロードするファイルを選択
+    $(document).on("change","#hidden7", function(){
+      $(this).parent().css("z-index","-10");
+      $(this).parent().remove;
+      // 画像データの取得
+      var file = $(this).prop('files')[0];
+
+      // 画像以外は処理を停止
+      // $(".hidden").css("display","none");
+      // $(".form__upload__dropbox__visible").append(inputFile);
+      
+      if (! file.type.match('image.*')) {
+        // クリア
+        $(this).val('');
+        $(this).html('');
+        return;
+      }
+      // 画像表示
+      $("#image-container2").append(buildHTML(file));
+      // 仮
+      var reader = new FileReader();
+      reader.onload = function() {
+        $('.img1').attr('src', reader.result);
+        console(reader.result);
+      }
+    reader.readAsDataURL(file);
+    var boxLength =($(".image-box").length);
+    if(boxLength == 5){
+      $(".form__upload").append(formBox);
+      $("#top-dropbox").css("display","none");
+      $(".sell-content").css("margin-top","162px");
+      }
+    });
+  });
+}); 
+
+$(document).on("turbolinks:load", function(){
+  function buildHTML(file){
+    var html = `<li class="image-box">
+                  <img class="img8"></img>
+                  <div class="button">
+                    <a class="edit">編集</a>
+                    <a class="delete">削除</a>
+                  </div>
+                </li>`
+    return html;
+  }
+  function formBox(){
+    var html = `<div class='form__upload__dropbox'>
+                <ul class='image-container'　id='image-container2'>
+                </ul>
+                <div class='form__upload__dropbox__visible' id='top-dropbox'>
+                <p>
+                ドラッグアンドドロップ
+                またはクリックしてファイルをアップロード
+                </p>
+                <label class='form__upload__dropbox__visible__label' for="hidden6">
+                <input class="hidden" type="file" name="product[images]" id="hidden6" />
+                </label>
+                <label class='form__upload__dropbox__visible__label' for="hidden7">
+                <input class="hidden" type="file" name="product[images]" id="hidden7" />
+                </label>
+                <label class='form__upload__dropbox__visible__label' for="hidden8">
+                <input class="hidden" type="file" name="product[images]" id="hidden8" />
+                </label>
+                <label class='form__upload__dropbox__visible__label' for="hidden9">
+                <input class="hidden" type="file" name="product[images]" id="hidden9" />
+                </label>
+                <label class='form__upload__dropbox__visible__label' for="hidden10">
+                <input class="hidden" type="file" name="product[images]" id="hidden10" />
+                </label>
+                </di>
+                </div>`
+    return html;
+  }
+  $(function() {
+    // アップロードするファイルを選択
+    $(document).on("change","#hidden8", function(){
+      $(this).parent().css("z-index","-10");
+      $(this).parent().remove;
+      // 画像データの取得
+      var file = $(this).prop('files')[0];
+
+      // 画像以外は処理を停止
+      // $(".hidden").css("display","none");
+      // $(".form__upload__dropbox__visible").append(inputFile);
+      
+      if (! file.type.match('image.*')) {
+        // クリア
+        $(this).val('');
+        $(this).html('');
+        return;
+      }
+      // 画像表示
+      $("#image-container2").append(buildHTML(file));
+      // 仮
+      var reader = new FileReader();
+      reader.onload = function() {
+        $('.img1').attr('src', reader.result);
+        console(reader.result);
+      }
+    reader.readAsDataURL(file);
+    var boxLength =($(".image-box").length);
+    if(boxLength == 5){
+      $(".form__upload").append(formBox);
+      $("#top-dropbox").css("display","none");
+      $(".sell-content").css("margin-top","162px");
+      }
+    });
+  });
+}); 
+
+$(document).on("turbolinks:load", function(){
+  function buildHTML(file){
+    var html = `<li class="image-box">
+                  <img class="img9"></img>
+                  <div class="button">
+                    <a class="edit">編集</a>
+                    <a class="delete">削除</a>
+                  </div>
+                </li>`
+    return html;
+  }
+  function formBox(){
+    var html = `<div class='form__upload__dropbox'>
+                <ul class='image-container'　id='image-container2'>
+                </ul>
+                <div class='form__upload__dropbox__visible' id='top-dropbox'>
+                <p>
+                ドラッグアンドドロップ
+                またはクリックしてファイルをアップロード
+                </p>
+                <label class='form__upload__dropbox__visible__label' for="hidden6">
+                <input class="hidden" type="file" name="product[images]" id="hidden6" />
+                </label>
+                <label class='form__upload__dropbox__visible__label' for="hidden7">
+                <input class="hidden" type="file" name="product[images]" id="hidden7" />
+                </label>
+                <label class='form__upload__dropbox__visible__label' for="hidden8">
+                <input class="hidden" type="file" name="product[images]" id="hidden8" />
+                </label>
+                <label class='form__upload__dropbox__visible__label' for="hidden9">
+                <input class="hidden" type="file" name="product[images]" id="hidden9" />
+                </label>
+                <label class='form__upload__dropbox__visible__label' for="hidden10">
+                <input class="hidden" type="file" name="product[images]" id="hidden10" />
+                </label>
+                </di>
+                </div>`
+    return html;
+  }
+  $(function() {
+    // アップロードするファイルを選択
+    $(document).on("change","#hidden9", function(){
+      $(this).parent().css("z-index","-10");
+      $(this).parent().remove;
+      // 画像データの取得
+      var file = $(this).prop('files')[0];
+
+      // 画像以外は処理を停止
+      // $(".hidden").css("display","none");
+      // $(".form__upload__dropbox__visible").append(inputFile);
+      
+      if (! file.type.match('image.*')) {
+        // クリア
+        $(this).val('');
+        $(this).html('');
+        return;
+      }
+      // 画像表示
+      $("#image-container2").append(buildHTML(file));
+      // 仮
+      var reader = new FileReader();
+      reader.onload = function() {
+        $('.img1').attr('src', reader.result);
+        console(reader.result);
+      }
+    reader.readAsDataURL(file);
+    var boxLength =($(".image-box").length);
+    if(boxLength == 5){
+      $(".form__upload").append(formBox);
+      $("#top-dropbox").css("display","none");
+      $(".sell-content").css("margin-top","162px");
+      }
+    });
+  });
+}); 
+
+$(document).on("turbolinks:load", function(){
+  function buildHTML(file){
+    var html = `<li class="image-box">
+                  <img class="img10"></img>
+                  <div class="button">
+                    <a class="edit">編集</a>
+                    <a class="delete">削除</a>
+                  </div>
+                </li>`
+    return html;
+  }
+  function formBox(){
+    var html = `<div class='form__upload__dropbox'>
+                <ul class='image-container'　id='image-container2'>                </ul>
+                <div class='form__upload__dropbox__visible' id='top-dropbox'>
+                <p>
+                ドラッグアンドドロップ
+                またはクリックしてファイルをアップロード
+                </p>
+                <label class='form__upload__dropbox__visible__label' for="hidden6">
+                <input class="hidden" type="file" name="product[images]" id="hidden6" />
+                </label>
+                <label class='form__upload__dropbox__visible__label' for="hidden7">
+                <input class="hidden" type="file" name="product[images]" id="hidden7" />
+                </label>
+                <label class='form__upload__dropbox__visible__label' for="hidden8">
+                <input class="hidden" type="file" name="product[images]" id="hidden8" />
+                </label>
+                <label class='form__upload__dropbox__visible__label' for="hidden9">
+                <input class="hidden" type="file" name="product[images]" id="hidden9" />
+                </label>
+                <label class='form__upload__dropbox__visible__label' for="hidden10">
+                <input class="hidden" type="file" name="product[images]" id="hidden10" />
+                </label>
+                </di>
+                </div>`
+    return html;
+  }
+  $(function() {
+    // アップロードするファイルを選択
+    $(document).on("change","#hidden10", function(){
+      $(this).parent().css("z-index","-10");
+      $(this).parent().remove;
+      // 画像データの取得
+      var file = $(this).prop('files')[0];
+
+      // 画像以外は処理を停止
+      // $(".hidden").css("display","none");
+      // $(".form__upload__dropbox__visible").append(inputFile);
+      
+      if (! file.type.match('image.*')) {
+        // クリア
+        $(this).val('');
+        $(this).html('');
+        return;
+      }
+      // 画像表示
+      $("#image-container2").append(buildHTML(file));
+      // 仮
+      var reader = new FileReader();
+      reader.onload = function() {
+        $('.img1').attr('src', reader.result);
+        console(reader.result);
+      }
+    reader.readAsDataURL(file);
+    var boxLength =($(".image-box").length);
+    if(boxLength == 5){
+      $(".form__upload").append(formBox);
+      $("#top-dropbox").css("display","none");
+      $(".sell-content").css("margin-top","162px");
+      }
+    });
+  });
+}); 

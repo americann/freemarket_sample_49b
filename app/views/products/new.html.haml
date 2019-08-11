@@ -15,14 +15,21 @@
           %p.form__upload__text 最大10枚までアップロードできます
           .form__upload__dropbox
             %ul.image-container
-            %label.form__upload__dropbox__visible{id: "top-dropbox",for: "hidden"}
-              = f.file_field :images, class: 'hidden' ,id:'hidden'
-            %label.form__upload__dropbox__visible{id: "top-dropbox2",for: "hidden2"}
-              = f.file_field :images, class: 'hidden2' ,id:'hidden2'
+            .form__upload__dropbox__visible{id: "top-dropbox"}
               %p 
                 ドラッグアンドドロップ
                 またはクリックしてファイルをアップロード
-                
+              %label.form__upload__dropbox__visible__label{for: "hidden1"}
+                = f.file_field :images, class: 'hidden' ,id:'hidden1'
+              %label.form__upload__dropbox__visible__label{for: "hidden2"}
+                = f.file_field :images, class: 'hidden' ,id:'hidden2'
+              %label.form__upload__dropbox__visible__label{for: "hidden3"}
+                = f.file_field :images, class: 'hidden' ,id:'hidden3'
+              %label.form__upload__dropbox__visible__label{for: "hidden4"}
+                = f.file_field :images, class: 'hidden' ,id:'hidden4'
+              %label.form__upload__dropbox__visible__label{for: "hidden5"}
+                = f.file_field :images, class: 'hidden' ,id:'hidden5'
+          
 
         .sell-content
           .sell-content__group1
