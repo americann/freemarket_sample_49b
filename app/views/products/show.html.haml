@@ -16,21 +16,17 @@
           
       %ul#thumbnail-list
         - if @product.images.attached?
-          - @product.images.each do |image|
+          - @product.images[0..4].each do |image|
             %li.thumbnail-item
-              = image_tag image
+              = image_tag image 
+                  
+      - if @product.images[5..9] != nil
+        %ul#thumbnail-list  
+          - if @product.images.attached?
+            - @product.images[5..9].each do |image|
+              %li.thumbnail-item
+                = image_tag image
 
-      %ul#thumbnail-list  
-        %li.thumbnail-item
-          = image_tag('products/bag1.jpg')
-        %li.thumbnail-item
-          = image_tag('products/bag2.jpg')
-        %li.thumbnail-item
-          = image_tag('products/bag3.jpg')
-        %li.thumbnail-item
-          = image_tag('products/bag4.jpg')
-        %li.thumbnail-item
-          = image_tag('products/bag5.jpg')
       
     %table.productshow__table
       %tr
