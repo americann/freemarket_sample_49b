@@ -4,6 +4,10 @@ class User < ApplicationRecord
   validates :lastname, presence: true
   validates :firstname_kana, presence: true
   validates :lastname_kana, presence: true
+  validates :birthday, presence: true
+
+  VALID_EMAIL_REGEX =  /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i 
+  validates :email, uniqueness: true 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
