@@ -1,5 +1,6 @@
 class CardsController < ApplicationController
-
+ protect_from_forgery except: :payjp ##外部サービスのjs読み込みを許可
+ 
 def index
  @cards = Card.all
 end
@@ -18,9 +19,18 @@ def create
 end
 
 def payjp
-
+  respond_to do |format|
+  format.json {
+    require 'payjp'
+    Payjp.api_key = "pk_test_d7a950435be908a5fbe46bd8"
+    if current_user.card
+      current_user.card.update(token: params[:token])
+     else
+      Card.create(token: params[:token],user_id:current_user.id)
+    end
+    }
 end
-
+end
 
 private
 def card_params
