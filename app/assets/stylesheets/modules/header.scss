@@ -429,7 +429,7 @@ body {
       list-style: none;
     }
   
-    &__signup-nav.btn{
+    &__signup-nav{
       display: flex;
       cursor: pointer;
       background: #ea352d;
@@ -443,7 +443,7 @@ body {
       
     }
   
-    &__login-nav.btn{
+    &__login-nav{
       display: flex;
       border: 1px solid #0099e8;
       background: #fff;

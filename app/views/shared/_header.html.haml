@@ -388,7 +388,7 @@
               %li
                 = link_to 'ブランド一覧', '#', class:'category__list__child'
       
-      - if user_signed_in? && current_user.id   #ログインしてたら
+      - if user_signed_in?   #ログインしてたら
         %ul.header-nav-right
           %li#good.header-nav-right__nice
             = link_to '', class:'header-nav-right__nice__link navbar ' do
@@ -470,7 +470,8 @@
       - else
         %ul.header-nav-right-signup
           %li
-            %a.header-nav-right-signup__signup-nav.btn{href: ""} 新規会員登録
+            = link_to "新規登録", new_user_registration_path, class: 'header-nav-right-signup__signup-nav'
+
+           
           %li
-            %a.header-nav-right-signup__login-nav.btn{href: ""} ログイン
-          
+            = link_to "ログイン", new_user_session_path, class: 'header-nav-right-signup__login-nav'
