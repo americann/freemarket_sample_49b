@@ -7,7 +7,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def new
     @user = User.new
     @user.build_address
-    @user.build_card
   end
   
   def create

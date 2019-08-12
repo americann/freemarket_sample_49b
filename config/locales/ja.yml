@@ -149,7 +149,7 @@ ja:
     currency:
       format:
         delimiter: ","
-        format: "%u%n"
+        format: "%n%u"
         precision: 0
         separator: "."
         significant: false
@@ -205,4 +205,3 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
-    
