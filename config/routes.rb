@@ -7,12 +7,18 @@ Rails.application.routes.draw do
       get'buy_confirmation' 
     end
   end
-  resources  :users do 
+  resources  :users do
     member do
       get'identification' 
       get'logout'
     end
   end
+  resources  :cards do
+    collection do 
+      post'payjp'
+    end
+  end
+
   resources  :products, only:[:index, :new, :show]
   resources  :users, only:[:index, :show, :edit]
   resources  :cards, only:[:index, :new, :create]
