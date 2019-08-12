@@ -3,8 +3,7 @@
 #
 # Examples:
 #
-  movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-  Character.create(name: 'Luke', movie: movies.first)
+
 parent_array = 
 ['レディース','メンズ','ベビー・キッズ','インテリア・住まい・小物','本・音楽・ゲーム','おもちゃ・ホビー・グッズ','コスメ・香水・美容','家電・スマホ・カメラ','スポーツ・レジャー','ハンドメイド','チケット','自動車・オートバイ','その他']
 
