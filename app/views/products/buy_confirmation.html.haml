@@ -39,7 +39,7 @@
         .top-content__payment
           .top-content__payment__left 支払い金額
           .top-content__payment__right ¥1,000
-        = f.button :購入する ,class: "top-content__button"
+        = link_to '購入する' , pay_cards_path(current_user) , class: "top-content__button"
       .middle-content
         .middle-content__top 配送先
         .middle-content__middle 〒542-0081<br>大阪府大阪市中央区南船場２丁目６−２８ ユタカビル7階<br>真子就有
@@ -51,7 +51,7 @@
           .bottom-content__middle__number ************0000<br>11 / 23
           = image_tag("/visa.svg",class:"bottom-content__middle__image")
         .bottom-content__bottom
-          = link_to '変更する','', class: "bottom-content__bottom__link" 
+          = link_to '変更する', class: "bottom-content__bottom__link" 
   %footer.footer-terms
     .footer__inner
       %ul.footer__inner__links

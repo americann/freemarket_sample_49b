@@ -32,6 +32,9 @@ def payjp
 end
 end
 
+def pay
+end
+
 private
 def card_params
   params.require(:card).permit(:card_number, :expiration_date, :security_cord).merge(user_id: current_user.id)
