@@ -57,7 +57,7 @@
     shipping_date: "2~3",
     price: 3000,
     size: "S",
-    user_id: 1,
+    user_id: 27,
     prefecture_id: [*(1..47)].sample(),
     category_id: [*(1..13)].sample(),
     shipping_method: "ゆうゆうメルカリ便",
