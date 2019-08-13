@@ -1,8 +1,6 @@
 .entire
-  %header.header-new
-    %h1.header-new__logo
-      = link_to root_path, class:'container__logo__link' do
-        = image_tag("#{asset_path "products/new/logo1.png"}",class:"new-logo-icon")
+  = render 'shared/logoheader'
+  
   .main
     .main__sell
       %h2.main__sell__text 商品の情報を入力
@@ -139,22 +137,5 @@
           =f.submit  "出品する" , class:"sell-btn-box__btn" 
           = link_to  "もどる", :back, class:'sell-btn-box__link'
           
-
-  %footer.footer-terms
-    .footer__inner
-      %ul.footer__inner__links
-        %li.footer__inner__links__link1
-          = link_to"プライバシーポリシー","#"
-
-        %li.footer__inner__links__link2
-          = link_to"メルカリ利用規約","#"
-
-        %li.footer__inner__links__link2
-          = link_to"特定商取引に関する表記","#"
-
-      .footer__inner__logo
-        = link_to root_path,class:'footer-inner__logo__link' do
-          = image_tag("#{asset_path "products/new/logo2.png"}",class:"new-logo2-icon")
-
-      %p.footer__inner__c-mark  
-        %small © 2019 Mercari
+  = render 'shared/logofooter'
+  
