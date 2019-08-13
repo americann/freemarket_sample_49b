@@ -18,7 +18,7 @@ def create
   end
 end
 
-def payjp
+def payjp ##トークンを取得して保存
   respond_to do |format|
   format.json {
     require 'payjp'
@@ -32,7 +32,11 @@ def payjp
 end
 end
 
-def pay
+def pay　##支払いの時にトークンと支払い金額をpayjpに渡す
+require 'payjp'
+product = Product.find(params[:format]).price
+Payjp.api_key = "pk_test_d7a950435be908a5fbe46bd8"
+charge = Payjp::Charge.create(amount: product, token: current_user.card.token, currency: 'jpy')
 end
 
 private

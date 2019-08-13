@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   resources  :cards do
     collection do 
       post'payjp'
-      post'pay'
+      get'pay'
     end
   end
 

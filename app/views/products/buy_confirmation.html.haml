@@ -39,7 +39,7 @@
         .top-content__payment
           .top-content__payment__left 支払い金額
           .top-content__payment__right ¥1,000
-        = link_to '購入する' , pay_cards_path(current_user) , class: "top-content__button"
+        = link_to '購入する' , pay_cards_path(@product) , class: "top-content__button"
       .middle-content
         .middle-content__top 配送先
         .middle-content__middle 〒542-0081<br>大阪府大阪市中央区南船場２丁目６−２８ ユタカビル7階<br>真子就有
@@ -70,4 +70,3 @@
 
       %p.footer__inner__c-mark  
         %small © 2019 Mercari
-
