@@ -77,4 +77,10 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'active_hash'
 gem 'payjp'
+
 gem 'dotenv-rails'
+
+
+gem 'omniauth'
+gem 'omniauth-facebook'
+
