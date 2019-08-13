@@ -35,11 +35,10 @@
                 %p.single-row 一部のポイントを使う
               = f.number_field :point,placeholder: "使うポイントを入力",class: "how_points"
                 
-            
         .top-content__payment
           .top-content__payment__left 支払い金額
           .top-content__payment__right ¥1,000
-        = link_to '購入する' , pay_cards_path(@product) , class: "top-content__button"
+        = link_to '購入する' , pay_card_path(@product) , class: "top-content__button", method: :post
       .middle-content
         .middle-content__top 配送先
         .middle-content__middle 〒542-0081<br>大阪府大阪市中央区南船場２丁目６−２８ ユタカビル7階<br>真子就有

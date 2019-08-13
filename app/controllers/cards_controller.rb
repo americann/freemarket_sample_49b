@@ -1,6 +1,6 @@
 class CardsController < ApplicationController
- protect_from_forgery except: :payjp ##外部サービスのjs読み込みを許可
- 
+ protect_from_forgery except: [:pay,:payjp] ##外部サービスのjs読み込みを許可
+
 def index
  @cards = Card.all
 end
@@ -18,25 +18,26 @@ def create
   end
 end
 
-def payjp ##トークンを取得して保存
+def payjp ##トークンを取得保存、トークンを活用して顧客を作成して保存
   respond_to do |format|
   format.json {
     require 'payjp'
-    Payjp.api_key = "pk_test_d7a950435be908a5fbe46bd8"
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    response_customer = Payjp::Customer.create(card: params[:token])
     if current_user.card
-      current_user.card.update(token: params[:token])
-     else
-      Card.create(token: params[:token],user_id:current_user.id)
+    current_user.card.update(token: params[:token] , customer_id: response_customer.id , user_id:current_user.id)
+    else
+    Card.create(token: params[:token], customer_id: response_customer.id , user_id:current_user.id)
     end
-    }
+  }
 end
 end
 
-def pay　##支払いの時にトークンと支払い金額をpayjpに渡す
-require 'payjp'
-product = Product.find(params[:format]).price
-Payjp.api_key = "pk_test_d7a950435be908a5fbe46bd8"
-charge = Payjp::Charge.create(amount: product, token: current_user.card.token, currency: 'jpy')
+def pay ##支払いの時にトークンと支払い金額をpayjpに渡す
+product = Product.find(params[:id]).price
+customer_id = current_user.card.customer_id
+Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+charge = Payjp::Charge.create(amount: product, customer: customer_id, currency: 'jpy')
 end
 
 private
