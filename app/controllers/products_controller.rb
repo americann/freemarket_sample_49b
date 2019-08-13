@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
   # before_action :move_to_index, except: :index
 
   def index
+    @parent = Category.where(parent_id: nil)
   end
 
   def create
