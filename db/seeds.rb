@@ -3,8 +3,7 @@
 #
 # Examples:
 #
-  movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-  Character.create(name: 'Luke', movie: movies.first)
+
 parent_array = 
 ['レディース','メンズ','ベビー・キッズ','インテリア・住まい・小物','本・音楽・ゲーム','おもちゃ・ホビー・グッズ','コスメ・香水・美容','家電・スマホ・カメラ','スポーツ・レジャー','ハンドメイド','チケット','自動車・オートバイ','その他']
 
@@ -48,20 +47,6 @@ end
 grandchild_array.each do |grandchild|
   Category.create(name: grandchild[0] , parent_id: grandchild[1])
 end
-
-Product.create(
-  name: "カバンです1",
-  description: "カバンです1カバンです1カバンです1カバンです1カバンです1カバンです1カバンです1カバンです1カバンです1カバンです1カバンです1カバンです1カバンです1カバンです1カバンです1カバンです1カバンです1カバンです1カバンです1カバンです1",
-  state: "新品",
-  postage: "送料込み",  
-  shipping_date: "2~3",
-  price: "3000",
-  size: "S",
-  user_id: "1",
-  prefecture_id:"1",
-  category_id:"1",
-  shipping_method: "ゆうゆうメルカリ便",
-)
 
 200.times do |no|
   Product.create(

@@ -12,8 +12,8 @@
           %button.search__form__icon{type: "submit"}
             %i.fas.fa-search
 
-    .header-nav-box
-      .serch-nav-box1
+    .header-nav
+      .search-nav-left
         %ul.header-nav-left
           %li#category.header-nav-left__nav1
             = link_to '', class:'header-nav-left__nav1__link navbar navleft' do
@@ -33,7 +33,7 @@
                             %li
                               = link_to "#{grand_child.name}", '#', class:'category__list__grandchild'
             
-
+        
           %li#brand.header-nav-left__nav2
             = link_to '' , class:'header-nav-left__nav2__link navbar navleft' do
               %i.fa.fa-tag
@@ -51,7 +51,8 @@
                 = link_to 'アディダス', '#', class:'category__list__child'
               %li
                 = link_to 'ブランド一覧', '#', class:'category__list__child'
-      .serch-nav-box2
+      
+      - if user_signed_in?   #ログインしてたら
         %ul.header-nav-right
           %li#good.header-nav-right__nice
             = link_to '', class:'header-nav-right__nice__link navbar ' do
@@ -129,6 +130,12 @@
                 %li
                   購入した商品-過去の取引
                   %i.fa.fa-chevron-right
+        
+      - else
+        %ul.header-nav-right-signup
+          %li
+            = link_to "新規登録", new_user_registration_path, class: 'header-nav-right-signup__signup-nav'
 
-
-
+           
+          %li
+            = link_to "ログイン", new_user_session_path, class: 'header-nav-right-signup__login-nav'

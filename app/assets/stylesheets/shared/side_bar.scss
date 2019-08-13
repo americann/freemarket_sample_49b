@@ -16,11 +16,13 @@
 
   ul{
     margin:0px;
+    cursor: pointer;
   }
 
   a{
     text-decoration: none;
     color:#333
+    
   }
 
   li{
@@ -30,11 +32,6 @@
     height:50px;
     font-size:14px;
     padding:16px;
-  }
-
-  li.mypage {
-    background-color:#EEEEEE;
-    font-weight:bold;
   }
   
   .fa, .fas {
