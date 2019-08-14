@@ -129,6 +129,8 @@ body {
         display: block;
         font-size: 14px;
         line-height: 1.5;
+        -webkit-transform: translate(0, -50%);
+        transform: translate(0, -50%);
         white-space: pre-wrap;
         border: 1px dashed #ccc;
         background: #f5f5f5;
@@ -567,6 +569,14 @@ body {
   }
 }
 
+
+
+
+
+
+
+
+
 //マウスがのった時だけリンク下線つく
 .footer__inner__links a:hover {
   text-decoration: underline;
@@ -615,16 +625,33 @@ body {
         float: right;
       }
     }
-    &__logo {
-      width: 80px;
-      height: 65px;
-      margin: 40px auto 0;
-      display: block;
-    }
+  
     &__c-mark {
       margin: 8px 0 0;
       font-size: 13px;
       text-align: center;
     }
   }
+}
+
+.single__footer{
+  margin:0 auto;
+  padding: 40px 180px;
+}
+.item-detail__form-box__group__select-wrap__select-default {
+  //select（他の所も共通）
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }

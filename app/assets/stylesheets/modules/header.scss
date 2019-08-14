@@ -66,7 +66,7 @@ body {
 }
 
 //headerの下部(大枠)
-.header-nav-box {
+.header-nav {
   width: 1020px;
   height: 44px;
   margin-top: 8px;
@@ -115,16 +115,15 @@ body {
   font-size: 20px;
 }
 
-.serch-nav-box1 {
+.search-nav-left {
   //カテゴリーから探す　ブランドから探すの大枠
-  width: 320px;
-  height: 44px;
+  width: 80%;
 }
 
 .header-nav-left {
   //urタグ
   display: flex;
-  width: 100%;
+  width: 50%;
   cursor: pointer;
   &__nav1 {
     //liタグ　カテゴリーから探す
@@ -245,16 +244,12 @@ body {
   }
 }
 
-.serch-nav-box2 {
-  //いいね！　お知らせ　やること　マイページの大枠
-  width: 550px;
-  height: 44px;
+
   .header-nav-right {
     display: flex;
-    width: 100%;
+    width: 50%;
     cursor: pointer;
     position:relative;
-    left:150px;
     &__nice{//いいね！一覧
       list-style: none;
       width: 150px;
@@ -421,7 +416,44 @@ body {
         }
       }
     }
-
-
   }
-}
+
+  
+  .header-nav-right-signup{
+    display: flex;
+    width: 50%;
+    cursor: pointer;
+    position:relative;
+    left:100px;
+    li{
+      list-style: none;
+    }
+  
+    &__signup-nav{
+      display: flex;
+      cursor: pointer;
+      background: #ea352d;
+      border: 1px solid #ea352d;
+      color: #fff;
+      border-radius: 4px; 
+      text-align: center;
+      text-decoration: none;
+      margin: 5px;
+      padding: 10px;
+      
+    }
+  
+    &__login-nav{
+      display: flex;
+      border: 1px solid #0099e8;
+      background: #fff;
+      color: #0099e8;
+      text-decoration: none;
+      text-align: center;
+      margin: 5px;
+      padding: 10px;
+      border-radius: 4px; 
+      }
+    
+  }
+  

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: {registrations: 'users/registrations'}
+  devise_for :users, controllers: {omniauth_callbacks: 'users/omniauth_callbacks',
+    registrations: 'users/registrations'
+    }
    
   root 'products#index'
   resources  :products do 
@@ -7,11 +9,20 @@ Rails.application.routes.draw do
       get'buy_confirmation' 
     end
   end
-  resources  :users do 
+  resources  :users do
     member do
       get'identification' 
     end
   end
+  resources  :cards do
+    collection do 
+      post'payjp'
+    end
+    member do
+      post 'pay'
+    end
+  end
+
   resources  :products, only:[:index, :new, :show]
   resources  :users, only:[:index, :show, :edit]
   resources  :cards, only:[:index, :new, :create]

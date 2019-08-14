@@ -7,17 +7,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def new
     @user = User.new
     @user.build_address
-    @user.build_card
   end
   
   def create
     @user = User.new(user_params)
     @user.save!
+    bypass_sign_in(@user)
     redirect_to root_path
   rescue
     render action: 'new'
   end
-
 
   private
 

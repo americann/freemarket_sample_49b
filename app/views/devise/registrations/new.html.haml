@@ -1,88 +1,240 @@
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :ニックネーム
-    %br/
-    = f.text_field :nickname, placeholder: '例）メルカリ太郎'
-  .field
-    = f.label :メールアドレス
-    %br/
-    = f.email_field :email, placeholder:'PC・携帯どちらでも可'
-  .field
-    = f.label :パスワード
-    %br/
-    = f.password_field :password, placeholder:'６文字以上'
-  .field
-    = f.label :パスワード（確認）
-    %br/
-    = f.password_field :password_confirmation, placeholder:'６文字以上'
-  .field
-    = f.label :お名前（全角）
-    %br/
-    = f.text_field :firstname, placeholder:'例）山田'
-    = f.text_field :lastname, placeholder:'例）絢'
-  .field
-    = f.label :お名前カナ（全角）
-    %br/
-    = f.text_field :firstname_kana, placeholder:'例）ヤマダ'
-    = f.text_field :lastname_kana, placeholder:'例）アヤ'
-  .field
-    = f.label :生年月日
-    %br/
-    = raw sprintf(                          |
-      f.date_select(                        |
-      :birthday,                            |
-      use_month_numbers: true,              |
-      start_year:     1930,                 |
-      end_year:       (Time.now.year),      |
-      default:        Date.new(1989, 1, 1), |
-      date_separator:    '%s'),             |
-      '年','月')+ '日'                         |
-  %div
-    = f.fields_for :address do |address_f|
-      = address_f.label :郵便番号
-      %br/
-      = address_f.text_field :zip_code, placeholder:'例）123ー4567'
-      %br/
-      = address_f.label :都道府県
-      %br/
-      = address_f.collection_select :prefecture_id, Prefecture.all, :id, :name
-      %br/
-      = address_f.label :市区町村
-      %br/
-      = address_f.text_field :city , placeholder:'例）横浜市緑区'
-      %br/
-      = address_f.label :番地
-      %br/
-      = address_f.text_field :block , placeholder:'例）青山1-1-1'
-      %br/
-      = address_f.label :建物名
-      %br/
-      = address_f.text_field :building_number , placeholder:'例）柳ビル103'
-      %br/
-      = address_f.label :電話
-      %br/
-      = address_f.telephone_field :phone_number , placeholder:'例）09012345678'
-      %br/
-  %div
-    = f.fields_for :card do |card_f|
-      = card_f.label :カード番号
-      %br/
-      = card_f.text_field :card_number, placeholder:'半角数字のみ'
-      %br/
-      = card_f.label :カード番号
-      %br/
-      = card_f.date_select(             |
-        :expiration_date,               |
-        discard_day: true,              |
-        start_year: Date.today.year,    |
-        end_year: (Date.today.year+10), |
-        use_month_numbers: true )       |
-      %br/
-      = card_f.label :セキュリティコード
-      %br/
-      = card_f.text_field :card_number, placeholder:'カード背面4桁もしくは3桁の番号'
-      %br/
-  .actions
-    = f.submit "次へ進む"
-= render "devise/shared/links"
+.single-container
+  .single-container__header
+    %h1
+      = image_tag("#{asset_path "header/logo.svg"}")
+    %ol.stepBar#step1
+      %li.visited
+        %span 
+        = succeed "会員情報" do
+          %br/
+      %li
+        %span 
+        = succeed "お届け先住所入力" do
+          %br/
+      %li
+        %span 
+        = succeed "完了" do
+          %br
+
+    %ol.stepBar#step2
+      %li.visited
+        %span
+        = succeed "会員情報" do
+          %br/
+      %li.visited
+        %span 
+        = succeed "お届け先住所入力" do
+          %br/
+      %li
+        %span 
+        = succeed "完了" do
+          %br/
+
+  .user-text
+    .user-text__topic
+      会員情報入力
+    .user-text__form
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = render "devise/shared/error_messages", resource: resource
+        
+        .user-table#user_table
+          .user-text__form__topic
+            = f.label :ニックネーム
+            %span.form-require
+              必須
+            %br/
+          .user-text__input
+            = f.text_field :nickname, placeholder: '例）メルカリ太郎',class: "required"
+            
+            - if resource.errors.any?
+              %ul
+                - resource.errors.full_messages_for(:nickname).each do|message|
+                  .error_message= message
+
+          .user-text__form__topic
+            = f.label :メールアドレス
+            %span.form-require
+              必須
+            %br/
+          .user-text__input
+            = f.email_field :email, placeholder:'PC・携帯どちらでも可'
+          
+            - if resource.errors.any?
+              %ul
+                - resource.errors.full_messages_for(:email).each do|message|
+                  .error_message= message
+
+          .user-text__form__topic
+            = f.label :パスワード
+            %span.form-require
+              必須
+            %br/
+          .user-text__input
+            = f.password_field :password, placeholder:'６文字以上'
+
+            - if resource.errors.any?
+              %ul
+                - resource.errors.full_messages_for(:password).each do|message|
+                  .error_message= message
+
+          .user-text__form__topic
+            = f.label :パスワード（確認）
+            %span.form-require
+              必須
+            %br/
+          .user-text__input
+            = f.password_field :password_confirmation, placeholder:'６文字以上'
+            - if resource.errors.any?
+              %ul
+                - resource.errors.full_messages_for(:password).each do|message|
+                  .error_message= message
+
+
+          .user-text__form__topic
+            本人確認
+          .user-text__text
+            安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。
+            他のお客さまに公開されることはありません。
+
+          .user-text__form__topic
+            = f.label :お名前（全角）
+            %span.form-require
+              必須
+
+          .user-text__input
+            = f.text_field :firstname, placeholder:'例）山田'
+            
+          .user-text__input
+            = f.text_field :lastname, placeholder:'例）絢'
+            - if resource.errors.any?
+              %ul
+                - resource.errors.full_messages_for(:firstname).each do|message|
+                  .error_message= message
+
+            - if resource.errors.any?
+              %ul
+                - resource.errors.full_messages_for(:lastname).each do|message|
+                  .error_message= message
+
+          .user-text__form__topic
+            = f.label :お名前カナ（全角）
+            %span.form-require
+              必須
+            %br/
+          .user-text__input
+            = f.text_field :firstname_kana, placeholder:'例）ヤマダ'
+            
+
+            = f.text_field :lastname_kana, placeholder:'例）アヤ'
+            - if resource.errors.any?
+              %ul
+                - resource.errors.full_messages_for(:firstname_kana).each do|message|
+                  .error_message= message
+            - if resource.errors.any?
+              %ul
+                - resource.errors.full_messages_for(:lastname_kana).each do|message|
+                  .error_message= message
+
+          .user-text__form__topic
+            = f.label :生年月日
+            %span.form-require
+              必須
+            %br/
+          .user-text__birthday
+            -# .user-text__birthday__tab.fa.fa-chevron-down.fa-lg
+            = raw sprintf(                          |
+              f.date_select(                        |
+              :birthday,                            |
+              use_month_numbers: true,              |
+              start_year:     1930,                 |
+              end_year:       (Time.now.year),      |
+              include_blank: true,                  |
+              default:        nil,                  |
+              date_separator:    '%s'),             |
+              '年','月')+ '日'                         |
+            - if resource.errors.any?
+              %ul
+                - resource.errors.full_messages_for(:birthday).each do|message|
+                  .error_message= message
+
+          .text-comment
+            ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+
+          .text-center
+            「次へ進む」のボタンを押すことにより、
+            %p.agreement
+              = link_to"利用契約","#"
+              に同意したものとみなします
+          
+        %input#button{type: "button", value: "次へ進む"}
+        
+        = f.fields_for :address do |address_f|
+          .address-table#address_table
+            .user-text__form__topic 
+              = address_f.label :郵便番号
+              %span.form-require
+                必須
+            .user-text__input
+              = address_f.text_field :zip_code, placeholder:'例）123ー4567'
+              - if resource.errors.any?
+                %ul
+                  -resource.address.errors.full_messages_for(:zip_code).each do|message|
+                    .error_message= message
+
+            .user-text__form__topic
+              = address_f.label :都道府県
+              %span.form-require
+                必須
+          
+            .user-text__select
+              = address_f.collection_select :prefecture_id, Prefecture.all, :id, :name,{prompt: "---"},class:"user-text__select__prefecture"
+              %i.fa.fa-chevron-down.fa-lg
+              - if resource.errors.any?
+                %ul
+                  -resource.address.errors.full_messages_for(:prefecture_id).each do|message|
+                    .error_message= message
+                    
+
+
+            .user-text__form__topic
+              = address_f.label :市区町村
+              %span.form-require
+                必須
+            .user-text__input
+              = address_f.text_field :city , placeholder:'例）横浜市緑区'
+              - if resource.errors.any?
+                %ul
+                  -resource.address.errors.full_messages_for(:city).each do|message|
+                    .error_message= message
+
+            .user-text__form__topic
+              = address_f.label :番地
+              %span.form-require
+                必須
+            .user-text__input
+              = address_f.text_field :block , placeholder:'例）青山1-1-1'
+              - if resource.errors.any?
+                %ul
+                  -resource.address.errors.full_messages_for(:block).each do|message|
+                    .error_message= message
+
+            .user-text__form__topic
+              = address_f.label :建物名
+              %span.form-notrequire
+                任意
+            .user-text__input  
+              = address_f.text_field :building_number , placeholder:'例）柳ビル103'
+              
+            .user-text__form__topic
+              = address_f.label :電話
+              %span.form-notrequire
+                任意
+            .user-text__input  
+              = address_f.text_field :phone_number , placeholder:'例）09012345678'
+            
+            .actions
+              %input{type: "submit", value: "次へ進む"}
+          
+      = render "devise/shared/links"
+
+= render 'shared/logofooter'

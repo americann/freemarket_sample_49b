@@ -9,51 +9,24 @@
 
     #wrap
       %ul#slider
-        %li.slide-item
-          = image_tag('products/bag1.jpg')
-        %li.slide-item
-          = image_tag('products/bag2.jpg')
-        %li.slide-item
-          = image_tag('products/bag3.jpg')
-        %li.slide-item
-          = image_tag('products/bag4.jpg')
-        %li.slide-item
-          = image_tag('products/bag5.jpg')
-        %li.slide-item
-          = image_tag('products/bag1.jpg')
-        %li.slide-item
-          = image_tag('products/bag2.jpg')
-        %li.slide-item
-          = image_tag('products/bag3.jpg')
-        %li.slide-item
-          = image_tag('products/bag4.jpg')
-        %li.slide-item
-          = image_tag('products/bag5.jpg')
-        
-        
+        - if @product.images.attached?
+          - @product.images.each do |image|
+            %li.slide-item
+              = image_tag image
+          
       %ul#thumbnail-list
-        %li.thumbnail-item
-          = image_tag('products/bag1.jpg')
-        %li.thumbnail-item
-          = image_tag('products/bag2.jpg')
-        %li.thumbnail-item
-          = image_tag('products/bag3.jpg')
-        %li.thumbnail-item
-          = image_tag('products/bag4.jpg')
-        %li.thumbnail-item
-          = image_tag('products/bag5.jpg')
+        - if @product.images.attached?
+          - @product.images[0..4].each do |image|
+            %li.thumbnail-item
+              = image_tag image 
+                  
+      - if @product.images[5..9] != nil
+        %ul#thumbnail-list  
+          - if @product.images.attached?
+            - @product.images[5..9].each do |image|
+              %li.thumbnail-item
+                = image_tag image
 
-      %ul#thumbnail-list  
-        %li.thumbnail-item
-          = image_tag('products/bag1.jpg')
-        %li.thumbnail-item
-          = image_tag('products/bag2.jpg')
-        %li.thumbnail-item
-          = image_tag('products/bag3.jpg')
-        %li.thumbnail-item
-          = image_tag('products/bag4.jpg')
-        %li.thumbnail-item
-          = image_tag('products/bag5.jpg')
       
     %table.productshow__table
       %tr
@@ -107,13 +80,12 @@
       %tr
         %th 配送元地域
         %td 
-          = @product.prefecture_id
+          = @product.prefecture.name
       %tr
         %th 発送日の目安
         %td 
           = @product.shipping_date
           日で発送
-  
   
     .productshow__price
       %span.productshow__price__yen
@@ -124,7 +96,7 @@
       %span.productshow__price__shopping-fee
         = @product.postage
     .productshow__shopping-botton
-      = link_to '購入画面に進む',buy_confirmation_product_path
+      = link_to '購入画面に進む',buy_confirmation_product_path(@product)
     .productshow__description
       %p.productshow__description__inner
         = @product.description
@@ -134,13 +106,13 @@
         いいね！
         %span.like__number
           1
-.comment
-  .comment__main
-    .comment__main__content
+.product
+  .product__main
+    .product__main__content
 
       %form.message-form{action: "#", method: "POST"}
         %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
         %textarea.textarea-default{name: "body", type: "text", value: ""}
-      .comment__main__content__button
+      .product__main__content__button
         = link_to 'コメントする','#'
 = render 'shared/footer'

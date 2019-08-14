@@ -194,6 +194,14 @@
   }
 }
 
+
+
+//jsのカードsize
+.js-card-icon{
+  width:240px;
+  height:105px;
+}
+
 .card-new__inside__security__cord__signup {
     height: 50px;
     width: 343px;
@@ -230,4 +238,41 @@
     font-size: 15px;
     color: #0099e8;
   }
+}
+
+//クレジットカードsize
+.visa-icon{
+  width:49px;
+  height:20px;
+}
+//クレジットカードsize
+.master-icon{
+  width:250px;
+  height:20px;
+  padding-right:30px;
+}
+//クレジットカードsize
+.saison-icon{
+  width:49px;
+  height:20px;
+}
+//クレジットカードsize
+.jcb-icon{
+  width:49px;
+  height:20px;
+}
+//クレジットカードsize
+.american-icon{
+  width:49px;
+  height:20px;
+}
+//クレジットカードsize
+.diners-icon{
+  width:49px;
+  height:20px;
+}
+//クレジットカードsize
+.discover-icon{
+  width:60px;
+  height:20px;
 }
