@@ -1,4 +1,6 @@
-class User < ApplicationRecord
+# class User < ApplicationRecord
+
+class User < ActiveRecord::Base
   validates :nickname, presence: true
   validates :firstname, presence: true
   validates :lastname, presence: true
@@ -27,20 +29,15 @@ class User < ApplicationRecord
     user = User.where(uid: auth.uid, provider: auth.provider).first
  
     unless user
-      user = User.create(
-        uid:      auth.uid,
+      user = User.new(
+        uid: auth.uid,
         provider: auth.provider,
-        email:    auth.info.email,
+        email: auth.info.email,
         password: Devise.friendly_token[0, 20]
       )
+       user.save(:validate => false)
     end
- 
     user
   end
- 
-
-
-
-
 
 end
