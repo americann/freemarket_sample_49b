@@ -26,4 +26,6 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 config/.DS_Store
+config/initializers/devise.rb
 /.env
+
