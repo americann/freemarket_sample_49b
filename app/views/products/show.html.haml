@@ -87,7 +87,6 @@
           = @product.shipping_date
           日で発送
   
-  
     .productshow__price
       %span.productshow__price__yen
         ¥
@@ -97,7 +96,7 @@
       %span.productshow__price__shopping-fee
         = @product.postage
     .productshow__shopping-botton
-      = link_to '購入画面に進む',buy_confirmation_product_path
+      = link_to '購入画面に進む',buy_confirmation_product_path(@product)
     .productshow__description
       %p.productshow__description__inner
         = @product.description
