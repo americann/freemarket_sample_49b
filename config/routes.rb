@@ -19,6 +19,9 @@ Rails.application.routes.draw do
     collection do 
       post'payjp'
     end
+    member do
+      post 'pay'
+    end
   end
 
   resources  :products, only:[:index, :new, :show]
