@@ -47,14 +47,14 @@ ActiveRecord::Schema.define(version: 2019_08_13_035004) do
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "card_number"
-    t.date "expiration_date"
+    t.integer "expiration_date"
     t.integer "security_cord"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-    t.integer "customer_id"
+    t.text "customer_id"
     t.integer "card_id"
-    t.integer "token"
+    t.text "token"
   end
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -95,7 +95,7 @@ ActiveRecord::Schema.define(version: 2019_08_13_035004) do
     t.string "firstname"
     t.string "lastname"
     t.string "firstname_kana"
-    t.string "lastname_kana", default: ""
+    t.string "lastname_kana"
     t.date "birthday"
     t.string "uid"
     t.string "provider"
