@@ -34,7 +34,7 @@
           出品者
         %td
           .productshow__table__name
-            = link_to user_path(1) do
+            = link_to user_path do
               = @product.user.nickname
           .rate
             .rate__score
@@ -87,13 +87,13 @@
           = @product.shipping_date
           日で発送
   
-    .productshow__price
-      %span.productshow__price__yen
+    .price
+      %span.price__yen
         ¥
         = @product.price
-      %span.productshow__price__tax
+      %span.price__tax
         (税込)
-      %span.productshow__price__shopping-fee
+      %span.price__shopping-fee
         = @product.postage
     .productshow__shopping-botton
       = link_to '購入画面に進む',buy_confirmation_product_path(@product)
@@ -106,13 +106,14 @@
         いいね！
         %span.like__number
           1
-.product
-  .product__main
-    .product__main__content
 
+.comment
+  .comment__main
+    .comment__main__content
       %form.message-form{action: "#", method: "POST"}
         %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
         %textarea.textarea-default{name: "body", type: "text", value: ""}
-      .product__main__content__button
-        = link_to 'コメントする','#'
+    .comment__main__button
+      = link_to 'コメントする','#'
+      
 = render 'shared/footer'
