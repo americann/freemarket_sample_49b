@@ -1,0 +1,89 @@
+.business-wrapper__main {
+  float: right;
+  width: 700px;
+  min-height: 240px;
+  position: absolute;
+  top: 175px;
+  left: 450px;
+  &__text {
+    padding: 0 16px;
+    background: #fafafa;
+    font-size: 16px;
+    line-height: 72px;
+    font-weight: bold;
+  }
+  &__list {
+    width: 700px;
+    height: 75px;
+    list-style: none;
+    &__ele1 {
+      background: #fff;
+      width: 33.3%;
+      text-align: center;
+      line-height: 75px;
+      vertical-align: top;
+      height: 75px;
+      float: left;
+      &__link {
+        text-decoration: none;
+        color: black;
+      }
+    }
+    &__ele2 {
+      background: #fff;
+      width: 33.3%;
+      text-align: center;
+      line-height: 75px;
+      vertical-align: top;
+      display: inline-block;
+      height: 75px;
+      border-top: solid;
+      border-color: red;
+      float: left;
+      &__link {
+        display: block;
+        text-decoration: none;
+        color: black;
+      }
+    }
+    &__ele3 {
+      background: #fff;
+      width: 33.3%;
+      text-align: center;
+      line-height: 75px;
+      vertical-align: top;
+      display: inline-block;
+      height: 75px;
+      &__link {
+        display: block;
+        text-decoration: none;
+        color: black;
+      }
+    }
+  }
+  &__index {
+    width: 700px;
+    min-height: 85px;
+    background: #fff;
+  }
+}
+
+.business-link{ //リンク3つのビジュアル面
+  display: block;
+  text-decoration: none;
+  color:black;
+}
+
+.business-image{ //配列がなかった場合のロゴ画像と文言
+  height:100px;
+  width:90px;
+  display:block;
+  margin:auto;
+}
+
+.business-wrapper__main__text{ //ロゴ画像下の文言
+    text-align: center;
+    font-size: 16px;
+    color: #ccc;
+    background-color: white;
+}
