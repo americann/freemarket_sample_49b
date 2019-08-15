@@ -15,5 +15,21 @@
       %li.business-wrapper__main__list__ele3
         =link_to "売却済み" , finish_user_path(current_user) ,class: "business-wrapper__main__list__ele3__link"
     .business-wrapper__main__index
-          
+
+      - unless @products.empty?
+        .exhibit-wrapper__main__image
+        %br
+        %br
+        %br
+        = image_tag("#{asset_path "user/logo-gray.png"}",class:"business-image")
+        %br
+        %h1.exhibit-wrapper__main__text 取引中の商品はありません
+        %br
+        %br
+      - else
+        - @products.each do | product |
+          .business-wrapper__main__index__name
+          =link_to detail_user_path(product.id) , class:"business-link" do
+            = product.name
+
   = render 'shared/footer'

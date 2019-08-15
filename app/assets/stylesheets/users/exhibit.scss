@@ -16,6 +16,7 @@
     width: 700px;
     height: 75px;
     list-style: none;
+    
     &__ele1 {
       background: #fff;
       width: 33.3%;
@@ -68,8 +69,23 @@
   }
 }
 
-.exhibit-link{
+.exhibit-link{ //リンク3つのビジュアル面
   display: block;
   text-decoration: none;
-  color: black;
+  color:black;
 }
+
+.exhibit-image{ //配列がなかった場合のロゴ画像と文言
+  height:100px;
+  width:90px;
+  display:block;
+  margin:auto;
+}
+
+.exhibit-wrapper__main__text{ //ロゴ画像下の文言
+    text-align: center;
+    font-size: 16px;
+    color: #ccc;
+    background-color: white;
+}
+

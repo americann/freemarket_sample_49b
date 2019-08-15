@@ -11,9 +11,25 @@
       %li.finish-wrapper__main__list__ele1
         =link_to "出品する" , exhibit_user_path(current_user) ,class: "finish-wrapper__main__list__ele1__link"
       %li.finish-wrapper__main__list__ele2
-        =link_to "取引中" , business_user_path(current_user) ,class: "finish-wrapper__main__list__ele2__link"
+        =link_to "取引中" , finish_user_path(current_user) ,class: "finish-wrapper__main__list__ele2__link"
       %li.finish-wrapper__main__list__ele3
         =link_to "売却済み" , finish_user_path(current_user) ,class: "finish-wrapper__main__list__ele3__link"
     .finish-wrapper__main__index
+
+      - unless @products.empty?
+        .exhibit-wrapper__main__image
+        %br
+        %br
+        %br
+        = image_tag("#{asset_path "user/logo-gray.png"}",class:"finish-image")
+        %br
+        %h1.exhibit-wrapper__main__text 売却済みの商品はありません
+        %br
+        %br
+      - else
+        - @products.each do | product |
+          .finish-wrapper__main__index__name
+          =link_to detail_user_path(product.id) , class:"finish-link" do
+            = product.name
           
   = render 'shared/footer'

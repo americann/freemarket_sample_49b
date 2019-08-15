@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       get'exhibit'
       get'business'
       get'finish'
+      get'detail'
     end
   end
   resources  :cards do

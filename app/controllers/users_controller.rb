@@ -14,9 +14,15 @@ class UsersController < ApplicationController
 
   def business
     @parent = Category.where(parent_id: nil)
+    @products = Product.where(user_id: current_user.id).limit(5)
   end
 
   def finish
+    @parent = Category.where(parent_id: nil)
+    @products = Product.where(user_id: current_user.id).limit(5)
+  end
+
+  def detail
     @parent = Category.where(parent_id: nil)
   end
 
