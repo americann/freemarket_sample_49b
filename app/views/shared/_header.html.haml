@@ -12,6 +12,7 @@
           %button.search__form__icon{type: "submit"}
             %i.fas.fa-search
 
+
     .header-nav
       .search-nav-left
         %ul.header-nav-left
@@ -23,7 +24,6 @@
               - @parent.each do |parent| 
                 %li
                   = link_to "#{parent.name}", '#', class:'category__list__parent'  
-
                   %ul.category__child
                     - parent.children.each do |child|
                       %li
