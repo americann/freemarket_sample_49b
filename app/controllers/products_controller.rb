@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
   before_action :authenticate_user!,only: :new
   
   def index
+    @parent = Category.where(parent_id: nil)
   end
 
   def create
