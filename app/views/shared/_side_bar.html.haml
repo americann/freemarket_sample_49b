@@ -22,22 +22,22 @@
           %i.fa.fa-angle-right
 
       %li
-        =link_to "#", class: "mypage-nav__lists__item" do 
+        =link_to exhibit_user_path(current_user) , class: "mypage-nav__lists__item" do 
           出品した商品-出品中
           %i.fa.fa-angle-right
 
       %li
-        =link_to "#", class: "mypage-nav__lists__item" do 
+        =link_to business_user_path(current_user), class: "mypage-nav__lists__item" do 
           出品した商品-取引中
           %i.fa.fa-angle-right
 
       %li
-        =link_to "#", class: "mypage-nav__lists__item" do 
+        =link_to finish_user_path(current_user), class: "mypage-nav__lists__item" do 
           出品した商品-売却済み
           %i.fa.fa-angle-right
 
       %li
-        =link_to "#", class: "mypage-nav__lists__item" do 
+        =link_to "#" , class: "mypage-nav__lists__item" do 
           購入した商品-取引中
           %i.fa.fa-angle-right
 

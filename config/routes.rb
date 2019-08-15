@@ -13,7 +13,9 @@ Rails.application.routes.draw do
     member do
       get'identification' 
       get'logout'
-      get'progress'
+      get'exhibit'
+      get'business'
+      get'finish'
     end
   end
   resources  :cards do
