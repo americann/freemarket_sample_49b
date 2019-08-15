@@ -15,11 +15,11 @@
           .category-container__bottom-title
             %h3{id: "category-#{category.id}"}="#{category.name}"
           .category-container__bottom-body
-            =link_to "すべて", "#"
+            =link_to "すべて", category_path(category)
             - category.children.each do |child|
               .category-children
                 %h4="#{child.name}"
                 .category-grand-children
                   - child.children.each do |grandchild|
                     .category-grand-children__name
-                      =link_to "#{grandchild.name}", "#"
+                      =link_to "#{grandchild.name}", category_path(grandchild)
