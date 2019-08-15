@@ -1,8 +1,10 @@
 class UsersController < ApplicationController
   def index
+    @parent = Category.where(parent_id: nil)
   end
   
   def show
+    @parent = Category.where(parent_id: nil)
   end
 
 
