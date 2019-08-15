@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
   def exhibit
     @parent = Category.where(parent_id: nil)
+    @products = Product.where(user_id: current_user.id).limit(5)
   end
 
   def business

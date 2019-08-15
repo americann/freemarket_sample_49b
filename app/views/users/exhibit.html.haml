@@ -15,5 +15,14 @@
       %li.exhibit-wrapper__main__list__ele3
         =link_to "売却済み" , finish_user_path(current_user) ,class: "exhibit-wrapper__main__list__ele3__link"
     .exhibit-wrapper__main__index
+    -if @products.present?
+      - @products.each do | product |
+        .exhibit-wrapper__main__index__name
+        =link_to exhibit_user_path(product.id) , class:"exhibit-link" do
+          = product.name
+    -else
+      .exhibit-wrapper__main__image
+        = image_tag("#{asset_path ""}",class:"exhibit-wrapper__main__image__ele")
+
           
   = render 'shared/footer'
