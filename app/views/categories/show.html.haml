@@ -1,17 +1,2 @@
 = render 'shared/header'
-
-.item-box-container
-  %h1="#{@category.name}の商品一覧"
-  .item-boxes-container
-    - @products.each do |product|
-      .item-box
-        =link_to product_path(product) do 
-          .item-box__top
-            = image_tag("products/bag1.jpg",width:"188",height:"188")
-          .item-box__bottom
-            %h3.item-box__bottom__title="#{product.name}"
-            .item-box__bottom__info
-              .item-box__bottom__info-price="¥#{product.price.to_s(:delimited)}"
-              .item-box__bottom__info-like
-                %i.far.fa-heart
-                %p.like-length 5
+= render partial: 'item_box_container', locals: { category: @category }
