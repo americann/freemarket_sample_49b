@@ -22,4 +22,4 @@
                 .category-grand-children
                   - child.children.each do |grandchild|
                     .category-grand-children__name
-                      =link_to "#{grandchild.name}", category_path(grandchild)
+                      =link_to grandchild.name, category_path(grandchild)
