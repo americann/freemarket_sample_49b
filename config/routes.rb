@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     member do
       get'identification' 
       get'logout'
+      get'progress'
     end
   end
   resources  :cards do

@@ -7,6 +7,8 @@ class UsersController < ApplicationController
     @parent = Category.where(parent_id: nil)
   end
 
+  def progress
+  end
 
   def edit
   end
