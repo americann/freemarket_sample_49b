@@ -31,19 +31,17 @@ class User < ActiveRecord::Base
 
     unless user
       user = User.new(
-                         provider: auth.provider,
-                         uid:      auth.uid,
-                         email: auth.info.email,
-                         password: Devise.friendly_token[0, 20],
-                        )
-                        user.save(:validate => false)
+                      provider: auth.provider,
+                      uid:      auth.uid,
+                      password: Devise.friendly_token[0, 20],
+                      )
+                        user.save(validate: false)
 
     end
     user
   end
   
   
-
   def self.find_for_oauth(auth)
     user = User.where(uid: auth.uid, provider: auth.provider).first
  
@@ -54,7 +52,7 @@ class User < ActiveRecord::Base
         email: auth.info.email,
         password: Devise.friendly_token[0, 20]
       )
-       user.save(:validate => false)
+       user.save(validate: false)
     end
     user
   end
