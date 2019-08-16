@@ -35,7 +35,7 @@
       会員情報入力
     .user-text__form
       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-        = render "devise/shared/error_messages", resource: resource
+        
         
         .user-table#user_table
           .user-text__form__topic
@@ -44,7 +44,7 @@
               必須
             %br/
           .user-text__input
-            = f.text_field :nickname, placeholder: '例）メルカリ太郎',class: "required"
+            = f.text_field :nickname, placeholder: '例）メルカリ太郎'
             
             - if resource.errors.any?
               %ul
