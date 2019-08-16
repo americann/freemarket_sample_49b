@@ -12,10 +12,12 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @parent = Category.where(parent_id: nil)
     @product = Product.find(params[:id])
   end
 
   def new
+    @parent = Category.where(parent_id: nil)
     @product = Product.new
     @parent = Category.where(parent_id: nil)
     @children = []
