@@ -20,4 +20,8 @@ class ApplicationController < ActionController::Base
       username == ENV["BASIC_AUTH_USER"] && password == ENV["BASIC_AUTH_PASSWORD"]
     end
   end
+
+  def create_parent_categories
+    @parent = Category.where(parent_id: nil)
+  end
 end
