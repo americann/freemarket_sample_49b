@@ -24,6 +24,7 @@ class UsersController < ApplicationController
 
   def detail
     @parent = Category.where(parent_id: nil)
+    @product = Product.find(params[:id])
   end
 
   def edit
