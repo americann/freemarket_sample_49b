@@ -4,18 +4,16 @@ width:700px;
 margin:auto;
 margin-top:60px;
 margin-bottom: 60px;
-background-color: white;
+background-color:#fafafa;
 border:solid;
   &__product{
-    height:700px;
-width:700px;
-border:solid;
-
+  height:700px;
+  width:700px;
+  border:solid;
     &__text{
-      height:33px;
-      width:620px;
-      
-      font-size: 24px;
+    height:33px;
+    width:620px;
+    font-size: 24px;
     text-align: center;
     word-wrap: break-word;
     line-height: 1.4;
@@ -58,24 +56,49 @@ border:solid;
   &__price{
       width: 620px;
       height: 60px;
-      border:solid;
       margin: 24px 0 0;
       margin:auto;
       text-align: center;
-      border:solid;
-    }
+  
+  }
   &__etc{
     width: 620px;
-    min-height: 60px;
+    height: 60px;
     margin:auto;
+    border:solid;
   }
+}
 
-
+.detail-wrapper__main__btn{
+  width: 700px;
+  height: 270px;
+  margin:auto;
+  border:solid;
+  margin: 24px 0 24px 0;
+  background: #fff;
+  padding: 8px 16px 8px 16px;
+  &__ele{
+    width: 668px;
+  height: 50px;
+    margin: 16px 0 16px 0;
+    background: #ea352d;
+    border: 1px solid #ea352d;
+    color: #fff;
+    display: block;
+    width: 100%;
+    line-height: 48px;
+    font-size: 14px;
+    transition: all ease-out .3s;
+    cursor: pointer;
+    text-align: center;
   }
-
-  
-
-
+  &__attention{
+    width: 652px;
+    height: 44px;
+    margin:auto;
+  border:solid;
+  }
+}
 
 }
 
@@ -103,4 +126,22 @@ margin:auto;
   background-color:#fafafa;
   width:150px;
   border:solid;
+}
+
+.btn-space{
+  font-size: 16px;
+  text-align: center;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+}
+
+#ele2{
+  background:gray;
+  border: 1px solid gray;
+}
+
+#ele3{
+  background:gray;
+  border: 1px solid gray;
 }
