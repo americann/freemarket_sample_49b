@@ -1,12 +1,25 @@
 class UsersController < ApplicationController
+
   def index
-    @parent = Category.where(parent_id: nil)
   end
   
   def show
-    @parent = Category.where(parent_id: nil)
   end
 
+  def exhibit   
+    @products = Product.where(user_id: current_user.id).limit(5)
+  end
+
+  def business
+    @products = Product.where(user_id: current_user.id).limit(5)
+  end
+
+  def finish
+    @products = Product.where(user_id: current_user.id).limit(5)
+  end
+
+  def detail
+  end
 
   def edit
   end

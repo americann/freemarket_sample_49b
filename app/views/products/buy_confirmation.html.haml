@@ -52,20 +52,5 @@
         .bottom-content__bottom
           = link_to '変更する', class: "bottom-content__bottom__link" 
   %footer.footer-terms
-    .footer__inner
-      %ul.footer__inner__links
-        %li.footer__inner__links__link1
-          = link_to"プライバシーポリシー","#"
 
-        %li.footer__inner__links__link2
-          = link_to"メルカリ利用規約","#"
-
-        %li.footer__inner__links__link2
-          = link_to"特定商取引に関する表記","#"
-
-      .footer__inner__logo
-        = link_to root_path,class:'footer-inner__logo__link' do
-          = image_tag('/products/logo-gray.svg' ,class:'logo__img')
-
-      %p.footer__inner__c-mark  
-        %small © 2019 Mercari
+  = render 'shared/logofooter'
