@@ -1,10 +1,8 @@
 class ProductsController < ApplicationController
 
-  # before_action :move_to_index, except: :index
   before_action :authenticate_user!,only: :new
   
   def index
-    @parent = Category.where(parent_id: nil)
   end
 
   def create
@@ -12,14 +10,11 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @parent = Category.where(parent_id: nil)
     @product = Product.find(params[:id])
   end
 
   def new
-    @parent = Category.where(parent_id: nil)
     @product = Product.new
-    @parent = Category.where(parent_id: nil)
     @children = []
     @grand_children = []
 
@@ -44,13 +39,10 @@ class ProductsController < ApplicationController
     @user = User.find(current_user.id)
   end
 
-  # private
-  # def move_to_index
-  #   redirect_to action: :index unless user_signed_in?
-  # end
+  
   private
   def product_params
-    params.require(:product).permit(:name, :description, :category_id, :size, :state, :postage, :prefecture_id, :shipping_date, :price, ).merge(user_id: current_user.id)
+    params.require(:product).permit(:images, :name, :description, :category_id, :size, :state, :postage, :prefecture_id, :shipping_date, :price, ).merge(user_id: current_user.id)
   end
 
 
