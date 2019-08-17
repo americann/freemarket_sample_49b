@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   
-  before_action :set_products , only:[:exhibit , :business , :finish]
+before_action :set_products , only:[:exhibit , :business , :finish]
 
 def index
 end
@@ -9,7 +9,6 @@ def show
 end
 
 def exhibit
-  binding.pry
 end
 
 def business
