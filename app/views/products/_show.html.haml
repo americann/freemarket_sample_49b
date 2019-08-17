@@ -1,0 +1,110 @@
+.wrapper
+  = render 'shared/header'
+  = render 'shared/breadcrumbs'
+
+.productshow
+  .productshow__main
+    .productshow__name 
+      = @product.name
+
+    #wrap
+      %ul#slider
+        - if @product.images.attached?
+          - @product.images.each do |image|
+            %li.slide-item
+              = image_tag image
+          
+      %ul#thumbnail-list
+        - if @product.images.attached?
+          - @product.images[0..4].each do |image|
+            %li.thumbnail-item
+              = image_tag image 
+                  
+      - if @product.images[5..9] != nil
+        %ul#thumbnail-list  
+          - if @product.images.attached?
+            - @product.images[5..9].each do |image|
+              %li.thumbnail-item
+                = image_tag image
+
+      
+    %table.productshow__table
+      %tr
+        %th 
+          出品者
+        %td
+          .productshow__table__name
+            = link_to user_path do
+              = @product.user.nickname
+          .rate
+            .rate__score
+              %i.fas.fa-laugh
+              %p.rating-score__p
+                0
+            .rate__score
+              %i.fas.fa-meh
+              %p 0
+            .rate__score 
+              %i.fas.fa-frown
+              %p 0
+            .rate__score 
+      %tr
+        %th カテゴリー
+        %td 
+          レディース
+          .productshow__table__detail
+            %i.fa.fa-angle-right
+            バッグ
+          .productshow__table__detail
+            %i.fa.fa-angle-right
+            ハンドバッグ
+      %tr
+        %th ブランド
+        %td コーチ
+      %tr
+        %th 商品のサイズ
+        %td 
+          = @product.size
+      %tr
+        %th 商品の状態
+        %td 
+          = @product.state
+      %tr
+        %th 配送料の負担
+        %td 
+          = @product.postage
+      %tr
+        %th 配送の方法
+        %td
+          = @product.shipping_method
+      %tr
+        %th 配送元地域
+        %td 
+          = @product.prefecture.name
+      %tr
+        %th 発送日の目安
+        %td 
+          = @product.shipping_date
+          日で発送
+  
+    .price
+      %span.price__yen
+        ¥
+        = @product.price
+      %span.price__tax
+        (税込)
+      %span.price__shopping-fee
+        = @product.postage
+    .productshow__shopping-botton
+      = link_to '購入画面に進む',buy_confirmation_product_path(@product)
+    .productshow__description
+      %p.productshow__description__inner
+        = @product.description
+    %button.like
+      %i.far.fa-heart
+      %span
+        いいね！
+        %span.like__number
+          1
+      
+= render 'shared/footer'

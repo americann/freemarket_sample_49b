@@ -1,78 +1,9 @@
 .detail-wrapper
-  = render 'shared/header'
-  = render 'shared/breadcrumbs'
-  .detail-wrapper__main
-    .detail-wrapper__main__product
-      %h2.detail-wrapper__main__product__text
-        =@product.name
-      .detail-wrapper__main__product__detail
-        .detail-wrapper__main__product__detail__left
-          .detail-wrapper__main__product__detail__left__inside
-            = image_tag("#{asset_path "products/bag1.jpg"}",class:"bag1")
+  = render 'products/show'
 
-        %table.detail-wrapper__main__product__detail__right
-          %tr.tr
-            %td.left-side 出品者
-            %td.left-right
-              =link_to user_path do
-                =@product.user.nickname
-
-          %tr.tr2
-            %td.left-side カテゴリー
-            %td.left-right
-              =link_to root_path do
-                =@product.category.name
-
-          %tr.tr
-            %td.left-side ブランド
-            %td.left-right            
-
-          %tr.tr
-            %td.left-side 商品の状態
-            %td.left-right 
-              =@product.state
-
-          %tr.tr
-            %td.left-side 配送料の負担
-            %td.left-right
-              =@product.postage
-
-          %tr.tr
-            %td.left-side 配送の方法
-            %td.left-right
-              =@product.shipping_method
-
-          %tr.tr
-            %td.left-side 配送元地域
-            %td.left-right
-            
-          %tr.tr
-            %td.left-side 配送日の目安
-            %td.left-right
-              =@product.shipping_date
-
-      .detail-wrapper__main__product__price
-        %span.detail-wrapper__main__product__price__span1
-          = number_to_currency(@product.tax)
-        %span.detail-wrapper__main__product__price__span2 (税込)
-
-        %span.detail-wrapper__main__product__price__span3 送料込み
-
-      .detail-wrapper__main__product__etc
-        %p.detail-wrapper__main__product__detail.text
-          =@product.description
-
-    .detail-wrapper__main__btn
-      =button_to "商品の編集" , root_path(@product) , class:"detail-wrapper__main__btn__ele"
-      %p.btn-space or
-      =button_to "出品を一旦中止する" , root_path(@product) , class:"detail-wrapper__main__btn__ele" , id:"ele2"
-      =button_to "この商品を削除する" , root_path(@product) , class:"detail-wrapper__main__btn__ele" , id:"ele3"
+  .detail-wrapper__main__btn
+    =button_to "商品の編集" , root_path(@product) , class:"detail-wrapper__main__btn__ele"
+    %p.btn-space or
+    =button_to "出品を一旦中止する" , root_path(@product) , class:"detail-wrapper__main__btn__ele" , id:"ele2"
+    =button_to "この商品を削除する" , root_path(@product) , class:"detail-wrapper__main__btn__ele" , id:"ele3"
   
-    .detail-wrapper__main__btn
-      .detail-wrapper__main__btn__attention
-    
-  
-  
-  
-  
-  = render 'shared/footer'
