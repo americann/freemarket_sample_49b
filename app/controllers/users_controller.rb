@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   end
 
   def exhibit   
-   @products = Product.where(user_id: current_user.id).limit(5)
+    @products = Product.where(user_id: current_user.id).limit(5)
   end
 
   def business
