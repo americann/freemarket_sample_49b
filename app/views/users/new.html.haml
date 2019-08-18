@@ -8,8 +8,11 @@
 
       .login_link
         %ul
-          %li= link_to 'メールアドレスで登録する',new_user_registration_path,{class: :"mail_login btn"}
-          %li= link_to 'Facebookで登録する',user_facebook_omniauth_authorize_path, { class: :"facebook_login btn" }
-          %li= link_to 'Googleで登録する', user_google_omniauth_authorize_path,{ class: :"google_login btn" }
+          %li
+            = link_to 'メールアドレスで登録する',new_user_registration_path,{class: :"mail_login btn"}
+          %li
+            = link_to 'Facebookで登録する',user_facebook_omniauth_authorize_path, { class: :"facebook_login btn" }
+          %li
+            = link_to 'Googleで登録する', user_google_omniauth_authorize_path,{ class: :"google_login btn" }
 
 = render 'shared/logofooter'
