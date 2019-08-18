@@ -3,7 +3,7 @@ $(function(){
 $(".card-new__inside__security__cord__signup__btn").on('click', function(e) {
   e.preventDefault();
 
-  Payjp.setPublicKey('pk_test_d7a950435be908a5fbe46bd8'); //payjp API テスト秘密鍵を入力
+  Payjp.setPublicKey('pk_test_d7a950435be908a5fbe46bd8'); //payjp API テスト公開鍵を入力
   var card = {
     number: parseInt($(".card-new-form__inside__card-num__text").val()), //カード番号入力欄
     cvc: parseInt($(".card-new__inside__security__cord__text").val()),　//セキュリティーコード入力欄のIDやクラス名
