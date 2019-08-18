@@ -8,11 +8,17 @@
 
       .login_link
         %ul
-          %li
+          %li.mail_login
+            %i.far.fa-envelope 
             = link_to 'メールアドレスで登録する',new_user_registration_path,{class: :"mail_login btn"}
-          %li
+              
+          %li.facebook_login
+            %i.fab.fa-facebook-square
             = link_to 'Facebookで登録する',user_facebook_omniauth_authorize_path, { class: :"facebook_login btn" }
-          %li
-            = link_to 'Googleで登録する', user_google_omniauth_authorize_path,{ class: :"google_login btn" }
+            
+          
+          %li.google_login
+            = image_tag("#{asset_path "user/google.jpg"}",width:"20",height:"20")
+            = link_to 'Googleで登録する', user_google_omniauth_authorize_path,{ class: :"google btn" }
 
-= render 'shared/logofooter'
+  = render 'shared/logofooter'

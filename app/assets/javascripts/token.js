@@ -1,5 +1,6 @@
 $(document).on("turbolinks:load", function(){
 $(function(){
+  Payjp.setPublicKey('pk_test_d7a950435be908a5fbe46bd8');
 $(".card-new__inside__security__cord__signup__btn").on('click', function(e) {
   e.preventDefault();
 
