@@ -34,6 +34,10 @@ class ProductsController < ApplicationController
     end
   end
 
+  def edit
+    
+  end  
+
   def buy_confirmation
     @product = Product.find(params[:id])
     @user = User.find(current_user.id)
