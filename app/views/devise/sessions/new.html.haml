@@ -5,15 +5,22 @@
   -#   = content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) 
 
   .user-text
+    %ul.login-no-account
+      %p アカウントをお持ちでない方はこちら
+      %br
+      %li.signup
+        = link_to '新規会員登録',new_user_path,{class: :"signup btn"}
     .user-text__form
       .login_link
         %ul
-          %li
-            = link_to '新規会員登録',new_user_path,{class: :"signup btn"}
-          %li
+          %li.facebook_login
+            %i.fab.fa-facebook-square
             = link_to 'Facebookでログイン',user_facebook_omniauth_authorize_path, { class: :"facebook_login btn" }
-          %li
-            = link_to 'Googleでログイン', user_google_omniauth_authorize_path,{ class: :"google_login btn" }
+                     
+          %li.google_login
+            = image_tag("#{asset_path "user/google.jpg"}",width:"20",height:"20")
+            = link_to 'Googleでログイン', user_google_omniauth_authorize_path,{ class: :"google btn" }
+       
         %br
         %br
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
@@ -26,7 +33,7 @@
               %ul
                 - resource.errors.full_messages_for(:email).each do|message|
                   .error_message= message
-              = resource.errors
+              -# = resource.errors
           %br/
 
           .user-text__input
@@ -35,7 +42,7 @@
             - if resource.errors.any?
               %ul
                 - resource.errors.full_messages_for(:password).each do|message|
-                  .error_message= message
+                  .error_message=　message
 
         -# - if devise_mapping.rememberable?
         -#   .field
