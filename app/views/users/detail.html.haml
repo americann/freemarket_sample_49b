@@ -2,8 +2,11 @@
 .detail-wrapper
   = render 'products/show'
   .detail-wrapper__btns
-    =button_to "商品の編集" , root_path(@product) , class:"detail-wrapper__btns__ele"
+    -# = button_to "商品の編集", `/products/#{@product.id}/edit`, class:"detail-wrapper__btns__ele"
+    = button_to "商品の編集", "/products/#{@product.id}/edit", method: :get, class:"detail-wrapper__btns__ele"
     %p.text-space or
-    =button_to "出品を一旦停止する" , root_path(@product) , class:"detail-wrapper__btns__ele" , id:"gray-btn"
-    =button_to "商品の編集" , root_path(@product) , class:"detail-wrapper__btns__ele" , id:"gray-btn"
+    = button_to "出品を一旦停止する", root_path(@product), class:"detail-wrapper__btns__ele", id:"gray-btn"
+    = button_to "この商品を削除する", root_path(@product), class:"detail-wrapper__btns__ele", id:"gray-btn"
   = render 'products/comment'
+
+  -# "/tweets/#{@tweet.id}", method: :patch
