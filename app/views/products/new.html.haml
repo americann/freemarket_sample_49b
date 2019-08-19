@@ -1,8 +1,21 @@
 .entire
   = render 'shared/logoheader'
-  
-  .main
+
+
+  .modal-content
+    %p モーダルウィンドウのコンテンツをHTMLで自由に編集することができます。画像や、動画埋め込みなど、お好きなものを入れて下さい。
+    %p 「閉じる」か「背景」をクリックするとモーダルウィンドウを終了します。
+    %p
+      %a#modal-close.button-link 閉じる
+    / モーダルウィンドウのコンテンツ終了
+    
+  %p
+    %a#modal-open.button-link 
+      クリックするとモーダルウィンドウを開きます。
+    
+  .main   
     .main__sell
+      
       %h2.main__sell__text 商品の情報を入力
 
       = form_for @product,html: { class: 'form' } do |f|
@@ -17,7 +30,6 @@
                 %li ドラッグアンドドロップ 
                 %li またはクリックしてファイルをアップロード
               = f.file_field :images, class: 'hidden'
-              
 
         .sell-content
           .sell-content__group1
@@ -84,7 +96,7 @@
 
               .delivery__form-box__group2__select-wrap2
                 = f.collection_select :prefecture_id, Prefecture.all, :id, :name,{prompt: "---"}, class:"item-detail__form-box__group__select-wrap__select-default"
-                 
+                
                 %i.fa.fa-chevron-down.fa-lg
 
             .delivery__form-box__group3
@@ -136,6 +148,9 @@
 
           =f.submit  "出品する" , class:"sell-btn-box__btn" 
           = link_to  "もどる", :back, class:'sell-btn-box__link'
+
           
+      
   = render 'shared/logofooter'
   
+
