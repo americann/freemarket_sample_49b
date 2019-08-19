@@ -1,9 +1,6 @@
 .single-container
   = render 'shared/logoheader'
   
-  -# - flash.each do |name, msg|
-  -#   = content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) 
-
   .user-text
     %ul.login-no-account
       %p アカウントをお持ちでない方はこちら
@@ -33,7 +30,7 @@
               %ul
                 - resource.errors.full_messages_for(:email).each do|message|
                   .error_message= message
-              -# = resource.errors
+             
           %br/
 
           .user-text__input
@@ -43,11 +40,6 @@
               %ul
                 - resource.errors.full_messages_for(:password).each do|message|
                   .error_message=　message
-
-        -# - if devise_mapping.rememberable?
-        -#   .field
-        -#     = f.check_box :remember_me
-        -#     = f.label :remember_me
         
         .actions
           = f.submit "ログイン"
