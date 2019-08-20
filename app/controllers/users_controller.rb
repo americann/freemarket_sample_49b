@@ -5,7 +5,7 @@ before_action :set_products , only:[:exhibit , :business , :finish]
 def new
 end
   
-def exhibit   
+def exhibit
   @products = Product.where(user_id: current_user.id).limit(5)
 end
 
@@ -16,6 +16,11 @@ def show
 end
 
 def destroy
+@product = Product.find(params[:id])
+  if @product.destroy
+    flash[:notice] = '商品削除完了！！'
+    redirect_to action: 'exhibit'
+end
 end
 
 def exhibit

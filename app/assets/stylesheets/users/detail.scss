@@ -41,7 +41,6 @@
 
 //モーダルの大枠配置 非表示
 .modal_delete_js{
-  display: none;
   height: 100vh;
   position: fixed;
   top: 0;
@@ -56,6 +55,8 @@
   top: 50%;
   transform: translate(-50%,-50%);
   width: 60%;
+  border:solid;
+  height: 250px;
 }
 //モーダル表示された時のバック
 .modal_delete_btn_js{
@@ -63,4 +64,44 @@
     height: 100vh;
     position: absolute;
     width: 100%;
+}
+
+.modal_h1{
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.modal_p{
+  font-size: 13px;
+  font-weight: 50;
+  font-weight: lighter; 
+}
+
+.text_position{
+  text-align: center;
+}
+
+.left_btn{
+  float: left;
+  color:black;
+}
+
+.right_btn{
+  float: right;
+  border-left: 1px solid #ccc;
+  color: #0099e8;
+}
+
+.btn_type{
+  display: block;
+  text-decoration: none;
+}
+
+.btn_looks{
+  line-height: 63px;
+    cursor: pointer;
+  border-top: 1px solid #ccc;
+    width: 50%;
+    text-align: center;
+    border-style: solid;
 }
