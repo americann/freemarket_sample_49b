@@ -38,3 +38,29 @@
   margin-block-start: 1em;
   margin-block-end: 1em;
 }
+
+//モーダルの大枠配置 非表示
+.modal_delete_js{
+  display: none;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+//モーダルウィンドウのコンテンツ
+.modal_delete_content_js{
+  background: #fff;
+  left: 50%;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 60%;
+}
+//モーダル表示された時のバック
+.modal_delete_btn_js{
+  background: rgba(0,0,0,0.8);
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+}
