@@ -46,8 +46,6 @@ $(document).on("turbolinks:load", function(){
       var file = $(this).prop('files')[0];
 
       // 画像以外は処理を停止
-      // $(".hidden").css("display","none");
-      // $(".form__upload__dropbox__visible").append(inputFile);
       
       if (! file.type.match('image.*')) {
         // クリア
@@ -55,13 +53,10 @@ $(document).on("turbolinks:load", function(){
         $(this).html('');
         return;
       }
-      // 画像表示
       $(".image-container").append(buildHTML(file));
-      // 仮
       var reader = new FileReader();
       reader.onload = function() {
         $('.img1').attr('src', reader.result);
-        console(reader.result);
       }
     reader.readAsDataURL(file);
     var boxLength =($(".image-box").length);
@@ -117,9 +112,6 @@ $(document).on("turbolinks:load", function(){
     var html = `<input class="hidden2" type="file" name="product[images]" id="product_images" />`
     return html;
   }
-  // function newlabel(){
-  //   `<label class="form__upload__dropbox__visible" for="hidden2" id="top-dropbox"></label>`
-  // }
   $(function() {
     // アップロードするファイルを選択
     $(document).on("change","#hidden2", function(){
@@ -129,8 +121,7 @@ $(document).on("turbolinks:load", function(){
       var file = $(this).prop('files')[0];
 
       // 画像以外は処理を停止
-      // $(".hidden").css("display","none");
-      // $(".form__upload__dropbox__visible").append(inputFile);
+
       
       if (! file.type.match('image.*')) {
         // クリア
@@ -140,11 +131,9 @@ $(document).on("turbolinks:load", function(){
       }
       // 画像表示
       $(".image-container").append(buildHTML(file));
-      // 仮
       var reader = new FileReader();
       reader.onload = function() {
         $('.img2').attr('src', reader.result);
-        console(reader.result);
       }
       reader.readAsDataURL(file);
       var boxLength =($(".image-box").length);
@@ -206,9 +195,6 @@ $(document).on("turbolinks:load", function(){
       var file = $(this).prop('files')[0];
 
       // 画像以外は処理を停止
-      // $(".hidden").css("display","none");
-      // $(".form__upload__dropbox__visible").append(inputFile);
-      
       if (! file.type.match('image.*')) {
         // クリア
         $(this).val('');
@@ -217,11 +203,9 @@ $(document).on("turbolinks:load", function(){
       }
       // 画像表示
       $(".image-container").append(buildHTML(file));
-      // 仮
       var reader = new FileReader();
       reader.onload = function() {
         $('.img3').attr('src', reader.result);
-        console(reader.result);
       }
     reader.readAsDataURL(file);
     var boxLength =($(".image-box").length);
@@ -282,9 +266,6 @@ $(document).on("turbolinks:load", function(){
       var file = $(this).prop('files')[0];
 
       // 画像以外は処理を停止
-      // $(".hidden").css("display","none");
-      // $(".form__upload__dropbox__visible").append(inputFile);
-      
       if (! file.type.match('image.*')) {
         // クリア
         $(this).val('');
@@ -293,11 +274,9 @@ $(document).on("turbolinks:load", function(){
       }
       // 画像表示
       $(".image-container").append(buildHTML(file));
-      // 仮
       var reader = new FileReader();
       reader.onload = function() {
         $('.img4').attr('src', reader.result);
-        console(reader.result);
       }
     reader.readAsDataURL(file);
     var boxLength =($(".image-box").length);
@@ -359,9 +338,6 @@ $(document).on("turbolinks:load", function(){
       var file = $(this).prop('files')[0];
 
       // 画像以外は処理を停止
-      // $(".hidden").css("display","none");
-      // $(".form__upload__dropbox__visible").append(inputFile);
-      
       if (! file.type.match('image.*')) {
         // クリア
         $(this).val('');
@@ -370,11 +346,9 @@ $(document).on("turbolinks:load", function(){
       }
       // 画像表示
       $(".image-container").append(buildHTML(file));
-      // 仮
       var reader = new FileReader();
       reader.onload = function() {
         $('.img5').attr('src', reader.result);
-        console(reader.result);
       }
     reader.readAsDataURL(file);
     var boxLength =($(".image-box").length);
@@ -434,10 +408,7 @@ $(document).on("turbolinks:load", function(){
       // 画像データの取得
       var file = $(this).prop('files')[0];
 
-      // 画像以外は処理を停止
-      // $(".hidden").css("display","none");
-      // $(".form__upload__dropbox__visible").append(inputFile);
-      
+      // 画像以外は処理を停止      
       if (! file.type.match('image.*')) {
         // クリア
         $(this).val('');
@@ -446,11 +417,9 @@ $(document).on("turbolinks:load", function(){
       }
       // 画像表示
       $("#image-container2").append(buildHTML(file));
-      // 仮
       var reader = new FileReader();
       reader.onload = function() {
         $('.img1').attr('src', reader.result);
-        console(reader.result);
       }
     reader.readAsDataURL(file);
     var boxLength =($(".image-box").length);
@@ -511,9 +480,6 @@ $(document).on("turbolinks:load", function(){
       var file = $(this).prop('files')[0];
 
       // 画像以外は処理を停止
-      // $(".hidden").css("display","none");
-      // $(".form__upload__dropbox__visible").append(inputFile);
-      
       if (! file.type.match('image.*')) {
         // クリア
         $(this).val('');
@@ -522,11 +488,9 @@ $(document).on("turbolinks:load", function(){
       }
       // 画像表示
       $("#image-container2").append(buildHTML(file));
-      // 仮
       var reader = new FileReader();
       reader.onload = function() {
         $('.img1').attr('src', reader.result);
-        console(reader.result);
       }
     reader.readAsDataURL(file);
     var boxLength =($(".image-box").length);
@@ -587,9 +551,6 @@ $(document).on("turbolinks:load", function(){
       var file = $(this).prop('files')[0];
 
       // 画像以外は処理を停止
-      // $(".hidden").css("display","none");
-      // $(".form__upload__dropbox__visible").append(inputFile);
-      
       if (! file.type.match('image.*')) {
         // クリア
         $(this).val('');
@@ -598,11 +559,9 @@ $(document).on("turbolinks:load", function(){
       }
       // 画像表示
       $("#image-container2").append(buildHTML(file));
-      // 仮
       var reader = new FileReader();
       reader.onload = function() {
         $('.img1').attr('src', reader.result);
-        console(reader.result);
       }
     reader.readAsDataURL(file);
     var boxLength =($(".image-box").length);
@@ -663,9 +622,6 @@ $(document).on("turbolinks:load", function(){
       var file = $(this).prop('files')[0];
 
       // 画像以外は処理を停止
-      // $(".hidden").css("display","none");
-      // $(".form__upload__dropbox__visible").append(inputFile);
-      
       if (! file.type.match('image.*')) {
         // クリア
         $(this).val('');
@@ -674,11 +630,9 @@ $(document).on("turbolinks:load", function(){
       }
       // 画像表示
       $("#image-container2").append(buildHTML(file));
-      // 仮
       var reader = new FileReader();
       reader.onload = function() {
         $('.img1').attr('src', reader.result);
-        console(reader.result);
       }
     reader.readAsDataURL(file);
     var boxLength =($(".image-box").length);
@@ -738,9 +692,6 @@ $(document).on("turbolinks:load", function(){
       var file = $(this).prop('files')[0];
 
       // 画像以外は処理を停止
-      // $(".hidden").css("display","none");
-      // $(".form__upload__dropbox__visible").append(inputFile);
-      
       if (! file.type.match('image.*')) {
         // クリア
         $(this).val('');
@@ -749,11 +700,9 @@ $(document).on("turbolinks:load", function(){
       }
       // 画像表示
       $("#image-container2").append(buildHTML(file));
-      // 仮
       var reader = new FileReader();
       reader.onload = function() {
         $('.img1').attr('src', reader.result);
-        console(reader.result);
       }
     reader.readAsDataURL(file);
     var boxLength =($(".image-box").length);
