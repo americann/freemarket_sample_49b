@@ -5,13 +5,44 @@ class ProductsController < ApplicationController
   def index
   end
 
+
   def create
     @product = Product.create(product_params)
   end
 
+
+  def edit
+    @product = Product.find(params[:id])
+    @children = []
+    @grand_children = []
+
+    respond_to do |format|
+      format.html
+      format.json do
+        if params[:parent_id]
+          Category.find(params[:parent_id]).children.each do |child|
+            @children << child
+          end
+        else
+          Category.find(params[:child_id]).children.each do |child|
+            @grand_children << child
+          end
+        end
+      end
+    end
+  end  
+
+
+  def update
+    product = Product.find(params[:id])
+    product.update(product_params) if product.user_id == current_user.id
+  end
+
+
   def show
     @product = Product.find(params[:id])
   end
+
 
   def new
     @product = Product.new
@@ -33,6 +64,7 @@ class ProductsController < ApplicationController
       end
     end
   end
+
 
   def buy_confirmation
     @product = Product.find(params[:id])

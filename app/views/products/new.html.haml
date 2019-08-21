@@ -1,10 +1,5 @@
 .entire
   = render 'shared/logoheader'
-
-
-
-
-
       
   .main   
     .main__sell
@@ -17,12 +12,23 @@
           %h3.form__upload__imgtext 出品画像
           %p.form__upload__text 最大10枚までアップロードできます
           .form__upload__dropbox
-            = f.text_area :images, class: "form__upload__dropbox__file"
-            .form__upload__dropbox__visible 
-              %ul
-                %li ドラッグアンドドロップ 
-                %li またはクリックしてファイルをアップロード
-              = f.file_field :images, class: 'hidden'
+
+            %ul.image-container
+            .form__upload__dropbox__visible{id: "top-dropbox"}
+              %p 
+                ドラッグアンドドロップ
+                またはクリックしてファイルをアップロード
+              %label.form__upload__dropbox__visible__label{for: "hidden1"}
+                = f.file_field :images, class: 'hidden' ,id:'hidden1'
+              %label.form__upload__dropbox__visible__label{for: "hidden2"}
+                = f.file_field :images, class: 'hidden' ,id:'hidden2'
+              %label.form__upload__dropbox__visible__label{for: "hidden3"}
+                = f.file_field :images, class: 'hidden' ,id:'hidden3'
+              %label.form__upload__dropbox__visible__label{for: "hidden4"}
+                = f.file_field :images, class: 'hidden' ,id:'hidden4'
+              %label.form__upload__dropbox__visible__label{for: "hidden5"}
+                = f.file_field :images, class: 'hidden' ,id:'hidden5'
+          
 
         .sell-content
           .sell-content__group1
@@ -38,68 +44,47 @@
           %h3.item-detail__sub-head 商品の詳細
           .item-detail__form-box
             .item-detail__form-box__group1
-              = f.label :カテゴリー, class:"item-detail__form-box__group1__label" #カテゴリー
+              = f.label :カテゴリー, class:"item-detail__form-box__group1__label1" #カテゴリー
+
               .item-detail__form-box__group1__select-wrap1
-                = f.collection_select :category_id, @parent, :id, :name,{prompt: "---"},class:"category__box__parent item-detail__form-box__group__select-wrap__select-default"
-                %i.fa.fa-chevron-down.fa-lg
-
-              .item-detail__form-box__group1__select-wrap2
-                = f.collection_select :category_id, @children, :id, :name,{prompt: "---"},class:"category__box__child item-detail__form-box__group__select-wrap__select-default"
-                %i.fa.fa-chevron-down.fa-lg
-
-              .item-detail__form-box__group1__select-wrap3
-                = f.collection_select :category_id, @grand_children, :id, :name,{prompt: "---"},class:"category__box__grandchild item-detail__form-box__group__select-wrap__select-default"
+                -# =f.select :category_id, [["---", "---"],[1, "レディース"], [2, "メンズ"],[3,"ベビー・キッズ"],["住まい・インテリア・小物","住まい・インテリア・小物"],["本・音楽・ゲーム","本・音楽・ゲーム"],["おもちゃ・ホビー・グッズ","おもちゃ・ホビー・グッズ"],["コスメ・香水・美容","コスメ・香水・美容"],["家電・スマホ・カメラ","家電・スマホ・カメラ"],["スポーツ・レジャー","スポーツ・レジャー"],["ハンドメイド","ハンドメイド"],["チケット","チケット"],["自動車・オートバイ","自動車・オートバイ"],["その他","その他"] ],{} ,class:"item-detail__form-box__group1__select-wrap1__select-default1"
+                =f.collection_select :category_id, @categories, :id, :name,{prompt: "---"},class:"item-detail__form-box__group1__select-wrap1__select-default1"
                 %i.fa.fa-chevron-down.fa-lg
 
             .item-detail__form-box__group2
-              = f.label :サイズ, class:"item-detail__form-box__group2__label"
-              .item-detail__form-box__group2__select-wrap
-                = f.select :size, [["---", "---"],["XXS以下", "XXS以下"], ["XS(SS)", "XS(SS)"],["S","S"],["M","M"],["L","L"],["XL(LL)","XL(LL)"],["2XL(3L)","2XL(3L)"],["3XL(4L)","3XL(4L)"],["4XL(5L以上)","4XL(5L以上)"],["FREE SIZE","FREE SIZE"] ], {} ,class:"item-detail__form-box__group__select-wrap__select-default"
+              =f.label :商品の状態, class:"item-detail__form-box__group2__label2"
+
+              .item-detail__form-box__group2__select-wrap2
+                =f.select :state, [["---", "---"],["新品、未使用", "新品、未使用"], ["未使用に近い", "未使用に近い"],["目立った傷や汚れなし","目立った傷や汚れなし"],["やや傷や汚れあり","やや傷や汚れあり"],["傷や汚れあり","傷や汚れあり"],["全体的に状態が悪い","全体的に状態が悪い"] ], {} ,class:"item-detail__form-box__group2__select-wrap2__select-default2"
                 %i.fa.fa-chevron-down.fa-lg
-
-
-            .item-detail__form-box__group3
-              = f.label :ブランド, class:"item-detail__form-box__group3__label"
-              .item-detail__form-box__group3__select-wrap
-                -# =f.select :brand, 
-                %i.fa.fa-chevron-down.fa-lg
-
-
-            .item-detail__form-box__group4
-              = f.label :商品の状態, class:"item-detail__form-box__group3__label"
-              .item-detail__form-box__group4__select-wrap
-                = f.select :state, [["---", "---"],["新品、未使用", "新品、未使用"], ["未使用に近い", "未使用に近い"],["目立った傷や汚れなし","目立った傷や汚れなし"],["やや傷や汚れあり","やや傷や汚れあり"],["傷や汚れあり","傷や汚れあり"],["全体的に状態が悪い","全体的に状態が悪い"] ], {} ,class:"item-detail__form-box__group__select-wrap__select-default"
-                %i.fa.fa-chevron-down.fa-lg
-
 
         .delivery
           %h3.delivery__sub-head 配送について
           .delivery__form-box
             .delivery__form-box__group1
-              = f.label :配送料の負担 , class:"delivery__form-box__group1__label1"
+              =f.label :配送料の負担 ,class:"delivery__form-box__group1__label1"
 
               .delivery__form-box__group1__select-wrap1
-                = f.select :postage, [["---", "---"],["送料込み(出品者負担)", "送料込み(出品者負担)"],["着払い(購入者負担)", "着払い(購入者負担)"] ], {} , class:"item-detail__form-box__group__select-wrap__select-default"
+                =f.select :postage, [["---", "---"],["送料込み(出品者負担)", "送料込み(出品者負担)"],["着払い(購入者負担)", "着払い(購入者負担)"] ], {} , {class:"delivery__form-box__group1__select-wrap1__select-default1"}
                 %i.fa.fa-chevron-down.fa-lg
 
 
             
             .delivery__form-box__group2
-              = f.label :発送元の地域, class:"delivery__form-box__group2__label2"
+              =f.label :発送元の地域, class:"delivery__form-box__group2__label2"
 
               .delivery__form-box__group2__select-wrap2
-                = f.collection_select :prefecture_id, Prefecture.all, :id, :name,{prompt: "---"}, class:"item-detail__form-box__group__select-wrap__select-default"
-                
+                = f.collection_select :prefecture_id, Prefecture.all, :id, :name,{prompt: "---"}, class:"delivery__form-box__group2__select-wrap2__select-default2"
+                 
                 %i.fa.fa-chevron-down.fa-lg
 
             .delivery__form-box__group3
               =f.label :発送までの日数, class:"delivery__form-box__group3__label3" 
 
               .delivery__form-box__group3__select-wrap3
-                = f.select :shipping_date, [["---", "---"],["1~2日で発送", "1~2日で発送"], ["2~3日で発送", "2~3日で発送"],["4~7日で発送", "4~7日で発送"] ], {} , class:"item-detail__form-box__group__select-wrap__select-default"
+                = f.select :shipping_date, [["---", "---"],["1~2日で発送", "1~2日で発送"], ["2~3日で発送", "2~3日で発送"],["4~7日で発送", "4~7日で発送"] ], {} , {class:"delivery__form-box__group3__select-wrap3__select-default3"}
 
                 %i.fa.fa-chevron-down.fa-lg
-
 
         .sale-price
           %h3.sale-price__sub-head 販売価格(300〜9,999,999)
@@ -120,6 +105,7 @@
             .sale-price__form-box__third
               .sale-price__form-box__third__label 販売利益
               .sale-price__form-box__third__mark1
+
 
 
         .sell-btn-box
@@ -151,8 +137,6 @@
 
           = link_to  "もどる", :back, class:'button-link__link'
 
-          
-      
   = render 'shared/logofooter'
   
 
