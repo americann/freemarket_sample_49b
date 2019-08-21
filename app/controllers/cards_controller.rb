@@ -2,6 +2,7 @@ class CardsController < ApplicationController
  protect_from_forgery except: [:pay,:payjp] ##外部サービスのjs読み込みを許可
 
 def index
+ @cards = Card.all
 end
 
 def new

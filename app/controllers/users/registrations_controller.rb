@@ -26,8 +26,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
     def user_params
       params.require(:user).permit(:nickname,:firstname,:lastname,:firstname_kana,:lastname_kana,:birthday,:email,:password,
-        address_attributes: [:zip_code,:prefecture_id,:city,:block,:building_number,:phone_number],
-        card_attributes: [:card_number, :expiration_date, :security_cord]
+        address_attributes: [:zip_code,:prefecture_id,:city,:block,:building_number,:phone_number]
         )
     end
 
