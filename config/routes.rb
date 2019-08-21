@@ -12,6 +12,11 @@ Rails.application.routes.draw do
   resources  :users do
     member do
       get'identification' 
+      get'logout'
+      get'exhibit'
+      get'business'
+      get'finish'
+      get'detail'
     end
   end
   resources  :cards do
@@ -23,8 +28,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources  :products, only:[:index, :new, :show]
-  resources  :users, only:[:index, :show, :edit]
-  resources  :cards, only:[:index, :new, :create]
+  resources  :categories, only: %i(index show)
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,0 +1,25 @@
+= render 'shared/header'
+
+.category-index-wrapper
+  .category-container
+    .category-container__top
+      .category-container__top-title
+        %h2 カテゴリー一覧
+      .category-container__top-list
+        - @categories.each do |category|
+          .category-parent
+            =link_to "#{category.name}", "#category-#{category.id}"
+    .category-container__bottom
+      - @categories.each do |category|
+        .category-container__bottom-box
+          .category-container__bottom-title
+            %h3{id: "category-#{category.id}"}="#{category.name}"
+          .category-container__bottom-body
+            =link_to "すべて", category_path(category)
+            - category.children.each do |child|
+              .category-children
+                %h4="#{child.name}"
+                .category-grand-children
+                  - child.children.each do |grandchild|
+                    .category-grand-children__name
+                      =link_to grandchild.name, category_path(grandchild)

@@ -1,1 +1,10 @@
-%p 仮ページ　支払い完了
+%div.pay-comp
+  %div.pay-comp__header
+  = render "shared/header"
+  %div.pay-comp__side-bar
+  = render "shared/side_bar"
+
+  %div.pay-comp__main
+    =link_to "支払い完了" , root_path , class:"pay-comp__main__link"
+
+  = render "shared/footer"

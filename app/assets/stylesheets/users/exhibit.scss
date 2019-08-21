@@ -1,0 +1,119 @@
+.exhibit-wrapper__main {
+  position: absolute;
+  top: 175px;
+  left: 450px;
+  &__text {
+    padding: 0 16px;
+    background: #fafafa;
+    font-size: 16px;
+    line-height: 72px;
+    font-weight: bold;
+  }
+  &__list {
+    width: 700px;
+    height: 75px;
+    list-style: none;
+    
+    &__ele1 {
+      background: #fff;
+      width: 33.3%;
+      text-align: center;
+      line-height: 75px;
+      vertical-align: top;
+      height: 75px;
+      border-top: solid;
+      border-color: red;
+      float: left;
+      &__link {
+        text-decoration: none;
+        color: black;
+      }
+    }
+    &__ele2 {
+      background: #fff;
+      width: 33.3%;
+      text-align: center;
+      line-height: 75px;
+      vertical-align: top;
+      height: 75px;
+      float: left;
+      &__link {
+        display: block;
+        text-decoration: none;
+        color: black;
+      }
+    }
+    &__ele3 {
+      background: #fff;
+      width: 33.3%;
+      text-align: center;
+      line-height: 75px;
+      vertical-align: top;
+      display: inline-block;
+      height: 75px;
+      &__link {
+        display: block;
+        text-decoration: none;
+        color: black;
+      }
+    }
+  }
+  &__index {
+    width: 700px;
+    min-height: 85px;
+    background: #fff;
+    .exhibit-wrapper__tab {
+      &__list {
+        position: relative;
+        height: 84px;
+        padding: 16px;
+        &__icon {
+          position: absolute;
+          left: 80px;
+          bottom: 20px;
+          .fa-heart {
+            position: absolute;
+            bottom: 0;
+          }
+          .fa-comment-alt {
+            color: #ccc;
+            position: absolute;
+            left: 40px;
+          }
+          span {
+            margin-left: 90px;
+            background: #0099e8;
+            color: #fff;
+            font-family: monospace;
+          }
+        }
+      }
+        img {
+          height: 48px;
+          width: 48px;
+        }
+    }
+  }
+}
+
+.exhibit-link{ //リンク3つのビジュアル面
+  text-decoration: none;
+  color:black;
+  position: absolute;
+  left: 80px;
+}
+
+.exhibit-image{ //配列がなかった場合のロゴ画像と文言
+  height:100px;
+  width:90px;
+  display:block;
+  margin:auto;
+}
+
+.exhibit-wrapper__main__text{ //ロゴ画像下の文言
+    text-align: center;
+    font-size: 16px;
+    color: #ccc;
+    background-color: white;
+}
+

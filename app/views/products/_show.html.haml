@@ -106,14 +106,3 @@
         いいね！
         %span.like__number
           1
-
-.comment
-  .comment__main
-    .comment__main__content
-      %form.message-form{action: "#", method: "POST"}
-        %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-        %textarea.textarea-default{name: "body", type: "text", value: ""}
-    .comment__main__button
-      = link_to 'コメントする','#'
-      
-= render 'shared/footer'

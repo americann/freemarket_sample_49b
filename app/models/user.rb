@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable,:omniauthable
+         :recoverable, :rememberable, :validatable,:omniauthable,omniauth_providers:  %i(google facebook)
          
   has_many :products
 
@@ -25,6 +25,23 @@ class User < ActiveRecord::Base
 
 
 
+  protected
+  def self.find_for_google(auth)
+    user = User.find_by(email: auth.info.email)
+
+    unless user
+      user = User.new(
+                      provider: auth.provider,
+                      uid:      auth.uid,
+                      password: Devise.friendly_token[0, 20],
+                      )
+                        user.save(validate: false)
+
+    end
+    user
+  end
+  
+  
   def self.find_for_oauth(auth)
     user = User.where(uid: auth.uid, provider: auth.provider).first
  
@@ -35,7 +52,7 @@ class User < ActiveRecord::Base
         email: auth.info.email,
         password: Devise.friendly_token[0, 20]
       )
-       user.save(:validate => false)
+       user.save(validate: false)
     end
     user
   end

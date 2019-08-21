@@ -1,0 +1,43 @@
+.item-box-container {
+  margin: 40px auto 0;
+  width: 1020px;
+  h1 {
+    font-size: 22px;
+    margin: 24px 0 8px;
+    font-weight: bold;
+  }
+}
+
+.item-boxes-container {
+  display: flex;
+  flex-wrap: wrap;
+  .item-box{
+    margin-bottom: 20px;
+    a {
+      text-decoration: none;
+      color: black;
+    }
+    &__bottom {
+      background-color: #fff;
+      padding: 16px;
+      &__title {
+        overflow: hidden;
+        line-height: 1.5;
+      }
+      &__info {
+        display: flex;
+        justify-content: space-between;
+        margin: 8px 0 0;
+      }
+      &__info-price {
+        font-weight: bold;
+      }
+      &__info-like {
+        display: flex;
+      }
+    }
+  }
+  .item-box:not(:nth-child(5n)){
+    margin-right: 20px; 
+  }
+}
