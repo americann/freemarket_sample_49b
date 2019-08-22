@@ -1,7 +1,8 @@
 $(document).on('turbolinks:load', function() {
 $(function(){
-  $('.detail-wrapper__btns__ele').on('click' , function(){
+  $('.delete-modal').on('click' , function(){
     $('.modal_delete_js').show();
+    return false;
   });
   $('.modal_cancel').on('click',function(){
     $('.modal_delete_js').hide();
