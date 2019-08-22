@@ -45,6 +45,7 @@
   position: fixed;
   top: 0;
   width: 100%;
+  display:none;
 }
 //モーダルウィンドウのコンテンツ
 .modal_delete_content_js{
@@ -55,7 +56,6 @@
   top: 50%;
   transform: translate(-50%,-50%);
   width: 60%;
-  border:solid;
   height: 250px;
 }
 //モーダル表示された時のバック

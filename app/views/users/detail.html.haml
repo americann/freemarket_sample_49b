@@ -19,8 +19,8 @@
   .detail-wrapper__btns
     = button_to "商品の編集", "/products/#{@product.id}/edit", method: :get, class:"detail-wrapper__btns__ele"
     %p.text-space or
-    =button_to "出品を一旦停止する" , root_path(@product) , class:"detail-wrapper__btns__ele" , id:"gray-btn"
-    =button_to "この商品を削除する" , "" , class:"detail-wrapper__btns__ele delete-modal" , id:"gray-btn" #モーダルを呼びだす為のボタン
+    =button_to "出品を一旦停止する" , "" , class:"detail-wrapper__btns__ele" , id:"gray-btn"
+    =button_to "この商品を削除する" , "" , class:"detail-wrapper__btns__ele delete-modal" , method: :get , id:"gray-btn" #モーダルを呼びだす為のボタン
   = render 'products/comment'
   %br
   %br
