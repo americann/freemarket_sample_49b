@@ -28,7 +28,6 @@ body {
   position: absolute;
   right: 16px;
   top: 50%;
-  z-index: 2;
   color: #888;
   font-size: 8px;
   -webkit-transform: translate(0, -50%);
@@ -452,21 +451,22 @@ body {
   &__inner {
     width: 620px;
   }
-  &__btn {
-    margin: 40px 0 0;
-    background: #ea352d;
-    border: 1px solid #ea352d;
-    color: #fff;
-    display: block;
-    width: 100%;
-    line-height: 48px;
-    font-size: 14px;
-    border: 1px solid transparent;
-    -webkit-transition: all ease-out .3s;
-    transition: all ease-out .3s;
-    cursor: pointer;
-    text-align: center;
-  }
+}
+
+.button-link{
+  margin: 40px 0 0;
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-align: center;
+
+
   &__link {
     width: 45%;
     margin: 24px auto 0;
@@ -478,8 +478,6 @@ body {
     line-height: 48px;
     font-size: 14px;
     border: 1px solid transparent;
-    -webkit-transition: all ease-out .3s;
-    transition: all ease-out .3s;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
@@ -552,7 +550,6 @@ body {
   //select（他の所も共通）
   width: 100%;
   position: relative;
-  z-index: 2;
   height: 48px;
   padding: 0 16px;
   border-radius: 4px;
