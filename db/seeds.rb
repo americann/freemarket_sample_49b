@@ -59,7 +59,7 @@ end
     size: "S",
     user_id: 1,
     prefecture_id: [*(1..47)].sample(),
-    category_id: [*(1..13)].sample(),
+    category_id: [*(160..1331)].sample(),
     shipping_method: "ゆうゆうメルカリ便",
   )
 end
