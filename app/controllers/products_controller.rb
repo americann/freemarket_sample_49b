@@ -3,6 +3,14 @@ class ProductsController < ApplicationController
   before_action :authenticate_user!,only: :new
   
   def index
+    parent_ids = @parent.pluck(:id)
+
+    child_ids = []
+    @parent.each { |parent| child_ids.concat(parent.children.pluck(:id))}
+
+    all_products = Product.includes(category:{parent: :parent}).where.not(category_id: parent_ids + child_ids).order("created_at desc")
+
+    @new_products = parent_ids.map { |parent_id| get_four_new_items(all_products,parent_id) }
   end
 
   def create
@@ -41,10 +49,13 @@ class ProductsController < ApplicationController
 
   
   private
+  
   def product_params
     params.require(:product).permit(:name, :description, :category_id, :size, :state, :postage, :prefecture_id, :shipping_date, :price, ).merge(user_id: current_user.id)
   end
 
-
+  def get_four_new_items(all_products, parent_id)
+    all_products.select { |product| product.category.parent.parent.id == parent_id }.slice(0,4)
+  end
 end
 
