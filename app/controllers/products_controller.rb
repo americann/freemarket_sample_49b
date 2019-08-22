@@ -79,6 +79,9 @@ class ProductsController < ApplicationController
     @user = User.find(current_user.id)
   end
 
+  def search
+    @products = Product.where('name LIKE(?)', "%#{params[:keyword]}%").order("created_at desc").limit(24)
+  end
   
   private
   

@@ -7,7 +7,7 @@
           = image_tag('//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1905591235.jpg' , class:"logo-img")
 
       .search
-        %form.search__form
+        %form.search__form{action: "/products/search"}
           %input.search__form__input{name: "keyword", placeholder: "何かお探しですか？", type: "search", value: ""}
           %button.search__form__icon{type: "submit"}
             %i.fas.fa-search
