@@ -1,7 +1,4 @@
 .exhibit-wrapper__main {
-  float: right;
-  width: 700px;
-  min-height: 240px;
   position: absolute;
   top: 175px;
   left: 450px;
@@ -38,7 +35,6 @@
       text-align: center;
       line-height: 75px;
       vertical-align: top;
-      display: inline-block;
       height: 75px;
       float: left;
       &__link {
@@ -66,13 +62,45 @@
     width: 700px;
     min-height: 85px;
     background: #fff;
+    .exhibit-wrapper__tab {
+      &__list {
+        position: relative;
+        height: 84px;
+        padding: 16px;
+        &__icon {
+          position: absolute;
+          left: 80px;
+          bottom: 20px;
+          .fa-heart {
+            position: absolute;
+            bottom: 0;
+          }
+          .fa-comment-alt {
+            color: #ccc;
+            position: absolute;
+            left: 40px;
+          }
+          span {
+            margin-left: 90px;
+            background: #0099e8;
+            color: #fff;
+            font-family: monospace;
+          }
+        }
+      }
+        img {
+          height: 48px;
+          width: 48px;
+        }
+    }
   }
 }
 
 .exhibit-link{ //リンク3つのビジュアル面
-  display: block;
   text-decoration: none;
   color:black;
+  position: absolute;
+  left: 80px;
 }
 
 .exhibit-image{ //配列がなかった場合のロゴ画像と文言

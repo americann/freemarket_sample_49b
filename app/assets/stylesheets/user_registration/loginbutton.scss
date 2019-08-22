@@ -1,0 +1,51 @@
+.btn{
+    width: 100%;
+    line-height: 48px; 
+    font-size: 12px;
+    text-decoration: none;
+    color: #333;
+}
+
+.login-no-account{
+    padding: 50px;
+    border-bottom: 1px solid #f5f5f5;
+    color:#333;
+    font-size:12px;
+    text-align: center;
+}
+
+.signup{
+    border: 1px solid #0099e8;
+    background: #0099e8;
+    color: #fff;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.mail_login{
+    color: #fff;
+    background-color: #ea352d;
+    cursor: pointer;
+    text-align: center;
+
+}
+
+
+.facebook_login{
+    margin: 16px 0 0;
+    background: #385185;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+}
+
+.google_login{
+    margin: 16px 0 0;
+    background: #fff;
+    border: #979797 solid 1px;
+    color: #333;
+    cursor: pointer;
+    text-align: center;
+}
+

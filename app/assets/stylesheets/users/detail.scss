@@ -1,0 +1,40 @@
+
+.detail-wrapper__btns{
+  width:55%;
+  height:300px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  background: #fff;
+  padding: 8px 16px 8px 16px;
+  margin:auto;
+  margin-top:45px;
+  margin-bottom:45px;
+  &__ele{
+    width:668px;
+    height:50px;
+    margin: 16px 0 16px 0;
+    background: #ea352d;
+    border: 1px solid #ea352d;
+    color: #fff;
+    display: block;
+    width: 100%;
+    line-height: 48px;
+    font-size: 14px;
+    transition: all ease-out .3s;
+    cursor: pointer;
+    text-align: center;
+ }
+}
+
+#gray-btn{
+  background: grey;
+  border: 1px solid grey;
+}
+
+.text-space{
+  text-align: center;
+  font-size: 16px;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+}

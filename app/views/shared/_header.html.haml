@@ -23,16 +23,15 @@
             %ul.category__parent
               - @parent.each do |parent| 
                 %li
-                  = link_to "#{parent.name}", '#', class:'category__list__parent'  
+                  = link_to parent.name, category_path(parent), class:'category__list__parent'  
                   %ul.category__child
                     - parent.children.each do |child|
                       %li
-                        = link_to "#{child.name}", '#', class:'category__list__child'
+                        = link_to child.name, category_path(child), class:'category__list__child'
                         %ul.category__grandchild
                           - child.children.each do |grand_child|
                             %li
-                              = link_to "#{grand_child.name}", '#', class:'category__list__grandchild'
-            
+                              = link_to grand_child.name, category_path(grand_child), class:'category__list__grandchild'
         
           %li#brand.header-nav-left__nav2
             = link_to '' , class:'header-nav-left__nav2__link navbar navleft' do
@@ -116,7 +115,8 @@
                   いいね！一覧
                   %i.fa.fa-chevron-right
                 %li
-                  出品した商品-出品中
+                  = link_to exhibit_user_path(current_user) , class: "mypage-nav__lists__item" do 
+                    出品した商品-出品中
                   %i.fa.fa-chevron-right
                 %li
                   出品した商品-取引中
@@ -134,7 +134,7 @@
       - else
         %ul.header-nav-right-signup
           %li
-            = link_to "新規登録", new_user_registration_path, class: 'header-nav-right-signup__signup-nav'
+            = link_to "新規登録", new_user_path, class: 'header-nav-right-signup__signup-nav'
 
            
           %li
