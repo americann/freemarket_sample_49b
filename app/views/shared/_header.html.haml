@@ -23,16 +23,15 @@
             %ul.category__parent
               - @parent.each do |parent| 
                 %li
-                  = link_to "#{parent.name}", '#', class:'category__list__parent'  
+                  = link_to parent.name, category_path(parent), class:'category__list__parent'  
                   %ul.category__child
                     - parent.children.each do |child|
                       %li
-                        = link_to "#{child.name}", '#', class:'category__list__child'
+                        = link_to child.name, category_path(child), class:'category__list__child'
                         %ul.category__grandchild
                           - child.children.each do |grand_child|
                             %li
-                              = link_to "#{grand_child.name}", '#', class:'category__list__grandchild'
-            
+                              = link_to grand_child.name, category_path(grand_child), class:'category__list__grandchild'
         
           %li#brand.header-nav-left__nav2
             = link_to '' , class:'header-nav-left__nav2__link navbar navleft' do

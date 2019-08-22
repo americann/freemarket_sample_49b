@@ -22,11 +22,11 @@
         .sell-content
           .sell-content__group1
             = f.label :商品名, class:"sell-content__group1__label"
-            = f.text_field :name, class: "sell-content__group1__input", placeholder:"商品名（必須 40文字まで)", value:""
+            = f.text_field :name, class: "sell-content__group1__input", placeholder:"商品名（必須 40文字まで)"
 
           .sell-content__group2
             = f.label :商品の説明, class:"sell-content__group2__label" #商品の説明
-            = f.text_area :description, class:"sell-content__group2__input", placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", value:""
+            = f.text_area :description, class:"sell-content__group2__input", placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
 
 
         .item-detail
@@ -35,15 +35,15 @@
             .item-detail__form-box__group1
               = f.label :カテゴリー, class:"item-detail__form-box__group1__label" #カテゴリー
               .item-detail__form-box__group1__select-wrap1
-                = f.collection_select :category_id, @parent, :id, :name,{prompt: "---"},class:"category__box__parent item-detail__form-box__group__select-wrap__select-default"
+                = f.collection_select :category_id, @parent, :id, :name, {prompt: "---"}, class:"category__box__parent item-detail__form-box__group__select-wrap__select-default"
                 %i.fa.fa-chevron-down.fa-lg
 
               .item-detail__form-box__group1__select-wrap2
-                = f.collection_select :category_id, @children, :id, :name,{prompt: "---"},class:"category__box__child item-detail__form-box__group__select-wrap__select-default"
+                = f.collection_select :category_id, @children, :id, :name, {prompt: "---"}, class:"category__box__child item-detail__form-box__group__select-wrap__select-default"
                 %i.fa.fa-chevron-down.fa-lg
 
               .item-detail__form-box__group1__select-wrap3
-                = f.collection_select :category_id, @grand_children, :id, :name,{prompt: "---"},class:"category__box__grandchild item-detail__form-box__group__select-wrap__select-default"
+                = f.collection_select :category_id, @grand_children, :id, :name, {prompt: "---"}, class:"category__box__grandchild item-detail__form-box__group__select-wrap__select-default"
                 %i.fa.fa-chevron-down.fa-lg
 
             .item-detail__form-box__group2
@@ -83,7 +83,7 @@
               = f.label :発送元の地域, class:"delivery__form-box__group2__label2"
 
               .delivery__form-box__group2__select-wrap2
-                = f.collection_select :prefecture_id, Prefecture.all, :id, :name,{prompt: "---"}, class:"item-detail__form-box__group__select-wrap__select-default"
+                = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "---"}, class:"item-detail__form-box__group__select-wrap__select-default"
                  
                 %i.fa.fa-chevron-down.fa-lg
 
@@ -134,18 +134,7 @@
               = link_to"加盟店規約","#"
               に同意したことになります。
 
-
-          =f.submit  "出品する" , class:"button-link" ,id:"modal-open"
-
-          .modal-content
-            .modal-content__completed
-              出品が完了しました！
-            .modal-content__details
-              あなたが出品した商品は「出品した商品一覧」からいつでも見ることができます。
-
-              = link_to '続けて出品する', new_product_path,{ class: :"button-link",id: :"modal-close" }
-
-          = link_to  "もどる", :back, class:'button-link__link'
+          =f.submit  "編集する" , class:"sell-btn-box__btn" 
+          = link_to  "もどる", :back, class:'sell-btn-box__link'
           
   = render 'shared/logofooter'
-  
