@@ -1,10 +1,10 @@
-=link_to product_path(new_product), class: "product-box" do 
+=link_to product_path(1), class: "product-box" do 
   .product-box__top
     = image_tag("/products/sho.jpg",width:"213",height:"220")
   .product-box__bottom
-    .product-box__bottom__title=new_product.name
+    .product-box__bottom__title ゆでたまご
     .product-box__bottom__info
-      .product-box__bottom__info__price="¥#{new_product.price.to_s(:delimited)}"
+      .product-box__bottom__info__price ¥ 7,000
       .product-box__bottom__info__like
         %i.far.fa-heart
         %p.like-length 5

@@ -1,1 +1,8 @@
-= render partial: "parent", collection: @parent
+.products-box
+  =link_to "#", class: "products-box__title" do 
+    レディース新着アイテム
+  .four-box
+    = render 'products/product_box'
+    
+  =link_to "#", class: "products-box__viewAllItems" do 
+    すべての商品を見る
