@@ -20,10 +20,7 @@ def destroy
   if @product.destroy
     flash[:notice] = '商品削除完了！！'
     redirect_to action: 'exhibit'
-end
-end
-
-def exhibit
+  end
 end
 
 def business
