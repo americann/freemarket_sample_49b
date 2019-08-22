@@ -1,0 +1,12 @@
+= render 'shared/header'
+
+.search-container
+  .search-left
+    .search-top
+      %select.select-default
+        %option{value: ""} 並び替え
+  .search-right
+    %h3.search-right__title 新着商品
+    .items-box-content
+      = render partial: 'product', collection: @products
+
