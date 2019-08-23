@@ -1,0 +1,5 @@
+.products-box
+  =link_to "#{parent.name}新着アイテム", category_path(parent), class: "products-box__title"
+  .four-box
+    = render partial: "new_product", collection: @new_products[parent_counter]
+  =link_to "すべての商品を見る", category_path(parent), class: "products-box__viewAllItems"

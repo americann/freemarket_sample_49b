@@ -59,7 +59,28 @@ end
     size: "S",
     user_id: 1,
     prefecture_id: [*(1..47)].sample(),
-    category_id: [*(1..13)].sample(),
+    category_id: [*(160..1331)].sample(),
     shipping_method: "ゆうゆうメルカリ便",
   )
 end
+
+User.create(
+  nickname:"メルカリたろう",
+  email:"merucari@gmail.com",
+  password:"yuki0401",
+  firstname:"田中",
+  lastname:"太郎",
+  firstname_kana:"タナカ",
+  lastname_kana:"タロウ",
+  birthday:"2000-04-01",
+)
+
+Address.create(
+  zip_code: 552-0012,
+  prefecture_id: [*(1..47)].sample(),
+  city:"大阪市港区",
+  block: "1-1-1",
+  building_number: "aaaビル",
+  phone_number:1112222,
+  user_id: 1,
+)
