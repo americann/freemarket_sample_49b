@@ -10,7 +10,5 @@ $(function(){
   $('.modal_delete_btn_js').on('click' , function(){
     $('.modal_delete_js').hide();
   });
-
-});
-setTimeout("$('.notice').fadeOut('slow')", 1000) ;
+ });
 });

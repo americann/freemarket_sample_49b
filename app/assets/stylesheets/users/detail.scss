@@ -105,3 +105,15 @@
     text-align: center;
     border-style: solid;
 }
+
+.modal_h1.text_position{//確認とテキストのスペース確保
+  margin-bottom:10px;
+}
+
+.modal_p.text_position{//テキスト3行の行間
+  line-height:20px;
+}
+
+.no{//テキスト3行目とボタンのスペース確保
+  margin-bottom:60px;
+}

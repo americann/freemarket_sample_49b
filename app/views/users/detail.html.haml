@@ -7,12 +7,8 @@
       %h1.modal_h1.text_position 確認
       %p.modal_p.text_position 削除すると二度と復活できません。
       %p.modal_p.text_position 削除するかわりに停止する事もできます。
-      %br.modal_br
-      %p.modal_p.text_position 本当に削除しますか？
-      %br.modal_br
-      %br.modal_br
-      %br.modal_br
-      %br.modal_br
+      %p.modal_p.text_position.no 本当に削除しますか？
+      
       =link_to "キャンセル" , "" ,class:"modal_cancel left_btn btn_type btn_looks"
       =link_to  "削除する" , user_path(@product.id) , class:"real_delete_btn right_btn btn_type btn_looks" , method: :delete
 
