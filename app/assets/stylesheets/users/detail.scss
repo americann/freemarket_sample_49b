@@ -38,3 +38,82 @@
   margin-block-start: 1em;
   margin-block-end: 1em;
 }
+
+//モーダルの大枠配置 非表示
+.modal_delete_js{
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display:none;
+}
+//モーダルウィンドウのコンテンツ
+.modal_delete_content_js{
+  background: #fff;
+  left: 50%;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 60%;
+  height: 250px;
+}
+//モーダル表示された時のバック
+.modal_delete_btn_js{
+  background: rgba(0,0,0,0.8);
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+}
+
+.modal_h1{
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.modal_p{
+  font-size: 13px;
+  font-weight: 50;
+  font-weight: lighter; 
+}
+
+.text_position{
+  text-align: center;
+}
+
+.left_btn{
+  float: left;
+  color:black;
+}
+
+.right_btn{
+  float: right;
+  border-left: 1px solid #ccc;
+  color: #0099e8;
+}
+
+.btn_type{
+  display: block;
+  text-decoration: none;
+}
+
+.btn_looks{
+  line-height: 63px;
+    cursor: pointer;
+  border-top: 1px solid #ccc;
+    width: 50%;
+    text-align: center;
+    border-style: solid;
+}
+
+.modal_h1.text_position{//確認とテキストのスペース確保
+  margin-bottom:10px;
+}
+
+.modal_p.text_position{//テキスト3行の行間
+  line-height:20px;
+}
+
+.no{//テキスト3行目とボタンのスペース確保
+  margin-bottom:60px;
+}
