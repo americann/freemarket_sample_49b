@@ -35,15 +35,15 @@
             .item-detail__form-box__group1
               = f.label :カテゴリー, class:"item-detail__form-box__group1__label" #カテゴリー
               .item-detail__form-box__group1__select-wrap1
-                = f.collection_select :category_id, @parent, :id, :name, {prompt: "---"}, class:"category__box__parent item-detail__form-box__group__select-wrap__select-default"
+                = f.collection_select :category_id, @parent, :id, :name, {prompt: "---", selected: @product.category.parent.parent.id}, class:"category__box__parent item-detail__form-box__group__select-wrap__select-default"
                 %i.fa.fa-chevron-down.fa-lg
 
               .item-detail__form-box__group1__select-wrap2
-                = f.collection_select :category_id, @children, :id, :name, {prompt: "---"}, class:"category__box__child item-detail__form-box__group__select-wrap__select-default"
+                = f.collection_select :category_id, @children_categories, :id, :name, {prompt: "---", selected: @product.category.parent.id}, class:"category__box__child item-detail__form-box__group__select-wrap__select-default"
                 %i.fa.fa-chevron-down.fa-lg
 
               .item-detail__form-box__group1__select-wrap3
-                = f.collection_select :category_id, @grand_children, :id, :name, {prompt: "---"}, class:"category__box__grandchild item-detail__form-box__group__select-wrap__select-default"
+                = f.collection_select :category_id, @grandchildren_categories, :id, :name, {prompt: "---", selected: @product.category.id}, class:"category__box__grandchild item-detail__form-box__group__select-wrap__select-default"
                 %i.fa.fa-chevron-down.fa-lg
 
             .item-detail__form-box__group2
@@ -118,23 +118,7 @@
 
 
         .sell-btn-box
-          .sell-btn-box__inner
-            %p.ban       
-              = link_to"禁止されている出品","#"
-              = link_to"行為","#"
-              を必ずご確認ください。
-            %p.ban
-              またブランド品でシリアルナンバー等がある場合はご記載ください。
-            %p.ban
-              = link_to"偽ブランドの販売","#"
-              は犯罪であり処罰される可能性があります。
-            
-            %p.ban
-              また、出品をもちまして
-              = link_to"加盟店規約","#"
-              に同意したことになります。
-
-          =f.submit  "編集する" , class:"sell-btn-box__btn" 
-          = link_to  "もどる", :back, class:'sell-btn-box__link'
+          =f.submit  "変更する" , class:"sell-btn-box__btn" 
+          = link_to  "キャンセル", :back, class:'sell-btn-box__link'
           
   = render 'shared/logofooter'
