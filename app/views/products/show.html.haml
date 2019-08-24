@@ -51,13 +51,13 @@
       %tr
         %th カテゴリー
         %td 
-          レディース
+          = @product.category.parent.parent.name
           .productshow__table__detail
             %i.fa.fa-angle-right
-            バッグ
+            = @product.category.parent.name
           .productshow__table__detail
             %i.fa.fa-angle-right
-            ハンドバッグ
+            = @product.category.name
       %tr
         %th ブランド
         %td コーチ
