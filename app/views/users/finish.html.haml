@@ -12,8 +12,8 @@
         =link_to "出品中" , exhibit_user_path(current_user) ,class: "exhibit-wrapper__main__list__ele__link"
       %li.exhibit-wrapper__main__list__ele
         =link_to "取引中" , business_user_path(current_user) ,class: "exhibit-wrapper__main__list__ele__link"
-      %li.exhibit-wrapper__main__list__ele
-        =link_to "売却済み" , finish_user_path(current_user) ,class: "exhibit-wrapper__main__list__ele__link finish-btn"
+      %li.exhibit-wrapper__main__list__ele.finish-btn
+        =link_to "売却済み" , finish_user_path(current_user) ,class: "exhibit-wrapper__main__list__ele__link"
     .exhibit-wrapper__main__index
       - unless @products.empty?
         .exhibit-wrapper__main__image
