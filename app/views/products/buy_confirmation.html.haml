@@ -57,7 +57,10 @@
           = @user.address.prefecture.name
           = @user.address.city
           = @user.address.block
-          = @user.address.building_number   
+          = @user.address.building_number
+          %br
+          = @user.firstname
+          = @user.lastname
 
         .middle-content__bottom
           = link_to '変更する','', class: "middle-content__bottom__link" 
