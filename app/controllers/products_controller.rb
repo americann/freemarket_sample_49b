@@ -63,6 +63,11 @@ class ProductsController < ApplicationController
   def buy_confirmation
     @product = Product.find(params[:id])
     @user = User.find(current_user.id)
+
+  else 
+
+    redirect_to  identification_user_path
+
   end
 
   def search
