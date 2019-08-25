@@ -18,7 +18,7 @@ end
 def destroy
 @product = Product.find(params[:id])
   if @product.destroy
-    redirect_to controller: :products, action: :index
+    redirect_to controller: :products, action: :exhibit
   else
     redirect_to action: 'exhibit'
   end
