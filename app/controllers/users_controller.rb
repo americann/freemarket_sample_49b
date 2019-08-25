@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  
+
 before_action :set_products , only:[:exhibit , :business , :finish]
 
 def new
