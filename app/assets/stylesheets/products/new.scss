@@ -389,8 +389,19 @@ body {
           font-weight: 600;
           font-size: 14px;
           float: left;
-          // display: inline-block;
         }
+          .form-require__price {
+            position: relative;
+            right: 170px;
+            top: 17px;
+            margin: 0 0 0 8px;
+            padding: 2px 4px;
+            border-radius: 2px;
+            color: #fff;
+            font-size: 12px;
+            vertical-align: top;
+            background: #ea352d;
+          }
         &__price {
           width: 50%;
           height: 48px;
