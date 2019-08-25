@@ -9,12 +9,16 @@
       = form_with(model: @user, local: true, class: "top-content") do |f|
         .top-content__info
           %figure.top-content__info__image
-            = image_tag("/products/m34238645569_1.jpg",class: "img")
-          .top-content__info__title シャツ
+            - @product.images.each do |image| 
+              = image_tag image
+
+          .top-content__info__title
+            = @product.name
+
         .top-content__price
-          ¥ 1,000
+          = "¥#{@product.price.to_s(:delimited)}"
           %span
-            送料込み
+          = @product.postage
         .top-content__select-points
           %p{class:"top-content__select-points__text"} ポイントを使う
           %i.fas.fa-angle-down
@@ -37,20 +41,35 @@
                 
         .top-content__payment
           .top-content__payment__left 支払い金額
-          .top-content__payment__right ¥1,000
+          .top-content__payment__right 
+            ¥
+            = @product.price
+
         = link_to '購入する' , pay_card_path(@product) , class: "top-content__button", method: :post
       .middle-content
         .middle-content__top 配送先
-        .middle-content__middle 〒542-0081<br>大阪府大阪市中央区南船場２丁目６−２８ ユタカビル7階<br>真子就有
+        .middle-content__middle 
+          〒
+          = @user.address.zip_code
+
+          %br/
+          = @user.address.prefecture.name
+          = @user.address.city
+          = @user.address.block
+          = @user.address.building_number
+          %br
+          = @user.firstname
+          = @user.lastname
+
         .middle-content__bottom
           = link_to '変更する','', class: "middle-content__bottom__link" 
       .bottom-content
         .bottom-content__top 支払い方法
         .bottom-content__middle 
-          .bottom-content__middle__number ************0000<br>11 / 23
+          .bottom-content__middle__number 
           = image_tag("/visa.svg",class:"bottom-content__middle__image")
         .bottom-content__bottom
-          = link_to '変更する', class: "bottom-content__bottom__link" 
+          = link_to '変更する','', class: "bottom-content__bottom__link" 
   %footer.footer-terms
 
   = render 'shared/logofooter'
