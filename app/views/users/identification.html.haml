@@ -13,38 +13,59 @@
 
         .identification-content__middle__information
           %label お名前
-          %p 
+          %br
+          %br
+          = @user.firstname
+          = @user.lastname
+
         .identification-content__middle__information
           %label お名前カナ 
-          %p 
+          %br
+          %br
+          = @user.firstname_kana
+          = @user.lastname_kana
+
+
         .identification-content__middle__information
           %label 生年月日
-          %p 
-        .identification-content__middle__form-box
-          .identification-content__middle__form-box__top
-            %label 郵便番号
-            %span.form-require 必須
-          = f.number_field :zip_code, placeholder: "例) 1234567"
-        .identification-content__middle__form-box
-          .identification-content__middle__form-box__top
-            %label 都道府県
-            %span.form-require 必須
-          = f.collection_select :prefecture_id, Prefecture.all, :id , :name
-        .identification-content__middle__form-box
-          .identification-content__middle__form-box__top
-            %label 市区町村
-            %span.form-require 必須
-          = f.text_field :city,placeholder: "例)横浜市緑区"
-        .identification-content__middle__form-box
-          .identification-content__middle__form-box__top
-            %label 番地
-            %span.form-require 必須
-          = f.text_field :block,placeholder: "例)青山1-1-1"
-        .identification-content__middle__form-box
-          .identification-content__middle__form-box__top
-            %label 建物名
-            %span.form-require 必須
-          = f.text_field :building_number,placeholder: "例)柳ビル103"
+          %br
+          %br
+          = @user.birthday
+
+
+
+
+
+        -# .identification-content__middle__form-box
+        -#   .identification-content__middle__form-box__top
+        -#     %label 郵便番号
+        -#     %span.form-require 必須
+
+        -#   = f.number_field :zip_code, placeholder: "例) 1234567"
+        -# .identification-content__middle__form-box
+        -#   .identification-content__middle__form-box__top
+        -#     %label 都道府県
+        -#     %span.form-require 必須
+        -#   = f.collection_select :prefecture_id, Prefecture.all, :id , :name
+        -# .identification-content__middle__form-box
+        -#   .identification-content__middle__form-box__top
+        -#     %label 市区町村
+        -#     %span.form-require 必須
+        -#   = f.text_field :city,placeholder: "例)横浜市緑区"
+        -# .identification-content__middle__form-box
+        -#   .identification-content__middle__form-box__top
+        -#     %label 番地
+        -#     %span.form-require 必須
+        -#   = f.text_field :block,placeholder: "例)青山1-1-1"
+        -# .identification-content__middle__form-box
+        -#   .identification-content__middle__form-box__top
+        -#     %label 建物名
+        -#     %span.form-require 必須
+        -#   = f.text_field :building_number,placeholder: "例)柳ビル103"
+
+
+
+
 
 
       .identification-content__bottom
