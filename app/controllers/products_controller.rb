@@ -29,6 +29,7 @@ class ProductsController < ApplicationController
   def update
     product = Product.find(params[:id])
     product.update(product_params) if product.user_id == current_user.id
+    redirect_to detail_user_path(product)
   end
 
 
