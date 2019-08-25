@@ -16,8 +16,7 @@
             = @product.name
 
         .top-content__price
-          ¥
-          = @product.price
+          = "¥#{@product.price.to_s(:delimited)}"
           %span
           = @product.postage
         .top-content__select-points

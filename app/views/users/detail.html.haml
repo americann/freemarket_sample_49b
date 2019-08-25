@@ -88,8 +88,7 @@
     
       .price
         %span.price__yen
-          ¥
-          = @product.price
+          = "¥#{@product.price.to_s(:delimited)}"
         %span.price__tax
           (税込)
         %span.price__shopping-fee
