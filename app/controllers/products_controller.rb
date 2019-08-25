@@ -21,23 +21,8 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
-    @children = []
-    @grand_children = []
-
-    respond_to do |format|
-      format.html
-      format.json do
-        if params[:parent_id]
-          Category.find(params[:parent_id]).children.each do |child|
-            @children << child
-          end
-        else
-          Category.find(params[:child_id]).children.each do |child|
-            @grand_children << child
-          end
-        end
-      end
-    end
+    @children_categories = @product.category.parent.parent.children
+    @grandchildren_categories = @product.category.parent.children
   end  
 
 
