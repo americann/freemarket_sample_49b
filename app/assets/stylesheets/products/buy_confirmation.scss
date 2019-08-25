@@ -31,6 +31,7 @@
       flex-direction: column;
       &__info{
         display:flex;
+        
         &__title{
           width:240px;
           margin-left:16px;
@@ -40,10 +41,11 @@
           padding-top: 5px;
         }
         &__image{
-          width:64px;
-          .img{
-            width:64px;
+          
+          img{
+            width:80px;
           }
+          
         }
       }
       &__price{
