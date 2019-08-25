@@ -1,5 +1,4 @@
 .exhibit-wrapper
-  = render 'shared/header'
   = render 'shared/breadcrumbs'
 
   .exhibit-wrapper__side
@@ -34,5 +33,3 @@
                   出品中
               - product.images.each do |image| 
                 = image_tag image
-                              
-  = render 'shared/footer'
