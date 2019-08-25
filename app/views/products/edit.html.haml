@@ -8,24 +8,41 @@
       = form_for @product,html: { class: 'form' } do |f|
 
         .form__upload
-          %h3.form__upload__imgtext 出品画像
+          %h3.form__upload__imgtext
+          = f.label :出品画像
+          %span.form-require
+            必須
           %p.form__upload__text 最大10枚までアップロードできます
           .form__upload__dropbox
-            = f.text_area :images, class: "form__upload__dropbox__file"
-            .form__upload__dropbox__visible 
-              %ul
-                %li ドラッグアンドドロップ 
-                %li またはクリックしてファイルをアップロード
-              = f.file_field :images, class: 'hidden'
+            %ul.image-container
+            .form__upload__dropbox__visible{id: "top-dropbox"}
+              %p 
+                ドラッグアンドドロップ
+                またはクリックしてファイルをアップロード
+              %label.form__upload__dropbox__visible__label{for: "hidden1"}
+                = f.file_field :images, class: 'hidden' ,id:'hidden1'
+              %label.form__upload__dropbox__visible__label{for: "hidden2"}
+                = f.file_field :images, class: 'hidden' ,id:'hidden2'
+              %label.form__upload__dropbox__visible__label{for: "hidden3"}
+                = f.file_field :images, class: 'hidden' ,id:'hidden3'
+              %label.form__upload__dropbox__visible__label{for: "hidden4"}
+                = f.file_field :images, class: 'hidden' ,id:'hidden4'
+              %label.form__upload__dropbox__visible__label{for: "hidden5"}
+                = f.file_field :images, class: 'hidden' ,id:'hidden5'
+        
               
 
         .sell-content
           .sell-content__group1
             = f.label :商品名, class:"sell-content__group1__label"
+            %span.form-require
+              必須
             = f.text_field :name, class: "sell-content__group1__input", placeholder:"商品名（必須 40文字まで)"
 
           .sell-content__group2
             = f.label :商品の説明, class:"sell-content__group2__label" #商品の説明
+            %span.form-require
+              必須
             = f.text_area :description, class:"sell-content__group2__input", placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
 
 
@@ -34,20 +51,24 @@
           .item-detail__form-box
             .item-detail__form-box__group1
               = f.label :カテゴリー, class:"item-detail__form-box__group1__label" #カテゴリー
+              %span.form-require
+                必須
               .item-detail__form-box__group1__select-wrap1
-                = f.collection_select :category_id, @parent, :id, :name, {prompt: "---"}, class:"category__box__parent item-detail__form-box__group__select-wrap__select-default"
+                = f.collection_select :category_id, @parent, :id, :name, {prompt: "---", selected: @product.category.parent.parent.id}, class:"category__box__parent item-detail__form-box__group__select-wrap__select-default"
                 %i.fa.fa-chevron-down.fa-lg
 
               .item-detail__form-box__group1__select-wrap2
-                = f.collection_select :category_id, @children, :id, :name, {prompt: "---"}, class:"category__box__child item-detail__form-box__group__select-wrap__select-default"
+                = f.collection_select :category_id, @children_categories, :id, :name, {prompt: "---", selected: @product.category.parent.id}, class:"category__box__child item-detail__form-box__group__select-wrap__select-default"
                 %i.fa.fa-chevron-down.fa-lg
 
               .item-detail__form-box__group1__select-wrap3
-                = f.collection_select :category_id, @grand_children, :id, :name, {prompt: "---"}, class:"category__box__grandchild item-detail__form-box__group__select-wrap__select-default"
+                = f.collection_select :category_id, @grandchildren_categories, :id, :name, {prompt: "---", selected: @product.category.id}, class:"category__box__grandchild item-detail__form-box__group__select-wrap__select-default"
                 %i.fa.fa-chevron-down.fa-lg
 
             .item-detail__form-box__group2
               = f.label :サイズ, class:"item-detail__form-box__group2__label"
+              %span.form-require
+                必須
               .item-detail__form-box__group2__select-wrap
                 = f.select :size, [["---", "---"],["XXS以下", "XXS以下"], ["XS(SS)", "XS(SS)"],["S","S"],["M","M"],["L","L"],["XL(LL)","XL(LL)"],["2XL(3L)","2XL(3L)"],["3XL(4L)","3XL(4L)"],["4XL(5L以上)","4XL(5L以上)"],["FREE SIZE","FREE SIZE"] ], {} ,class:"item-detail__form-box__group__select-wrap__select-default"
                 %i.fa.fa-chevron-down.fa-lg
@@ -62,6 +83,8 @@
 
             .item-detail__form-box__group4
               = f.label :商品の状態, class:"item-detail__form-box__group3__label"
+              %span.form-require
+                必須
               .item-detail__form-box__group4__select-wrap
                 = f.select :state, [["---", "---"],["新品、未使用", "新品、未使用"], ["未使用に近い", "未使用に近い"],["目立った傷や汚れなし","目立った傷や汚れなし"],["やや傷や汚れあり","やや傷や汚れあり"],["傷や汚れあり","傷や汚れあり"],["全体的に状態が悪い","全体的に状態が悪い"] ], {} ,class:"item-detail__form-box__group__select-wrap__select-default"
                 %i.fa.fa-chevron-down.fa-lg
@@ -72,7 +95,8 @@
           .delivery__form-box
             .delivery__form-box__group1
               = f.label :配送料の負担 , class:"delivery__form-box__group1__label1"
-
+              %span.form-require
+                必須
               .delivery__form-box__group1__select-wrap1
                 = f.select :postage, [["---", "---"],["送料込み(出品者負担)", "送料込み(出品者負担)"],["着払い(購入者負担)", "着払い(購入者負担)"] ], {} , class:"item-detail__form-box__group__select-wrap__select-default"
                 %i.fa.fa-chevron-down.fa-lg
@@ -81,18 +105,18 @@
             
             .delivery__form-box__group2
               = f.label :発送元の地域, class:"delivery__form-box__group2__label2"
-
+              %span.form-require
+                必須
               .delivery__form-box__group2__select-wrap2
                 = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "---"}, class:"item-detail__form-box__group__select-wrap__select-default"
-                 
                 %i.fa.fa-chevron-down.fa-lg
 
             .delivery__form-box__group3
               =f.label :発送までの日数, class:"delivery__form-box__group3__label3" 
-
+              %span.form-require
+                必須
               .delivery__form-box__group3__select-wrap3
                 = f.select :shipping_date, [["---", "---"],["1~2日で発送", "1~2日で発送"], ["2~3日で発送", "2~3日で発送"],["4~7日で発送", "4~7日で発送"] ], {} , class:"item-detail__form-box__group__select-wrap__select-default"
-
                 %i.fa.fa-chevron-down.fa-lg
 
 
@@ -102,6 +126,8 @@
             .sale-price__form-box__first
               .sale-price__form-box__first__inside
                 = f.label :価格, class:"sale-price__form-box__first__inside__label"
+                %span.form-require__price
+                  必須
 
                 .sale-price__form-box__first__inside__price
                   %p.sale-price__form-box__first__inside__price__text ¥
@@ -118,23 +144,7 @@
 
 
         .sell-btn-box
-          .sell-btn-box__inner
-            %p.ban       
-              = link_to"禁止されている出品","#"
-              = link_to"行為","#"
-              を必ずご確認ください。
-            %p.ban
-              またブランド品でシリアルナンバー等がある場合はご記載ください。
-            %p.ban
-              = link_to"偽ブランドの販売","#"
-              は犯罪であり処罰される可能性があります。
-            
-            %p.ban
-              また、出品をもちまして
-              = link_to"加盟店規約","#"
-              に同意したことになります。
-
-          =f.submit  "編集する" , class:"sell-btn-box__btn" 
-          = link_to  "もどる", :back, class:'sell-btn-box__link'
+          =f.submit  "変更する" , class:"sell-btn-box__btn" 
+          = link_to  "キャンセル", :back, class:'sell-btn-box__link'
           
   = render 'shared/logofooter'

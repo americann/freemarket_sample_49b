@@ -34,10 +34,14 @@ def payjp ##トークンを取得保存、トークンを活用して顧客を�
 end
 
 def pay ##支払いの時にトークンと支払い金額をpayjpに渡す
-product = Product.find(params[:id]).price
-customer_id = current_user.card.customer_id
-Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
-charge = Payjp::Charge.create(amount: product, customer: customer_id, currency: 'jpy')
+  if current_user.card
+    product = Product.find(params[:id]).price
+    customer_id = current_user.card.customer_id
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    charge = Payjp::Charge.create(amount: product, customer: customer_id, currency: 'jpy')
+  else
+   render :new
+  end
 end
 
 private
