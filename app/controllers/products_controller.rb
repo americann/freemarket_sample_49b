@@ -21,29 +21,15 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
-    @children = []
-    @grand_children = []
-
-    respond_to do |format|
-      format.html
-      format.json do
-        if params[:parent_id]
-          Category.find(params[:parent_id]).children.each do |child|
-            @children << child
-          end
-        else
-          Category.find(params[:child_id]).children.each do |child|
-            @grand_children << child
-          end
-        end
-      end
-    end
+    @children_categories = @product.category.parent.parent.children
+    @grandchildren_categories = @product.category.parent.children
   end  
 
 
   def update
     product = Product.find(params[:id])
     product.update(product_params) if product.user_id == current_user.id
+    redirect_to detail_user_path(product)
   end
 
 
@@ -77,6 +63,11 @@ class ProductsController < ApplicationController
   def buy_confirmation
     @product = Product.find(params[:id])
     @user = User.find(current_user.id)
+
+  else 
+
+    redirect_to  identification_user_path
+
   end
 
   def search
