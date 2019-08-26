@@ -1,5 +1,4 @@
 .identification-wrapper
-  = render 'shared/header'
   = render 'shared/breadcrumbs'
   .identification-main
     = render "shared/side_bar"
@@ -10,43 +9,57 @@
         .identification-content__middle__text
           %p お客さまの本人情報をご登録ください。<br>登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
           = link_to "本人確認書類のアップロードについて"
+
         .identification-content__middle__information
           %label お名前
-          %p 真子 就有
+          %br
+          %br
+          = @user.firstname
+          = @user.lastname
+
         .identification-content__middle__information
           %label お名前カナ 
-          %p マコ ユキナリ
+          %br
+          %br
+          = @user.firstname_kana
+          = @user.lastname_kana
+
+
         .identification-content__middle__information
           %label 生年月日
-          %p 1989/9/18/
+          %br
+          %br
+          = @user.birthday
+
         .identification-content__middle__form-box
           .identification-content__middle__form-box__top
             %label 郵便番号
-            %p 任意
+            %span.form-require 必須
+
           = f.number_field :zip_code, placeholder: "例) 1234567"
         .identification-content__middle__form-box
           .identification-content__middle__form-box__top
             %label 都道府県
-            %p 任意
+            %span.form-require 必須
           = f.collection_select :prefecture_id, Prefecture.all, :id , :name
         .identification-content__middle__form-box
           .identification-content__middle__form-box__top
             %label 市区町村
-            %p 任意
+            %span.form-require 必須
           = f.text_field :city,placeholder: "例)横浜市緑区"
         .identification-content__middle__form-box
           .identification-content__middle__form-box__top
             %label 番地
-            %p 任意
+            %span.form-require 必須
           = f.text_field :block,placeholder: "例)青山1-1-1"
         .identification-content__middle__form-box
           .identification-content__middle__form-box__top
             %label 建物名
-            %p 任意
+            %span.form-require 必須
           = f.text_field :building_number,placeholder: "例)柳ビル103"
+
       .identification-content__bottom
         = f.button :登録する ,class: "identification-content__bottom__submit"
         .identification-content__bottom__link
           = link_to "本人情報の確認について"
   = render 'shared/exhibition_button'
-  = render 'shared/footer'

@@ -20,9 +20,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   private
 
-    # def find_user
-    #   @user = User.find(params[:id])
-    # end
+   
 
     def user_params
       params.require(:user).permit(:nickname,:firstname,:lastname,:firstname_kana,:lastname_kana,:birthday,:email,:password,

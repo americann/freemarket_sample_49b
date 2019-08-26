@@ -6,7 +6,6 @@ def new
 end
   
 def exhibit
-  @products = Product.where(user_id: current_user.id).limit(5)
 end
 
 def index
@@ -38,8 +37,19 @@ def edit
 end
 
 def identification
-  @user = User.new
+  
+  @user = User.find(current_user.id)
+ 
 end
+
+
+def update
+  @user = User.new(user_params)
+  @user = User.find(current_user.id)
+  @user.save
+end
+
+
 
 def logout
   @user = User.new
@@ -50,4 +60,11 @@ private
 def set_products
   @products = Product.where(user_id: current_user.id).limit(5)
 end
+
+def user_params
+  params.require(:user).permit(:nickname,:firstname,:lastname,:firstname_kana,:lastname_kana,:birthday,:email,:password,
+    address_attributes: [:zip_code,:prefecture_id,:city,:block,:building_number,:phone_number]
+    )
+end
+
 end
