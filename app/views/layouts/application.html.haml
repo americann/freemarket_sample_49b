@@ -16,7 +16,7 @@
     %link{href: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css", rel:"stylesheet", type: "text/css"}/
     %script{src: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js", type: "text/javascript"}
   %body
-  = render "shared/header" unless check_request_path("products#new", "products#edit", "users/registrations#new", "users#new", "products#buy_confirmation")
+  = render "shared/header" unless check_request_path("products#new", "products#edit", "users/registrations#new", "users#new", "products#buy_confirmation","users#complete")
   = yield
-  = render "shared/footer" unless check_request_path("products#new", "products#edit", "users/registrations#new", "users#new", "products#buy_confirmation")
+  = render "shared/footer" unless check_request_path("products#new", "products#edit", "users/registrations#new", "users#new", "products#buy_confirmation","users#complete")
   

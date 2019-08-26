@@ -1,0 +1,30 @@
+.single-container
+  
+  .single-container__header
+    %h1
+      = link_to image_tag("#{asset_path "header/logo.svg"}"), root_path
+    %ol.stepBar#step3
+      %li.visited
+        %span 
+        = succeed "会員情報" do
+          %br/
+      %li.visited
+        %span 
+        = succeed "お届け先住所入力" do
+          %br/
+      %li.visited
+        %span 
+        = succeed "完了" do
+          %br
+
+  .user-text
+    .user-text__topic
+      会員登録完了
+    .user-text__form
+      ありがとうございます。
+      %br
+      登録が完了しました。
+    = link_to "メルカリをはじめる",root_path
+
+
+= render 'shared/logofooter'
