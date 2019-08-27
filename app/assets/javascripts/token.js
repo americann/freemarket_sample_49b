@@ -1,4 +1,12 @@
 $(document).on("turbolinks:load", function(){
+  function buildHTML(card) {
+      var html =
+      `<div class = "card-regist-js2">
+        カード登録完了です
+        </div>`
+      return html;
+  }
+
   $(function(){
   $(".card-new__inside__security__cord__signup__btn").on('click', function(e) {
     e.preventDefault();
@@ -21,7 +29,9 @@ $(document).on("turbolinks:load", function(){
           data: { token: token },
           dataType: 'json',
         })
-        .done(function(){
+        .done(function(date){
+         var html = buildHTML(date);
+         $('.card-regist-js').append(html).fadeOut(5000);
           //非同期通信成功時の処理
         })
         .fail(function(){
