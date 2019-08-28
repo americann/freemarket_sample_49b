@@ -21,7 +21,7 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
-    @images = @product.images ||= []
+    @images = @product.images if @product.images.attached?
     @children_categories = @product.category.parent.parent.children
     @grandchildren_categories = @product.category.parent.children
   end  
