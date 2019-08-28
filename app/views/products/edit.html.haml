@@ -21,9 +21,16 @@
               %p 
                 ドラッグアンドドロップ
                 またはクリックしてファイルをアップロード
-              -(1..10).each.with_index(1) do |no|
-                %label.form__upload__dropbox__visible__label{for: "hidden#{no}"}
-                  = f.file_field :images, multiple: true, class: 'hidden' ,id:"hidden#{no}"
+              %label.form__upload__dropbox__visible__label{for: "hidden1"}
+                = f.file_field :images, multiple: true, class: 'hidden' ,id:'hidden1'
+              %label.form__upload__dropbox__visible__label{for: "hidden2"}
+                = f.file_field :images, multiple: true, class: 'hidden' ,id:'hidden2'
+              %label.form__upload__dropbox__visible__label{for: "hidden3"}
+                = f.file_field :images, multiple: true, class: 'hidden' ,id:'hidden3'
+              %label.form__upload__dropbox__visible__label{for: "hidden4"}
+                = f.file_field :images, multiple: true, class: 'hidden' ,id:'hidden4'
+              %label.form__upload__dropbox__visible__label{for: "hidden5"}
+                = f.file_field :images, multiple: true, class: 'hidden' ,id:'hidden5'
         
               
 
