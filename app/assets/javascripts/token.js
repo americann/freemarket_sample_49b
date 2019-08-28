@@ -44,4 +44,16 @@ $(document).on("turbolinks:load", function(){
     });
   })
   })
+
+  $(function(){
+    $(".card-new__inside__security__cord__signup__btn").on('click', function() {
+      $(this).toggleClass('active');
+      $(this).prop("disabled", true);
+      setTimeout(function(){
+        window.location.href = 'http://localhost:3000/cards';
+      }, 5000);
+  })
+
+  
+  });
   });
