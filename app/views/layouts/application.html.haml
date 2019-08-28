@@ -18,5 +18,5 @@
   %body
   = render "shared/header" unless check_request_path("products#new", "products#edit", "users/registrations#new", "devise/sessions#new", "users#new", "products#buy_confirmation")
   = yield
-  = render "shared/footer" unless check_request_path("products#new", "products#edit", "users/registrations#new", "users#new", "products#buy_confirmation")
+  = render "shared/footer" unless check_request_path("products#new", "products#edit", "users/registrations#new", "devise/sessions#new", "users#new", "products#buy_confirmation")
   
