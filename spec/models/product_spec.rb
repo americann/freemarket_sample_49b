@@ -14,14 +14,6 @@ RSpec.describe Product, type: :model do
     expect(product.errors[:description]).to include("を入力してください")
   end
 
-  it 'returns a result of calculation' do
-    user = FactoryBot.create(:user)
-    product = FactoryBot.build(:product)
-    category = FactoryBot.create(:category)
-    
-    expect(product.tax).to eq(2160)
-  end
-
   it 'is invalid without a state' do
     product = FactoryBot.build(:product,state: nil)
     product.valid?
@@ -57,5 +49,5 @@ RSpec.describe Product, type: :model do
     product.valid?
     expect(product.errors[:shipping_method]).to include("を入力してください")
   end
-  
+
 end
