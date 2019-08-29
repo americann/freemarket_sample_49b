@@ -7,4 +7,4 @@
       .product-box__bottom__info__price="¥#{new_product.price.to_s(:delimited)}"
       .product-box__bottom__info__like
         %i.far.fa-heart
-        %p.like-length 5
+        %p.like-length=new_product.likes.count
