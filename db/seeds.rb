@@ -33,7 +33,6 @@ child_array.each do |child|
   Category.create(name: child[0],parent_id: child[1])
 end
 
-
 parent_id_cnt=0
 grandchild_array=[]
 child_grandchild_array.each do |child_grandchild|
@@ -46,22 +45,6 @@ child_grandchild_array.each do |child_grandchild|
 end
 grandchild_array.each do |grandchild|
   Category.create(name: grandchild[0] , parent_id: grandchild[1])
-end
-
-200.times do |no|
-  Product.create(
-    name: "カバンです#{no}",
-    description: "カバンです#{no}カバンです#{no}カバンです#{no}カバンです#{no}カバンです#{no}カバンです#{no}カバンです#{no}カバンです#{no}カバンです#{no}カバンです#{no}カバンです#{no}カバンです#{no}カバンです#{no}カバンです#{no}カバンです#{no}カバンです#{no}カバンです#{no}カバンです#{no}カバンです#{no}カバンです#{no}",
-    state: "新品",
-    postage: "送料込み",  
-    shipping_date: "2~3",
-    price: 3000,
-    size: "S",
-    user_id: 1,
-    prefecture_id: [*(1..47)].sample(),
-    category_id: [*(160..1331)].sample(),
-    shipping_method: "ゆうゆうメルカリ便",
-  )
 end
 
 User.create(
@@ -84,3 +67,21 @@ Address.create(
   phone_number:1112222,
   user_id: 1,
 )
+
+200.times do |no|
+  product = Product.new(
+    name: "カバンです#{no}",
+    description: "カバンです#{no}カバンです#{no}カバンです#{no}カバンです#{no}カバンです#{no}カバンです#{no}カバンです#{no}カバンです#{no}カバンです#{no}カバンです#{no}カバンです#{no}カバンです#{no}カバンです#{no}カバンです#{no}カバンです#{no}カバンです#{no}カバンです#{no}カバンです#{no}カバンです#{no}カバンです#{no}",
+    state: "新品",
+    postage: "送料込み",  
+    shipping_date: "2~3",
+    price: 3000,
+    size: "S",
+    user_id: 1,
+    prefecture_id: [*(1..47)].sample(),
+    category_id: [*(160..1331)].sample(),
+    shipping_method: "ゆうゆうメルカリ便",
+  )
+  product.images.attach(io: File.open("app/assets/images/products/bag1.jpg"),filename: "bag1.jpg")
+  product.save
+end
