@@ -16,13 +16,13 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :validatable,:omniauthable,omniauth_providers:  %i(google facebook)
          
   has_many :products
+  has_many :likes
 
   has_one :address
   accepts_nested_attributes_for :address
 
   has_one :card
   accepts_nested_attributes_for :card
-
 
 
   protected
@@ -56,5 +56,4 @@ class User < ActiveRecord::Base
     end
     user
   end
-
 end
