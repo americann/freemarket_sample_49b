@@ -99,12 +99,9 @@
     .productshow__description
       %p.productshow__description__inner
         = @product.description
-    %button.like
-      %i.far.fa-heart
-      %span
-        いいね！
-        %span.like__number
-          1
+    - if user_signed_in?
+      %button.like
+        = render partial: "like", locals: {product: @product}
 
 = render 'products/comment'
       
