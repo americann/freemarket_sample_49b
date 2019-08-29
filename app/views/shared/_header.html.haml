@@ -21,9 +21,8 @@
               %i.fa.fa-list-ul.fa-1.3x
               %span.header-nav-left__nav1__link__character カテゴリーから探す
             %ul.category__parent
-              - @parent.each do |parent| 
                 %li
-                  = link_to parent.name, category_path(parent), class:'category__list__parent'  
+                  = link_to parent.name, category_path(parent), class:'category__list__parent'
                   %ul.category__child
                     - parent.children.each do |child|
                       %li
@@ -32,7 +31,7 @@
                           - child.children.each do |grand_child|
                             %li
                               = link_to grand_child.name, category_path(grand_child), class:'category__list__grandchild'
-        
+
           %li#brand.header-nav-left__nav2
             = link_to '' , class:'header-nav-left__nav2__link navbar navleft' do
               %i.fa.fa-tag
@@ -50,7 +49,7 @@
                 = link_to 'アディダス', '#', class:'category__list__child'
               %li
                 = link_to 'ブランド一覧', '#', class:'category__list__child'
-      
+
       - if user_signed_in?   #ログインしてたら
         %ul.header-nav-right
           %li#good.header-nav-right__nice
@@ -65,18 +64,18 @@
             .notification-box
               %ul
                 %li
-                  = image_tag("/mercari_profile.png") 
+                  = image_tag("/mercari_profile.png")
                   お知らせ１
                 %li
-                  = image_tag("/mercari_profile.png") 
+                  = image_tag("/mercari_profile.png")
                   お知らせ２
                 %li
-                  = image_tag("/mercari_profile.png") 
+                  = image_tag("/mercari_profile.png")
                   お知らせ３
                 %li
-                  = image_tag("/mercari_profile.png") 
+                  = image_tag("/mercari_profile.png")
                   お知らせ４
-                  
+
           %li#todo.header-nav-right__todo
             = link_to '' , class:'header-nav-right__todo__link navbar' do
               %i.fa.fa-check
@@ -115,7 +114,7 @@
                   いいね！一覧
                   %i.fa.fa-chevron-right
                 %li
-                  = link_to exhibit_user_path(current_user) , class: "mypage-nav__lists__item" do 
+                  = link_to exhibit_user_path(current_user) , class: "mypage-nav__lists__item" do
                     出品した商品-出品中
                   %i.fa.fa-chevron-right
                 %li
@@ -130,12 +129,12 @@
                 %li
                   購入した商品-過去の取引
                   %i.fa.fa-chevron-right
-        
+
       - else
         %ul.header-nav-right-signup
           %li
             = link_to "新規登録", new_user_path, class: 'header-nav-right-signup__signup-nav'
 
-           
+
           %li
             = link_to "ログイン", new_user_session_path, class: 'header-nav-right-signup__login-nav'
