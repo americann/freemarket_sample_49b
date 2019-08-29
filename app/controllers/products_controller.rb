@@ -63,6 +63,11 @@ class ProductsController < ApplicationController
   def buy_confirmation
     @product = Product.find(params[:id])
     @user = User.find(current_user.id)
+
+  else 
+
+    redirect_to  identification_user_path
+
   end
 
   def search
@@ -72,7 +77,7 @@ class ProductsController < ApplicationController
   private
   
   def product_params
-    params.require(:product).permit(:images, :name, :description, :category_id, :size, :state, :postage, :prefecture_id, :shipping_date, :price, ).merge(user_id: current_user.id)
+    params.require(:product).permit(:name, :description, :category_id, :size, :state, :postage, :prefecture_id, :shipping_date, :price, images:[]).merge(user_id: current_user.id)
   end
 
   def get_four_new_items(all_products, parent_id)

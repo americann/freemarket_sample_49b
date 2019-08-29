@@ -25,10 +25,11 @@ def payjp ##トークンを取得保存、トークンを活用して顧客を�
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     response_customer = Payjp::Customer.create(card: params[:token])
       if current_user.card
-        current_user.card.update(token: params[:token] , customer_id: response_customer.id , user_id:current_user.id)
+      current_user.card.update(token: params[:token] , customer_id: response_customer.id , user_id:current_user.id)
       else
-        Card.create(token: params[:token], customer_id: response_customer.id , user_id:current_user.id)
+      Card.create(token: params[:token], customer_id: response_customer.id , user_id:current_user.id)
       end
+     @card = current_user.card
     }
   end
 end

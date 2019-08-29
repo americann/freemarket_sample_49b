@@ -13,16 +13,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user = User.new(user_params)
     @user.save!
     bypass_sign_in(@user)
-    redirect_to root_path
+    
+    redirect_to complete_user_path(@user)
+
   rescue
     render action: 'new'
   end
 
+  
   private
-
-    # def find_user
-    #   @user = User.find(params[:id])
-    # end
 
     def user_params
       params.require(:user).permit(:nickname,:firstname,:lastname,:firstname_kana,:lastname_kana,:birthday,:email,:password,

@@ -21,6 +21,7 @@ Rails.application.routes.draw do
       get'business'
       get'finish'
       get'detail'
+      get'complete'
     end
   end
   resources  :cards do
