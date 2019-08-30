@@ -1,11 +1,5 @@
 .default-container
-  %nav.breadcrumbs
-    %ul
-      %li
-        メルカリ
-      %i.fa.fa-angle-right
-      %li
-        ユーザー名
+  - breadcrumb :mypage_show, current_user
   .user-details
     .user-profile
       = image_tag("#{asset_path "user_bg.jpg"}")
