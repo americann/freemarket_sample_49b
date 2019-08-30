@@ -52,9 +52,9 @@ ActiveRecord::Schema.define(version: 2019_08_29_082516) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-    t.integer "customer_id"
+    t.text "customer_id"
     t.integer "card_id"
-    t.integer "token"
+    t.text "token"
   end
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -104,7 +104,7 @@ ActiveRecord::Schema.define(version: 2019_08_29_082516) do
     t.string "firstname"
     t.string "lastname"
     t.string "firstname_kana"
-    t.string "lastname_kana"
+    t.string "lastname_kana", default: ""
     t.date "birthday"
     t.string "uid"
     t.string "provider"
