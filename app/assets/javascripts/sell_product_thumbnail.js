@@ -41,7 +41,7 @@ $(document).on("turbolinks:load", function(){
     // アップロードするファイルを選択
     $("#hidden1").change(function(){
       $(this).parent().css("pointer-events" ,"none");
-      $(this).parent().remove;
+      $(this).parent().css("z-index","10");
       // 画像データの取得
       var file = $(this).prop('files')[0];
 
@@ -116,7 +116,7 @@ $(document).on("turbolinks:load", function(){
     // アップロードするファイルを選択
     $("#hidden2").change(function(){
       $(this).parent().css("pointer-events" ,"none");
-      $(this).parent().remove;
+      $(this).parent().css("z-index","10");
       // 画像データの取得
       var file = $(this).prop('files')[0];
 
@@ -190,7 +190,7 @@ $(document).on("turbolinks:load", function(){
     // アップロードするファイルを選択
     $("#hidden3").change(function(){
       $(this).parent().css("pointer-events" ,"none");
-      $(this).parent().remove;
+      $(this).parent().css("z-index","10");
       // 画像データの取得
       var file = $(this).prop('files')[0];
 
@@ -261,7 +261,7 @@ $(document).on("turbolinks:load", function(){
     // アップロードするファイルを選択
     $("#hidden4").change(function(){
       $(this).parent().css("pointer-events" ,"none");
-      $(this).parent().remove;
+      $(this).parent().css("z-index","10");
       // 画像データの取得
       var file = $(this).prop('files')[0];
 
@@ -333,7 +333,7 @@ $(document).on("turbolinks:load", function(){
     // アップロードするファイルを選択
     $("#hidden5").change(function(){
       $(this).parent().css("pointer-events" ,"none");
-      $(this).parent().remove;
+      $(this).parent().css("z-index","10");
       // 画像データの取得
       var file = $(this).prop('files')[0];
 
@@ -475,7 +475,7 @@ $(document).on("turbolinks:load", function(){
     // アップロードするファイルを選択
     $(document).on("change","#hidden7", function(){
       $(this).parent().css("pointer-events" ,"none");
-      $(this).parent().remove;
+      $(this).parent().css("z-index","10");
       // 画像データの取得
       var file = $(this).prop('files')[0];
 
@@ -546,7 +546,7 @@ $(document).on("turbolinks:load", function(){
     // アップロードするファイルを選択
     $(document).on("change","#hidden8", function(){
       $(this).parent().css("pointer-events" ,"none");
-      $(this).parent().remove;
+      $(this).parent().css("z-index","10");
       // 画像データの取得
       var file = $(this).prop('files')[0];
 
@@ -617,7 +617,7 @@ $(document).on("turbolinks:load", function(){
     // アップロードするファイルを選択
     $(document).on("change","#hidden9", function(){
       $(this).parent().css("pointer-events" ,"none");
-      $(this).parent().remove;
+      $(this).parent().css("z-index","10");
       // 画像データの取得
       var file = $(this).prop('files')[0];
 
@@ -687,7 +687,7 @@ $(document).on("turbolinks:load", function(){
     // アップロードするファイルを選択
     $(document).on("change","#hidden10", function(){
       $(this).parent().css("pointer-events" ,"none");
-      $(this).parent().remove;
+      $(this).parent().css("z-index","10");
       // 画像データの取得
       var file = $(this).prop('files')[0];
 
