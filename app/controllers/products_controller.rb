@@ -42,10 +42,10 @@ class ProductsController < ApplicationController
   def destroy
     @product = Product.find(params[:id])
       if @product.user_id === current_user.id
-      redirect_to action: 'detail'
+        @product.destroy
+        redirect_to action: 'exhibit'
       else
-      @product.destroy
-      redirect_to action: 'exhibit'
+        redirect_to action: 'detail'
       end
     end
 
