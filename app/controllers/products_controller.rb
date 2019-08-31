@@ -72,7 +72,7 @@ class ProductsController < ApplicationController
 
 #カードがなければ
   else
-    redirect_to  new_card_path　
+    redirect_to new_card_path
   end
 
   end
