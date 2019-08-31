@@ -8,6 +8,10 @@ Rails.application.routes.draw do
     resources :likes, only: %i(create destroy)
     member do
       get'buy_confirmation' 
+      get'exhibit'
+      get'business'
+      get'finish'
+      get'detail'
     end
 
     collection do
@@ -18,10 +22,6 @@ Rails.application.routes.draw do
     member do
       get'identification' 
       get'logout'
-      get'exhibit'
-      get'business'
-      get'finish'
-      get'detail'
       get'complete'
     end
   end

@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
 
   before_action :authenticate_user!,only: :new
+  before_action :set_products , only:[:exhibit , :business , :finish]
   
   def index
     parent_ids = @parent.pluck(:id)
@@ -38,6 +39,28 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
+  def destroy
+    @product = Product.find(params[:id])
+      if @product.user_id === current_user.id
+      redirect_to action: 'detail'
+      else
+      @product.destroy
+      redirect_to action: 'exhibit'
+      end
+    end
+
+    def exhibit
+    end
+    
+    def business
+    end
+    
+    def finish
+    end
+    
+    def detail
+      @product = Product.find(params[:id])
+    end
 
   def new
     @product = Product.new
@@ -83,6 +106,10 @@ class ProductsController < ApplicationController
 
   def get_four_new_items(all_products, parent_id)
     all_products.select { |product| product.category.parent.parent.id == parent_id }.slice(0,4)
+  end
+
+  def set_products
+    @products = Product.where(user_id: current_user.id).limit(5)
   end
 end
 
