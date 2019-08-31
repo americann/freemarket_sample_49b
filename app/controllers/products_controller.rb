@@ -24,6 +24,8 @@ class ProductsController < ApplicationController
     @images = @product.images if @product.images.attached?
     @children_categories = @product.category.parent.parent.children
     @grandchildren_categories = @product.category.parent.children
+
+    redirect_to (root_path) unless @product.user_id == current_user.id
   end  
 
 
