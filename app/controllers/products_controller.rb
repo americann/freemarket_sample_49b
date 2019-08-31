@@ -24,6 +24,8 @@ class ProductsController < ApplicationController
     @images = @product.images if @product.images.attached?
     @children_categories = @product.category.parent.parent.children
     @grandchildren_categories = @product.category.parent.children
+
+    redirect_to (root_path) unless @product.user_id == current_user.id
   end  
 
 
@@ -65,9 +67,13 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @user = User.find(current_user.id)
 
-  else 
+# if カードがあれば
+  if current_user.card
 
-    redirect_to  new_card_path
+#カードがなければ
+  else
+    redirect_to  new_card_path　
+  end
 
   end
 
