@@ -67,6 +67,8 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @user = User.find(current_user.id)
 
+    redirect_to (root_path) if @product.user_id == current_user.id
+
 # if カードがあれば
   if current_user.card
 
