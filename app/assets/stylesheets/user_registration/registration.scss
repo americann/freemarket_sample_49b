@@ -141,6 +141,7 @@
       font-size:14px;
       color:#333333;
       margin: 5px;
+      text-align: center;
     }
 
     &__form{
@@ -238,4 +239,38 @@ select{
   font-size: 12px;
   vertical-align: top;
   background: gray;
+}
+
+
+
+.start{
+ 
+  
+  height: 100px;
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+
+&__button{
+  
+  a{  
+    width:300px;
+    display: block;
+    text-align: center;
+    line-height: 50px;
+    background-color:#EA352D;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    font-size:13px;
+    &:active{
+      background-color: gray; 
+    }
+  }
+}
+
+
 }

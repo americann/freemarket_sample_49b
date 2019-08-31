@@ -1,0 +1,14 @@
+-if product.like_user(current_user.id)
+  .heart-wrapper
+    %i.fas.fa-heart.active
+    %span
+    = link_to 'いいね！', product_like_path(product, product.like_user(current_user.id)), method: :delete, remote: true
+    %span.like__number
+      = product.likes.count
+-else
+  .heart-wrapper
+    %i.fas.fa-heart
+    %span
+    = link_to 'いいね！', product_likes_path(product), method: :post, remote: true
+    %span.like__number
+      = product.likes.count

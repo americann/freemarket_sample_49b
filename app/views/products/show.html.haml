@@ -50,13 +50,13 @@
       %tr
         %th カテゴリー
         %td 
-          = @product.category.parent.parent.name
+          = link_to @product.category.parent.parent.name, category_path(@product.category.parent.parent)
           .productshow__table__detail
             %i.fa.fa-angle-right
-            = @product.category.parent.name
+            = link_to @product.category.parent.name, category_path(@product.category.parent)
           .productshow__table__detail
             %i.fa.fa-angle-right
-            = @product.category.name
+            = link_to @product.category.name, category_path(@product.category)
       %tr
         %th ブランド
         %td コーチ
@@ -99,13 +99,9 @@
     .productshow__description
       %p.productshow__description__inner
         = @product.description
-    %button.like
-      %i.far.fa-heart
-      %span
-        いいね！
-        %span.like__number
-          1
+    - if user_signed_in?
+      %button.like
+        = render partial: "like", locals: {product: @product}
 
 = render 'products/comment'
       
-= render 'shared/footer'

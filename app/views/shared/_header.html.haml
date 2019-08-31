@@ -17,7 +17,7 @@
       .search-nav-left
         %ul.header-nav-left
           %li#category.header-nav-left__nav1
-            = link_to '', class:'header-nav-left__nav1__link navbar navleft' do
+            = link_to categories_path, class:'header-nav-left__nav1__link navbar navleft' do
               %i.fa.fa-list-ul.fa-1.3x
               %span.header-nav-left__nav1__link__character カテゴリーから探す
             %ul.category__parent
@@ -92,7 +92,7 @@
                 .profile__image
                   = image_tag("/member_photo_noimage.png")
                   .mypage-box__name
-                    ユーザー名
+                    = current_user.nickname
                   .mypage-box__score
                     %ul
                       %li

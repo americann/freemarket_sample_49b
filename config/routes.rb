@@ -5,6 +5,7 @@ Rails.application.routes.draw do
    
   root 'products#index'
   resources  :products do 
+    resources :likes, only: %i(create destroy)
     member do
       get'buy_confirmation' 
     end
@@ -21,6 +22,7 @@ Rails.application.routes.draw do
       get'business'
       get'finish'
       get'detail'
+      get'complete'
     end
   end
   resources  :cards do
