@@ -16,9 +16,13 @@ class Product < ApplicationRecord
   belongs_to_active_hash :prefecture
   belongs_to :category
   has_many_attached :images
+  has_many :likes, dependent: :destroy
 
   def tax
   self.price*1.08
   end
 
+  def like_user(id)
+    self.likes.find_by(user_id: id)
+  end
 end

@@ -166,8 +166,21 @@
   background: #f5f5f5;
   border-radius: 40px;
   cursor: pointer;
+  display: flex;
+  font-size: 16px;
+  a {
+    text-decoration: none;
+    color: #333;
+  }
+  .active {
+    animation: bounding 0.5s 2;
+    color: #e61f17;
+    @keyframes bounding{
+      0% {transform: translateY(0px);}
+      100% {transform: translateY(-10px);}
+    }
+  }
 }
-
 
 .comment{
   margin: 8px auto;
