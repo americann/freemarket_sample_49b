@@ -9,7 +9,7 @@
         %figure
           = image_tag("#{asset_path "user/member_photo.png"}")
         .content__mypage__icon__name
-          = link_to "yuki" ,user_path(1)
+          = link_to current_user.nickname ,user_path(current_user)
         .content__mypage__icon__name__number
           %div
             評価
