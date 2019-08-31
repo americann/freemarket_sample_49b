@@ -92,7 +92,7 @@
                 .profile__image
                   = image_tag("/member_photo_noimage.png")
                   .mypage-box__name
-                    ユーザー名
+                    = current_user.nickname
                   .mypage-box__score
                     %ul
                       %li
