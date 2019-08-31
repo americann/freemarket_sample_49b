@@ -67,7 +67,7 @@ class ProductsController < ApplicationController
 
   else 
 
-    redirect_to  identification_user_path
+    redirect_to  new_card_path
 
   end
 
