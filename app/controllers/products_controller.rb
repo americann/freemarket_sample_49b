@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
 
   before_action :authenticate_user!,only: :new
+  before_action :set_products , only:[:exhibit , :business , :finish]
   
   def index
     parent_ids = @parent.pluck(:id)
@@ -32,7 +33,7 @@ class ProductsController < ApplicationController
   def update
     product = Product.find(params[:id])
     product.update(product_params) if product.user_id == current_user.id
-    redirect_to detail_user_path(product)
+    redirect_to detail_product_path(product)
   end
 
 
@@ -40,6 +41,28 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
+  def destroy
+    @product = Product.find(params[:id])
+      if @product.user_id === current_user.id
+        @product.destroy
+        redirect_to action: 'exhibit'
+      else
+        redirect_to action: 'detail'
+      end
+    end
+
+    def exhibit
+    end
+    
+    def business
+    end
+    
+    def finish
+    end
+    
+    def detail
+      @product = Product.find(params[:id])
+    end
 
   def new
     @product = Product.new
@@ -91,6 +114,10 @@ class ProductsController < ApplicationController
 
   def get_four_new_items(all_products, parent_id)
     all_products.select { |product| product.category.parent.parent.id == parent_id }.slice(0,4)
+  end
+
+  def set_products
+    @products = Product.where(user_id: current_user.id).limit(5)
   end
 end
 
