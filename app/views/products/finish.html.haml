@@ -1,27 +1,27 @@
 .exhibit-wrapper
-  = render 'shared/breadcrumbs'
-
+  - breadcrumb :finish
+  
   .exhibit-wrapper__side
   = render "shared/side_bar"
 
   .exhibit-wrapper__main
-    .exhibit-wrapper__main__text 取引中の商品
+    .exhibit-wrapper__main__text 売却済みの商品
     %ul.exhibit-wrapper__main__list
       %li.exhibit-wrapper__main__list__ele
-        =link_to "出品中" , exhibit_user_path(current_user) ,class: "exhibit-wrapper__main__list__ele__link"
-      %li.exhibit-wrapper__main__list__ele.business-btn
-        =link_to "取引中" , business_user_path(current_user) ,class: "exhibit-wrapper__main__list__ele__link"
+        =link_to "出品中" , exhibit_product_path(current_user) ,class: "exhibit-wrapper__main__list__ele__link"
       %li.exhibit-wrapper__main__list__ele
-        =link_to "売却済み" , finish_user_path(current_user) ,class: "exhibit-wrapper__main__list__ele__link"
+        =link_to "取引中" , business_product_path(current_user) ,class: "exhibit-wrapper__main__list__ele__link"
+      %li.exhibit-wrapper__main__list__ele.finish-btn
+        =link_to "売却済み" , finish_product_path(current_user) ,class: "exhibit-wrapper__main__list__ele__link"
     .exhibit-wrapper__main__index
       - unless @products.empty?
         .exhibit-wrapper__main__image
           = image_tag("#{asset_path "user/logo-gray.png"}",class:"exhibit-image")
-          %h1.exhibit-wrapper__main__text 取引中の商品はありません
+          %h1.exhibit-wrapper__main__text 売却済みの商品はありません
       - else
         - @products.each do | product |
           %li.exhibit-wrapper__tab__list
-            = link_to detail_user_path(product.id), class:"exhibit-link" do
+            = link_to detail_product_path(product.id), class:"exhibit-link" do
               = product.name
           .exhibit-wrapper__tab__list__icon
             .list__item__count

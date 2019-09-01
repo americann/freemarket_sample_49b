@@ -1,24 +1,18 @@
 .default-container
-  %nav.breadcrumbs
-    %ul
-      %li
-        メルカリ
-      %i.fa.fa-angle-right
-      %li
-        ユーザー名
+  - breadcrumb :mypage_show, current_user
   .user-details
     .user-profile
       = image_tag("#{asset_path "user_bg.jpg"}")
       .user-photo
         = image_tag("#{asset_path "member_photo_noimage.png"}") 
         %h2.user-name
-          ユーザー名
+          = current_user.nickname
         .user-score
           %ul
             %li
               評価0
             %li
-              出品数0
+              = "出品数#{current_user.products.count}"
     .profile-under
       .raiting
         %i.fas.fa-laugh

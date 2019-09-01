@@ -1,5 +1,5 @@
 .wrapper
-  = render 'shared/breadcrumbs'
+  - breadcrumb :exhibit_show
   .productshow
     .productshow__main
       .productshow__name 
@@ -112,7 +112,7 @@
       %p.modal_p.text_position.no 本当に削除しますか？
       
       =link_to "キャンセル" , "" ,class:"modal_cancel left_btn btn_type btn_looks"
-      =link_to  "削除する" , user_path(@product.id) , class:"real_delete_btn right_btn btn_type btn_looks" , method: :delete
+      =link_to  "削除する" , product_path(@product.id) , class:"real_delete_btn right_btn btn_type btn_looks" , method: :delete
 
   .detail-wrapper__btns
     = button_to "商品の編集", "/products/#{@product.id}/edit", method: :get, class:"detail-wrapper__btns__ele"
