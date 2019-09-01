@@ -1,5 +1,5 @@
 .identification-wrapper
-  = render 'shared/breadcrumbs'
+  - breadcrumb :mypage_identification
   .identification-main
     = render "shared/side_bar"
     = form_with(model: @user, local: true, class: "identification-content") do |f|

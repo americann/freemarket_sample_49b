@@ -25,6 +25,52 @@ crumb :mypage do
   link "マイページ", users_path
 end
 
+crumb :mypage_edit do
+  link "プロフィール", edit_user_path
+  parent :mypage
+end
+
+crumb :pay do
+  link "支払い方法", cards_path
+  parent :mypage
+end
+
+crumb :card_new do
+  link "クレジットカード情報入力", new_card_path
+  parent :pay
+end
+
+crumb :exhibit do
+  link "出品した商品-出品中", exhibit_product_path
+  parent :mypage
+end
+
+crumb :business do
+  link "出品した商品-取引中", business_product_path
+  parent :mypage
+end
+
+crumb :finish do
+  link "出品した商品-売却済み", finish_product_path
+  parent :mypage
+end
+
+crumb :exhibit_show do
+  link "出品商品画面", detail_product_path
+  parent :exhibit
+end
+
+crumb :mypage_identification do
+  link "本人情報の登録", identification_user_path
+  parent :mypage
+end
+
+crumb :mypage_logout do
+  link "ログアウト", logout_user_path
+  parent :mypage
+end
+
+
 crumb :mypage_show do |user|
   link user.nickname, user_path(user)
 end
