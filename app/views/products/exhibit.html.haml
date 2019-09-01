@@ -1,5 +1,5 @@
 .exhibit-wrapper
-  = render 'shared/breadcrumbs'
+  - breadcrumb :exhibit
 
   .exhibit-wrapper__side
   = render "shared/side_bar"
@@ -31,5 +31,4 @@
                   %i.far.fa-comment-alt
                 %span.exhibit-wrapper__tab__list__tag
                   出品中
-              - product.images.each do |image| 
-                = image_tag image
+              = image_tag product.images.first

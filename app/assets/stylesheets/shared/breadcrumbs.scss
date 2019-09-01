@@ -1,15 +1,24 @@
-.breadcrumbs {
+.breadcrumbs-wrapper {
+  background-color: #fff;
+  width: 100%;
   border-top: 1px solid #eee;
   box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
-  background-color: #fff;
-  
-  ul {
-    display: flex;
-    padding: 16px;
-    margin: 0 180px;
-    font-size: 12px;
-    li {
-      margin: 0 10px;
+  .breadcrumbs {
+    background-color: #fff;
+    width: 1020px;
+    margin: 0 auto;
+    padding: 16px 0;
+    font-size: 14px;
+    a {
+      text-decoration: none;
+      color: black;
+      &:hover {
+        text-decoration: underline;
+        opacity: .7;
+      }
+    }
+    .current {
+      font-weight: 600;
     }
   }
 }

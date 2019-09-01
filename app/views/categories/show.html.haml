@@ -1,3 +1,8 @@
+- breadcrumb :parent_category, @category
+- if @category.parent
+  - breadcrumb :child_category, @category
+  - if @category.parent.parent
+    - breadcrumb :grand_child_category, @category
 .item-box-container
   %h1="#{@category.name}の商品一覧"
   .item-boxes-container
