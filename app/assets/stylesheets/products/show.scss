@@ -208,21 +208,18 @@
         width:100%;
         margin: 10px auto;
       }
+    .comment__main__button {
+      width: 100%;
+      display: block;
+      text-align: center;
+      line-height: 50px;
+      background-color: #AAAAAA;
+      color: #fff;
+      text-decoration: none;
+      cursor: pointer;
+      font-size: 13px;
     }
-
-    &__button{
-      padding:10px;
-       a{
-        display: block;
-        text-align: center;
-        line-height: 50px;
-        background-color:#AAAAAA;
-        color: #fff;
-        text-decoration: none;
-        cursor: pointer;
-        font-size:13px;
-      }
-    }   
+    }
   }
 }
 
