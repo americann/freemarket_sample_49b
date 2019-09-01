@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root 'products#index'
   resources  :products do 
     resources :likes, only: %i(create destroy)
+    resources :comments, only: [:create]
     member do
       get'buy_confirmation' 
       get'exhibit'
