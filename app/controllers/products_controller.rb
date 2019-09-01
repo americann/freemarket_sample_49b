@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
 
   before_action :authenticate_user!,only: :new
+  before_action :set_products , only:[:exhibit , :business , :finish]
   
   def index
     parent_ids = @parent.pluck(:id)
@@ -15,7 +16,12 @@ class ProductsController < ApplicationController
 
 
   def create
-    @product = Product.create(product_params)
+    @product = Product.new(product_params)
+    if @product.save
+      redirect_to root_path
+    else
+      redirect_to new_product_path
+    end
   end
 
 
@@ -24,13 +30,15 @@ class ProductsController < ApplicationController
     @images = @product.images if @product.images.attached?
     @children_categories = @product.category.parent.parent.children
     @grandchildren_categories = @product.category.parent.children
+
+    redirect_to (root_path) unless @product.user_id == current_user.id
   end  
 
 
   def update
     product = Product.find(params[:id])
     product.update(product_params) if product.user_id == current_user.id
-    redirect_to detail_user_path(product)
+    redirect_to detail_product_path(product)
   end
 
 
@@ -38,6 +46,28 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
+  def destroy
+    @product = Product.find(params[:id])
+      if @product.user_id === current_user.id
+        @product.destroy
+        redirect_to action: 'exhibit'
+      else
+        redirect_to action: 'detail'
+      end
+    end
+
+    def exhibit
+    end
+    
+    def business
+    end
+    
+    def finish
+    end
+    
+    def detail
+      @product = Product.find(params[:id])
+    end
 
   def new
     @product = Product.new
@@ -58,6 +88,9 @@ class ProductsController < ApplicationController
         end
       end
     end
+    
+    
+
   end
 
 
@@ -65,9 +98,15 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @user = User.find(current_user.id)
 
-  else 
+    redirect_to (root_path) if @product.user_id == current_user.id
 
-    redirect_to  new_card_path
+# if カードがあれば
+  if current_user.card
+
+#カードがなければ
+  else
+    redirect_to new_card_path
+  end
 
   end
 
@@ -83,6 +122,10 @@ class ProductsController < ApplicationController
 
   def get_four_new_items(all_products, parent_id)
     all_products.select { |product| product.category.parent.parent.id == parent_id }.slice(0,4)
+  end
+
+  def set_products
+    @products = Product.where(user_id: current_user.id).limit(5)
   end
 end
 

@@ -92,7 +92,7 @@
                 .profile__image
                   = image_tag("/member_photo_noimage.png")
                   .mypage-box__name
-                    ユーザー名
+                    = current_user.nickname
                   .mypage-box__score
                     %ul
                       %li
@@ -115,7 +115,7 @@
                   いいね！一覧
                   %i.fa.fa-chevron-right
                 %li
-                  = link_to exhibit_user_path(current_user) , class: "mypage-nav__lists__item" do 
+                  = link_to exhibit_product_path(current_user) , class: "mypage-nav__lists__item" do 
                     出品した商品-出品中
                   %i.fa.fa-chevron-right
                 %li
