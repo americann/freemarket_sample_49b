@@ -1,5 +1,8 @@
 .comment
   .comment__main
+    - @comments.each do |comment| 
+      %li.comment__list
+
     .comment__main__content
       = form_with model: [@product, @comment] do |form|
         .message-form
