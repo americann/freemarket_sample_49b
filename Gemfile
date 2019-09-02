@@ -62,6 +62,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+  gem 'faker'
 end
 
 group :production do
@@ -85,5 +86,12 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 
+
+gem'rspec-rails'
+gem'factory_bot_rails'
+
 gem 'aws-sdk-s3', require: false
+
+
 gem 'gretel'
+
