@@ -1,5 +1,5 @@
 class Product < ApplicationRecord   
-  # validates :images, presence: true
+  validates :images, presence: true
   validates :name, presence: true
   validates :description, presence: true 
   validates :category_id, presence: true
@@ -9,7 +9,6 @@ class Product < ApplicationRecord
   validates :prefecture_id, presence: true
   validates :shipping_date, presence: true
   validates :price, presence: true
-  validates :shipping_method, presence: true
 
   belongs_to :user
   extend ActiveHash::Associations::ActiveRecordExtensions
