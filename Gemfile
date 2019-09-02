@@ -45,6 +45,7 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
   gem 'pry-rails','>=0.3.9'
+  gem 'rails-controller-testing'
 end
 
 group :development do
