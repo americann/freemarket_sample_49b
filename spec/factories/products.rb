@@ -11,6 +11,5 @@ FactoryBot.define do
     prefecture_id {1}
     association :category
     shipping_method {"ゆうゆうメルカリ便"}
-
   end
 end
