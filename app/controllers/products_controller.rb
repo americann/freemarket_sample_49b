@@ -70,6 +70,7 @@ class ProductsController < ApplicationController
     def detail
       @product = Product.find(params[:id])
       @comment = Comment.new
+      @comments = @product.comments.includes(:user) || []
     end
 
   def new
