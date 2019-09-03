@@ -45,6 +45,7 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
   gem 'pry-rails','>=0.3.9'
+  gem 'faker'
 end
 
 group :development do
@@ -86,8 +87,11 @@ gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 
 
-gem 'aws-sdk-s3', require: false
-gem 'gretel'
-
 gem'rspec-rails'
 gem'factory_bot_rails'
+
+gem 'aws-sdk-s3', require: false
+
+
+gem 'gretel'
+
