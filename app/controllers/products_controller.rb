@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
 
-  before_action :authenticate_user!,only: :new
-  before_action :set_products , only:[:exhibit , :business , :finish]
+  # before_action :authenticate_user!,only: :new
+  # before_action :set_products , only:[:exhibit , :business , :finish]
   
   def index
     parent_ids = @parent.pluck(:id)
