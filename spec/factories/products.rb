@@ -10,7 +10,7 @@ FactoryBot.define do
     size {"s"}
     association :user
     prefecture_id {1}
-    association :category
+    category_id {1316}
     shipping_method {"ゆうゆうメルカリ便"}
   end
 end
