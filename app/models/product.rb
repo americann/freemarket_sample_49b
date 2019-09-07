@@ -17,6 +17,7 @@ class Product < ApplicationRecord
   belongs_to :category
   has_many_attached :images
   has_many :likes, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   def tax
   self.price*1.08

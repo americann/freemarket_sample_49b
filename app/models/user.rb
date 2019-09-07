@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
          
   has_many :products
   has_many :likes, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   has_one :address
   accepts_nested_attributes_for :address
